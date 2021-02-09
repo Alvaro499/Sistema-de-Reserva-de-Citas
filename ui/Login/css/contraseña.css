@@ -1,0 +1,29 @@
+form input {
+	padding-left: 75px;
+	height: 35px;
+	width: 100%;
+	font-size: 20px;
+}
+/*Cuerpo*/
+h1{
+    margin: 0 0 20px 0;
+}
+h2{ 
+	margin: 20px 0 20px 0;
+	text-align: left;
+	color: white;
+}
+/*Parte abajo*/
+#texto{
+	padding-top: 30px;
+	color: white;
+	text-align: right;
+}
+#boton{
+	padding: 12px;
+	margin: 25px 0 0 0;
+	float: center;
+	background-color: red;
+	color: white;
+	font-size: 20px;
+}

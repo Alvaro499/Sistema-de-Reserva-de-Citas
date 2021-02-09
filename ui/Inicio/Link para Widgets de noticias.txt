@@ -1,0 +1,17 @@
+<!-- <iframe src="https://www.welivesecurity.com/nwa/?e=CJvx1hW" height="950" width="665" style="max-width: 100%;"></iframe> -->
+			
+		1)Noticias welivesecurity
+			<!-- https://www.welivesecurity.com/la-es/news-widget-generator-la-es/# -->
+
+		2)Noticias BBC
+			<!-- https://www.bbc.com/mundo/institucional/2011/03/000000_widget_gel -->
+
+		3)Cambios de moneda
+			https://www.exchangeratewidget.com/es/
+
+
+4)Servidores gratis para alojar pagina y realizar pruebas
+	https://www.hostingexperto.es/hosting-gratuito/
+
+5)Como usr widgets:
+	https://www.webnode.es/ayuda/index.php?/Knowledgebase/Article/View/3445/
