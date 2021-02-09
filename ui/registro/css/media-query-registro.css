@@ -1,0 +1,26 @@
+@media screen and (min-width: 812px){
+
+	.btn_registro{
+		font-size: 1.2rem;
+		padding: 2% 2%;
+	}
+
+	.registro h2, h3{
+		font-size: 1.5rem;
+	}
+
+	.registro label{
+		font-size: 1.5rem
+	}
+}
+
+
+@media screen and (min-width: 1080px){
+	.btn_registro{
+
+		font-size: 1.5rem;
+		/*padding: 3% 0.5%;*/
+	}
+
+	
+}

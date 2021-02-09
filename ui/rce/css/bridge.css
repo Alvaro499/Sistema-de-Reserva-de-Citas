@@ -1,0 +1,10 @@
+@import url("normalize.css");
+@import url("estructura.css");
+@import url("menu_v.css");
+@import url("menu_h.css");
+@import url("administracion_citas.css");
+@import url("reserva_aceptada.css");
+@import url("media-query-administracion-citas.css");
+@import url("media-query-reserva-aceptada.css");
+@import url("media-query812.css");
+@import url("media-query570.css");

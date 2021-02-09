@@ -1,0 +1,113 @@
+#nav_v li:nth-child(4){  /*resalto */
+    background: #BE1E2D;
+    color: #000000;
+}
+
+.select{
+    width: 50%;
+    height: 30px;
+    text-align: center;
+    padding: 5px 10px;
+    font-size: 15px;
+    border: 1px solid rgba(128,189,255,1);
+    margin: 20px 0 25px 0;
+    text-align: center;
+    text-align-last: center;
+}
+
+.select:focus{
+border: none;
+box-shadow: 5px 5px 5px rgba(128,189,255,0.5) , -5px -5px 5px rgba(128,189,255,0.5);
+}
+
+
+/*COPIAND EL CODIGO DE LOS CORREOS*/
+
+.cita_cliente{      /*Contenedor del formulario, es un <form>*/
+    background: #FFFFFF;
+    width: 100%;
+    height: 100%;
+    border-radius: 3%;
+    text-align: center;
+    padding: 20px 20px;
+    display: flex;
+    align-items: center;
+    flex-flow: column wrap;
+    border: 1px solid #BCCBD3;
+    box-shadow: 1.5px 1.5px 15px rgba(0,0,0,0.5) , -1.5px -1.5px 15px rgba(0,0,0,0.5);
+}
+
+.cita_cliente h1{
+    margin: 0 0 50px 0;
+    font-size: 2.5rem
+
+}
+
+.cita_cliente label{
+    margin: 25px 0 0 0;
+    font-size: 1.5rem
+}
+
+
+/*Crear esapcio entre los campos del formmulario*/
+.cita_cliente input, textarea{
+    border: 1px solid rgba(128,189,255,1);
+    box-shadow: 2px 2px 5px rgba(128,189,255,0.5) , -2px -2px 5px rgba(128,189,255,0.5);
+    margin: 20px 0 25px 0
+}
+
+.cita_cliente input{
+     width: 50%;
+    text-align: center;
+    padding: 5px 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+
+#asunto_ct::placeholder{
+    font-style: italic;
+}
+
+
+#mensaje_ct{  /*textarea*/
+    width: 70%;
+    height: 100px;
+    height: 100px;
+    padding: 10px 25px;
+    resize: none; /*evitar cambiar de tamano el textarea*/
+}
+
+
+.cont_btn{      /*Contenedor que guarda los botones de "enviar" y archivos*/
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    
+}
+
+
+.btn_ct{       /*estilos de los botones*/
+
+    background: rgba(38,124,181,1);
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10%;
+    width: 25%;
+    padding: 3% 2%;
+    margin: 75px 0 0 0;
+    outline: none;
+}
+
+.btn_ct:hover{
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.5) , -3px -3px 10px rgba(0,0,0,0.5);
+    cursor: pointer;
+}
+
+.btn_ct:active{
+    transform: scale(0.9);
+}

@@ -1,0 +1,55 @@
+/*TAMANO DE LOS ICONOS Menu Vertical*/
+#menu_v span img{
+	width: 30px;
+	height: 30px
+}
+
+
+/*MENU VERTICAL*/
+
+.logo{
+	background: #FFFFFF;
+	text-align: center;
+	padding: 10px 0;
+	
+	position: sticky;
+	top: 0
+}
+
+#menu_v{
+	background: #262261;
+}
+
+/*Generar un espacio entre los iconos y el texto*/
+#nav_v span{
+	margin-right: 10px
+}
+
+#nav_v{
+	background: #262261;
+	position: sticky;
+	top: 83px; /*Evita que el menu vertical se mueva cuando la intefaz se desplaza hacia arriba/abajo. El top 83px es porque al ser sticky se mantendra en una posicion fija, por lo que el top es igual a la altura del contenedor del logo que es de 83 px, asi siempre se mantendra debajo de él*/
+	padding: 20px 0 0 0 /*crear un espacio entre el logo y las opciones del menu vertical*/
+}
+
+#nav_v ul{
+	display: flex;
+	flex-direction: column;
+}
+
+#nav_v li{
+	margin-bottom: 10px
+}
+
+#nav_v a{
+	color: #FFFFFF;
+	display: flex;
+	align-items: center;
+	padding: 10px 20px ;
+	font-size: 1.2rem
+}
+
+#nav_v a:hover{
+	background: #FFFFFF;
+	color: #000000;
+}

@@ -1,0 +1,38 @@
+@media screen and (min-width: 812px){
+
+	#mensaje_correos{
+		height: 250px;
+		font-size: 1.5rem;
+	}	
+
+
+	#asunto_correos{
+		width: 50%;
+		font-size: 1.1rem;
+	}
+
+	.btn_correos{
+
+		font-size: 1.2rem;
+		padding: 2% 2%;
+	}
+
+	.form_correos h2, h3{
+		font-size: 1.5rem;
+	}
+
+	.form_correos label{
+		font-size: 1.5rem
+	}
+}
+
+
+@media screen and (min-width: 1080px){
+	.btn_correos{
+
+		font-size: 1.5rem;
+		/*padding: 3% 0.5%;*/
+	}
+
+	
+}

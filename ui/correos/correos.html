@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Alvaro Siles, Sebastián, Kevin">
+	<meta name="viewport" content="user-scalable=no, width=device-width">
+	<title>Correos</title>
+	<link rel="stylesheet" type="text/css" href="fonts_awesome/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bridge.css">
+</head>
+
+<body>
+
+	<div class="container">
+		
+		<header id="menu_v">
+			
+			<div class="logo">
+				<img src="img/logo.png" alt="Logo de la empresa">
+			</div>
+
+			<nav id="nav_v">
+				<ul>
+					<li class="li_v inicio"><a href="#"><span><img src="iconos/inicio.svg" aria-hidden="true" class="icono_v"></span>Inicio</a></li>
+					<li class="li_v correos"><a href="#"><span><img src="iconos/email.svg" aria-hidden="true" class="icono_v"></span>Correos</a></li>
+					<li class="li_v registro"><a href="#"><span><img src="iconos/registro.svg" aria-hidden="true" class="icono_v"></span>Registro</a></li>
+					<li class="li_v citas"><a href="#"><span><img src="iconos/citas.svg" aria-hidden="true" class="icono_v"></span>Citas</a></li>
+					<li class="li_v analitica"><a href="#"><span><img src="iconos/analitica-web.svg" aria-hidden="true" class="icono_v"></span>Analítica Web</a></li>
+					<li class="li_v calendario"><a href="#"><span><img src="iconos/calendario.svg" aria-hidden="true" class="icono_v"></span>Calendario</a></li>
+					<li class="li_v guia_web"><a href="#"><span><img src="iconos/guia-web.svg" aria-hidden="true" class="icono_v"></span>Guía Web</a></li>
+					<!-- <li class="li_v asistencia"><a href="#"><span><img src="iconos/formulario.svg" aria-hidden="true" class="icono_v"></span>Asistencia Técnica</a></li> -->
+				</ul>	
+			</nav>
+
+		</header>
+
+
+		<header id="menu_h">
+			<nav id="nav_h">
+
+				<!-- Cree esete div para separar el iconos de la flecha de los de idioma, usuarios, etc -->
+				<div class="regre">
+					<button><img src="iconos/flecha-izq.svg" alt="Regresar"></button>
+				</div>
+
+				<ul>
+					<li class="li_h idioma"><a href="#"><img src="iconos/idioma.svg" alt="Cambiar Idioma"></a></li>
+					<li class="li_h notifi"><a href="#"><img src="iconos/bell.svg" alt="Notifaciones"></a></li>
+					<li class="li_h usuario"><img src="iconos/usuario.svg" id="usuario" alt="Foto de Perfil"></li>
+					<li class="li_h nombre"><div class="userNmae">Nombre Usuario</div></li>
+				</ul>
+			</nav>
+
+
+			<!-- SubMenu de Atajos (Menu Horizontal Negro) -->
+			<div class="submenu_h">
+				
+				<a href="#"><span><img src="iconos/inicio-blanco.svg"></span>Inicio</a>
+				<a href="#"><span><img src="iconos/log-out.svg"></span>Salir</a>
+
+			</div>
+		</header>
+
+		<main id="principal">
+			
+			<form class="form_correos">
+				
+				<h1>Correos</h1>
+				<h3>Especifique el asunto del correo a enviar</h3>
+				<label for="asunto_correos">Asunto:</label>
+				<input type="" name="mensaje_correos" id="asunto_correos" placeholder="Por ejemplo: 'actualización días feriados'" required="true">
+				<label for="mensaje_correos">Mensaje:</label>
+				<textarea id="mensaje_correos" name="mensaje_correos" resize="none" required="true"></textarea>
+
+				<div class="cont_btn">
+					<button class="btn_correos">Adjuntar Archivo</button>
+					<button type="submit" class="btn_correos">Enviar</button>
+				</div>
+				
+
+			</form>
+			
+		</main>
+
+	</div>
+
+
+	
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="hide_menu_v.js"></script>
+</body>
+</html>
