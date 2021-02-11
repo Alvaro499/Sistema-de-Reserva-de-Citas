@@ -92,8 +92,8 @@
                 <label for="rol_usua">Rol del Usuario:</label>
                 <select id="medio" class="select" name="rol">
                     
-					<option value="">Empleado</option>
-                    <option value="">Cliente</option>
+					<option value="2" name="rol">Empleado</option>
+                    <option value="3" name="rol">Cliente</option>
                 </select>
 
 				<div class="cont_btn">

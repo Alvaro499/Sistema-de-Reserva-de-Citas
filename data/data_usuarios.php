@@ -27,10 +27,13 @@
         }
 
 
-        public function seleccionarRolUsuario($rol,$cedrol){
+        public function insertarRolUsuario($rol,$cedrol){
 
             try {
-                
+                $insertarRol = $this->cargarConexion->prepare("INSERT INTO `usuario-rol`(`idroles`, `usuarios_cedula`) VALUES ('$rol','$cedrol')");
+
+                $resultadoRol = $insertarRol->execute();
+                return $resultadoRol;
             } catch (PDOException $e) {
                 echo "La inserción del rol de usuario falló:" . $e->getMessage();
             }

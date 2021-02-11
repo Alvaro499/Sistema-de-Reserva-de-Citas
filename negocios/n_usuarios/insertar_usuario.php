@@ -2,7 +2,7 @@
 
     require("../../data/data_usuarios.php");
 
-    if(!empty($_POST["cedula"]) && !empty($_POST["nombre_usuario"]) && !empty($_POST["apell1"]) && !empty($_POST["apell2"]) && !empty($_POST["email"]) && !empty($_POST["cel_1"]) && !empty($_POST["cel_2"]) && !empty($_POST["rol"])){
+    if(!empty($_POST["cedula"]) && !empty($_POST["nombre_usuario"]) && !empty($_POST["apell1"]) && !empty($_POST["apell2"]) && !empty($_POST["email"]) && !empty($_POST["cel_1"]) && !empty($_POST["cel_2"]) && !empty($_REQUEST["rol"])){
 
         echo "Exito <br>";
 
@@ -13,16 +13,18 @@
         $email = $_POST["email"];
         $celular = $_POST["cel_1"];
         $celular_op = $_POST["cel_2"];
-        $rol = $_POST["rol"];
+        $rol = $_REQUEST["rol"];
+
         $contra = "123";
 
         $usuarios = new D_Usuarios();
-        $insertar = $usuarios->insertarUsuario($cedula,$nombre,$apellido1,$apellido2,$email,$celular,$celular_op,$contra);
+        $insertarUsuario = $usuarios->insertarUsuario($cedula,$nombre,$apellido1,$apellido2,$email,$celular,$celular_op,$contra);
+        $insertarRol = $usuarios->insertarRolUsuario($rol,$cedula);
         
-        if($insertar){
+        if($insertarUsuario && $insertarRol){
 
-            echo "Inserción exitosa <br>";
-            echo $rol . "<br>"
+            echo "Inserción exitosa en la tabla Usuarios y rol-usuarios <br>";
+            
 
 
         }else{
