@@ -1,44 +1,45 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<title>Cambiar contraseña</title>
+	<title>Cambiar Contraseña</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-	<link rel="stylesheet" type="text/css" href="css/style3.css">
-	<!--JQUERY-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>   
-    <!-- Los iconos tipo Solid de Fontawesome-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
-    <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+	<link rel="stylesheet" type="text/css" href="fonts_awesome/css/all.min.css">
+	
+	<link rel="stylesheet" type="text/css" href="../../assets/css/style_login/cambiar_contra.css">
+
 </head>
 <body>
 	<div class="contenedor">
 		<header class="parte1">
 			<figure class="logo">
-				<img src="img/Gapa.png">
+				<img src="../../assets/img/logo.png">
 			</figure>
-			<figure class="boton">
-				<button onclick="abrir()" class="botonarriba">Regresar página de inicio</button>
-			</figure>	
+
+			<button onclick="abrir()" class="botonarriba">Regresar página de inicio</button>
+			
 		</header>
-		<figure>
-			<img src="img/prueba2.jpg">
+
+		<figure class="fondo">
+			
+			<!-- Ventana	 -->
+			<div class="ventana" id="vent">
+				
+				<form>
+					<h1>Cambiar Contraseña</h1>
+					<div id="contraseña" class="prueba">
+						<h2>Contraseña nueva: </h2>
+						<input type="password" name="contraseña">
+					</div>
+					<div id="contraseña" class="prueba">
+						<h2>Confirme contraseña: </h2>
+						<input type="password" name="contraseña">
+					</div>
+					<input type="submit" id="boton" value="Confirmar Contraseña">			
+				</form>
+			</div>
 		</figure>
-		<!-- Ventana	 -->
-		<div class="ventana" id="vent">
-			<h1>Crear contraseña</h1>
-			<form>
-				<div id="contraseña" class="prueba">
-					<h2>Contraseña nueva: </h2>
-					<input type="password" name="contraseña">
-				</div>
-				<div id="contraseña" class="prueba">
-					<h2>Confirme contraseña: </h2>
-					<input type="password" name="contraseña">
-				</div>
-				<button id="boton">Ingresar</button>			
-			</form>
-		</div>
+		
 	</div>
 </body>
 </html>

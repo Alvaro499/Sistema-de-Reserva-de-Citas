@@ -1,0 +1,25 @@
+@media screen and (min-width: 812px){
+
+	.ventana form{
+		
+		width: 50%;
+		margin: auto;
+	}
+
+}
+
+@media screen and (min-width: 1080px){
+
+	.ventana form{
+		
+		width: 50%;
+		margin: auto;
+	}
+
+	#boton{
+		
+		font-size: 1.5rem;
+		
+	}
+
+}

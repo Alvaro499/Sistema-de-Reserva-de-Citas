@@ -1,0 +1,63 @@
+/*
+Sitio: GAPPA
+
+Autor: Alvaro Siles Quesada y Sebastián
+
+Actualizado: 25/11/2020
+
+Actrualizado por: Alvaro Siles Quesada
+*/
+
+
+/*
+Colores de la página:
+
+Body background: #FFFFFF
+
+Color 1 de la empresa (azul):
+
+	rgb(38,34,97)
+	HEX: #262261
+
+Color 2 de la empresa (rojo):
+	
+	rgba: (189,30,45)
+	HEX: #BD1E2D
+
+Color de los textos:
+	
+	#FFFFFF
+	rgba(255,255,255,255)
+
+	#000000
+	rgba(0,0,0)
+*/
+
+
+/*
+Fuentes tipográficas:
+	Calibri
+*/
+
+/*
+TAMANOS DEL DISENO ILLUSTRATOR:
+
+	Menu vertical: 255px ancho
+	Menu horizontal: 1000px ancho
+	Aplicaciones: 1000px ancho
+
+*/
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	list-style: none;
+	text-decoration: none;
+}
+
+/*font-family: Calibri - font-family: Calibri, sans-serif*/
+
+a, p, div{
+	font-family: Calibri, sans-serif
+}

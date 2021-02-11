@@ -1,0 +1,24 @@
+@media screen and (min-width: 812px){
+
+	.ventana form{
+		
+		width: 50%;
+		margin: auto;
+	}
+
+}
+
+@media screen and (min-width: 1080px){
+
+	.ventana form{
+		
+		width: 40%;
+		margin: auto;
+	}
+
+	h1{
+		font-size: 2rem;
+	}
+
+
+}
