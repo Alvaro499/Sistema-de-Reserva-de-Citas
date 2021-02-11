@@ -16,7 +16,7 @@
         public function insertarUsuario($cedula,$nombre,$apellido1,$apellido2,$email,$celular,$celular_op,$contra){
 
             try {
-                $insertar = $this->cargarConexion->prepare("INSERT INTO `usuarios`(`cedula`, `nombre`, `apellido1`, `apellido2`, `celular`, `celular_opcional`, `correo`, `password`, `pass_temp`) VALUES (`$cedula`,`$nombre`,`$apellido1`,`$apellido2`,`$celular`,`$celular_op`,`$email`,`$contra`,`0`)");
+                $insertar = $this->cargarConexion->prepare("INSERT INTO `usuarios`(`cedula`, `nombre`, `apellido1`, `apellido2`, `celular`, `celular_opcional`, `correo`, `password`, `pass_temp`) VALUES ('$cedula','$nombre','$apellido1','$apellido2','$celular','$celular_op','$email','$contra','0')");
 
                 $resultado = $insertar->execute();
                 return $resultado;
