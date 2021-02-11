@@ -64,7 +64,7 @@
 
 		<main id="principal">
 			
-			<form class="registro">
+			<form class="registro" method="post" action="../../negocios/n_usuarios/insertar_usuario.php">
 				
                 <h1>Registro de Usuario</h1>
                 

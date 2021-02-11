@@ -1,6 +1,6 @@
 <?php
 
-    require("../db/db_access.php");
+    require("../../db/db_access.php");
     class D_Usuarios{
 
         private $cargarConexion;
@@ -10,7 +10,7 @@
 
             $this->objConexion = new Conexion();
 
-            $this->cargarConexion = $this->conectar();
+            $this->cargarConexion = $this->objConexion->conectar();
         }
 
         public function insertarUsuario($cedula,$nombre,$apellido1,$apellido2,$email,$celular,$celular_op,$contra){
