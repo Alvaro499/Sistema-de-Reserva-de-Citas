@@ -90,9 +90,10 @@
                 <input type="text" id="n_celular" class="input" name="cel_2">
                 
                 <label for="rol_usua">Rol del Usuario:</label>
-                <select id="medio" class="select" name="rol_usua">
+                <select id="medio" class="select" name="rol">
+                    
+					<option value="">Empleado</option>
                     <option value="">Cliente</option>
-                    <option value="">Colaborador</option>
                 </select>
 
 				<div class="cont_btn">

@@ -25,6 +25,17 @@
                 echo "La inserción de usuario falló:" . $e->getMessage();
             }
         }
+
+
+        public function seleccionarRolUsuario($rol,$cedrol){
+
+            try {
+                
+            } catch (PDOException $e) {
+                echo "La inserción del rol de usuario falló:" . $e->getMessage();
+            }
+
+        }
     }
 
 ?>
