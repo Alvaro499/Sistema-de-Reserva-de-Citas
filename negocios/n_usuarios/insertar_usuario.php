@@ -17,13 +17,14 @@
 
         $usuarios = new D_Usuarios();
         $contra = generar_contra();
-        $contra = password_hash($contra, PASSWORD_DEFAULT, ["cost"=>5]);
-        $insertarUsuario = $usuarios->insertarUsuario($cedula,$nombre,$apellido1,$apellido2,$email,$celular,$celular_op,$contra);
+        $contra2 = password_hash($contra, PASSWORD_DEFAULT, ["cost"=>10]);
+        $insertarUsuario = $usuarios->insertarUsuario($cedula,$nombre,$apellido1,$apellido2,$email,$celular,$celular_op,$contra2);
         $insertarRol = $usuarios->insertarRolUsuario($rol,$cedula);
         
         if($insertarUsuario && $insertarRol){
 
             echo "Inserción exitosa en la tabla Usuarios y rol-usuarios <br>";
+            echo "Contraseña: " . $contra;
             
         }else{
             echo "Error en la inserción <br>";

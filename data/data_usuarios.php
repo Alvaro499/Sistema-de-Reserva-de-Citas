@@ -30,7 +30,7 @@
         public function insertarRolUsuario($rol,$cedrol){
 
             try {
-                $insertarRol = $this->cargarConexion->prepare("INSERT INTO `usuario-rol`(`idroles`, `usuarios_cedula`) VALUES ('$rol','$cedrol')");
+                $insertarRol = $this->cargarConexion->prepare("INSERT INTO `usuario_rol`(`idroles`, `usuarios_cedula`) VALUES ('$rol','$cedrol')");
 
                 $resultadoRol = $insertarRol->execute();
                 return $resultadoRol;
@@ -40,23 +40,59 @@
 
         }
 
-        public function consultarUsuario($correo, $contra){
+        public function VerificarUsuario($correo, $contra){
             try{
-                echo $correo . " ". $contra . "</br>";
-                $query = $this->cargarConexion->prepare("SELECT user.nombre, user.pass_temp, ur.idroles FROM usuarios AS user, usuario_rol AS ur WHERE user.correo='$correo' AND user.password=$contra AND user.cedula='12345678' ");
+                echo $correo /*. " ". $contra */. "</br>";
+                $query = $this->cargarConexion->prepare("SELECT cedula, `password` FROM usuarios WHERE correo='$correo'");
 
                 $query->execute();
                 $resultado = $query->fetchAll();
-                var_dump($resultado);
+                
+                if(count($resultado)>0){
+                    $pass;
                 foreach($resultado as $value){
-                    echo "Nombre " . $value["user.nombre"] . " Pass_Temporal " . $value["user.pass_temp"] . " rol " . $value["ur.idroles"];
+                    $pass = $value["password"];
                 }
-                return $resultado;
-
+               // $pass = password_hash($pass, PASSWORD_DEFAULT,['cost'=> 5]);
+                    if(password_verify($contra, $pass)){
+                        return 1; //La contraseña es correcta
+                    }else{
+                        return 0; //La contraseña es incorecta
+                    }
+    
+                }else{
+                    return 3; //No existe el usuario
+                }
             }catch(PDOException $e){
                 echo "Error:" . $e->getMessage();
             }
         }
+        
+        public function consultarUsuario($correo, $contra){
+            try{
+                $verificar=$this->VerificarUsuario($correo, $contra);
+                if($verificar==1){
+                    //echo $correo . " ". $contra . "</br>";
+                    $query = $this->cargarConexion->prepare("SELECT user.nombre, user.pass_temp, ur.idroles FROM usuarios AS user, usuario_rol AS ur WHERE user.correo='$correo' AND user.cedula=ur.usuarios_cedula ");
+
+                    $query->execute();
+                    $resultado = $query->fetchAll();
+                
+                   /* foreach($resultado as $value){
+                        echo "Nombre " . $value["nombre"] . " Pass_Temporal " . $value["pass_temp"] . " rol " . $value["idroles"];
+                    }*/
+                    return $resultado;
+                }else if($verificar==0){
+                    return 0;
+                }else{
+                    return 3;
+                }
+            }catch(PDOException $e){
+                echo "Error:" . $e->getMessage();
+            }
+        }
+
+     
 
         public function consultarUsuario2($correo, $contra){
             try{

@@ -9,10 +9,17 @@
     $objeto = new D_Usuarios();
     $info = $objeto->consultarUsuario($correo,$pass);
 
-    foreach($info as $value){
-        echo "Nombre " . $value["nombre"] . " Pass_Temporal " . $value["tipo"] . " rol " . $value["rol"];
-    }
+    if($info==0){
+        echo "Usuario Incorrecto";
+    }else if($info==3){
+        echo "Usuario Incorrecto, No existe correo";
+    }else{
+
     
+        foreach($info as $value){
+            echo "Nombre " . $value["nombre"] . " Pass_Temporal " . $value["pass_temp"];
+        }
+    }
 
  }else{
      echo "Fallo Inicio de Sesión";
