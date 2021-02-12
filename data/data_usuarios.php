@@ -92,38 +92,6 @@
             }
         }
 
-     
-
-        public function consultarUsuario2($correo, $contra){
-            try{
-                $query = $this->cargarConexion->prepare("SELECT
-                user.nombre AS nombre,
-                user.pass_temp AS tipo,
-                ur.idroles AS rol
-            FROM
-                usuarios AS user
-            INNER JOIN usuario_rol AS ur
-            ON
-                user.cedula = ur.usuarios_cedula
-            WHERE
-               
-            user.correo='$correo' AND user.password=$contra");
-
-                $query->execute();
-                $resultado = $query->fetchAll(PDO::FETCH_ASSOC);
-
-                var_dump($resultado);
-                foreach($resultado as $value){
-                    echo "Nombre " . $value["user.nombre"] . " Pass_Temporal " . $value["user.pass_temp"] . " rol " . $value["ur.idroles"];
-                }
-
-                return $resultado;
-
-            }catch(PDOException $e){
-                echo "Error:" . $e->getMessage();
-            }
-        }
-
-    }
+    }//Cierre de D_Usuarios
 
 ?>

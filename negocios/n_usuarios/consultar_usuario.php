@@ -15,7 +15,6 @@
         echo "Usuario Incorrecto, No existe correo";
     }else{
 
-    
         foreach($info as $value){
             echo "Nombre " . $value["nombre"] . " Pass_Temporal " . $value["pass_temp"];
         }
