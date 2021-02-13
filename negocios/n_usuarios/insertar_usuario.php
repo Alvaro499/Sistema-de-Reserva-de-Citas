@@ -17,8 +17,9 @@
 
         $usuarios = new D_Usuarios();
         $contra = generar_contra();
-        $contra = password_hash($contra, PASSWORD_DEFAULT, ["cost"=>5]);
-        $insertarUsuario = $usuarios->insertarUsuario($cedula,$nombre,$apellido1,$apellido2,$email,$celular,$celular_op,$contra);
+        echo $contra;
+        $contra2 = password_hash($contra, PASSWORD_DEFAULT, ["cost"=>5]);
+        $insertarUsuario = $usuarios->insertarUsuario($cedula,$nombre,$apellido1,$apellido2,$email,$celular,$celular_op,$contra2);
         $insertarRol = $usuarios->insertarRolUsuario($rol,$cedula);
         
         if($insertarUsuario && $insertarRol){
