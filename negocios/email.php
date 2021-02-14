@@ -16,7 +16,7 @@
 
                 $email->isSMTP();
 
-                $email->Host = "smtp/gmail.com";
+                $email->Host = "smtp.gmail.com";
 
                 $email->SMTPAuth = true;
 
