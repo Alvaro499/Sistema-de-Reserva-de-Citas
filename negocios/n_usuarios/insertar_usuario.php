@@ -1,6 +1,7 @@
 <?php
 
     require("../../data/data_usuarios.php");
+    require("../email.php");
 
     if(!empty($_POST["cedula"]) && !empty($_POST["nombre_usuario"]) && !empty($_POST["apell1"]) && !empty($_POST["apell2"]) && !empty($_POST["email"]) && !empty($_POST["cel_1"]) && !empty($_REQUEST["rol"])){
 
@@ -25,6 +26,10 @@
         if($insertarUsuario && $insertarRol){
 
             echo "Inserción exitosa en la tabla Usuarios y rol-usuarios <br>";
+
+            $contraTemporal = new N_EnvioEmail();
+
+            $contraTemporal->envioContra($email,$contra,$nombre);
             
         }else{
             echo "Error en la inserción <br>";
