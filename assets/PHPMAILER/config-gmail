@@ -1,0 +1,101 @@
+Los Protocolos de Redes
+
+1)Que son los protocolos?
+
+	Es el encargado de enviar y recibir mensajes de correo electronico entre hosts, usuarios o servidores. Entre sus funciones se incluyen el procesado de los mensajes, filtrados, etc
+
+	Un protocolo es un conjunto de reglas de formalidad en servicio de correo. Existen dos formas deiferentes de consultar el correo: "POP" y "IMAP", ya que
+
+2)POP (POST OFFICE PROTOCOL):
+
+	Permite acceder a sus buzones de correo en internet y descargar emsnajes en los equipos de.
+
+	Ya Microsoft y Google poseen estas funcionalidades "POP"
+
+3)SMTP (Simple Transfer Protocol - Protocolo de Transferencia):
+
+	A diferencia del POP o el IMAP, el SMTP solo permite enviar archivos, ni siquiera permite descargar archivos. Es decir es solo un protocolo de salida
+
+	Son principalmente usadas por empresas o aplicaciones muy pequenas
+
+	3.1)Como funciona?
+
+		a)El cliente se conecta al servidore de correo y se presenta indicando su direcccion de correo electronico
+		b)Le indica al sevidor a que direccion de correo quiere enviar el mensaje
+		c)Se envia el cuerpo del mensaje (texto,archivos,adjuntos)
+		d)La responsabilidad de recepcion queda en manos del servidor (solo salida de informacion)
+
+4)El peligro de SMTP:
+		
+	SMTP llega a ser visto por otros servidores como inseguro, apra ello debemos hacer que la comunicacion se envie mediante un transporte seguro
+
+	Para evitar esta mal vista hacia STMP, en el codigo la info debe llevar unas especificaciones y encapsularlo de uan manera que sea visto como seguro
+
+
+5)Configurar STMP para enviar correos:
+
+	Pasos:
+
+	5.1)Activar ruta:
+		Buscar en Xampp un archivo ini siguiendo esta ruta
+		C:\xampp\php\php.in
+
+	5.2)Buscar en el editor el siguiente complemento y quitarle el ";" de adelante:
+		extension=php_openssl.dll
+
+		*En el caso de que no la posea, se debe crear debajo de otro complemento llamado ;extension=openssl
+
+		Esto para activar sll en php y poder eviar informacion por medio de SMTP
+
+	5.3)Cambiar el puerto smtp_port=25 y el localhost
+
+		Se debe cambiar por el puerto smtp_port=587
+		//Este metodo permite enviar correos SMTP
+
+		Despues cambiar el SMTP=localhost por SMTP=smtp.gmail.com
+		//Esto para poder enviar correos con el protocolo por defecto de gmail.com
+
+	5.4)Escribir el correo que se usara para enviar correos desde php
+
+		Reemplazar ;sendmail_from = me@example.com por ejemplo por sendmail_from = alvarosiles499@gmail.com
+
+	5.5)Darle la ruta al sendmail_path
+
+		;sendmail_path = debe llevar una ruta y sin ";", asi:
+
+		sendmail_path = "\"C:\xampp\sendmail\sendmail.exe\" -t"
+
+		//El "-t" lee los correos a los destinatarios
+
+
+	5.6)Buscar dentro de Xampp la carpeta "sendmail" y el archivo "sendmail.ini" para editarlo
+
+		Las extensiones ini son arcivos para configuracion de programas
+	
+	5.7)En el archivo "sendmail.ini" editar los siguiente:
+
+		5.7.1)smtp_server=mail.mydomain.com -> smtp_server=smtp.gmail.com
+		5.7.2) smtp_port=25 -> smtp_port=587
+		5.7.3)error_logfile=error.log -> queda igual
+		5.7.4);debug_logfile=debug.log -> debug_logfile=debug.log
+		5.7.5)auth_username= -> auth_username=alvarosiles499@gmail.com
+		5.7.6)auth_password= -> auth_password=SanLui58
+		5.7.7)force_sender= -> force_sender=alvarosiles499@gmail.com
+
+	5.8)Permitir el acceso de aplicaciones poco seguras
+
+		Siguiendo este enlace se activa:
+		https://myaccount.google.com/lesssecureapps?pli=1&rapt=AEjHL4MnmWAIr6tWWs7NukbhIcN53upEhdPclTQbKWX9u58xbfI-pk5zXZr7PCfmgxiVBoPlADhjoxsBC2TG3oexxXy-r2DA3w
+
+	5.9)Reiniciar el Xampp
+
+		-Se apaga todo en el Xampp con la opcion "stop"
+		-Tambien se puede ir al icono de la barra de tareas y presionamos "out" en el logo de Xampp
+		-Reiniciar las opciones de Apache y MySQL
+
+
+6)Llamar a la libreria de "phpmailer"
+	
+
+
+7)Codificar el codigo de envi
