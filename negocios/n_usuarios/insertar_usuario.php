@@ -36,7 +36,7 @@
 
 
     function generar_contra(){
-        $caracteres='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789?!¡%$#¿*';
+        $caracteres='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789?!¡%$#¿';
         $longpalabra=4;
         for($pass='', $n=strlen($caracteres)-1; strlen($pass) < $longpalabra ; ) {
             $x = rand(0,$n);
