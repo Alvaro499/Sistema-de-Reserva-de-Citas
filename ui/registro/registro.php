@@ -64,33 +64,40 @@
 
 		<main id="principal">
 			
-			<form class="registro" method="post" action="../../negocios/n_usuarios/insertar_usuario.php">
+			<form class="registro" method="post" action="../../negocios/n_usuarios/insertar_usuario.php" onsubmit= "return validacion();">
 				
                 <h1>Registro de Usuario</h1>
                 
 				<label for="cedula">Cédula:</label>
                 <input type="text" id="cedula" class="input" name="cedula">
+				<div id="error_ced"></div>
                 
 				<label for="nombre_usuario">Nombre del Usuario:</label>
                 <input type="text" id="nombre" class="input" name="nombre_usuario">
+				<div id="error_nomb"></div>
                 
 				<label for="apell1">Primer Apellido:</label>
                 <input type="text" id="p_apellido" class="input" name="apell1">
+				<div id="error_ap1"></div>
                 
 				<label for="apell2">Segundo Apellido:</label>
                 <input type="text" id="s_apellido" class="input" name="apell2">
+				<div id="error_ap2"></div>
                 
 				<label for="email">Correo Electrónico:</label>
-                <input type="email" id="correo" class="input" name="email">
+                <input type="text" id="correo" class="input" name="email" >
+				<div id="error_correo"></div>
                 
 				<label for="cel_1">Número Celular:</label>
                 <input type="text" id="n_celular" class="input" name="cel_1">
+				<div id="error_num1"></div>
 
                 <label for="cel_2">Número de Celular Opcional:</label>
-                <input type="text" id="n_celular" class="input" name="cel_2">
+                <input type="text" id="s_celular" class="input" name="cel_2">
+				
                 
                 <label for="rol_usua">Rol del Usuario:</label>
-                <select id="medio" class="select" name="rol">
+                <select id="rol" class="select" name="rol">
                     
 					<option value="2" name="rol">Empleado</option>
                     <option value="3" name="rol">Cliente</option>
@@ -109,5 +116,6 @@
 
 	
 	<script type="text/javascript" src="../../assets/js/hide_menu_v.js"></script>
+	<script type="text/javascript" src="../../assets/js/registro_valid.js"></script>
 </body>
 </html>
