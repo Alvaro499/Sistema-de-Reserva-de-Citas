@@ -11,7 +11,6 @@ window.addEventListener("load", function(){
         var regex_texto = new RegExp('^[a-zA-ZÀ-ÿ]+$', 'i', 'g');
         var regex_tel = new RegExp('^[0-9]+$');
         //var regex_correo = new RegExp(/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)/);
-        
         function validacion(){
 
             if (ced == null || ced == "" || !regex_tel.test(ced)) {
