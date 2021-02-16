@@ -63,7 +63,7 @@
 
 		<main id="principal">
 			
-			<form class="registro" method="post" action="../../negocios/n_usuarios/insertar_usuario.php">
+			<form class="registro" method="post" action="../../negocios/n_usuarios/insertar_usuario.php" onsubmit="return validacion();">
 				
                 <h1>Registro de Usuario</h1>
                 
