@@ -1,9 +1,5 @@
 "use strict";
 
-        // var form = document.querySelector(".registro");
-        
-
-        
         function validacion(){
             var ced = document.getElementById("cedula").value;
             var nomb = document.getElementById("nombre").value;
@@ -72,6 +68,7 @@
                 console.log(ape_2);
                 cant_error++;
 
+<<<<<<< HEAD
             }else{
                 document.getElementById("error_ap2").style.color = "#FFF";
                 document.getElementById("s_apellido").style.border = "3px solid #54E346";
@@ -81,6 +78,9 @@
             }
             
             if (correo == null || correo == "" || !regex_correo.test(correo)) {
+=======
+            }else if (correo == null || correo == "" || !regex_texto.test(correo)) {
+>>>>>>> 310bc52c113c1cfb202ff2b9c88958ae5a66d0f1
                 document.getElementById("error_correo").innerHTML = "El formato de correo es inválido.";
                 document.getElementById("error_correo").style.color = "#E40017";
                 document.getElementById("correo").style.border = "3px solid #E40017";
