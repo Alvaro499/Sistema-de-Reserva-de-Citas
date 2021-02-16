@@ -6,7 +6,6 @@
 	<meta name="author" content="Alvaro Siles, Sebastián, Kevin">
 	<meta name="viewport" content="user-scalable=no, width=device-width">
 	<title>Registro de Usuario</title>
-	<link rel="stylesheet" type="text/css" href="fonts_awesome/css/all.min.css">
 	<link rel="stylesheet" type="text/css" href="../../assets/css/style_registro/bridge.css">
 </head>
 
@@ -64,7 +63,7 @@
 
 		<main id="principal">
 			
-			<form class="registro" method="post" action="../../negocios/n_usuarios/insertar_usuario.php" onsubmit= "return validacion();">
+			<form class="registro" method="post" action="../../negocios/n_usuarios/insertar_usuario.php">
 				
                 <h1>Registro de Usuario</h1>
                 
@@ -94,6 +93,7 @@
 
                 <label for="cel_2">Número de Celular Opcional:</label>
                 <input type="text" id="s_celular" class="input" name="cel_2">
+				<div id="error_num2"></div>
 				
                 
                 <label for="rol_usua">Rol del Usuario:</label>

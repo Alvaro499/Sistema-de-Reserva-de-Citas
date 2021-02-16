@@ -10,7 +10,8 @@ window.addEventListener("load", function(){
 
         var regex_texto = new RegExp('^[a-zA-ZÀ-ÿ]+$', 'i', 'g');
         var regex_tel = new RegExp('^[0-9]+$');
-        var regex_correo = new RegExp("/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)/");
+        //var regex_correo = new RegExp(/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)/);
+        
         function validacion(){
 
             if (ced == null || ced == "" || !regex_tel.test(ced)) {
@@ -34,7 +35,7 @@ window.addEventListener("load", function(){
                 console.log(ape_2);
                 return false;
 
-            }else if (correo == null || correo == "" || !regex_correo.test(correo)) {
+            }else if (correo == null || correo == "" || !regex_texto.test(correo)) {
                 document.getElementById("error_correo").innerHTML = "El formato de correo es inválido.";
                 console.log(correo);
                 return false;
