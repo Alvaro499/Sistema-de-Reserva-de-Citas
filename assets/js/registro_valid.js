@@ -11,6 +11,7 @@ function validacion(){
     var ape_2 = document.getElementById("s_apellido").value;
     var correo = document.getElementById("correo").value;
     var cel_1 = document.getElementById("n_celular").value;
+    var cel_2 = document.getElementById("s_celular").value;
     var cant_error = 0;
 
     var regex_texto = new RegExp('^[a-zA-ZÀ-ÿ]+$', 'i', 'g');
@@ -36,7 +37,7 @@ function validacion(){
     if (nomb == null || nomb == "" || !regex_texto.test(nomb)) {
 
         
-        document.getElementById("error_nomb").innerHTML = "El formato de usuario es inválido, revise que no digito numeros.";
+        document.getElementById("error_nomb").innerHTML = "El formato de nombre de usuario es inválido, revise que no digito numeros.";
         document.getElementById("error_nomb").style.color = "#E40017";
         document.getElementById("nombre").style.border = "3px solid #E40017";
         console.log(nomb);
@@ -105,6 +106,23 @@ function validacion(){
     }else{
         document.getElementById("error_num1").style.color = "#FFF";
         document.getElementById("n_celular").style.border = "3px solid #54E346";
+        if(cant_error>0){
+            cant_error--;
+        }
+    }
+
+    if (!regex_tel.test(cel_2)) {
+
+        document.getElementById("error_num2").innerHTML = "El formato del celular opcional es inválido, revise que no lleve letras.";
+        document.getElementById("error_num2").style.color = "#E40017";
+        document.getElementById("s_celular").style.border = "3px solid #E40017";
+        cant_error++;
+        
+    }else{
+
+        document.getElementById("error_num2").style.color = "#FFF";
+        document.getElementById("s_celular").style.border = "3px solid #54E346";
+
         if(cant_error>0){
             cant_error--;
         }
