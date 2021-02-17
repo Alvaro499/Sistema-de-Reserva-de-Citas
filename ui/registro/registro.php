@@ -87,7 +87,7 @@
                 <input type="text" id="correo" class="input" name="email" >
 				<div id="error_correo"></div>
                 
-				<label for="cel_1">Número Celular:</label>
+				<label for="cel_1">Número de Celular:</label>
                 <input type="text" id="n_celular" class="input" name="cel_1">
 				<div id="error_num1"></div>
 
