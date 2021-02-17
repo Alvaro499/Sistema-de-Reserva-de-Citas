@@ -21,13 +21,14 @@ function validacion(){
     //var regex_correo = new RegExp(/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)/);
 
     if (ced == null || ced == "" || !regex_tel.test(ced)) {
-        document.getElementById("error_ced").innerHTML = "*Cédula no válida. Verificar que no incluya letras o guiones.";
+        document.getElementById("error_ced").innerHTML = "Cédula no válida. Verificar que no incluya letras o guiones.";
         document.getElementById("error_ced").style.color = "#E40017";
         document.getElementById("cedula").style.border = "3px solid #E40017";
         console.log(ced);
         cant_error++;
     }else{
-        document.getElementById("error_ced").style.color = "#FFF";
+        
+        document.getElementById("error_ced").innerHTML = "";
         document.getElementById("cedula").style.border = "3px solid #54E346";
         if(cant_error>0){
             cant_error--;
@@ -44,7 +45,7 @@ function validacion(){
         cant_error++;
 
     }else{
-        document.getElementById("error_nomb").style.color = "#FFF";
+        document.getElementById("error_nomb").innerHTML = "";
         document.getElementById("nombre").style.border = "3px solid #54E346";
         if(cant_error>0){
             cant_error--;
@@ -59,7 +60,8 @@ function validacion(){
         cant_error++;
 
     }else{
-        document.getElementById("error_ap1").style.color = "#FFF";
+        
+        document.getElementById("error_ap1").innerHTML = "";
         document.getElementById("p_apellido").style.border = "3px solid #54E346";
         if(cant_error>0){
             cant_error--;
@@ -67,6 +69,7 @@ function validacion(){
     }
 
     if (ape_2 == null || ape_2 == "" || !regex_texto.test(ape_2)) {
+        
         document.getElementById("error_ap2").innerHTML = "El formato de segundo apellido es inválido, revise que no digito numeros.";
         document.getElementById("error_ap2").style.color = "#E40017";
         document.getElementById("s_apellido").style.border = "3px solid #E40017";
@@ -74,7 +77,7 @@ function validacion(){
         cant_error++;
 
     }else{
-        document.getElementById("error_ap2").style.color = "#FFF";
+        document.getElementById("error_ap2").innerHTML = "";
         document.getElementById("s_apellido").style.border = "3px solid #54E346";
         if(cant_error>0){
             cant_error--;
@@ -89,7 +92,8 @@ function validacion(){
         cant_error++;
 
     }else{
-        document.getElementById("error_correo").style.color = "#FFF";
+        
+        document.getElementById("error_correo").innerHTML = "";
         document.getElementById("correo").style.border = "3px solid #54E346";
         if(cant_error>0){
             cant_error--;
@@ -104,28 +108,30 @@ function validacion(){
         cant_error++;
 
     }else{
-        document.getElementById("error_num1").style.color = "#FFF";
+        document.getElementById("error_num1").innerHTML = "";
         document.getElementById("n_celular").style.border = "3px solid #54E346";
         if(cant_error>0){
             cant_error--;
         }
     }
 
-    if (!regex_tel.test(cel_2)) {
+    if (regex_tel.test(cel_2)) {
+
+        //document.getElementById("error_num2").style.color = "#FFF";
+        document.getElementById("error_num2").innerHTML = "";
+        document.getElementById("s_celular").style.border = "3px solid #54E346";
+ 
+    }else if(cel_2 == ""){
+
+        document.getElementById("error_num2").innerHTML = "";
+        document.getElementById("s_celular").style.border = "1px solid #80BDFF"; //estilo original del diseno
+
+    }else{
 
         document.getElementById("error_num2").innerHTML = "El formato del celular opcional es inválido, revise que no lleve letras.";
         document.getElementById("error_num2").style.color = "#E40017";
         document.getElementById("s_celular").style.border = "3px solid #E40017";
         cant_error++;
-        
-    }else{
-
-        document.getElementById("error_num2").style.color = "#FFF";
-        document.getElementById("s_celular").style.border = "3px solid #54E346";
-
-        if(cant_error>0){
-            cant_error--;
-        }
     }
     
     if(cant_error>0){
