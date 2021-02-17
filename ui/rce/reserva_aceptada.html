@@ -64,18 +64,21 @@
 
 		<main id="principal">
 			
-			<form class="reserva_acept">
+			<form class="reserva_acept" onsubmit="return reserva_lista();">
 				
                 <h1>Reserva Aceptada</h1>
                 
 				<label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" class="input">
+				<div id="error_nomb"></div>
                 
 				<label for="medio_presencial">Oficina:</label>
                 <input type="text" id="medio_presencial" class="input">
+				<div id="error_ofi"></div>
                 
 				<label for="c_personas">Cantidad de Persona:</label>
                 <input type="number" id="c_personas" class="input">
+				<div id="error_cp"></div>
                 
 				<label for="medio_virtual">Plataforma:</label>
                 <select id="medio_virtual" class="select">
@@ -86,6 +89,7 @@
                 
                 <label for="link">Link:</label>
                 <input type="text" id="link" class="input">
+				<div id="error_link"></div>
 
 				<div class="cont_btn">
 					<button type="submit" class="btn_reserva">Aceptar</button>
@@ -100,5 +104,6 @@
 
 	
 	<script type="text/javascript" src="../../assets/js/hide_menu_v.js"></script>
+	<script type="text/javascript" src="../../assets/js/reserva_aceptada.js"></script>
 </body>
 </html>
