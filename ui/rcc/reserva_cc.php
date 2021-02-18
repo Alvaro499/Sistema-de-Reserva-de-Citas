@@ -115,7 +115,7 @@
 		</main>
 
 	</div>
-	<script type="text/javascript" src="../../assets/js/rcc_valid.js"></script>
+	<script type="text/javascript" src="../../assets/js/validaciones/rcc_valid.js"></script>
 	<script type="text/javascript" src="../../assets/js/hide_menu_v.js"></script>
 </body>
 </html>
