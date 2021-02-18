@@ -24,42 +24,30 @@
 			<!-- <img src="img/prueba2.jpg"> -->
 			<div class="ventana" id="vent">
 				
-				<form>
+				<form method="POST" action="" onsubmit="return validacion()">
 					<h1>Crear contraseña</h1>
 					<div id="usuario" class="prueba">
 						<h2>Contraseña actual: </h2>
-						<input type="password" name="user-name">
+						<input id="contra_actual" type="password" name="user-name">
+						<div id="error_contra_actual"></div>
 					</div>
+
 					<div id="contraseña" class="prueba">
 						<h2>Contraseña nueva: </h2>
-						<input type="password" name="contraseña">
+						<input id="contra_nueva" type="password" name="contraseña">
+						<div id="error_contra_nueva"></div>
 					</div>
+
 					<div id="contraseña" class="prueba">
 						<h2>Confirme nueva contraseña: </h2>
-						<input type="password" name="contraseña">
+						<input id="confirm_contra" type="password" name="contraseña">
+						<div id="error_confirm_contra"></div>
 					</div>
 					<input id="boton" type="submit" value="Confirmar nueva contraseña">			
 				</form>
 			</figure>
-		<!-- Ventana	 -->
-		<!-- <div class="ventana" id="vent">
-			<h1>Crear contraseña</h1>
-			<form>
-				<div id="usuario" class="prueba">
-					<h2>Contraseña actual: </h2>
-					<input type="text" name="user-name">
-				</div>
-				<div id="contraseña" class="prueba">
-					<h2>Contraseña nueva: </h2>
-					<input type="password" name="contraseña">
-				</div>
-				<div id="contraseña" class="prueba">
-					<h2>Confirme contraseña: </h2>
-					<input type="password" name="contraseña">
-				</div>
-				<button id="boton">Ingresar</button>			
-			</form>
-		</div> -->
+	
 	</div>
+	<script type="text/javascript" src="../../assets/js/validaciones/crear_contra_valid.js"></script>
 </body>
 </html>
