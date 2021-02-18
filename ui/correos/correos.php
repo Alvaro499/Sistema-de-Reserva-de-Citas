@@ -64,14 +64,18 @@
 
 		<main id="principal">
 			
-			<form class="form_correos">
+			<form class="form_correos" method="POST" action="" onsubmit="return validacion();">
 				
 				<h1>Correos</h1>
 				<h3>Especifique el asunto del correo a enviar</h3>
+
 				<label for="asunto_correos">Asunto:</label>
-				<input type="" name="mensaje_correos" id="asunto_correos" placeholder="Por ejemplo: 'actualización días feriados'" required="true">
+				<input type="text" name="mensaje_correos" id="asunto_correos" placeholder="Por ejemplo: 'actualización días feriados'">
+				<div id="error_asunto"></div>
+
 				<label for="mensaje_correos">Mensaje:</label>
-				<textarea id="mensaje_correos" name="mensaje_correos" resize="none" required="true"></textarea>
+				<textarea id="mensaje_correos" name="mensaje_correos" resize="none"></textarea>
+				<div id="error_correo"></div>
 
 				<div class="cont_btn">
 					<button class="btn_correos">Adjuntar Archivo</button>
@@ -86,6 +90,7 @@
 	</div>
 
 	<script type="text/javascript" src="../../assets/js/hide_menu_v.js"></script>
+	<script type="text/javascript" src="../../assets/js/validaciones/correos_valid.js"></script>
 	
 </body>
 </html>
