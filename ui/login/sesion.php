@@ -4,7 +4,6 @@
 	<title>Inicio de Sesión</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-	<link rel="stylesheet" type="text/css" href="fonts_awesome/css/all.min.css">
 	<link rel="stylesheet" type="text/css" href="../../assets/css/style_login/sesion.css">
 	
 </head>
@@ -23,16 +22,26 @@
 			<!-- <img src="img/prueba2.jpg"> -->
 			<div class="ventana" id="vent">
 				
-				<form method="POST" action="../../negocios/n_usuarios/consultar_usuario.php">
+				<form method="POST" action="../../negocios/n_usuarios/consultar_usuario.php" onsubmit="return validacion()">
 					<h1>Iniciar Sesión</h1>
+
 					<div class="campos campo-usuario">
-						<input id="usuario" class="prueba" type="text" name="correo" placeholder="Correo:" >
+
+						<input id="correo" class="prueba" type="text" name="correo" placeholder="Correo:" >
+
 						<span><img src="../../assets/iconos/correo-usuario.svg"></span>
+
 					</div>
+					<div id="error_correo"></div>
+
 					<div class="campos campo-contra">
-						<input id="contraseña" class="prueba" type="password" name="pass" placeholder="Contraseña:">
+
+						<input id="contra" class="prueba" type="password" name="pass" placeholder="Contraseña:">
+
 						<span><img src="../../assets/iconos/contra.svg"></span>
+
 					</div>
+					<div id="error_contra"></div>
 					
 					<div class="div-texto">
 						
@@ -45,29 +54,7 @@
 			</div>
 		</figure>
 
-		<!-- Ventana	 -->
-		<!-- <div class="ventana" id="vent">
-			
-			<form>
-				<h1>Iniciar Sesión</h1>
-				<div class="campos campo-usuario">
-					<input id="usuario" class="prueba" type="text" name="user-name" placeholder="Correo" >
-					<span><img src="iconos/correo-usuario.svg"></span>
-				</div>
-				<div class="campos campo-contra">
-					<input id="contraseña" class="prueba" type="password" name="contraseña" placeholder="Contraseña">
-					<span><img src="iconos/contra.svg"></span>
-				</div>
-				
-				<div class="div-texto">
-					
-					<a href="" id="texto">¿Olvidó contraseña?</a>
-
-				</div>
-			
-				<input id="boton" type="submit" name="" value="Iniciar">			
-			</form>
-		</div> -->
 	</div>
+	<script type="text/javascript" src="../../assets/js/validaciones/sesion_valid.js"></script>
 </body>
 </html>

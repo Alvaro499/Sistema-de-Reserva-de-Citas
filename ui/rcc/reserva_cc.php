@@ -64,7 +64,7 @@
 
 		<main id="principal">
 			
-			<form class="cita_cliente">
+			<form class="cita_cliente" method="POST" action="../../negocios/n_usuarios/insertar_usuario.php" onsubmit="return validacion();">
 				
                 <h1>Reservación de Citas</h1>
                 
@@ -85,13 +85,16 @@
                 <!-- ct = Cita Cliente -->
 				<label for="asunto_ct">Asunto:</label>
                 <input type="text" id="asunto" class="input" name="asunto_ct">
-                
+                <div id="error_asunto"></div>
+
 				<label for="fecha_ct">Fecha:</label>
                 <input type="date" id="fecha" class="input" name="fecha_ct">
-                
+                <div id="error_fecha"></div>
+
 				<label for="hora_ct">Hora:</label>
                 <input type="time" id="hora" class="input" name="hora_ct">
-                
+                <div id="error_hora"></div>
+
 				<label for="medio_ct">Medio de reunión:</label>
                 <select id="medio" class="select" name="medio_ct" title="El colaborador le indicará la plataforma o sitio de la capacitacion, según usted haya escogido">
                     <option value="">Presencial</option>
@@ -99,7 +102,8 @@
                 </select>
                 
                 <label for="mensaje_ct">Mensaje:</label>
-				<textarea id="mensaje_ct" resize="none" required="true" name="mensaje_ct"></textarea>
+				<textarea id="mensaje_ct" resize="none" name="mensaje_ct"></textarea>
+				<div id="error_mensaje"></div>
 
 				<div class="cont_btn">
                     <button class="btn_ct">Adjuntar Archivo</button>
@@ -111,7 +115,7 @@
 		</main>
 
 	</div>
-
+	<script type="text/javascript" src="../../assets/js/validaciones/rcc_valid.js"></script>
 	<script type="text/javascript" src="../../assets/js/hide_menu_v.js"></script>
 </body>
 </html>
