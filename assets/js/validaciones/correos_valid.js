@@ -9,7 +9,7 @@ function validacion(){
 
 	if (asunto == null || asunto == "" || asunto.length > 100) {
 
-		document.getElementById("error_asunto").innerHTML = "El correo debe llevar un asunto y ser menor a 100 carácteres";
+		document.getElementById("error_asunto").innerHTML = "El asunto es obligatorio";
 		document.getElementById("error_asunto").style.color = "#E40017";
 		document.getElementById("asunto_correos").style.border = "3px solid #E40017";
 		cant_error++;
@@ -26,7 +26,7 @@ function validacion(){
 
 	if (correo == null || correo == "") {
 
-		document.getElementById("error_correo").innerHTML = "El correo debe llevar un mensaje antes enviarse";
+		document.getElementById("error_correo").innerHTML = "El correo es obligatorio";
 		document.getElementById("error_correo").style.color = "#E40017";
 		document.getElementById("mensaje_correos").style.border = "3px solid #E40017";
 		cant_error++;
