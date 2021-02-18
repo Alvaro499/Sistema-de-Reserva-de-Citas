@@ -11,13 +11,10 @@ function validacion(){
 		document.getElementById("correo").placeholder = "Correo no válido";
 		 document.getElementById("correo").style.border = "3px solid #E40017";
 		cant_error++;
+		console.log(cant_error);
 	
 	}else{
         document.getElementById("correo").style.border = "3px solid #54E346";
-
-        if (cant_error > 0) {
-        	cant_error--
-        }
 	}
 
 	if(cant_error>0){
