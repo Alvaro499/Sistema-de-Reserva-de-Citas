@@ -25,32 +25,29 @@
 			<!-- Ventana	 -->
 			<div class="ventana" id="vent">
 
-				<form>
+				<form method="POST" action="" onsubmit="return validacion()">
 					<h1>Recuperación de Contraseña</h1>
-					<h2>Digite el correo con el cual está registrada su cuenta:</h2>
 
-					<input class="correo" type="email" name="user-name">
+					<h2>Digite el correo con el cual está registrada su cuenta:</h2>
+					<input class="correo" id="correo" type="text" name="user-name" placeholder="ejemplo@hotmail.com">
+					<div id="error_correo"></div>
+
+					
+					<!-- <button>Enviar correo de recuperación</button>
+
+					<h2>Escriba el código enviado al correo electrónico secundario para  de cuenta :</h2>
+					<input class="codigo" id="codigo" type="text" name="codigo">
+					<div id="error_correo"></div> -->
 
 					<input type="submit" id="boton" value="Enviar">			
 				</form>
+
+				<!-- <div id="contra_nueva"></div> -->
 			</div>
 
 		</figure>
-		
-
-		<!-- <div class="ventana" id="vent">
-			<h1>Recuperación de contraseña</h1>
-			<form>
-				<div id="usuario" class="prueba">
-					<h2>Digite el correo con el cual esta registrada su cuenta</h2>
-					<input class="correo" type="text" name="user-name">
-				</div>
-				<div id="contraseña" class="prueba">
-					<h2> </h2>
-				</div>
-				<input type="submit" id="boton" value="Enviar">			
-			</form>
-		</div> -->
+	
 	</div>
+	<script type="text/javascript" src="../../assets/js/validaciones/recuperar_contra_valid.js"></script>
 </body>
 </html>
