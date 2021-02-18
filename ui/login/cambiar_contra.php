@@ -25,21 +25,31 @@
 			<!-- Ventana	 -->
 			<div class="ventana" id="vent">
 				
-				<form>
+				<form method="POST" action="" onsubmit="return validacion()">
+
 					<h1>Cambiar Contraseña</h1>
+
+					
 					<div id="contraseña" class="prueba">
 						<h2>Contraseña nueva: </h2>
-						<input type="password" name="contraseña">
+						<input id="contra_nueva" type="password" name="contraseña">
+						<div id="error_contra_nueva"></div>
 					</div>
+
 					<div id="contraseña" class="prueba">
 						<h2>Confirme contraseña: </h2>
-						<input type="password" name="contraseña">
+						<input id="confirm_contra" type="password" name="contraseña">
+						<div id="error_confirm_contra"></div>
 					</div>
+
 					<input type="submit" id="boton" value="Confirmar Contraseña">			
+
 				</form>
 			</div>
 		</figure>
 		
 	</div>
+
+	<script type="text/javascript" src="../../assets/js/validaciones/cambiar_contra_valid.js"></script>
 </body>
 </html>
