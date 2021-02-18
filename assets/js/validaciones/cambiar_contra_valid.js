@@ -5,9 +5,7 @@ function validacion(){
 	var confirm_contra = document.getElementById("confirm_contra").value;
 	var cant_error = 0;
 
-	//var regex_texto = new RegExp('^[a-zA-ZÀ-ÿ]+$', 'i', 'g');
-
-	if (contra_nueva == null || contra_nueva == "" || contra_nueva.length < 6 || contra_nueva.length > 12) {
+	if (contra_nueva == null || contra_nueva == "" || contra_nueva.length > 12 || contra_nueva.length < 6) {
 
 		document.getElementById("error_contra_nueva").innerHTML = "Su nueva contraseña debe incluir carácteres alfanuméricos; y ser de 6 a 12 caráctres";
 		document.getElementById("error_contra_nueva").style.color = "#E40017";
