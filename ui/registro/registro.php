@@ -116,6 +116,6 @@
 
 	
 	<script type="text/javascript" src="../../assets/js/hide_menu_v.js"></script>
-	<script type="text/javascript" src="../../../assets/js/registro_valid.js"></script>
+	<script type="text/javascript" src="../../../assets/js/validaciones/registro_valid.js"></script>
 </body>
 </html>
