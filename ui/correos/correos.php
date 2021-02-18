@@ -64,7 +64,7 @@
 
 		<main id="principal">
 			
-			<form class="form_correos" method="POST" action="" onsubmit="return validacion();">
+			<form class="form_correos" method="POST" action="" onsubmit="return validacion()";>
 				
 				<h1>Correos</h1>
 				<h3>Especifique el asunto del correo a enviar</h3>
