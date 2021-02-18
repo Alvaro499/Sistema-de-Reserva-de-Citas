@@ -4,25 +4,21 @@ function validacion(){
 	var correo = document.getElementById("correo").value;
 	var contra = document.getElementById("contra").value;
 	var cant_error = 0;
-
-	//var regex_correo = /^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+	console.log(cant_error);
 	const regex_correo = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-
-    // var regex_alfanumeric = /^(?=.*\d)(?=.*[a-záéíóúüñ]).*[A-ZÁÉÍÓÚÜÑ];
 
 	if (correo == null || correo == "" || !regex_correo.test(correo)) {
 
         document.getElementById("correo").placeholder = "Correo no válido";
 		document.getElementById("correo").style.border = "3px solid #E40017";
 		cant_error++;
+		console.log(cant_error);
 	
-	}else{
+	}
+	else{
 
         document.getElementById("correo").style.border = "3px solid #54E346";
 
-        if (cant_error > 0) {
-        	cant_error--;
-        }
 	}
 
 	if (contra == null || contra == "") {
@@ -30,20 +26,17 @@ function validacion(){
 		document.getElementById("contra").placeholder = "Contraseña no válida";
 		document.getElementById("contra").style.border = "3px solid #E40017";
 		cant_error++;
+		console.log(cant_error);
 		
-	}else{
+	}
+	else{
 
         document.getElementById("contra").style.border = "3px solid #54E346";
-
-        if (cant_error > 0) {
-        	cant_error--
-        }
-
 	}
 
-	if(cant_error>0){
-        return false;
+	if(cant_error <= 0){
+        return true;
     }else{
-        return true; 
+        return false; 
     }
 }

@@ -13,6 +13,7 @@ function validacion(){
 		document.getElementById("error_asunto").style.color = "#E40017";
 		document.getElementById("asunto_correos").style.border = "3px solid #E40017";
 		cant_error++;
+		console.log(cant_error);
 	
 	}else{
 
@@ -26,6 +27,7 @@ function validacion(){
 		document.getElementById("error_correo").style.color = "#E40017";
 		document.getElementById("mensaje_correos").style.border = "3px solid #E40017";
 		cant_error++;
+		console.log(cant_error);
 		
 	}else{
 
