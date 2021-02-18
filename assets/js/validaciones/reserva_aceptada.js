@@ -52,7 +52,7 @@ function reserva_lista(){
         }
     }
 
-    if (link == null || link == "" || !regex_correo.test(link)) {
+    if (link == null || link == "" ) {
         document.getElementById("error_link").innerHTML = "Digite un link";
         document.getElementById("error_link").style.color = "#E40017";
         document.getElementById("link").style.border = "3px solid #E40017";
