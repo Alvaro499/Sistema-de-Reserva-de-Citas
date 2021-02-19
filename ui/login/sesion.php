@@ -4,6 +4,7 @@
 	<title>Inicio de Sesión</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="../../assets/fonts_awesome/css/all.min.css">
 	<link rel="stylesheet" type="text/css" href="../../assets/css/style_login/sesion.css">
 	
 </head>
@@ -29,19 +30,22 @@
 
 						<input id="correo" class="prueba" type="text" name="correo" placeholder="Correo:" >
 
-						<span><img src="../../assets/iconos/correo-usuario.svg"></span>
+						<span class="info_icon iconos"><img src="../../assets/iconos/correo-usuario.svg"></span>
+						<span id="alert_correo" class="alert_icon iconos"><i class="fas fa-exclamation-circle"></i></span>
 
 					</div>
-					<div id="error_correo"></div>
+					<div id="error_correo" class="div_error">*Correo no válido</div>
 
 					<div class="campos campo-contra">
 
 						<input id="contra" class="prueba" type="password" name="pass" placeholder="Contraseña:">
 
-						<span><img src="../../assets/iconos/contra.svg"></span>
-
+						<span class="info_icon iconos"><img src="../../assets/iconos/contra.svg"></span>
+						<span id="alert_contra" class="alert_icon iconos"><i class="fas fa-exclamation-circle"></i></span>
+						
 					</div>
-					<div id="error_contra"></div>
+
+					<div id="error_contra" class="div_error">*Contraseña no válida</div>
 					
 					<div class="div-texto">
 						

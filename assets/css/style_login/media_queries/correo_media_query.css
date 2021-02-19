@@ -2,12 +2,35 @@
 
 	.ventana form{
 		
-		width: 50%;
-		/*padding: 50px;*/
+		width: 60%;
+	}
+
+	form .correo {
+		font-size: 1.4rem;
 	}
 
 	#boton{
 		width: 75%;
+	}
+
+	/* Iconos de alerta de errores*/
+	.campos .alert_icon .fa-exclamation-circle{
+		font-size: 1.8rem;
+	}
+
+	.campos .alert_icon{
+		right: 4%;
+		top: 22%;
+	}
+
+	/* Div's de error */
+	.div_error{
+		
+		width: 100%;
+		height: auto;
+		text-align: center;
+		margin-top: 40px;
+		font-size: 1.2rem;
 	}
 
 }
@@ -25,7 +48,7 @@
 		font-size: 2rem;
 	}
 
-	h2{ 
+	label{ 
 		font-size: 1.5rem;
 	}
 

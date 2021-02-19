@@ -2,22 +2,59 @@
 
 	.ventana form{
 		
-		width: 50%;
+		width: 60%;
 		margin: auto;
 	}
 
+	form input {
+		
+		padding-left: 50px;
+		font-size: 1.2rem;
+	}
+
+	.campos .info_icon img{
+		width: 30px;
+		height: 30px;
+	}
+
+	.campos .info_icon{
+		position: absolute;
+		left: 3%;
+		top: 65%;
+	}
+
+/* Iconos de alerta de errores*/
+	.campos .alert_icon .fa-exclamation-circle{
+		font-size: 1.8rem;
+	}
+
+	/* Div's de error */
+	.div_error{
+		
+		width: 100%;
+		height: auto;
+		text-align: center;
+		margin-top: 40px;
+		font-size: 1.2rem;
+	}
 }
 
 @media screen and (min-width: 1080px){
 
 	.ventana form{
 		
-		width: 40%;
+		width: 50%;
 		margin: auto;
 	}
 
 	h1{
 		font-size: 2rem;
+	}
+
+	/* Div's de error */
+	.div_error{
+		
+		font-size: 1.4rem;
 	}
 
 

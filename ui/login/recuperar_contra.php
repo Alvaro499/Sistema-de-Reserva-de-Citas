@@ -4,7 +4,7 @@
 	<title>Recuperar Contraseña</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-	<link rel="stylesheet" type="text/css" href="fonts_awesome/css/all.min.css">
+	<link rel="stylesheet" href="../../assets/fonts_awesome/css/all.min.css">
 	<link rel="stylesheet" type="text/css" href="../../assets/css/style_login/recuperar_contra.css">
     
 </head>
@@ -28,21 +28,15 @@
 				<form method="POST" action="" onsubmit="return validacion()">
 					<h1>Recuperación de Contraseña</h1>
 
-					<h2>Digite el correo con el cual está registrada su cuenta:</h2>
-					<input class="correo" id="correo" type="text" name="user-name" placeholder="ejemplo@hotmail.com">
-					<div id="error_correo"></div>
-
-					
-					<!-- <button>Enviar correo de recuperación</button>
-
-					<h2>Escriba el código enviado al correo electrónico secundario para  de cuenta :</h2>
-					<input class="codigo" id="codigo" type="text" name="codigo">
-					<div id="error_correo"></div> -->
-
+					<label for="correo">Digite el correo con el cual está registrada su cuenta:</label>
+					<div class="campos campo_correo">
+						<input class="correo" id="correo" type="text" name="correo" placeholder="ejemplo@hotmail.com">
+						<span id="alert_correo" class="alert_icon iconos"><i class="fas fa-exclamation-circle"></i></span>
+						<div id="error_correo" class="div_error">*Correo no válido</div>
+					</div>
+				
 					<input type="submit" id="boton" value="Enviar">			
 				</form>
-
-				<!-- <div id="contra_nueva"></div> -->
 			</div>
 
 		</figure>
