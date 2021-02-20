@@ -70,15 +70,15 @@
                 
 				<label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" class="input">
-				<div id="error_nomb"></div>
+				<div id="error_nomb" class="errores"></div>
                 
 				<label for="medio_presencial">Oficina:</label>
                 <input type="text" id="medio_presencial" class="input">
-				<div id="error_ofi"></div>
+				<div id="error_ofi" class="errores"></div>
                 
 				<label for="c_personas">Cantidad de Persona:</label>
                 <input type="number" id="c_personas" class="input">
-				<div id="error_cp"></div>
+				<div id="error_cp" class="errores"></div>
                 
 				<label for="medio_virtual">Plataforma:</label>
                 <select id="medio_virtual" class="select">
@@ -89,7 +89,7 @@
                 
                 <label for="link">Link:</label>
                 <input type="text" id="link" class="input">
-				<div id="error_link"></div>
+				<div id="error_link" class="errores"></div>
 
 				<div class="cont_btn">
 					<button type="submit" class="btn_reserva">Aceptar</button>

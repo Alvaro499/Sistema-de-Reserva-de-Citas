@@ -90,3 +90,10 @@
 .btn_reserva:active{
     transform: scale(0.9);
 }
+
+.errores{
+	margin-top: -20px;
+    margin-bottom: 20px;
+	font-size: 1.5rem;
+	font-weight: bold;
+}

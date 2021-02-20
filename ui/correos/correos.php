@@ -73,7 +73,7 @@
 				<input type="text" name="mensaje_correos" id="asunto_correos" placeholder="Por ejemplo: 'actualización días feriados'">
 				<div id="error_asunto"></div>
 
-				<label for="mensaje_correos">Mensaje:</label>
+				<label for="mensaje_correos">*Mensaje:</label>
 				<textarea id="mensaje_correos" name="mensaje_correos" resize="none"></textarea>
 				<div id="error_correo"></div>
 
@@ -81,8 +81,6 @@
 					<button class="btn_correos">Adjuntar Archivo</button>
 					<button type="submit" class="btn_correos">Enviar</button>
 				</div>
-				
-
 			</form>
 			
 		</main>

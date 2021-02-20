@@ -15,7 +15,7 @@ function validacion(){
 
     if (asunto == null || asunto == "") {
         document.getElementById("error_asunto").innerHTML = "El Asunto es obligatorio.";
-        document.getElementById("error_asunto").style.color = "#E40017";
+        document.getElementById("error_asunto").style.color = "#C70039";
         document.getElementById("asunto").style.border = "3px solid #E40017";
         cant_error++;
         console.log(cant_error);
@@ -29,7 +29,7 @@ function validacion(){
     
     if (mensaje == null || mensaje == "") {
         document.getElementById("error_mensaje").innerHTML = "El Mensaje es obligatorio.";
-        document.getElementById("error_mensaje").style.color = "#E40017";
+        document.getElementById("error_mensaje").style.color = "#C70039";
         document.getElementById("mensaje_ct").style.border = "3px solid #E40017";
         cant_error++;
         console.log(cant_error);
@@ -43,7 +43,7 @@ function validacion(){
     
     if (fecha == null || fecha == "") {
         document.getElementById("error_fecha").innerHTML = "La fecha es obligatoria";
-        document.getElementById("error_fecha").style.color = "#E40017";
+        document.getElementById("error_fecha").style.color = "#C70039";
         document.getElementById("fecha").style.border = "3px solid #E40017";
         cant_error++;
         console.log(cant_error);
@@ -57,7 +57,7 @@ function validacion(){
     
     if (hora == null || hora == "") {
         document.getElementById("error_hora").innerHTML = "La Hora es obligatoria.";
-        document.getElementById("error_hora").style.color = "#E40017";
+        document.getElementById("error_hora").style.color = "#C70039";
         document.getElementById("hora").style.border = "3px solid #E40017";
         cant_error++;
         console.log(cant_error);

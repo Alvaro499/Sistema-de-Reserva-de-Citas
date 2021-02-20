@@ -70,7 +70,7 @@ function validacion(){
 
     if (ape_2 == null || ape_2 == "" || !regex_texto.test(ape_2)) {
         
-        document.getElementById("error_ap2").innerHTML = "El formato de segundo apellido es inválido, revise que no digito numeros.";
+        document.getElementById("error_ap2").innerHTML = "*El formato de segundo apellido es inválido, revise que no digito numeros.";
         document.getElementById("error_ap2").style.color = "#E40017";
         document.getElementById("s_apellido").style.border = "3px solid #E40017";
         console.log(ape_2);
@@ -85,7 +85,7 @@ function validacion(){
     }
     
     if (correo == null || correo == "" || !regex_correo.test(correo)) {
-        document.getElementById("error_correo").innerHTML = "El formato de correo es inválido.";
+        document.getElementById("error_correo").innerHTML = "*El formato de correo es inválido.";
         document.getElementById("error_correo").style.color = "#E40017";
         document.getElementById("correo").style.border = "3px solid #E40017";
         console.log(correo);
@@ -101,7 +101,7 @@ function validacion(){
     }
     
     if (cel_1 == null || cel_1 == "" || !regex_tel.test(cel_1)) {
-        document.getElementById("error_num1").innerHTML = "El formato de celular es inválido, revise que no lleve letras.";
+        document.getElementById("error_num1").innerHTML = "*El formato de celular es inválido, revise que no lleve letras.";
         document.getElementById("error_num1").style.color = "#E40017";
         document.getElementById("n_celular").style.border = "3px solid #E40017";
         console.log(cel_1);
@@ -128,7 +128,7 @@ function validacion(){
 
     }else{
 
-        document.getElementById("error_num2").innerHTML = "El formato del celular opcional es inválido, revise que no lleve letras.";
+        document.getElementById("error_num2").innerHTML = "*El formato del celular opcional es inválido, revise que no lleve letras.";
         document.getElementById("error_num2").style.color = "#E40017";
         document.getElementById("s_celular").style.border = "3px solid #E40017";
         cant_error++;

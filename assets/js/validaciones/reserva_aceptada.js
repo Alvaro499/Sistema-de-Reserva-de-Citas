@@ -26,7 +26,7 @@ function reserva_lista(){
     }
 
     if (nomb == null || nomb == "" || !regex_texto.test(nomb)) {
-        document.getElementById("error_nomb").innerHTML = "El formato de usuario es inválido, revise que no digito numeros.";
+        document.getElementById("error_nomb").innerHTML = "*El formato de usuario es inválido, revise que no digito numeros.";
         document.getElementById("error_nomb").style.color = "#E40017";
         document.getElementById("nombre").style.border = "3px solid #E40017";
         cant_error++;
@@ -39,7 +39,7 @@ function reserva_lista(){
     }
 
     if (ofi == null || ofi == "" || !regex_texto.test(ofi)) {
-        document.getElementById("error_ofi").innerHTML = "El formato de usuario es inválido, revise que no digito numeros.";
+        document.getElementById("error_ofi").innerHTML = "*El formato de usuario es inválido, revise que no digito numeros.";
         document.getElementById("error_ofi").style.color = "#E40017";
         document.getElementById("medio_presencial").style.border = "3px solid #E40017";
         cant_error++;
@@ -53,7 +53,7 @@ function reserva_lista(){
     }
 
     if (link == null || link == "" ) {
-        document.getElementById("error_link").innerHTML = "Digite un link";
+        document.getElementById("error_link").innerHTML = "*Digite un link";
         document.getElementById("error_link").style.color = "#E40017";
         document.getElementById("link").style.border = "3px solid #E40017";
         cant_error++;

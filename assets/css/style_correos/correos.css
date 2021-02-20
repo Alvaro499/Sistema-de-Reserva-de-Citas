@@ -42,12 +42,14 @@
 	width: 50%;
 	text-align: center;
 	padding: 5px 10px;
+	border-radius: 5px;
 }
 
 #mensaje_correos{  /*textarea*/
 	width: 70%;
 	height: 100px;
 	padding: 10px 25px;
+	border-radius: 10px;
 	resize: none; /*evitar cambiar de tamano el textarea*/
 }
 
@@ -86,4 +88,11 @@
 
 .btn_correos:active{
 	transform: scale(0.9);
+}
+
+#error_asunto, #error_correo{
+	margin-top: -20px;
+	font-size: 1.5rem;
+	font-weight: bold;
+	
 }

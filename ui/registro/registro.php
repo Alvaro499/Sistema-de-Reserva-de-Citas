@@ -69,31 +69,31 @@
                 
 				<label for="cedula">Cédula:</label>
                 <input type="text" id="cedula" class="input" name="cedula">
-				<div id="error_ced"></div>
+				<div id="error_ced" class="errores"></div>
                 
 				<label for="nombre_usuario">Nombre del Usuario:</label>
                 <input type="text" id="nombre" class="input" name="nombre_usuario">
-				<div id="error_nomb"></div>
+				<div id="error_nomb" class="errores"></div>
                 
 				<label for="apell1">Primer Apellido:</label>
                 <input type="text" id="p_apellido" class="input" name="apell1">
-				<div id="error_ap1"></div>
+				<div id="error_ap1" class="errores"></div>
                 
 				<label for="apell2">Segundo Apellido:</label>
                 <input type="text" id="s_apellido" class="input" name="apell2">
-				<div id="error_ap2"></div>
+				<div id="error_ap2" class="errores"></div>
                 
 				<label for="email">Correo Electrónico:</label>
                 <input type="text" id="correo" class="input" name="email" >
-				<div id="error_correo"></div>
+				<div id="error_correo" class="errores"></div>
                 
 				<label for="cel_1">Número de Celular:</label>
                 <input type="text" id="n_celular" class="input" name="cel_1">
-				<div id="error_num1"></div>
+				<div id="error_num1" class="errores"></div>
 
                 <label for="cel_2">Número de Celular Opcional:</label>
                 <input type="text" id="s_celular" class="input" name="cel_2">
-				<div id="error_num2"></div>
+				<div id="error_num2" class="errores"></div>
 				
                 
                 <label for="rol_usua">Rol del Usuario:</label>

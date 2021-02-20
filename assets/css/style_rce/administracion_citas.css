@@ -68,3 +68,10 @@ grid-template-columns: repeat(1, auto);
 .success{
     background: rgba(21,115,71);
 }
+
+.errores{
+	margin-top: -20px;
+    margin-bottom: 20px;
+	font-size: 1.5rem;
+	font-weight: bold;
+}
