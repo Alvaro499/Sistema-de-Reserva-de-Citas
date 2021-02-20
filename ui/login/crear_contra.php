@@ -37,7 +37,7 @@
 
 					<!-- Crear contrasena nueva -->
 					<label for="contra_nueva">Contraseña nueva:</label>
-					<div id="contraseña" class="prueba campos campo-usuario">
+					<div id="contra" class="prueba campos campo-usuario">
 						<input id="contra_nueva" type="password" name="contra_nueva">
 						<span id="alert_contra_nueva" class="alert_icon iconos"><i class="fas fa-exclamation-circle"></i></span>
 					</div>

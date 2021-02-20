@@ -28,7 +28,7 @@ function validacion(){
 
 	}else{
 
-		document.getElementById("error_confirm_contra").style.display = "block";
+		document.getElementById("error_confirm_contra").style.display = "none";
 		document.getElementById("confirm_contra").style.border = "3px solid #54E346";
 		document.getElementById("alert_confirm_contra").style.display = "none";
 	}

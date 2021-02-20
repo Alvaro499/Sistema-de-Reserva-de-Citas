@@ -31,7 +31,7 @@
 
 					<!-- Crear contrasena nueva -->
 					<label for="contra_nueva">Contraseña nueva: </label>
-					<div id="contra" class="prueba">
+					<div id="ctn_nueva" class="prueba campos campo-usuario">
 						<input id="contra_nueva" type="password" name="coontra_nueva">
 						<span id="alert_contra_nueva" class="alert_icon iconos"><i class="fas fa-exclamation-circle"></i></span>
 					</div>
@@ -41,7 +41,7 @@
 
 					<!-- Confirmar contrasena -->
 					<label for="confirm_contra">Confirme contraseña: </label>
-					<div id="contraseña" class="prueba">
+					<div id="ctn_confirm" class="prueba campos campo-usuario">
 						<input id="confirm_contra" type="password" name="confirm_contra">
 						<span id="alert_confirm_contra" class="alert_icon iconos"><i class="fas fa-exclamation-circle"></i></span>
 					</div>
