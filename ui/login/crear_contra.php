@@ -4,6 +4,7 @@
 	<title>Crear Contraseña</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="../../assets/fonts_awesome/css/all.min.css">
 	<link rel="stylesheet" type="text/css" href="../../assets/css/style_login/crear_contra.css">
 	
 
@@ -25,23 +26,33 @@
 				
 				<form method="POST" action="" onsubmit="return validacion()">
 					<h1>Crear contraseña</h1>
-					<div id="usuario" class="prueba">
-						<h2>Contraseña actual: </h2>
-						<input id="contra_actual" type="password" name="user-name">
-						<div id="error_contra_actual"></div>
+
+					<!-- Contrasena actual -->
+					<label for="contra_actual">Contraseña actual:</label>
+					<div id="usuario" class="prueba campos campo-usuario">
+						<input id="contra_actual" type="password" name="contra_actual">
+						<span id="alert_contra_actual" class="alert_icon iconos"><i class="fas fa-exclamation-circle"></i></span>
+					</div>
+					<div id="error_contra_actual" class="div_error">*Su contraseña actual no es válida.</div>
+
+					<!-- Crear contrasena nueva -->
+					<label for="contra_nueva">Contraseña nueva:</label>
+					<div id="contraseña" class="prueba campos campo-usuario">
+						<input id="contra_nueva" type="password" name="contra_nueva">
+						<span id="alert_contra_nueva" class="alert_icon iconos"><i class="fas fa-exclamation-circle"></i></span>
+					</div>
+					<div id="error_contra_nueva" class="div_error">*La contraseña debe incluir carácteres alfanuméricos.
+						</br></br>*La contraseña debe ser de al menos 6 a 12 carácteres.
 					</div>
 
-					<div id="contraseña" class="prueba">
-						<h2>Contraseña nueva: </h2>
-						<input id="contra_nueva" type="password" name="contraseña">
-						<div id="error_contra_nueva"></div>
+					<!-- Confirmar contrasena -->
+					<label for="confirm_contra">Confirme nueva contraseña:</label>
+					<div id="contraseña" class="prueba campos campo-usuario">
+						<input id="confirm_contra" type="password" name="confirm_contra">
+						<span id="alert_confirm_contra" class="alert_icon iconos"><i class="fas fa-exclamation-circle"></i></span>
 					</div>
+					<div id="error_confirm_contra" class="div_error">La contraseña no coincide con la anteriormente creada.</div>
 
-					<div id="contraseña" class="prueba">
-						<h2>Confirme nueva contraseña: </h2>
-						<input id="confirm_contra" type="password" name="contraseña">
-						<div id="error_confirm_contra"></div>
-					</div>
 					<input id="boton" type="submit" value="Confirmar nueva contraseña">			
 				</form>
 			</figure>

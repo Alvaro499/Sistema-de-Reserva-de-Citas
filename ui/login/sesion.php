@@ -24,6 +24,7 @@
 			<div class="ventana" id="vent">
 				
 				<form method="POST" action="../../negocios/n_usuarios/consultar_usuario.php" onsubmit="return validacion()">
+					
 					<h1>Iniciar Sesión</h1>
 
 					<div class="campos campo-usuario">

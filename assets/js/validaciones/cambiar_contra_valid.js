@@ -7,28 +7,30 @@ function validacion(){
 
 	if (contra_nueva == null || contra_nueva == "" || contra_nueva.length > 12 || contra_nueva.length < 6) {
 
-		document.getElementById("error_contra_nueva").innerHTML = "Su nueva contraseña debe incluir carácteres alfanuméricos; y ser de 6 a 12 caráctres";
-		document.getElementById("error_contra_nueva").style.color = "#E40017";
+		document.getElementById("error_contra_nueva").style.display = "block";
 		document.getElementById("contra_nueva").style.border = "3px solid #E40017";
+		document.getElementById("alert_contra_nueva").style.display = "block";
 		cant_error++;
 		
 	}else{
 
-		document.getElementById("error_contra_nueva").innerHTML = "";
+		document.getElementById("error_contra_nueva").style.display = "none";
 		document.getElementById("contra_nueva").style.border = "3px solid #54E346";
+		document.getElementById("alert_contra_nueva").style.display = "none";
 	}
 
-	if (confirm_contra != contra_nueva) {
+	if (confirm_contra = "" || confirm_contra != contra_nueva) {
 
-		document.getElementById("error_confirm_contra").innerHTML = "La contraseña no coincide, verificar nuevamente";
-		document.getElementById("error_confirm_contra").style.color = "#E40017";
+		document.getElementById("error_confirm_contra").style.display = "block";
 		document.getElementById("confirm_contra").style.border = "3px solid #E40017";
+		document.getElementById("alert_confirm_contra").style.display = "block";
 		cant_error++;
 
 	}else{
 
-		document.getElementById("error_confirm_contra").innerHTML = "";
+		document.getElementById("error_confirm_contra").style.display = "block";
 		document.getElementById("confirm_contra").style.border = "3px solid #54E346";
+		document.getElementById("alert_confirm_contra").style.display = "none";
 	}
 
 	if(cant_error>0){

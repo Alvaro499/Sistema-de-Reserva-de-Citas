@@ -31,17 +31,60 @@ form div input {
 	padding: 10px;
 	height: 40px;
 	width: 100%;
-	font-size: 20px;
+	font-size: 1rem
 }
+
+/* Contenedor de los inputs */
+.campos{
+	position: relative;
+	width: 100%;
+}
+
+/* Iconos de alerta de errores*/
+.campos .alert_icon .fa-exclamation-circle{
+	font-size: 1.5rem;
+	color: red;
+}
+
+.campos .alert_icon{
+	display: none;
+	position: absolute;
+	right: 4%;
+	top: 15%;
+}
+
+/* Div's de error */
+.div_error{
+	display: none;
+	width: 100%;
+	height: auto;
+	margin: auto;
+	padding: 8px 10px;
+	text-align: center;
+	margin-top: 5px;
+	margin-bottom: 30px;
+	color: #fff;
+	font-size: 1.1rem;
+	font-weight: bold;
+	
+	/* background: #FB6566; */
+	background: #FB6566;
+
+	border-radius: 4px;
+	border-bottom: 1px solid red;
+}
+
+
 /*Cuerpo*/
 h1{
     margin: 0 0 20px 0;
     font-size: 2rem;
     color: #ffffff
 }
-h2{ 
+label{ 
 	margin: 20px 0 20px 0;
 	text-align: left;
+	font-size: 1.2rem;
 	color: #ffffff;
 }
 /*Parte abajo*/

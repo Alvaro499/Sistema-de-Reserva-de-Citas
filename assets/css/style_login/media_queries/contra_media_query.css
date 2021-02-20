@@ -2,8 +2,16 @@
 
 	.ventana form{
 		
-		width: 50%;
+		width: 60%;
 		margin: auto;
+	}
+
+	form div input {
+		font-size: 1.4rem
+	}
+
+	.div_error{
+		font-size: 1.4rem;
 	}
 
 }
@@ -11,15 +19,20 @@
 @media screen and (min-width: 1080px){
 
 	.ventana form{
-		
-		width: 50%;
+		width: 60%;
 		margin: auto;
 	}
 
+	label{ 
+		font-size: 1.4rem;
+	}
+
+	form div input {
+		font-size: 1.6rem
+	}
+
 	#boton{
-		
 		font-size: 1.5rem;
-		
 	}
 
 }

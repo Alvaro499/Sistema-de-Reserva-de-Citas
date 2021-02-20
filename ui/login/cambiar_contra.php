@@ -4,7 +4,7 @@
 	<title>Cambiar Contraseña</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-	<link rel="stylesheet" type="text/css" href="fonts_awesome/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="../../assets/fonts_awesome/css/all.min.css">
 	
 	<link rel="stylesheet" type="text/css" href="../../assets/css/style_login/cambiar_contra.css">
 
@@ -29,18 +29,23 @@
 
 					<h1>Cambiar Contraseña</h1>
 
-					
-					<div id="contraseña" class="prueba">
-						<h2>Contraseña nueva: </h2>
-						<input id="contra_nueva" type="password" name="contraseña">
-						<div id="error_contra_nueva"></div>
+					<!-- Crear contrasena nueva -->
+					<label for="contra_nueva">Contraseña nueva: </label>
+					<div id="contra" class="prueba">
+						<input id="contra_nueva" type="password" name="coontra_nueva">
+						<span id="alert_contra_nueva" class="alert_icon iconos"><i class="fas fa-exclamation-circle"></i></span>
+					</div>
+					<div id="error_contra_nueva" class="div_error">*La contraseña debe incluir carácteres alfanuméricos.
+						</br></br>*La contraseña debe ser de al menos 6 a 12 carácteres.
 					</div>
 
+					<!-- Confirmar contrasena -->
+					<label for="confirm_contra">Confirme contraseña: </label>
 					<div id="contraseña" class="prueba">
-						<h2>Confirme contraseña: </h2>
-						<input id="confirm_contra" type="password" name="contraseña">
-						<div id="error_confirm_contra"></div>
+						<input id="confirm_contra" type="password" name="confirm_contra">
+						<span id="alert_confirm_contra" class="alert_icon iconos"><i class="fas fa-exclamation-circle"></i></span>
 					</div>
+					<div id="error_confirm_contra" class="div_error">La contraseña no coincide con la anteriormente creada.</div>
 
 					<input type="submit" id="boton" value="Confirmar Contraseña">			
 
