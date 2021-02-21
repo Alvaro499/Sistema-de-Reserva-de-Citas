@@ -35,13 +35,13 @@
 
                 $email->isHTML(true);
 
-                $email->Subject = "Envío de contraseña para el accesso al Sistema de Reservas de Citas Gapa";
+                $email->Subject = utf8_decode("Envío de contraseña para el accesso al Sistema de Reservas de Citas Gapa");
 
-                $email->Body = "<b>Estimado cliente $nombre, mediante este correo le entregamos la contrasena para su acceso a la plataforma Sistema de Reservas Citas Gapa.</b>
+                $email->Body = utf8_decode("<b>Estimado cliente <strong>$nombre<strong>, mediante este correo le entregamos la contraseña para su acceso a la plataforma Sistema de Reservas Citas Gapa.</b>
                 
-                Su contrasena es: $contra </br>
+                Su contraseña es: $contra </br>
                 
-                Enlace a nuestra pagina: ";
+                Enlace a nuestra pagina: ");
 
                 $email->send();
 
