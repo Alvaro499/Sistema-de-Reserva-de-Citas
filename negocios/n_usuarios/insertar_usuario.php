@@ -3,7 +3,7 @@
     require("../../data/data_usuarios.php");
     require("../email.php");
 
-    if(!empty($_POST["cedula"]) && !empty($_POST["nombre_usuario"]) && !empty($_POST["apell1"]) && !empty($_POST["apell2"]) && !empty($_POST["email"]) && !empty($_POST["cel_1"]) && !empty($_REQUEST["rol"])){
+    //if(!empty($_POST["cedula"]) && !empty($_POST["nombre_usuario"]) && !empty($_POST["apell1"]) && !empty($_POST["apell2"]) && !empty($_POST["email"]) && !empty($_POST["cel_1"]) && !empty($_REQUEST["rol"])){
 
         echo "Exito <br>";
 
@@ -35,9 +35,9 @@
             echo "Error en la inserción <br>";
         }
 
-    }else{
-        echo "Fallo";
-    }
+    //}else{
+      //  echo "Fallo";
+    //}
 
 
     function generar_contra(){

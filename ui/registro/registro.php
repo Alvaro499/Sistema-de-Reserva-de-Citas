@@ -7,6 +7,7 @@
 	<meta name="viewport" content="user-scalable=no, width=device-width">
 	<title>Registro de Usuario</title>
 	<link rel="stylesheet" type="text/css" href="../../assets/css/style_registro/bridge.css">
+	<link rel="stylesheet" type="text/css" href="../../assets/css/toastr/toastr.min.css">
 </head>
 
 <body>
@@ -63,7 +64,7 @@
 
 		<main id="principal">
 			
-			<form class="registro" method="post" action="../../negocios/n_usuarios/insertar_usuario.php" onsubmit="return validacion();">
+			<form id="frmregistro" class="registro">
 				
                 <h1>Registro de Usuario</h1>
                 
@@ -117,5 +118,47 @@
 	
 	<script type="text/javascript" src="../../assets/js/hide_menu_v.js"></script>
 	<script type="text/javascript" src="../../assets/js/validaciones/registro_valid.js"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="../../assets/js/toastr/toastr.min.js"></script>
+	<script type="text/javascript">
+	
+		$("form#frmregistro").submit(function(event){
+			event.preventDefault();
+			if(validacion()){
+				var ced = $("#cedula").val();
+				var nombre = $("#nombre").val();
+				var apellido1 = $("#p_apellido").val();
+				var apellido2 = $("#s_apellido").val();
+				var correo = $("#correo").val();
+				var celular = $("#n_celular").val();
+				var opcional_celular = $("#s_celular").val();
+				var rol = $("#rol").val();
+
+				let datos = 
+				"cedula=" + ced +
+				"&nombre_usuario=" + nombre + 
+				"&apell1=" + apellido1 +
+				"&apell2=" + apellido2 +
+				"&email=" + correo +
+				"&cel_1=" + celular +
+				"&cel_2=" + opcional_celular +
+				"&rol=" + rol;
+
+				$.ajax({
+					type: "POST",
+					url:"../../negocios/n_usuarios/insertar_usuario.php",
+					data: datos,
+					//Métodos
+					success: function(data){
+						toastr.success("Se guardo exitosamente","Éxitos");
+					},
+					error: function(data){
+						toastr.error(data,"Error");
+					}
+				})
+			}
+		});
+		
+	</script>
 </body>
 </html>
