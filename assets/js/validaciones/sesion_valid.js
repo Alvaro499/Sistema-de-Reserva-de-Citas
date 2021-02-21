@@ -45,3 +45,18 @@ function validacion(){
         return false; 
     }
 }
+//Borrar aqui tambien en caso de que no haya exito
+// Ocultar y mostrar contrasena
+
+var ocultar = document.querySelector(".alert_visibility");
+console.log(ocultar);
+
+ocultar.addEventListener("click", function() {
+	
+	if (contra.type == "password") {
+		contra.type = "text";
+
+	}else{
+		contra.type = "password";
+	}
+})

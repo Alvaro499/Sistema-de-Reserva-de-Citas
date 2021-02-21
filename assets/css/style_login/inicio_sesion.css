@@ -23,10 +23,9 @@
 	display: flex;
 	flex-flow: column wrap;
 	font-size: 0.8rem;
-	padding: 50px;
+	padding: 10% 12%;
+	/* padding: 50px 60px; */
 	min-height: 400px;
-	/*outline: 4000px solid rgba(0, 0, 0, 0.2);*/
-
 }
 
 h1{
@@ -75,6 +74,23 @@ form input {
 	right: 5%;
 	top: 70%;
 }
+
+
+/* Icono de visibilidad para contrasena */
+.campos .alert_visibility .fa-eye{
+	font-size: 1.4rem;
+	color: #fff;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.campos .alert_visibility{
+	display: block;
+	position: absolute;
+	right: -10%;
+	top: 76%;
+}
+
 
 /* Div's de error */
 .div_error{

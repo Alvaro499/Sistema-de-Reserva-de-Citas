@@ -34,6 +34,7 @@
 					<div id="ctn_nueva" class="prueba campos campo-usuario">
 						<input id="contra_nueva" type="password" name="coontra_nueva">
 						<span id="alert_contra_nueva" class="alert_icon iconos"><i class="fas fa-exclamation-circle"></i></span>
+						<span id="alert_visibility" class="alert_visibility iconos ocultar1" title="Presione para mostrar/ocultar la contraseña"><i class="far fa-eye"></i></span>
 					</div>
 					<div id="error_contra_nueva" class="div_error">*La contraseña debe incluir carácteres alfanuméricos.
 						</br></br>*La contraseña debe ser de al menos 6 a 12 carácteres.
@@ -44,6 +45,7 @@
 					<div id="ctn_confirm" class="prueba campos campo-usuario">
 						<input id="confirm_contra" type="password" name="confirm_contra">
 						<span id="alert_confirm_contra" class="alert_icon iconos"><i class="fas fa-exclamation-circle"></i></span>
+						<span id="alert_visibility" class="alert_visibility iconos ocultar2" title="Presione para mostrar/ocultar la contraseña"><i class="far fa-eye"></i></span>
 					</div>
 					<div id="error_confirm_contra" class="div_error">La contraseña no coincide con la anteriormente creada.</div>
 

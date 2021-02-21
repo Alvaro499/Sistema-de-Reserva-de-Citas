@@ -55,3 +55,45 @@ function validacion(){
         return true; 
     }
 }
+//Borrar aqui tambien en caso de que no haya exito
+// Ocultar y mostrar contrasena
+
+var ocultar1 = document.querySelector(".ocultar1");
+var ocultar2 = document.querySelector(".ocultar2");
+var ocultar3 = document.querySelector(".ocultar3");
+
+ocultar1.addEventListener("click", function() {
+	
+	 if (contra_actual.type == "password") {
+	 	contra_actual.type = "text";
+
+	 }else{
+	 	contra_actual.type = "password";
+	 }
+
+
+})
+
+ocultar2.addEventListener("click", function() {
+	
+	if (contra_nueva.type == "password") {
+		contra_nueva.type = "text";
+
+	}else{
+		contra_nueva.type = "password";
+	}
+
+
+})
+
+ocultar3.addEventListener("click", function() {
+	
+	if (confirm_contra.type == "password") {
+		confirm_contra.type = "text";
+
+	}else{
+		confirm_contra.type = "password";
+	}
+
+
+})

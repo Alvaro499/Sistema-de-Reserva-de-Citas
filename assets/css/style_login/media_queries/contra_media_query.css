@@ -4,12 +4,23 @@
 		
 		width: 60%;
 		margin: auto;
+		padding: 6% 8%;
 	}
 
 	form div input {
 		font-size: 1.4rem
 	}
 
+	/* Icono de visibilidad para contrasena */
+	.campos .alert_visibility .fa-eye{
+		font-size: 1.4rem;
+	}
+
+	.campos .alert_visibility{
+		top: 20%;
+	}
+
+	/* Div's errores */
 	.div_error{
 		font-size: 1.4rem;
 	}
@@ -19,8 +30,9 @@
 @media screen and (min-width: 1080px){
 
 	.ventana form{
-		width: 60%;
+		width: 50%;
 		margin: auto;
+		padding: 2% 6%;
 	}
 
 	label{ 

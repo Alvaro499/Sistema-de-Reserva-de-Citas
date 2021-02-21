@@ -43,6 +43,7 @@
 
 						<span class="info_icon iconos"><img src="../../assets/iconos/contra.svg"></span>
 						<span id="alert_contra" class="alert_icon iconos"><i class="fas fa-exclamation-circle"></i></span>
+						<span id="alert_visibility" class="alert_visibility iconos" title="Presione para mostrar/ocultar la contraseña"><i class="far fa-eye"></i></span>
 						
 					</div>
 

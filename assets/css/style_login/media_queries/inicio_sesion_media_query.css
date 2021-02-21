@@ -2,8 +2,9 @@
 
 	.ventana form{
 		
-		width: 60%;
+		width: 70%;
 		margin: auto;
+		padding: 6% 10%;
 	}
 
 	form input {
@@ -27,6 +28,16 @@
 	.campos .alert_icon .fa-exclamation-circle{
 		font-size: 1.8rem;
 	}
+	
+	/* Icono de visibilidad para contrasena */
+	.campos .alert_visibility .fa-eye{
+		font-size: 1.6rem;
+	}
+
+	.campos .alert_visibility{
+		right: -12%;
+		top: 76%;
+	}
 
 	/* Div's de error */
 	.div_error{
@@ -45,6 +56,7 @@
 		
 		width: 50%;
 		margin: auto;
+		padding: 4% 8%;
 	}
 
 	h1{

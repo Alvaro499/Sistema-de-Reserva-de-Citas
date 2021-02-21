@@ -30,16 +30,19 @@
 					<!-- Contrasena actual -->
 					<label for="contra_actual">Contraseña actual:</label>
 					<div id="usuario" class="prueba campos campo-usuario">
-						<input id="contra_actual" type="password" name="contra_actual">
+						<input id="contra_actual" class="contras" type="password" name="contra_actual">
 						<span id="alert_contra_actual" class="alert_icon iconos"><i class="fas fa-exclamation-circle"></i></span>
+						<span id="alert_visibility" class="alert_visibility iconos ocultar1" title="Presione para mostrar/ocultar la contraseña"><i class="far fa-eye"></i></span>
+						
 					</div>
 					<div id="error_contra_actual" class="div_error">*Su contraseña actual no es válida.</div>
 
 					<!-- Crear contrasena nueva -->
 					<label for="contra_nueva">Contraseña nueva:</label>
 					<div id="contra" class="prueba campos campo-usuario">
-						<input id="contra_nueva" type="password" name="contra_nueva">
+						<input id="contra_nueva" class="contras" type="password" name="contra_nueva">
 						<span id="alert_contra_nueva" class="alert_icon iconos"><i class="fas fa-exclamation-circle"></i></span>
+						<span id="alert_visibility" class="alert_visibility iconos ocultar2" title="Presione para mostrar/ocultar la contraseña"><i class="far fa-eye"></i></span>
 					</div>
 					<div id="error_contra_nueva" class="div_error">*La contraseña debe incluir carácteres alfanuméricos.
 						</br></br>*La contraseña debe ser de al menos 6 a 12 carácteres.
@@ -48,8 +51,9 @@
 					<!-- Confirmar contrasena -->
 					<label for="confirm_contra">Confirme nueva contraseña:</label>
 					<div id="contraseña" class="prueba campos campo-usuario">
-						<input id="confirm_contra" type="password" name="confirm_contra">
+						<input id="confirm_contra" class="contras" type="password" name="confirm_contra">
 						<span id="alert_confirm_contra" class="alert_icon iconos"><i class="fas fa-exclamation-circle"></i></span>
+						<span id="alert_visibility" class="alert_visibility iconos ocultar3" title="Presione para mostrar/ocultar la contraseña"><i class="far fa-eye"></i></span>
 					</div>
 					<div id="error_confirm_contra" class="div_error">La contraseña no coincide con la anteriormente creada.</div>
 

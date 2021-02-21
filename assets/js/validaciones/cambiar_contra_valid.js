@@ -39,3 +39,31 @@ function validacion(){
         return true; 
     }
 }
+//Ocultar/mostrar contrasenas
+
+var ocultar1 = document.querySelector(".ocultar1");
+var ocultar2 = document.querySelector(".ocultar2");
+
+ocultar1.addEventListener("click", function() {
+	
+	if (contra_nueva.type == "password") {
+		contra_nueva.type = "text";
+
+	}else{
+		contra_nueva.type = "password";
+	}
+
+
+})
+
+ocultar2.addEventListener("click", function() {
+	
+	if (confirm_contra.type == "password") {
+		confirm_contra.type = "text";
+
+	}else{
+		confirm_contra.type = "password";
+	}
+
+
+})
