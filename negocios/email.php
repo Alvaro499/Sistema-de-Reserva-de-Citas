@@ -35,27 +35,30 @@
 
                 $email->isHTML(true);
 
+                $email->AddEmbeddedImage('../../assets/img/logo.png','logo');
+
                 $email->Subject = utf8_decode("Envío de contraseña para el accesso al Sistema de Reservas de Citas Gapa");
 
                 $email->Body = utf8_decode('<body style="font-family: Calibri; margin: 0; padding: 0">
 
                 <div class="contenedor">
                     <div>
-                        <img src="../../assets/img/logo.png">
-            
-                        <hr style="border: 1px solid #262261;">
+                        <img src="cid:logo">
+
+                        </br>
+                        <hr style="border: 1px solid #262261">
             
                         <div class="card">
             
-                            <p style="font-size: 1.4rem">Estimado cliente <strong>""</strong>, GAPA le da la bienvenida al Sistema de Reservas de Citas de la empresa, para nosotros en un gusto que haya aceptado adquirir dicho servicio.</p>
+                            <p style="font-size: 1.4rem">Estimado cliente <strong>' . $nombre . '</strong>, GAPA le da la bienvenida al Sistema de Reservas de Citas de la empresa, para nosotros en un gusto que haya aceptado adquirir dicho servicio.</p>
             
-                            <p style="font-size: 1.4rem">Su contraseña para el inicio de sesión es: <strong>""</strong>
+                            <p style="font-size: 1.4rem">Su contraseña para el inicio de sesión es: <strong>' . $contra . '</strong>
             
-                            <p style="font-size: 1.4rem">Recuerde que despues de iniciar sesión por primera vez podrá crear una nueva contraseña a su gusto.</p>
+                            <p style="font-size: 1.4rem">Recuerde que despues de iniciar sesión por primera vez tendrá que cambiar la contraseña por motivos de seguridad, esta puede ser a su gusto.</p>
             
                             <p style="font-size: 1.4rem">Cualquier duda o consulta que presente puede consultar con nosotros por cualquier medio, ya sea por correo electrónico, llamando a servicio al cliente o visitando nuestras oficinas.</p>
             
-                            <span style="font-size: 1.3rem">Visite nuestra página en: ""</span>
+                            <span style="font-size: 1.3rem">Visite nuestra página en: "https://gapacr.com/"</span>
             
                             <h3 style="font-size: 1.3rem">¡Estamos para servirle!</h3>
             
@@ -64,7 +67,7 @@
                         <div>
                             <hr style="border: 1px solid #262261">
                             <span style="font-size: 1.3rem">*Servicio al cliente: <strong>2543-453</strong></span>
-                            <br>
+                            </br>
                             <span style="font-size: 1.3rem">*Correo para consultas: srcg@gmail.com</span>
                         </div>
                         
