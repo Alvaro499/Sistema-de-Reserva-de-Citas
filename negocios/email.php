@@ -77,10 +77,9 @@
 
                 $email->send();
 
-                echo "Mensaje enviado";
-
+               return true;
             }catch (Exception $e) {
-                echo "El mensaje no se pudo enviar. Error: $email->ErrorInfo";
+                return false;
             }
 
         }//cierre funcion envioContra

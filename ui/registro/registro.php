@@ -150,10 +150,20 @@
 					data: datos,
 					//Métodos
 					success: function(data){
-						toastr.success("Se guardo exitosamente","Éxitos");
-					},
-					error: function(data){
-						toastr.error(data,"Error");
+						
+						if(data==1){
+							toastr.success("Se guardo exitosamente","Éxitos");
+						}else if(data==2){
+							toastr.error("Ese usuario ya hiciste","Error");
+						}
+						else if(data==3){
+							toastr.error("Ese usuario ya hiciste","Error");
+						}
+						else if(data==4){
+							toastr.error("Error al enviar el correo","Error");
+						}else{
+							toastr.error("Error desconocido","Error");
+						}
 					}
 				})
 			}

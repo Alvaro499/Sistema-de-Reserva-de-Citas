@@ -3,9 +3,6 @@
     require("../../data/data_usuarios.php");
     require("../email.php");
 
-    //if(!empty($_POST["cedula"]) && !empty($_POST["nombre_usuario"]) && !empty($_POST["apell1"]) && !empty($_POST["apell2"]) && !empty($_POST["email"]) && !empty($_POST["cel_1"]) && !empty($_REQUEST["rol"])){
-
-        echo "Exito <br>";
 
         $cedula = $_POST["cedula"];
         $nombre = $_POST["nombre_usuario"];
@@ -18,26 +15,32 @@
 
         $usuarios = new D_Usuarios();
         $contra = generar_contra();
-        echo $contra;
+        
         $contra2 = password_hash($contra, PASSWORD_DEFAULT, ["cost"=>5]);
         $insertarUsuario = $usuarios->insertarUsuario($cedula,$nombre,$apellido1,$apellido2,$email,$celular,$celular_op,$contra2);
-        $insertarRol = $usuarios->insertarRolUsuario($rol,$cedula);
         
-        if($insertarUsuario && $insertarRol){
+        if($insertarUsuario){
+            $insertarRol = $usuarios->insertarRolUsuario($rol,$cedula);
+        }
 
-            echo "Inserción exitosa en la tabla Usuarios y rol-usuarios <br>";
+        if($insertarUsuario && $insertarRol){
 
             $contraTemporal = new N_EnvioEmail();
 
             $contraTemporal->envioContra($email,$contra,$nombre);
-            
-        }else{
-            echo "Error en la inserción <br>";
         }
 
-    //}else{
-      //  echo "Fallo";
-    //}
+        if($insertarUsuario && $insertarRol && $contraTemporal){
+            echo 1; //Exito
+        }else if($insertarUsuario!= true){
+            echo 2; //Error en el insertar usuario
+        }else if($insertarRol!= true){
+            echo 3; //Error en el insertar usuario-rol
+        }else if($contraTemporal!= true){
+            echo 4; //Error en el envio de correo
+        }else{
+            echo 5; //Error desconocido
+        }
 
 
     function generar_contra(){

@@ -19,10 +19,10 @@
                 $insertar = $this->cargarConexion->prepare("INSERT INTO `usuarios`(`cedula`, `nombre`, `apellido1`, `apellido2`, `celular`, `celular_opcional`, `correo`, `password`, `pass_temp`) VALUES ('$cedula','$nombre','$apellido1','$apellido2','$celular','$celular_op','$email','$contra','0')");
 
                 $resultado = $insertar->execute();
-                return $resultado;
+                return true;
 
             } catch (PDOException $e) {
-                echo "La inserción de usuario falló:" . $e->getMessage();
+               return false;
             }
         }
 
@@ -35,7 +35,7 @@
                 $resultadoRol = $insertarRol->execute();
                 return $resultadoRol;
             } catch (PDOException $e) {
-                echo "La inserción del rol de usuario falló:" . $e->getMessage();
+                return false;
             }
 
         }
