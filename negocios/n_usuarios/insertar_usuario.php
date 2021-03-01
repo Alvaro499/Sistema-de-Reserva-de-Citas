@@ -2,6 +2,7 @@
 
     require("../../data/data_usuarios.php");
     require("../email.php");
+    // require("../../ui/include.php");
 
 
         $cedula = $_POST["cedula"];

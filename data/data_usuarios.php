@@ -1,6 +1,7 @@
 <?php
 
     require("../../db/db_access.php");
+    // require("../ui/include.php");
     class D_Usuarios{
 
         private $cargarConexion;
@@ -43,7 +44,7 @@
         public function VerificarUsuario($correo, $contra){
             try{
                 echo $correo /*. " ". $contra */. "</br>";
-                $query = $this->cargarConexion->prepare("SELECT cedula, `password` FROM usuarios WHERE correo='$correo'");
+                $query = $this->cargarConexion->prepare("SELECT `cedula`, `password` FROM usuarios WHERE correo='$correo'");
 
                 $query->execute();
                 $resultado = $query->fetchAll();
@@ -87,6 +88,15 @@
                 }else{
                     return 3;
                 }
+            }catch(PDOException $e){
+                echo "Error:" . $e->getMessage();
+            }
+        }
+        public function actu_pass_temp($correo){
+            try{
+                $act = $this->cargarConexion->prepare("UPDATE `usuarios` SET `pass_temp`=1 WHERE correo='$correo'");
+                $resultado = $act->execute(); 
+                return $resultado;
             }catch(PDOException $e){
                 echo "Error:" . $e->getMessage();
             }

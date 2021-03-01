@@ -1,5 +1,6 @@
 <?php 
  require("../../data/data_usuarios.php");
+// require("../../ui/include.php");
 
  $correo = $_POST["correo"];
  $pass =  $_POST["pass"];
@@ -16,7 +17,13 @@
     }else{
 
         foreach($info as $value){
-            echo "Nombre " . $value["nombre"] . " Pass_Temporal " . $value["pass_temp"];
+            // echo "Nombre " . $value["nombre"] . " Pass_Temporal " . $value["pass_temp"];
+            if ($value["pass_temp"] == 0){
+                header("Location: ../../ui/login/crear_contra.php");
+                $pass_temp = $objeto->actu_pass_temp($correo);
+            }else{
+                header("Location: ../../ui/inicio/index.php");
+            }
         }
     }
 
