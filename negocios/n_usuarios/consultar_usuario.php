@@ -1,33 +1,31 @@
 <?php 
  require("../../data/data_usuarios.php");
-// require("../../ui/include.php");
 
  $correo = $_POST["correo"];
- $pass =  $_POST["pass"];
-
- if(!empty($correo) && !empty($pass)){
+ $pass =  $_POST["contra"];
 
     $objeto = new D_Usuarios();
     $info = $objeto->consultarUsuario($correo,$pass);
 
     if($info==0){
-        echo "Usuario Incorrecto";
+        echo 0;
     }else if($info==3){
-        echo "Usuario Incorrecto, No existe correo";
-    }else{
+        echo 3;
+    }else if($info==4){
+        echo 4;
+    } 
+    else{
 
         foreach($info as $value){
-            // echo "Nombre " . $value["nombre"] . " Pass_Temporal " . $value["pass_temp"];
-            if ($value["pass_temp"] == 0){
-                header("Location: ../../ui/login/crear_contra.php");
-                $pass_temp = $objeto->actu_pass_temp($correo);
+        
+            if ($pass_temp = $value["pass_temp"] == 0){
+                //$objeto->actu_pass_temp($correo);
+                echo 2; //Direcciona a crear la contraseña por primera vez
             }else{
-                header("Location: ../../ui/inicio/index.php");
+                echo 1;//Direcciona al inicio del sistema
             }
         }
     }
 
- }else{
-     echo "Fallo Inicio de Sesión";
- }
+ 
 ?>

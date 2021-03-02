@@ -43,7 +43,7 @@
 
         public function VerificarUsuario($correo, $contra){
             try{
-                echo $correo /*. " ". $contra */. "</br>";
+             //   echo $correo /*. " ". $contra */. "</br>";
                 $query = $this->cargarConexion->prepare("SELECT `cedula`, `password` FROM usuarios WHERE correo='$correo'");
 
                 $query->execute();
@@ -84,12 +84,12 @@
                     }*/
                     return $resultado;
                 }else if($verificar==0){
-                    return 0;
+                    return 0;// Contraseña incorrecta
                 }else{
-                    return 3;
+                    return 3;//No existe el usuario
                 }
             }catch(PDOException $e){
-                echo "Error:" . $e->getMessage();
+                return 4; //Error desconocido
             }
         }
         public function actu_pass_temp($correo){

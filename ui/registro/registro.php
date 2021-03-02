@@ -147,7 +147,6 @@
 				$.ajax({
 					type: "POST",
 					url:"../../negocios/n_usuarios/insertar_usuario.php",
-					// url:"../include.php",
 					data: datos,
 					//Métodos
 					success: function(data){
