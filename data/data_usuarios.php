@@ -6,12 +6,17 @@
 
         private $cargarConexion;
         private $objConexion;
+        private $objSesion;
 
         public function __construct(){
 
             $this->objConexion = new Conexion();
 
             $this->cargarConexion = $this->objConexion->conectar();
+
+            //$this->objSesion = new C_Sesion();
+
+
         }
 
         public function insertarUsuario($cedula,$nombre,$apellido1,$apellido2,$email,$celular,$celular_op,$contra){
@@ -73,15 +78,12 @@
             try{
                 $verificar=$this->VerificarUsuario($correo, $contra);
                 if($verificar==1){
-                    //echo $correo . " ". $contra . "</br>";
-                    $query = $this->cargarConexion->prepare("SELECT user.nombre, user.pass_temp, ur.idroles FROM usuarios AS user, usuario_rol AS ur WHERE user.correo='$correo' AND user.cedula=ur.usuarios_cedula ");
+                    
+                    $query = $this->cargarConexion->prepare("SELECT user.nombre, user.correo, user.pass_temp, user.cedula, ur.idroles FROM usuarios AS user, usuario_rol AS ur WHERE user.correo='$correo' AND user.cedula=ur.usuarios_cedula ");
 
                     $query->execute();
                     $resultado = $query->fetchAll();
-                
-                   /* foreach($resultado as $value){
-                        echo "Nombre " . $value["nombre"] . " Pass_Temporal " . $value["pass_temp"] . " rol " . $value["idroles"];
-                    }*/
+
                     return $resultado;
                 }else if($verificar==0){
                     return 0;// Contraseña incorrecta

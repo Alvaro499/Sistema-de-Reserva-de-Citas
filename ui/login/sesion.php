@@ -93,7 +93,7 @@
 						else if(data==3){
 							toastr.error("No existe el usuario","Error",{positionClass: "toast-bottom-right"});
 						}else{
-							toastr.error("Error desconocido","Error",{positionClass: "toast-bottom-right"});
+							toastr.error("Error desconocido" + data,"Error",{positionClass: "toast-bottom-right"});
 						}
 					}
 			})
