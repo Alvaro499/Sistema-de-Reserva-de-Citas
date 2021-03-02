@@ -18,7 +18,7 @@
 
         foreach($info as $value){
         
-            if ($pass_temp = $value["pass_temp"] == 0){
+            if ($value["pass_temp"] == 0){
                 //$objeto->actu_pass_temp($correo);
                 echo 2; //Direcciona a crear la contraseña por primera vez
             }else{
