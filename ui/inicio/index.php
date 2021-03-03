@@ -21,7 +21,6 @@
 		if(!isset($_SESSION["cedula"])) {
 			header("Location: ../login/sesion.php");
 		}else {
-			// $bienvenida = "¡Hola ". $_SESSION["usuario"]. "!";
 		}     
 
 	?>
@@ -42,7 +41,7 @@
 					<li class="li_v"><a href="../"><span><img src="../../assets/iconos/citas.svg" aria-hidden="true" class="icono_v"></span>Citas</a></li>
 					<li class="li_v"><a href="../analitica_web/analitica.php"><span><img src="../../assets/iconos/analitica-web.svg" aria-hidden="true" class="icono_v"></span>Analítica Web</a></li>
 					<li class="li_v"><a href="#"><span><img src="../../assets/iconos/calendario.svg" aria-hidden="true" class="icono_v"></span>Calendario</a></li>
-					<li class="li_v"><a href="../guia/guia_web.php"><span><img src="../../assets/iconos/guia-web.svg" aria-hidden="true" class="icono_v"></span>Guía Web</a></li>
+					<li class="li_v"><a href="../guia_web/guia.php"><span><img src="../../assets/iconos/guia-web.svg" aria-hidden="true" class="icono_v"></span>Guía Web</a></li>
 					<!-- <li class="li_v"><a href="#"><span><img src="iconos/formulario.svg" aria-hidden="true" class="icono_v"></span>Asistencia Técnica</a></li> -->
 				</ul>	
 			</nav>
