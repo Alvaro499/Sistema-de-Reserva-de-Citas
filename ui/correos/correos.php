@@ -70,7 +70,7 @@
 			<div class="submenu_h">
 				
 				<a href="#"><span><img src="../../assets/iconos/inicio-blanco.svg"></span>Inicio</a>
-				<a href="#"><span><img src="../../assets/iconos/log-out.svg"></span>Salir</a>
+				<a href="../logout.php"><span><img src="../../assets/iconos/log-out.svg"></span>Salir</a>
 
 			</div>
 		</header>
