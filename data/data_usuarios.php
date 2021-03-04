@@ -79,6 +79,7 @@
                 $verificar=$this->VerificarUsuario($correo, $contra);
                 if($verificar==1){
                     
+                    //seleccionar la info del usuario para luego usarlas en las variables de sesion
                     $query = $this->cargarConexion->prepare("SELECT user.nombre, user.correo, user.pass_temp, user.cedula, ur.idroles FROM usuarios AS user, usuario_rol AS ur WHERE user.correo='$correo' AND user.cedula=ur.usuarios_cedula ");
 
                     $query->execute();

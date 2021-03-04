@@ -10,15 +10,15 @@
     $info = $objeto->consultarUsuario($correo,$pass);
 
     if($info==0){
-        echo 0;
+        echo 0; // contraseña incorrecta
     }else if($info==3){
-        echo 3;
+        echo 3; //no existe el usuario
     }else if($info==4){
-        echo 4;
+        echo 4; //error desconocido
     } 
     else{
 
-
+        //si el correo y contrasena son correctos, la funcion devuelve el arreglo con la info del usuario
         $objSesion->inicializar();
         foreach($info as $value){
             $objSesion->cargarSesion("cedula", $value["cedula"]);
