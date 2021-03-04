@@ -27,7 +27,6 @@
             $objSesion->cargarSesion("idrol", $value["idroles"]);
 
             if ($value["pass_temp"] == 0){
-                $objeto->actu_pass_temp($correo);
                 echo 2; //Direcciona a crear la contraseña por primera vez
             }else{
                 echo 1;//Direcciona al inicio del sistema

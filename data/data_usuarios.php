@@ -1,7 +1,7 @@
 <?php
 
-    require("../../db/db_access.php");
-    // require("../ui/include.php");
+    // include("../db/db_access.php");
+    include("../../db/db_access.php");
     class D_Usuarios{
 
         private $cargarConexion;
@@ -95,9 +95,9 @@
                 return 4; //Error desconocido
             }
         }
-        public function actu_pass_temp($correo){
+        public function actu_pass_temp($correo, $nueva){
             try{
-                $act = $this->cargarConexion->prepare("UPDATE `usuarios` SET `pass_temp`=1 WHERE correo='$correo'");
+                $act = $this->cargarConexion->prepare("UPDATE `usuarios` SET `pass_temp`=1,`password`='$nueva'  WHERE correo='$correo'");
                 $resultado = $act->execute(); 
                 return $resultado;
             }catch(PDOException $e){
