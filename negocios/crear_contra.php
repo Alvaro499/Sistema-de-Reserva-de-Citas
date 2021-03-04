@@ -1,11 +1,11 @@
 <?php 
- require("../data/data_usuarios.php");
+ require("../data/data_crear_contra.php");
  require("../sesion/C_Sesion.php");
 
  $nueva = $_POST["nueva"];
  $actual =  $_POST["actual"];
 
-    $objeto = new D_Usuarios();
+    $objeto = new D_Crear_Contra();
     $objSesion = new C_Sesion();
     $objSesion->inicializar(); //Inicializando la sesion 
     $info = $objeto->verificarUsuario($_SESSION["correo"],$actual); //Aqui se confirma la contraseña vieja

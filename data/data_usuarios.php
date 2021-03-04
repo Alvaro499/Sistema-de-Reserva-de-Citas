@@ -1,7 +1,6 @@
 <?php
 
-    // include("../db/db_access.php");
-    include("../../db/db_access.php");
+    require("../../db/db_access.php");
     class D_Usuarios{
 
         private $cargarConexion;
