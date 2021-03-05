@@ -53,5 +53,17 @@ class D_Crear_Contra{
         }
     }
 
+    public function recuperarContra($correo){
+
+        try{
+            $act = $this->cargarConexion->prepare("SELECT `cedula` ,`correo` FROM `usuarios` WHERE correo='$correo'");
+            $resultado = $act->execute(); 
+            return $resultado;
+        }catch(PDOException $e){
+            echo "Error:" . $e->getMessage();
+        }
+
+    }
+
 }//Cierre de D_Crear_Contra
 ?>

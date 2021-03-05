@@ -51,7 +51,7 @@
 					
 					<div class="div-texto">
 						
-						<a href="recuperar_contra.html" id="texto">¿Olvidó su contraseña?</a>
+						<a href="recuperar_contra.php" id="texto">¿Olvidó su contraseña?</a>
 
 					</div>
 					
