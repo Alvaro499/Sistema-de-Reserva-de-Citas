@@ -78,5 +78,16 @@ class D_Crear_Contra{
 
     }
 
+    public function cambiarContra($cedula, $contra_actual){
+        try{
+            
+            $act = $this->cargarConexion->prepare("UPDATE `usuarios` SET `password`='$contra_actual' WHERE `cedula` = '$cedula'");
+            $resultado = $act->execute(); 
+            return $resultado;
+        }catch(PDOException $e){
+            echo "Error:" . $e->getMessage();
+        }
+    }
+
 }//Cierre de D_Crear_Contra
 ?>
