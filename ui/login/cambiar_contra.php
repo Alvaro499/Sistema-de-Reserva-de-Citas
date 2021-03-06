@@ -17,7 +17,9 @@
 		$parametro_ced = isset($_GET["cedula"]) ? $_GET["cedula"] : null;
 		//se trae el parametro con el valor de la cedula enviado por el correo ejecutado por recuperar_contra/php
 		
-		
+		if($parametro_ced == null){
+			header("location: ../login/sesion.php");
+		}
 		session_start();
 		$_SESSION["ced"] = $parametro_ced;
 		//se guarda el valor del parametro en una variable global para usarla en la funcion de recuperar contrasena
@@ -91,7 +93,7 @@
 					success: function(data){
 						if(data==0){//Usuario no existe
 							toastr.success("Cambio de contraseña exitosa","Exito",{positionClass: "toast-bottom-right"});
-							setTimeout(function(){ location.href="sesion.php"; }, 5000);		
+							setTimeout(function(){ location.href="sesion.php"; }, 3000);		
 						}
 						else if(data==1){
 							toastr.error("Fallo al cambiar contraseña","Error",{positionClass: "toast-bottom-right"});
