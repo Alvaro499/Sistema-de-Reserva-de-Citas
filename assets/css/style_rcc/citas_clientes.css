@@ -86,12 +86,43 @@ box-shadow: 5px 5px 5px rgba(128,189,255,0.5) , -5px -5px 5px rgba(128,189,255,0
     justify-content: space-around;
     align-items: center;
     width: 100%;
+    margin: 50px 0 0 0;
+	position: relative;
     
 }
 
+/*Estilo, Input type file */
 
-.btn_ct{       /*estilos de los botones*/
+[type="file"]{
+    display: block;
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	opacity: 0;
+	z-index: -1;
+}
 
+#label_file{
+    margin: 0 0 0 0;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/*Span que almacenara el nombre del archivo seleccionado por el label enlazado con el input type="file"*/
+#file_name{
+	width: 200px;
+	position: absolute;
+	top: 100%;
+	border: none;
+	font-size: 1rem;
+	color: #7C847D;
+	font-style: italic;
+	margin: 8px 0 0 0
+}
+
+.btn_ct{/*estilos de los botones, excluyendo input type "file"*/
     background: rgba(38,124,181,1);
     color: #ffffff;
     font-weight: bold;
@@ -100,7 +131,6 @@ box-shadow: 5px 5px 5px rgba(128,189,255,0.5) , -5px -5px 5px rgba(128,189,255,0
     border-radius: 10%;
     width: 25%;
     padding: 3% 2%;
-    margin: 75px 0 0 0;
     outline: none;
 }
 

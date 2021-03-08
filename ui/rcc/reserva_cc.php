@@ -14,16 +14,16 @@
 <body>
 
 	<?php 
-		require_once("../../sesion/C_Sesion.php");
+		// require_once("../../sesion/C_Sesion.php");
 
-		$inicio = new C_Sesion();
-		$inicio->inicializar();
+		// $inicio = new C_Sesion();
+		// $inicio->inicializar();
 		
-		if(!isset($_SESSION["cedula"])) {
-			header("Location: ../login/sesion.php");
-		}else {
+		// if(!isset($_SESSION["cedula"])) {
+		// 	header("Location: ../login/sesion.php");
+		// }else {
 			
-		}     
+		// }     
 
 	?>
 
@@ -121,7 +121,11 @@
 				<div id="error_mensaje" class="errores"></div>
 
 				<div class="cont_btn">
-                    <button class="btn_ct">Adjuntar Archivo</button>
+                    <!-- <button class="btn_ct">Adjuntar Archivo</button> -->
+					<label for="file" id="label_file" class="btn_ct">Adjuntar Archivo</label>
+					<span id="file_name"></span>
+					<input type="file" id="file" class="archivo">
+					
 					<button type="submit" class="btn_ct">Enviar</button>
 				</div>
 
@@ -130,6 +134,7 @@
 		</main>
 
 	</div>
+	<script type="text/javascript" src="../../assets/js/upload_file.js"></script>
 	<script type="text/javascript" src="../../assets/js/validaciones/rcc_valid.js"></script>
 	<script type="text/javascript" src="../../assets/js/hide_menu_v.js"></script>
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
