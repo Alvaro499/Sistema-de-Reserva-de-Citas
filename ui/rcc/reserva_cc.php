@@ -122,9 +122,12 @@
 
 				<div class="cont_btn">
                     <!-- <button class="btn_ct">Adjuntar Archivo</button> -->
-					<label for="file" id="label_file" class="btn_ct">Adjuntar Archivo</label>
-					<span id="file_name"></span>
-					<input type="file" id="file" class="archivo">
+					<label for="file" id="label_file" class="btn_ct">Adjuntar Archivo
+					
+						<span id="file_name"></span>
+					</label>
+					
+					<input type="file" id="file" class="archivo" value="file">
 					
 					<button type="submit" class="btn_ct">Enviar</button>
 				</div>
