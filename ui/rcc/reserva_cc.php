@@ -127,7 +127,7 @@
 						<span id="file_name"></span>
 					</label>
 					
-					<input type="file" id="file" class="archivo" value="file">
+					<input type="file" id="file" class="archivo">
 					
 					<button type="submit" class="btn_ct">Enviar</button>
 				</div>

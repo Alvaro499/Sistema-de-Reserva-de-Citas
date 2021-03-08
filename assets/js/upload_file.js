@@ -9,6 +9,6 @@
 // }​​​​)
 
 document.getElementById('file').onchange = function () {
-    console.log(this.value);
-    document.getElementById('file_name').innerHTML = document.getElementById('file').files[0].name;
-  }
+  console.log(this.value);
+  document.getElementById('file_name').innerHTML = document.getElementById('file').value;
+}
