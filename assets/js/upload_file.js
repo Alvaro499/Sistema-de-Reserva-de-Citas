@@ -1,14 +1,9 @@
-// alert("pspspsps");
-// var archivo = document.getElementById("file");
-// var nombre = document.getElementById("file_name");
-// console.log("hola");
+//Cuando el input type file detecte un cambio, nos traemos el nombre del archivo seleccionado, pero la ruta no es la verdadera, ya que incluye "fake/path/"
 
-// archivo.addEventListener('change', function(event){​​​​
-//     console.log(event);
-//     nombre.innerHTML = event.target.files[0].name;
-// }​​​​)
+var input_file = document.getElementById('file');
+var file_name = document.getElementById('file_name');
 
-document.getElementById('file').onchange = function () {
+input_file.onchange = function () {
   console.log(this.value);
-  document.getElementById('file_name').innerHTML = document.getElementById('file').value;
+  file_name.innerHTML = input_file.files[0].name;
 }
