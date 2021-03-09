@@ -2,13 +2,13 @@
 require("../../data/data_citas.php");
 require("../../sesion/C_Sesion.php");
 
-$area= $_REQUEST["area"];
-$asunto= $_POST["asunto"];
-$mensaje= $_POST["mensaje"];
-$archivo=null; //$_POST["q"];
-$fecha= $_POST["fecha"];
-$hora= $_POST["hora"];
-$medio= $_REQUEST["medio"];
+$area= $_REQUEST["servicio"];
+$asunto= $_POST["asunto_ct"];
+$mensaje= $_POST["mensaje_ct"];
+$archivo= $_FILES["file"]["name"];
+$fecha= $_POST["fecha_ct"];
+$hora= $_POST["hora_ct"];
+$medio= $_REQUEST["medio_ct"];
 
 $citas = new D_Citas();
 $sesion = new C_Sesion();

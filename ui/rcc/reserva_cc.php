@@ -127,7 +127,7 @@
 						<span id="file_name"></span>
 					</label>
 					
-					<input type="file" id="file" class="archivo">
+					<input type="file" id="file" name="file" class="archivo">
 					
 					<button type="submit" class="btn_ct">Enviar</button>
 				</div>
@@ -153,19 +153,25 @@
 				var hora = $("#hora").val();
 				var medio = $("#medio").val();
 				var mensaje = $("#mensaje_ct").val();
+				var archivo = $("#file");
 
-				let datos = 
-				"area=" + area +
-				"&asunto=" + asunto + 
-				"&fecha=" + fecha +
-				"&hora=" + hora +
-				"&medio=" + medio +
-				"&mensaje=" + mensaje;
+				console.log(archivo[0]);
+
+				// let datos = 
+				// "area=" + area +
+				// "&asunto=" + asunto + 
+				// "&fecha=" + fecha +
+				// "&hora=" + hora +
+				// "&medio=" + medio +
+				// "&mensaje=" + mensaje;
 
 				$.ajax({
 					type: "POST",
 					url:"../../negocios/n_citas/citas_clientes.php",
-					data: datos,
+					data: new FormData(this),
+					contentType: false,
+					cache:false,
+					processData: false,
 					//Métodos
 					success: function(data){
 						
