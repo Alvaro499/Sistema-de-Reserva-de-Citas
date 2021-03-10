@@ -124,7 +124,7 @@
                     <!-- <button class="btn_ct">Adjuntar Archivo</button> -->
 					<label for="file" id="label_file" class="btn_ct">Adjuntar Archivo
 					
-						<span id="file_name"></span>
+						<span id="file_name">Ningún archivo seleccionado</span>
 					</label>
 					
 					<input type="file" id="file" name="file" class="archivo">
