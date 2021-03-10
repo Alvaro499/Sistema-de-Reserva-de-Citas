@@ -8,6 +8,7 @@
 	<title>Correos</title>
 	<link rel="stylesheet" type="text/css" href="fonts_awesome/css/all.min.css">
 	<link rel="stylesheet" type="text/css" href="../../assets/css/style_correos/bridge.css">
+	<link rel="stylesheet" type="text/css" href="../../assets/css/toastr/toastr.min.css">
 </head>
 
 <body>
@@ -77,7 +78,7 @@
 
 		<main id="principal">
 			
-			<form class="form_correos" method="POST" action="" onsubmit="return validacion()";>
+			<form id="formu" class="form_correos">
 				
 				<h1>Correos</h1>
 				<h3>Especifique el asunto del correo a enviar</h3>
@@ -105,9 +106,38 @@
 		</main>
 
 	</div>
-	<script type="text/javascript" src="../../assets/js/upload_file.js"></script>
 	<script type="text/javascript" src="../../assets/js/hide_menu_v.js"></script>
 	<script type="text/javascript" src="../../assets/js/validaciones/correos_valid.js"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="../../assets/js/toastr/toastr.min.js"></script>
+	<script type="text/javascript" src="../../assets/js/upload_file.js"></script>
+	<script type="text/javascript">
 	
+		$("form#formu").submit(function(event){
+			event.preventDefault();
+			if(validacion()){
+
+				$.ajax({
+					type: "POST",
+					url:"../../negocios/n_correos/correos.php",
+					data: new FormData(this),
+					contentType: false,
+					cache:false,
+					processData: false,
+					//Métodos
+					success: function(data){
+						
+						if(data==1){
+							toastr.success("Se envió la solicitud exitosamente"+data,"Éxitos");
+						}else if(data==0){
+							toastr.error("Falló al solicitar la cita"+data,"Error");
+						}else{
+							toastr.error("Error desconocido"+data,"Error");
+						}
+					}
+				})
+			}
+		});
+	</script>
 </body>
 </html>
