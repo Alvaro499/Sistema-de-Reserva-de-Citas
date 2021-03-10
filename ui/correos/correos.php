@@ -13,15 +13,15 @@
 <body>
 
 	<?php 
-		require_once("../../sesion/C_Sesion.php");
+		// require_once("../../sesion/C_Sesion.php");
 
-		$inicio = new C_Sesion();
-		$inicio->inicializar();
+		// $inicio = new C_Sesion();
+		// $inicio->inicializar();
 		
-		if(!isset($_SESSION["cedula"])) {
-			header("Location: ../login/sesion.php");
-		}else {
-		}     
+		// if(!isset($_SESSION["cedula"])) {
+		// 	header("Location: ../login/sesion.php");
+		// }else {
+		// }     
 
 	?>
 
@@ -91,7 +91,13 @@
 				<div id="error_correo"></div>
 
 				<div class="cont_btn">
-					<button class="btn_correos">Adjuntar Archivo</button>
+
+					<label for="file" id="label_file" class="btn_ct btn_correos">Adjuntar Archivo
+						<span id="file_name">Ningún archivo seleccionado</span>
+					</label>
+
+					<input type="file" id="file" name="file" class="archivo">
+					<!-- <button class="btn_correos">Adjuntar Archivo</button> -->
 					<button type="submit" class="btn_correos">Enviar</button>
 				</div>
 			</form>
@@ -99,7 +105,7 @@
 		</main>
 
 	</div>
-
+	<script type="text/javascript" src="../../assets/js/upload_file.js"></script>
 	<script type="text/javascript" src="../../assets/js/hide_menu_v.js"></script>
 	<script type="text/javascript" src="../../assets/js/validaciones/correos_valid.js"></script>
 	
