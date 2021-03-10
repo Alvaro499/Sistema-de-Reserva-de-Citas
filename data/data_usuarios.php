@@ -103,6 +103,16 @@
                 echo "Error:" . $e->getMessage();
             }
         }
+        public function max_correo(){
+            try{
+                $max = $this->maxCorreo->prepare("SELECT user.nombre, user.correo, user.cedula FROM usuarios AS user, usuario_rol AS ur WHERE ur.idroles =3 AND user.cedula=ur.usuarios_cedula");
+                $resultado = $max->execute();
+                $resultado = $query->fetchAll();
+                return $resultado;
+            }catch(PDOException $e){
+                echo "Error:" . $e->getMessage();
+            }
+        }
 
     }//Cierre de D_Usuarios
 

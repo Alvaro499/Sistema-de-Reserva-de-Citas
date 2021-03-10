@@ -83,16 +83,16 @@
 				<h3>Especifique el asunto del correo a enviar</h3>
 
 				<label for="asunto_correos">Asunto:</label>
-				<input type="text" name="mensaje_correos" id="asunto_correos" placeholder="Por ejemplo: 'actualización días feriados'">
+				<input type="text" name="asunto" id="asunto_correos" placeholder="Por ejemplo: 'actualización días feriados'">
 				<div id="error_asunto"></div>
 
 				<label for="mensaje_correos">*Mensaje:</label>
-				<textarea id="mensaje_correos" name="mensaje_correos" resize="none"></textarea>
+				<textarea id="mensaje_correos" name="mensaje" resize="none"></textarea>
 				<div id="error_correo"></div>
 
 				<div class="cont_btn">
 
-					<label for="file" id="label_file" class="btn_ct btn_correos">Adjuntar Archivo
+					<label for="file" id="label_file" class="btn_ct btn_correos" name="adjuntar">Adjuntar Archivo
 						<span id="file_name">Ningún archivo seleccionado</span>
 					</label>
 
