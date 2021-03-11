@@ -128,9 +128,9 @@
 					success: function(data){
 						
 						if(data==1){
-							toastr.success("Se envió la solicitud exitosamente"+data,"Éxitos");
+							toastr.success("Los correos han sido enviado con éxito","Éxitos");
 						}else if(data==0){
-							toastr.error("Falló al solicitar la cita"+data,"Error");
+							toastr.error("Los correos no se enviaron","Error");
 						}else{
 							toastr.error("Error desconocido"+data,"Error");
 						}

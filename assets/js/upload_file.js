@@ -8,7 +8,7 @@ input_file.onchange = function() {
     var archiv = archi.type;
     console.log(archiv);
     console.log(this.value);
-    if (archiv == "image/jpg" || archiv == "image/jpeg" || archiv == "image/png" || archiv == "application/pdf" || archiv == "application/msword" || archiv == "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet") {
+    if (archiv == "image/jpg" || archiv == "image/jpeg" || archiv == "image/png" || archiv == "application/pdf" || archiv == "application/msword" || archiv == "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" || archiv == "application/vnd.ms-excel" || archiv == "application/vnd.openxmlformats-officedocument.wordprocessingml.document") {
         if (archi.size >= 500000000) {
             toastr.error("Tamaño máximo de 500Mb", "Error");
             file_name.innerHTML = "";

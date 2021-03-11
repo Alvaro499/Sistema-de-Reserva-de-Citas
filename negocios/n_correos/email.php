@@ -8,10 +8,10 @@
 
         //$email = new PHPmailer();
 
-        public function envioCorreoMax($correo,$asunto,$mensaje,$archivo){
+        public function envioCorreoMax($correo,$asunto,$mensaje,$archivo,$ruta){
             
             $email = new PHPmailer();
-            try {
+            try {              
                 $email->SMTPdEBUG = SMTP::DEBUG_SERVER;
 
                 $email->isSMTP();
@@ -30,6 +30,10 @@
                 $email->setFrom("sistemareservas.cg@gmail.com", "SRCG");
 
                 $email->addAddress($correo);
+
+                if(!empty($archivo)){
+                   $email->AddAttachment($ruta,$archivo);
+                }
 
                 $email->Charset = "UTF-8";
 
@@ -80,6 +84,7 @@
             }catch (Exception $e) {
                 return false;
             }
+            
 
         }//cierre funcion envioContra
         
