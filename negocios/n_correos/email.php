@@ -54,12 +54,10 @@
             
                         <div class="card">
             
-                            <p style="font-size: 1.4rem">Estimado cliente<strong>.</p>
+                            <p style="font-size: 1.4rem">Estimados clientes<strong>.</p>
             
-                            <p style="font-size: 1.4rem">Gapa le informa: <strong>' . $mensaje . '</strong>
-
-                            <p style="font-size: 1.4rem">Se adjunta el archivo para mayor información: <strong>' . $archivo . '</strong>
-            
+                            <p style="font-size: 1.4rem">' . $mensaje . '
+           
                             <h3 style="font-size: 1.3rem">¡Estamos para servirle!</h3>
             
                     <footer>
@@ -67,7 +65,7 @@
                         <div>
                             <hr style="border: 1px solid #262261">
                             <span style="font-size: 1.3rem">*Servicio al cliente: <strong>2543-453</strong></span>
-                            </br>
+                            <br>
                             <span style="font-size: 1.3rem">*Correo para consultas: srcg@gmail.com</span>
                         </div>
                         
