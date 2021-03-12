@@ -1,0 +1,53 @@
+@media(max-width: 569px){
+	
+	/*Menu Vertical (Azul)*/
+
+	#menu_v{
+		/*grid-column-start: 1;
+		grid-column-end: 2;
+		grid-row-start: 1;
+		grid-row-end: 3;*/
+		/*display: none;*/
+		
+ 		margin: 100% 100% 0 0;
+ 		transition: margin 0.8s linear;
+ 		overflow: hidden;
+
+	}
+
+	/*Menu Vertical (Rojo)*/
+
+	#menu_h{
+		grid-column-start: 1; /*el menu rojo inicia desde el menu vertical*/
+	}
+
+	.notifi{
+		margin-right: 5px; /*para que el boton notificaciones no se pegue tanto a al boton regre*/
+		
+	}
+
+	.idioma{
+		margin-right: 5px; /*para que el boton idioma no se pegue tanto a al boton regre*/
+		
+	}
+
+
+	#principal{
+		grid-column-start: 1; /*cuerpoo inicia desde el menu vertical*/
+	
+	}
+
+	.nombre div{
+		font-size: 1.1rem;
+	}
+
+	.nombre::after{ /*disminuir el tamano de la flecha de la seccion de ususarios*/
+		border-left: 6px solid transparent;
+		border-right: 6px solid transparent;
+		border-top: 10px solid #000000;
+
+	}
+
+}
+
+/*https://es.stackoverflow.com/questions/340390/cambiar-el-valor-de-la-propiedad-grid-column-row-de-css-con-javascript*/

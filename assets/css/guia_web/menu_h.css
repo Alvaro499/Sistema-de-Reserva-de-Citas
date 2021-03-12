@@ -1,0 +1,128 @@
+/*TAMANO DE LOS ICONOS Menu Horizontal*/
+
+	/*Le damos tmaano a todos los iconos, menos al de la foto de ususario, ya que esta debe ser más grande*/
+    #nav_h img:not(#usuario){
+        width: 30px;
+        height: 30px
+    }
+    
+    /*MENÚ HORIZONTAL*/
+    
+    #menu_h{
+        background: #BD1E2D;
+        height: auto;
+        position: sticky;
+        top: 0
+    }
+    
+    #nav_h{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 50px;
+    }
+    
+    
+    /*Modidicar la poisición de los iconos del menu horizontal (rojo)*/
+    
+    div.regre button{
+        background: rgba(0,0,0,0);
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        outline: none;
+    }
+    
+    div.regre button:hover{
+        background: rgba(0,0,0,0.5);
+    }
+    
+    .notifi{
+        margin-right: 70px;
+        padding: 5px
+    }
+    
+    .notifi:hover{
+        background: rgba(0,0,0,0.5);
+    }
+    
+    .idioma{
+        margin-right: 20px;
+        padding: 5px 10px
+    }
+    
+    .idioma:hover{
+        background: rgba(0,0,0,0.5);
+    }
+    
+    .usuario{
+        margin-right: 10px;
+        padding: 10px
+    }
+    
+    .usuario img{
+        width: 50px
+    }
+    
+    /*Editar el texto del div que contiene el nombre del usuario*/
+    .nombre div{
+        color: #FFFFFF;
+        font-size: 1.2rem;
+    }
+    
+    .nombre{
+        position: relative
+    }
+    
+    .nombre::after{
+        content: "";
+        height: 0;
+        width: 0;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-top: 12px solid #000000;
+        position: absolute;
+        left: 110%;
+        top: 25%
+    
+    }
+    
+    #nav_h ul{
+        display: flex;
+        align-items: center;
+        height: 83px
+    }
+    
+    #nav_h li{
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    
+    
+    /*SUBMENU*/
+    
+    .submenu_h img{
+        width: 20px;
+        height: 20px
+    }
+    
+    /*Generar un espacio entre los iconos y el texto*/
+    .submenu_h span{
+        margin-right: 10px
+    }
+    
+    .submenu_h{
+        background: #000000;
+        display: flex;
+        justify-content: space-between;
+        
+        padding: 5px 20px;
+        position: sticky;
+        top: 93px;
+    
+    }
+    
+    .submenu_h a{
+        color: #FFFFFF
+    }
