@@ -27,5 +27,16 @@ class D_Citas{
            return $e;
         }
     }
+
+    public function admin_citas(){
+        try{
+            $query = $this->cargarConexion->prepare("SELECT user.nombre, citas.idcitas_cliente, citas.asunto, citas.comentario,citas.fecha, citas.hora, citas.medio, citas.url_archivo, citas.area_servicio FROM citas_cliente AS citas, usuarios AS user WHERE citas.estado_cita=0 AND user.cedula=citas.idusuarios");
+            $resultado = $query->execute();
+            $resultado = $query->fetchAll();
+            return $resultado;
+        }catch(PDOException $e){
+            echo "Error:" . $e->getMessage();
+        }
+    }
 }
 ?>

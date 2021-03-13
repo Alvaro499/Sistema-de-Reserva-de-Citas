@@ -8,21 +8,22 @@
 	<title>Administración y Rervación de Citas</title>
 	<link rel="stylesheet" type="text/css" href="fonts_awesome/css/all.min.css">
 	<link rel="stylesheet" type="text/css" href="../../assets/css/style_rce/bridge.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/css/toastr/toastr.min.css">
 </head>
 
 <body>
 
     <?php 
-		require_once("../../sesion/C_Sesion.php");
+		// require_once("../../sesion/C_Sesion.php");
 
-		$inicio = new C_Sesion();
-		$inicio->inicializar();
+		// $inicio = new C_Sesion();
+		// $inicio->inicializar();
 		
-		if(!isset($_SESSION["cedula"])) {
-			header("Location: ../login/sesion.php");
-		}else {
+		// if(!isset($_SESSION["cedula"])) {
+		// 	header("Location: ../login/sesion.php");
+		// }else {
 			
-		}     
+		// }     
 
 	?>
 
@@ -81,21 +82,29 @@
 			<section class="admin_citas">
                 <h1>Reservas pendientes</h1>
                 <div id="reservas">
+                <?php 
+                require("../../negocios/n_citas/admin_citas.php");
+                $citas = new N_Admin_Citas();
+                $datos= $citas->get_citas();
+                foreach($datos as $values)
+                {
+                ?>
                     <div class="card-reserva">
-                        <h3>Contabilidad</h3>
-                        <p><strong>Usuario:</strong> ...</p>
-                        <p><strong>Asunto:</strong> Capacitación del servicio de Contabilidad</p>
-                        <p><strong>Fecha:</strong> 28/01/2021</p>
-                        <p><strong>Hora:</strong> 11:00a.m</p>
-                        <p><strong>Medio de reunión: </strong>Virtual</p>
-                        <p><strong>Mensaje:</strong> qwertyuiopasdfghjkldtyvuejcgebusjgwevr</p>
-                        <button class="btn file">Descargar</button>
-                        <button class="btn danger">Rechazar</button>
-                        <button class="btn success" onclick="location.href='reserva_aceptada.html'">Aceptar</button>
+                        <h3><?php echo $values["area_servicio"]; ?></h3>
+                        <p><strong>Usuario:</strong> <?php echo $values["nombre"]; ?></p>
+                        <p><strong>Asunto:</strong> <?php echo $values["asunto"]; ?></p>
+                        <p><strong>Fecha:</strong> <?php echo $values["fecha"]; ?></p>
+                        <p><strong>Hora:</strong> <?php echo $values["hora"]; ?></p>
+                        <p><strong>Medio de reunión: </strong><?php echo $values["medio"]; ?></p>
+                        <p><strong>Mensaje:</strong> <?php echo $values["url_archivo"]; ?></p>
+                        <button id="descargar" class="btn file">Descargar</button>
+                        <button id="rechazar" class="btn danger">Rechazar</button>
+                        <button id="aceptar" class="btn success" onclick='aceptar(<?php echo $values["idcitas_cliente"];?>);'>Aceptar</button>
                     </div>
+                <?php }?>
                     
 
-                    <div class="card-reserva">
+                    <!-- <div class="card-reserva">
                         <h3>Administración</h3>
                         <p><strong>Usuario:</strong> ...</p>
                         <p><strong>Asunto:</strong> Capacitación del servicio de Administración</p>
@@ -146,7 +155,7 @@
                         <button class="btn file">Descargar</button>
                         <button class="btn danger">Rechazar</button>
                         <button class="btn success" onclick="location.href='reserva_aceptada.html'">Aceptar</button>
-                    </div>
+                    </div> -->
                     
                     
                 </div>
@@ -159,5 +168,33 @@
 
 	
 	<script type="text/javascript" src="../../assets/js/hide_menu_v.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="../../assets/js/toastr/toastr.min.js"></script>
+    <script type="text/javascript">
+	function aceptar(id)
+    {
+        window.location="reserva_aceptada.php?id="+id;
+            // $.ajax({
+            //     type: "POST",
+            //     url:"../../negocios/n_citas/metodos_citas.php",
+            //     data: datos,
+            //     //Métodos
+            //     success: function(data){
+            //         if(data==1){
+            //             toastr.success("Se guardo exitosamente","Éxitos");
+            //         }else if(data==2){
+            //             toastr.error("Ese usuario ya hiciste","Error");
+            //         }else{
+            //             toastr.error("Error desconocido","Error");
+            //         }
+            //     }
+            // })   
+    }
+
+    function rechazar(){
+
+    }
+    
+</script>
 </body>
 </html>
