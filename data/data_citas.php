@@ -58,5 +58,15 @@ class D_Citas{
             echo "Error:" . $e->getMessage();
         }
     }
+
+    public function actualizarCita($id){
+        try{
+            $query = $this->cargarConexion->prepare("UPDATE `citas_cliente` SET `estado_cita`=1 WHERE `idcitas_cliente`= '$id'");
+            $resultado = $query->execute();
+            return $resultado;
+        }catch(PDOException $e){
+            echo "Error:" . $e->getMessage();
+        }
+    }
 }
 ?>
