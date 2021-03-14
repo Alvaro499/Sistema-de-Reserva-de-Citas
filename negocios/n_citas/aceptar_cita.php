@@ -10,13 +10,18 @@
     $id = $_POST["id"];
 
     $citas = new D_Citas();
-    $aceptar = $citas->aceptarCita($nombre,$presencial,$personas,$virtual,$link);
-    $actualizar = $citas->actualizarCita($id);
+    $aceptar = $citas->aceptarCita($nombre,$presencial,$personas,$virtual,$link,$id);
+    
 
-    // if ($eliminar) {
-    //     echo 1;
-    // }else{
-    //     echo 2;
-    // }
+    if ($aceptar) {
+        $actualizar = $citas->actualizarCita($id);
+        if ($acutalizar) {
+            echo 1; //la cita fue creada
+        }else{
+            echo 2; //cita no actualizada
+        }
+    }else{
+        echo 3; //la cita no fue creada
+    }
 
 ?>
