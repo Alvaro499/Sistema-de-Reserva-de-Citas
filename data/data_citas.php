@@ -38,5 +38,15 @@ class D_Citas{
             echo "Error:" . $e->getMessage();
         }
     }
+    
+    public function delete_citas($id){
+        try{
+            $query = $this->cargarConexion->prepare("DELETE FROM `citas_cliente` WHERE `idcitas_cliente`='$id'");
+            $resultado = $query->execute();
+            return $resultado;
+        }catch(PDOException $e){
+            echo "Error:" . $e->getMessage();
+        }
+    }
 }
 ?>
