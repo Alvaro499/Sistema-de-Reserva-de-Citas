@@ -134,7 +134,8 @@
 				var link = $("#link").val();
 
 				let datos = 
-				"nombre=" + nombre +
+				"id="+<?php echo $_GET["id"]?>+
+				"&nombre=" + nombre +
 				"&presencial=" + presencial + 
 				"&personas=" + personas +
 				"&virtual=" + virtual +
