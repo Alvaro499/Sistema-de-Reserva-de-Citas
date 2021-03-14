@@ -15,7 +15,7 @@
 
     if ($aceptar) {
         $actualizar = $citas->actualizarCita($id);
-        if ($acutalizar) {
+        if ($actualizar) {
             echo 1; //la cita fue creada
         }else{
             echo 2; //cita no actualizada
