@@ -8,6 +8,7 @@
 	<title>Reservación de Cita</title>
 	<link rel="stylesheet" type="text/css" href="fonts_awesome/css/all.min.css">
 	<link rel="stylesheet" type="text/css" href="../../assets/css/style_rce/bridge.css">
+	<link rel="stylesheet" type="text/css" href="../../assets/css/toastr/toastr.min.css">
 </head>
 
 <body>
@@ -119,5 +120,44 @@
 	
 	<script type="text/javascript" src="../../assets/js/hide_menu_v.js"></script>
 	<script type="text/javascript" src="../../assets/js/validaciones/reserva_aceptada.js"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="../../assets/js/toastr/toastr.min.js"></script>
+	<script type="text/javascript">
+	
+		$("form#frmregistro").submit(function(event){
+			event.preventDefault();
+			if(validacion()){
+				var nombre = $("#nombre").val();
+				var presencial = $("#medio_presencial").val();
+				var personas = $("#c_personas").val();
+				var virtual = $("#medio_virtual").val();
+				var link = $("#link").val();
+
+				let datos = 
+				"nombre=" + nombre +
+				"&presencial=" + presencial + 
+				"&personas=" + personas +
+				"&virtual=" + virtual +
+				"&link=" + link;
+
+				$.ajax({
+					type: "POST",
+					url:"../../negocios/n_usuarios/insertar_usuario.php",
+					data: datos,
+					//Métodos
+					success: function(data){
+						
+						if(data==1){
+							toastr.success("Se acepto la cita exitosamente","Éxitos");
+						}else if(data==2){
+							toastr.error("No se pudo aceptar la cita","Error");
+						}else{
+							toastr.error("Error desconocido","Error");
+						}
+					}
+				})
+			}
+		});
+	</script>
 </body>
 </html>
