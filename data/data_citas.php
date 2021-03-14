@@ -48,5 +48,15 @@ class D_Citas{
             echo "Error:" . $e->getMessage();
         }
     }
+
+    public function aceptarCita($nombre, $oficina, $cant_personas, $plataforma, $link){
+        try{
+            $query = $this->cargarConexion->prepare("INSERT INTO `citas_cliente`(`idcitas_cliente`, `area_servicio`, `asunto`, `comentario`, `url_archivo`, `fecha`, `hora`, `medio`, `estado_cita`, `idusuarios`) VALUES ('$nombre','$oficina','$cant_personas','$plataforma','$link')");
+            $resultado = $query->execute();
+            return $resultado;
+        }catch(PDOException $e){
+            echo "Error:" . $e->getMessage();
+        }
+    }
 }
 ?>

@@ -97,8 +97,8 @@
                         <p><strong>Hora:</strong> <?php echo $values["hora"]; ?></p>
                         <p><strong>Medio de reunión: </strong><?php echo $values["medio"]; ?></p>
                         <p><strong>Mensaje:</strong> <?php echo $values["url_archivo"]; ?></p>
-                        <button id="descargar" class="btn file">Descargar</button>
-                        <button id="rechazar" class="btn danger">Rechazar</button>
+                        <!-- <button id="descargar" class="btn file">Descargar</button> -->
+                        <button id="rechazar" class="btn danger" onclick='rechazar(<?php echo $values["idcitas_cliente"];?>);'>Rechazar</button>
                         <button id="aceptar" class="btn success" onclick='aceptar(<?php echo $values["idcitas_cliente"];?>);'>Aceptar</button>
                     </div>
                 <?php }?>
@@ -191,8 +191,24 @@
             // })   
     }
 
-    function rechazar(){
-
+    function rechazar(id){
+        let dato_id = "id="+id;
+         $.ajax({
+                type: "POST",
+                url:"../../negocios/n_citas/eliminar_cita.php",
+                data: dato_id,
+                //Métodos
+                success: function(data){
+                    if(data==1){
+                        toastr.success("Se rechazó exitosamente","Éxitos");
+                        location.reload();
+                    }else if(data==2){
+                        toastr.error("Error al rechazar cita","Error");
+                    }else{
+                        toastr.error("Error desconocido","Error");
+                    }
+                }
+            })
     }
     
 </script>
