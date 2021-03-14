@@ -1,6 +1,6 @@
 "use strict";
 
-function reserva_lista(){
+function validacion(){
     var nomb = document.getElementById("nombre").value;
     var ofi = document.getElementById("medio_presencial").value;
     var cant_person = document.getElementById("c_personas").value;

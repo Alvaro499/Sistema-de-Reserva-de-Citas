@@ -7,10 +7,16 @@
     $personas = $_POST["personas"];
     $virtual = $_POST["virtual"];
     $link = $_POST["link"];
+    $id = $_POST["id"];
 
     $citas = new D_Citas();
     $aceptar = $citas->aceptarCita($nombre,$presencial,$personas,$virtual,$link);
     $actualizar = $citas->actualizarCita($id);
 
+    // if ($eliminar) {
+    //     echo 1;
+    // }else{
+    //     echo 2;
+    // }
 
 ?>

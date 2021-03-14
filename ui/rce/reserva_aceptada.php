@@ -79,7 +79,7 @@
 
 		<main id="principal">
 			
-			<form class="reserva_acept" onsubmit="return reserva_lista();">
+			<form id="form_aceptar" class="reserva_acept">
 				
                 <h1>Reserva Aceptada</h1>
                 
@@ -124,7 +124,7 @@
 	<script type="text/javascript" src="../../assets/js/toastr/toastr.min.js"></script>
 	<script type="text/javascript">
 	
-		$("form#frmregistro").submit(function(event){
+		$("form#form_aceptar").submit(function(event){
 			event.preventDefault();
 			if(validacion()){
 				var nombre = $("#nombre").val();
