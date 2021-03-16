@@ -30,7 +30,7 @@ class D_Citas{
 
     public function admin_citas(){
         try{
-            $query = $this->cargarConexion->prepare("SELECT user.nombre, citas.idcitas_cliente, citas.asunto, citas.comentario,citas.fecha, citas.hora, citas.medio, citas.url_archivo, citas.area_servicio FROM citas_cliente AS citas, usuarios AS user WHERE citas.estado_cita=0 AND user.cedula=citas.idusuarios");
+            $query = $this->cargarConexion->prepare("SELECT user.cedula, user.nombre, citas.idcitas_cliente, citas.asunto, citas.comentario,citas.fecha, citas.hora, citas.medio, citas.url_archivo, citas.area_servicio FROM citas_cliente AS citas, usuarios AS user WHERE citas.estado_cita=0 AND user.cedula=citas.idusuarios");
             $resultado = $query->execute();
             $resultado = $query->fetchAll();
             return $resultado;
@@ -63,6 +63,20 @@ class D_Citas{
         try{
             $query = $this->cargarConexion->prepare("UPDATE `citas_cliente` SET `estado_cita`=1 WHERE `idcitas_cliente`= '$id'");
             $resultado = $query->execute();
+            return $resultado;
+        }catch(PDOException $e){
+            echo "Error:" . $e->getMessage();
+        }
+    }
+
+    /*
+        Consulta la información del usuario y la cita por medio de la cédula
+    */
+    public function get_cliente($ced){
+        try{
+            $query = $this->cargarConexion->prepare("SELECT user.nombre, user.correo, user.apellido1, citas.area_servicio, citas.fecha, citas.hora, citas.medio FROM citas_cliente AS citas, usuarios AS user WHERE user.cedula='$ced' AND user.cedula=citas.idusuarios");
+            $resultado = $query->execute();
+            $resultado = $query->fetchAll();
             return $resultado;
         }catch(PDOException $e){
             echo "Error:" . $e->getMessage();

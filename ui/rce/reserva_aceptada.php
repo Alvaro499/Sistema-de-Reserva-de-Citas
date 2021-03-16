@@ -149,7 +149,8 @@
 				"&presencial=" + presencial + 
 				"&personas=" + personas +
 				"&virtual=" + virtual +
-				"&link=" + link;
+				"&link=" + link +
+				"&cedula="+"<?php echo $_GET["cedula"];?>";
 
 				$.ajax({
 					type: "POST",
