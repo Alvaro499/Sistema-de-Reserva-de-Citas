@@ -14,16 +14,16 @@
 <body>
 
 	<?php 
-		require_once("../../sesion/C_Sesion.php");
+		// require_once("../../sesion/C_Sesion.php");
 
-		$inicio = new C_Sesion();
-		$inicio->inicializar();
+		// $inicio = new C_Sesion();
+		// $inicio->inicializar();
 		
-		if(!isset($_SESSION["cedula"])) {
-			header("Location: ../login/sesion.php");
-		}else {
+		// if(!isset($_SESSION["cedula"])) {
+		// 	header("Location: ../login/sesion.php");
+		// }else {
 			
-		}     
+		// }     
 
 	?>
 
@@ -78,7 +78,7 @@
 		</header>
 
 		<main id="principal">
-			
+		<?php $modo = $_GET["medio"];?>
 			<form id="form_aceptar" class="reserva_acept">
 				
                 <h1>Reserva Aceptada</h1>
@@ -87,24 +87,28 @@
                 <input type="text" id="nombre" class="input">
 				<div id="error_nomb" class="errores"></div>
                 
+				<?php if($modo=="Presencial"){?>
 				<label for="medio_presencial">Oficina:</label>
                 <input type="text" id="medio_presencial" class="input">
 				<div id="error_ofi" class="errores"></div>
-                
-				<label for="c_personas">Cantidad de Persona:</label>
-                <input type="number" id="c_personas" class="input">
-				<div id="error_cp" class="errores"></div>
-                
+                <?php }?>
+
+				<?php if($modo=="Virtual"){?>
 				<label for="medio_virtual">Plataforma:</label>
                 <select id="medio_virtual" class="select">
-                    <option value="">Teams</option>
-                    <option value="">Zoom</option>
-                    <option value="">Skype</option>
+                    <option value="Teams">Teams</option>
+                    <option value="Zoom">Zoom</option>
+                    <option value="Skype">Skype</option>
                 </select>
                 
                 <label for="link">Link:</label>
                 <input type="text" id="link" class="input">
 				<div id="error_link" class="errores"></div>
+				<?php }?>
+
+				<label for="c_personas">Cantidad de Persona:</label>
+                <input type="number" id="c_personas" class="input">
+				<div id="error_cp" class="errores"></div>
 
 				<div class="cont_btn">
 					<button type="submit" class="btn_reserva">Aceptar</button>
@@ -124,12 +128,20 @@
 	
 		$("form#form_aceptar").submit(function(event){
 			event.preventDefault();
-			if(validacion()){
+			if(validacion("<?php echo $modo;?>")){
 				var nombre = $("#nombre").val();
-				var presencial = $("#medio_presencial").val();
 				var personas = $("#c_personas").val();
-				var virtual = $("#medio_virtual").val();
-				var link = $("#link").val();
+				var presencial="";
+				var virtual="";
+				var link="";
+
+				if("<?php echo $modo;?>"=="Presencial"){
+					presencial = $("#medio_presencial").val();
+				}
+				if("<?php echo $modo;?>"=="Virtual"){
+					virtual = $("#medio_virtual").val();
+					link = $("#link").val();
+				}
 
 				let datos = 
 				"id="+ "<?php echo $_GET["id"];?>"+

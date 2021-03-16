@@ -1,10 +1,17 @@
 "use strict";
 
-function validacion(){
+function validacion(modo) {
     var nomb = document.getElementById("nombre").value;
-    var ofi = document.getElementById("medio_presencial").value;
     var cant_person = document.getElementById("c_personas").value;
-    var link = document.getElementById("link").value;
+    // var ofi = document.getElementById("medio_presencial").value;
+    // var link = document.getElementById("link").value;
+    var medio;
+    if (modo == "Virtual") {
+        medio = document.getElementById("link").value;
+    } else {
+        medio = document.getElementById("medio_presencial").value;
+    }
+
 
     var cant_error = 0;
 
@@ -17,12 +24,9 @@ function validacion(){
         document.getElementById("error_cp").style.color = "#E40017";
         document.getElementById("c_personas").style.border = "3px solid #E40017";
         cant_error++;
-    }else{
+    } else {
         document.getElementById("error_cp").style.color = "#FFF";
         document.getElementById("c_personas").style.border = "3px solid #54E346";
-        if(cant_error>0){
-            cant_error--;
-        }
     }
 
     if (nomb == null || nomb == "" || !regex_texto.test(nomb)) {
@@ -30,45 +34,40 @@ function validacion(){
         document.getElementById("error_nomb").style.color = "#E40017";
         document.getElementById("nombre").style.border = "3px solid #E40017";
         cant_error++;
-    }else{
+    } else {
         document.getElementById("error_nomb").style.color = "#FFF";
         document.getElementById("nombre").style.border = "3px solid #54E346";
-        if(cant_error>0){
-            cant_error--;
+    } //||
+    //!regex_texto.test(ofi)
+    if (modo == "Presencial") {
+        if (medio == null || medio == "") {
+            document.getElementById("error_ofi").innerHTML = "*El formato de usuario es inválido, revise que no digito numeros.";
+            document.getElementById("error_ofi").style.color = "#E40017";
+            document.getElementById("medio_presencial").style.border = "3px solid #E40017";
+            cant_error++;
+
+        } else {
+            document.getElementById("error_ofi").style.color = "#FFF";
+            document.getElementById("medio_presencial").style.border = "3px solid #54E346";
         }
     }
 
-    if (ofi == null || ofi == "" || !regex_texto.test(ofi)) {
-        document.getElementById("error_ofi").innerHTML = "*El formato de usuario es inválido, revise que no digito numeros.";
-        document.getElementById("error_ofi").style.color = "#E40017";
-        document.getElementById("medio_presencial").style.border = "3px solid #E40017";
-        cant_error++;
+    if (modo == "Virtual") {
+        if (medio == null || medio == "") {
+            document.getElementById("error_link").innerHTML = "*Digite un link";
+            document.getElementById("error_link").style.color = "#E40017";
+            document.getElementById("link").style.border = "3px solid #E40017";
+            cant_error++;
 
-    }else{
-        document.getElementById("error_ofi").style.color = "#FFF";
-        document.getElementById("medio_presencial").style.border = "3px solid #54E346";
-        if(cant_error>0){
-            cant_error--;
+        } else {
+            document.getElementById("error_link").style.color = "#FFF";
+            document.getElementById("link").style.border = "3px solid #54E346";
         }
     }
 
-    if (link == null || link == "" ) {
-        document.getElementById("error_link").innerHTML = "*Digite un link";
-        document.getElementById("error_link").style.color = "#E40017";
-        document.getElementById("link").style.border = "3px solid #E40017";
-        cant_error++;
-
-    }else{
-        document.getElementById("error_link").style.color = "#FFF";
-        document.getElementById("link").style.border = "3px solid #54E346";
-        if(cant_error>0){
-            cant_error--;
-        }
-    }
-
-    if(cant_error>0){
+    if (cant_error > 0) {
         return false;
-    }else{
-        return true; 
+    } else {
+        return true;
     }
 }

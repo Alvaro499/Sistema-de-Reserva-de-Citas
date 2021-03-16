@@ -99,7 +99,7 @@
                         <p><strong>Mensaje:</strong> <?php echo $values["url_archivo"]; ?></p>
                         <!-- <button id="descargar" class="btn file">Descargar</button> -->
                         <button id="rechazar" class="btn danger" onclick='rechazar(<?php echo $values["idcitas_cliente"];?>);'>Rechazar</button>
-                        <button id="aceptar" class="btn success" onclick='aceptar(<?php echo $values["idcitas_cliente"];?>);'>Aceptar</button>
+                        <button id="aceptar" class="btn success" onclick='aceptar(<?php echo $values["idcitas_cliente"];?>,"<?php echo $values["medio"];?>");'>Aceptar</button>
                     </div>
                 <?php }?>
                     
@@ -171,9 +171,9 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="../../assets/js/toastr/toastr.min.js"></script>
     <script type="text/javascript">
-	function aceptar(id)
+	function aceptar(id,medio)
     {
-        window.location="reserva_aceptada.php?id="+id;
+        window.location="reserva_aceptada.php?id="+id+"&medio="+medio;
             // $.ajax({
             //     type: "POST",
             //     url:"../../negocios/n_citas/metodos_citas.php",
