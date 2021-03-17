@@ -90,7 +90,7 @@
                 {
                 ?>
                     <div class="card-reserva">
-                        <h3><?php echo $values["area_servicio"]; ?></h3>
+                        <h3><?php echo "Área de " . $values["area_servicio"]; ?></h3>
                         <p><strong>Usuario:</strong> <?php echo $values["nombre"]; ?></p>
                         <p><strong>Asunto:</strong> <?php echo $values["asunto"]; ?></p>
                         <p><strong>Fecha:</strong> <?php echo $values["fecha"]; ?></p>

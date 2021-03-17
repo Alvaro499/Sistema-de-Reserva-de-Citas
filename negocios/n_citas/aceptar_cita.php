@@ -4,7 +4,7 @@
     require("correo_citas.php");
 
     $cedula = $_POST["cedula"];
-    $nombre = $_POST["nombre"];
+    $nombre_empleado = $_POST["nombre"];
     $presencial = $_POST["presencial"];
     $personas = $_POST["personas"];
     $virtual = $_POST["virtual"];
@@ -13,19 +13,28 @@
 
     $citas = new D_Citas();
     $correo = new N_Correo_Citas();
-    $aceptar = $citas->aceptarCita($nombre,$presencial,$personas,$virtual,$link,$id);
+    $aceptar = $citas->aceptarCita($nombre_empleado,$presencial,$personas,$virtual,$link,$id);
     $datos = $citas->get_cliente($cedula);
 
     //--------------------------
-    $correo_cliente;
     $nombre_cliente;
+    $apellido;
+    $correo_cliente;
+    $area;
     $fecha;
+    $hora;
+    $medio;
     foreach($datos as $value){
-        $nombre_cliente=$value["nombre"];
-        $correo_cliente=$value["correo"];
-        $fecha=$value["fecha"];
+        $nombre_cliente = $value["nombre"];
+        $apellido = $value["apellido1"];
+        $correo_cliente = $value["correo"];
+        $area = $value["area_servicio"];
+        $fecha = $value["fecha"];
+        $hora = $value["hora"];
+        $medio = $value["medio"];
+
     }
-    $correo->Cita_Aceptada($nombre_cliente,$correo_cliente,$fecha);
+    $correo->Cita_Aceptada($nombre_cliente,$apellido,$correo_cliente,$area,$fecha,$hora,$medio,$nombre_empleado,$virtual,$link,$presencial,$personas);
     //----------------------
     if ($aceptar) {
         $actualizar = $citas->actualizarCita($id);

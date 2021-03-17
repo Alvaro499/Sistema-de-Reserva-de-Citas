@@ -8,7 +8,7 @@
 
         
         // ($nombre_cliente, $apellido, $correo, $area, $fecha, $hora,$medio,$nombre_empleado, $plataforma, $link, $oficina, $cantidad)
-        public function Cita_Aceptada($nombre_cliente,$correo, $fecha){
+        public function Cita_Aceptada($nombre_cliente, $apellido, $correo, $area, $fecha, $hora,$medio,$nombre_empleado, $plataforma, $link, $oficina, $cantidad){
             
             $email = new PHPmailer();
             try {              
@@ -37,7 +37,7 @@
 
                 $email->AddEmbeddedImage('../../assets/img/logo.png','logo');
 
-                $email->Subject = utf8_decode("Chao");
+                $email->Subject = utf8_decode("Aprobación de la capacitación de Gapa");
 
                 $email->Body = utf8_decode('<body style="font-family: Calibri; margin: 0; padding: 0">
 
@@ -50,9 +50,15 @@
             
                         <div class="card">
             
-                            <p style="font-size: 1.4rem">Estimado cliente<strong>.</p>
+                            <p style="font-size: 1.4rem">Estimado cliente ' . $nombre_cliente. '<strong>.</p>
             
-                            <p style="font-size: 1.4rem">' . $nombre_cliente. ' '.$fecha  . '
+                            <p style="font-size: 1.4rem">Para nosotros es un gusto informarle que la solicitud de cita para la capacitación del personal en el área de en su empresa fue aprobada. La fecha de dicha capacitación está pendiente para el día ' .$fecha  . ' a las ' .$hora. '.
+
+                            <p style="font-size: 1.4rem">El Licenciado ' .$nombre_empleado. ' será el encargado de dirigir dicha capacitacion por medio ' .$medio. ' . La misma se realizará en la plataforma ' .$plataforma. '; el enlace de acceso será ' .$link.
+                            
+                            '<p style="font-size: 1.4rem"></p>. La cantidad de personas máxima es de ' .$cantidad. '.</p>
+
+                            <p style="font-size: 1.4rem">Le recordamos que debe guardar esta información con el fin de evitar posibles problemas el día de la capacitación</p>
            
                             <h3 style="font-size: 1.3rem">¡Estamos para servirle!</h3>
             
@@ -78,13 +84,6 @@
             }catch (Exception $e) {
                 return false;
             }
-            
-
         }//cierre funcion envioContra
-        
-
     }
-
-    
-
 ?>
