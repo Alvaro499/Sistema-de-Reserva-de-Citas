@@ -82,5 +82,15 @@ class D_Citas{
             echo "Error:" . $e->getMessage();
         }
     }
+    public function get_cliente2($ced){//Para enviar el correo de rechazar cita
+        try{
+            $query = $this->cargarConexion->prepare("SELECT user.nombre, user.correo, user.apellido1, citas.fecha, citas.hora FROM citas_cliente AS citas, usuarios AS user WHERE user.cedula='$ced' AND user.cedula=citas.idusuarios");
+            $resultado = $query->execute();
+            $resultado = $query->fetchAll();
+            return $resultado;
+        }catch(PDOException $e){
+            echo "Error:" . $e->getMessage();
+        }
+    }
 }
 ?>
