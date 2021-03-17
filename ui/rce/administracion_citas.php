@@ -98,7 +98,7 @@
                         <p><strong>Medio de reunión: </strong><?php echo $values["medio"]; ?></p>
                         <p><strong>Mensaje:</strong> <?php echo $values["comentario"]; ?></p>
                         <!-- <button id="descargar" class="btn file">Descargar</button> -->
-                        <button id="rechazar" class="btn danger" onclick='rechazar(<?php echo $values["idcitas_cliente"];?>);'>Rechazar</button>
+                        <button id="rechazar" class="btn danger" onclick='rechazar(<?php echo $values["idcitas_cliente"];?>, "<?php echo $values["cedula"];?>");'>Rechazar</button>
                         <button id="aceptar" class="btn success" onclick='aceptar(<?php echo $values["idcitas_cliente"];?>,"<?php echo $values["medio"];?>","<?php echo $values["cedula"];?>");'>Aceptar</button>
                     </div>
                 <?php }?>
@@ -191,8 +191,11 @@
             // })   
     }
 
-    function rechazar(id){
-        let dato_id = "id="+id;
+    function rechazar(id,cedula){
+        let dato_id = "id="+id +
+        "&cedula="+cedula;
+
+
          $.ajax({
                 type: "POST",
                 url:"../../negocios/n_citas/eliminar_cita.php",

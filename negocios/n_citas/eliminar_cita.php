@@ -4,12 +4,13 @@
 
 
     $id = $_POST["id"];
+    $cedula = $_POST["cedula"];
 
 
 
     $correo = new N_Correo_Citas();
     $delete = new D_Citas();
-    $datos_usuario = $delete->get_cliente2($id);
+    $datos_usuario = $delete->get_cliente2($cedula);
     $nombre_cliente;
     $apellido;
     $correo_cliente;
