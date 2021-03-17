@@ -107,7 +107,7 @@
 
                 $email->setFrom("sistemareservas.cg@gmail.com", "SRCG");
 
-                $email->addAddress($correo);
+                $email->addAddress($correo_cliente);
 
                 $email->Charset = "UTF-8";
 
@@ -132,10 +132,7 @@
             
                             <p style="font-size: 1.4rem">Gapa le informa que la solicitud de cita en la ' .$fecha  . ' a las ' .$hora. ' fue rechazada.
 
-                            <p style="font-size: 1.4rem">Se le recomienda realizar una nueva solicitud teniendo en consideracion las citas que aparecen agendas en la parte calendario para que  ' .$nombre_empleado. ' será el encargado de dirigir dicha capacitacion por medio ' .$medio. ' . La misma se realizará en la plataforma ' .$plataforma. '; el enlace de acceso será ' .$link.
-                            
-                            '<p style="font-size: 1.4rem"></p>. La cantidad de personas máxima es de ' .$cantidad. '.</p>
-
+                            <p style="font-size: 1.4rem">Se le recomienda realizar una nueva solicitud teniendo en consideracion las citas que aparecen agendas en la parte calendario</p>
                             <h3 style="font-size: 1.3rem">¡Estamos para servirle!</h3>
             
                     <footer>

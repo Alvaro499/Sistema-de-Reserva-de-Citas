@@ -14,16 +14,16 @@
 <body>
 
     <?php 
-		// require_once("../../sesion/C_Sesion.php");
+		require_once("../../sesion/C_Sesion.php");
 
-		// $inicio = new C_Sesion();
-		// $inicio->inicializar();
+		$inicio = new C_Sesion();
+		$inicio->inicializar();
 		
-		// if(!isset($_SESSION["cedula"])) {
-		// 	header("Location: ../login/sesion.php");
-		// }else {
+		if(!isset($_SESSION["cedula"])) {
+			header("Location: ../login/sesion.php");
+		}else {
 			
-		// }     
+		}     
 
 	?>
 
@@ -208,7 +208,7 @@
                     }else if(data==2){
                         toastr.error("Error al rechazar cita","Error");
                     }else{
-                        toastr.error("Error desconocido","Error");
+                        toastr.error("Error desconocido"+data,"Error");
                     }
                 }
             })
