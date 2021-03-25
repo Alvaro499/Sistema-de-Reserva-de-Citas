@@ -92,5 +92,30 @@ class D_Citas{
             echo "Error:" . $e->getMessage();
         }
     }
+
+    //FCC: Funciones de consulta para el calendarios
+
+    public function get_cliente_calendary($ced){
+        try {
+            $query = $this->cargarConexion->prepare("SELECT citas.asunto, citas.fecha, citas.hora, detalles.nombre_empleado FROM citas_cliente AS citas, detalles_cita AS detalles WHERE citas.idusuarios = '$ced' AND citas.estado_cita = 1 AND detalles.idcitas_cliente = citas.idcitas_cliente ");
+            $resultado = $query->execute();
+            $resultado = $query->fetchAll();
+            return $resultado;
+        } catch (PDOException $e) {
+            echo "Error:" . $e->getMessage();
+        }
+    }
+
+    // public function estado_cita($ced){
+    //     try {
+    //         $query = $this->cargarConexion->prepare("SELECT `estado_cita` FROM `citas_cliente` WHERE `idusuarios` = '$ced' ");
+    //         $resultado = $query->execute();
+    //         $resultado = $query->fetchAll();
+    //     } catch (PDOException $e) {
+    //         echo "Error:" . $e->getMessage();
+    //     }
+    // }
+
+    //FCC...
 }
 ?>

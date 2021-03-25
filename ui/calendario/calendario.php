@@ -6,8 +6,11 @@
 	<meta name="author" content="Alvaro Siles, Sebastián, Kevin">
 	<meta name="viewport" content="user-scalable=no, width=device-width">
 	<title>Analítica Web</title>
-	<link rel="stylesheet" type="text/css" href="fonts_awesome/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="../../assets/fonts_awesome/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="../../assets/css/style_calendario/bridge.css">
+
+	<!-- TOAST UI Calendar -->
+	<link rel="stylesheet" type="text/css" href="https://uicdn.toast.com/tui-calendar/latest/tui-calendar.css"/>
 </head>
 
 <body>
@@ -76,8 +79,80 @@
 
 		<main id="principal">
 			
+			<!-- Archivos JS TOAST UI Calendar -->
+
+			<script src="https://uicdn.toast.com/tui.code-snippet/v1.5.2/tui-code-snippet.min.js"></script>
+
+			<script src="https://uicdn.toast.com/tui.time-picker/latest/tui-time-picker.min.js"></script>
+
+			<script src="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.min.js"></script>
+
+			<script src="https://uicdn.toast.com/tui-calendar/latest/tui-calendar.js"></script>
+
+			<!-- ... -->
+
+			<!-- Creacion del calendario -->
+
+				<!-- Consultas -->
+			<?php
+				require("../../data/data_citas.php");
+				$consulta_citas = new D_Citas();
+
+				// $estado = $estado_cita->estado_cita();
+				$datos_cita = $consulta_citas->get_cliente_calendary($_SESSION["cedula"]);
 			
+			?>
+				<!-- Diseno e informacion del calendarios -->
+				<div>
+					<div id="calendar" style="height: 800px;"></div>
+					<button>><</button>
+				</div>
+				
 			
+			<script>
+				var Calendar = tui.Calendar;
+				
+
+				var calendar = new Calendar('#calendar',{
+					defaultView: 'month',
+					taskView: true,
+					//useCreationPopup: true, //crear popups
+					//useDetailPopup: true, //detalles del popup
+
+					template: {
+						monthDayName: function(dayname){
+							return '<span class="calendar-week-dayname-name">' + dayname.label + '</span>';
+						}
+					}
+				});
+				
+				calendar.createSchedules([
+    {
+        id: '1',
+        calendarId: '1',
+        title: 'my schedule',
+        category: 'time',
+        dueDateClass: '',
+        start: '2021-03-18T22:30:00+09:00',
+        end: '2021-03-25T02:30:00+09:00'
+    },
+    {
+        id: '2',
+        calendarId: '1',
+        title: 'second schedule',
+        category: 'time',
+        dueDateClass: '',
+        start: '2018-01-18T17:30:00+09:00',
+        end: '2018-01-19T17:31:00+09:00',
+        isReadOnly: true    // schedule is read-only
+    }
+]);
+// calendar.prev();
+
+
+				
+			</script>
+
 		</main>
 
 	</div>
