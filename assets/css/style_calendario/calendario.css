@@ -2,3 +2,44 @@
 	background: #BE1E2D;
 	color: #000000;
 }
+
+#father_calendar{
+	width: 100%;
+	position: relative;
+	padding: 25px;
+}
+
+#calendar{
+	margin-top: 25px;
+}
+
+.btn_cal{
+	outline: none;
+	border: none;
+	border-radius: 50%;
+	padding: 10px;
+	color: #000000;
+	/* background: rgba(255, 2555, 255, 0.50); */
+	background: rgba(255, 255, 255, 1);
+	font-weight: bold;
+	font-size: 1rem;
+	cursor: pointer;
+	margin: 0 0 0 25px;
+}
+
+#btn_left{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+#btn_right{
+	position: absolute;
+	top: 0;
+	left: 50px;
+	
+}
+
+.btn_cal:hover{
+	background: rgba(0, 0, 0, 0.4);
+}

@@ -103,9 +103,11 @@
 			
 			?>
 				<!-- Diseno e informacion del calendarios -->
-				<div>
+				<div id="father_calendar">
 					<div id="calendar" style="height: 800px;"></div>
-					<button>><</button>
+					<button id="btn_left" class="btn_cal" onclick="prevMonth();"><i class="fas fa-arrow-left"></i></button>
+					<button id="btn_right" class="btn_cal" onclick="nextMonth();"><i class="fas fa-arrow-right"></i></button>
+					
 				</div>
 				
 			
@@ -142,12 +144,19 @@
         title: 'second schedule',
         category: 'time',
         dueDateClass: '',
-        start: '2018-01-18T17:30:00+09:00',
-        end: '2018-01-19T17:31:00+09:00',
+        start: '2021-01-18T17:30:00+09:00',
+        end: '2021-01-19T17:31:00+09:00',
         isReadOnly: true    // schedule is read-only
     }
 ]);
-// calendar.prev();
+function nextMonth(){
+	calendar.next();
+}
+function prevMonth(){
+	calendar.prev();
+}
+// calendar.deleteSchedule(schedule.id, schedule.calendarId);
+
 
 
 				
