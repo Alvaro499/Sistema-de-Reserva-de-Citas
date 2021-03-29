@@ -107,6 +107,8 @@
 					<div id="calendar" style="height: 800px;"></div>
 					<button id="btn_left" class="btn_cal" onclick="prevMonth();"><i class="fas fa-arrow-left"></i></button>
 					<button id="btn_right" class="btn_cal" onclick="nextMonth();"><i class="fas fa-arrow-right"></i></button>
+					<button id="btn_today" onclick="todayDay();">Día de hoy</button>
+					<span id="today"></span>
 					
 				</div>
 				
@@ -123,47 +125,40 @@
 
 					template: {
 						monthDayName: function(dayname){
-							return '<span class="calendar-week-dayname-name">' + dayname.label + '</span>';
-						}
+							return '<span class="calendar-week-dayname-name">' + dayname.label + '</span>'
+						},
+						alldayTitle: function() {
+            				return 'All Day';
+    				    }
 					}
 				});
 				
 				calendar.createSchedules([
-    {
-        id: '1',
-        calendarId: '1',
-        title: 'my schedule',
-        category: 'time',
-        dueDateClass: '',
-        start: '2021-03-18T22:30:00+09:00',
-        end: '2021-03-25T02:30:00+09:00'
-    },
-    {
-        id: '2',
-        calendarId: '1',
-        title: 'second schedule',
-        category: 'time',
-        dueDateClass: '',
-        start: '2021-01-18T17:30:00+09:00',
-        end: '2021-01-19T17:31:00+09:00',
-        isReadOnly: true    // schedule is read-only
-    }
-]);
-function nextMonth(){
-	calendar.next();
-}
-function prevMonth(){
-	calendar.prev();
-}
+					<?php foreach ($datos_cita as $valor) { ?>
+    			{
+        			id: '1',
+        			calendarId: '1',
+        			title: 'Capacitacion con el/la Lic <?php echo $valor['nombre_empleado'] ?> ',
+        			category: '<?php echo $valor['area_servicio'] ?>',
+        			dueDateClass: '<?php echo $valor['hora'] ?>',
+        			start: '<?php echo $valor['fecha'] ?>'
+        			// end: '2021-03-25T02:30:00+09:00'
+    			},
+					<?php } ?>
+				]);
+
+				function nextMonth(){
+					calendar.next();
+				}
+				function prevMonth(){
+					calendar.prev();
+				}
+				function todayDay(){
+					calendar.today();
+				}
 // calendar.deleteSchedule(schedule.id, schedule.calendarId);
-
-
-
-				
 			</script>
-
 		</main>
-
 	</div>
 
 	<script type="text/javascript" src="../../assets/js/hide_menu_v.js"></script>

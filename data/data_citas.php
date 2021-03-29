@@ -93,11 +93,11 @@ class D_Citas{
         }
     }
 
-    //FCC: Funciones de consulta para el calendarios
+    //FCC: Funciones de consulta para el calendario
 
     public function get_cliente_calendary($ced){
         try {
-            $query = $this->cargarConexion->prepare("SELECT citas.asunto, citas.fecha, citas.hora, detalles.nombre_empleado FROM citas_cliente AS citas, detalles_cita AS detalles WHERE citas.idusuarios = '$ced' AND citas.estado_cita = 1 AND detalles.idcitas_cliente = citas.idcitas_cliente ");
+            $query = $this->cargarConexion->prepare("SELECT citas.area_servicio, citas.fecha, citas.hora, detalles.nombre_empleado FROM citas_cliente AS citas, detalles_cita AS detalles WHERE citas.idusuarios = '$ced' AND citas.estado_cita = 1 AND detalles.idcitas_cliente = citas.idcitas_cliente ");
             $resultado = $query->execute();
             $resultado = $query->fetchAll();
             return $resultado;

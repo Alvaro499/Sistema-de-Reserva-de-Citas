@@ -63,7 +63,18 @@
 					<li class="li_h idioma"><a href="#"><img src="../../assets/iconos/idioma.svg" alt="Cambiar Idioma"></a></li>
 					<li class="li_h notifi"><a href="#"><img src="../../assets/iconos/bell.svg" alt="Notifaciones"></a></li>
 					<li class="li_h usuario"><img src="../../assets/iconos/usuario.svg" id="usuario" alt="Foto de Perfil"></li>
-					<li class="li_h nombre"><div class="userNmae"><?php echo $_SESSION["nombre"] ?></div></li>
+					<li class="li_h nombre"><div class="userNmae"><?php echo $_SESSION["nombre"] ?></div>
+						<ul>
+							<li>
+								<div id="perfil" class="cont_perfil">
+									<a class="config_options" href="">Mi perfil</a>
+									
+									<a class="config_options" href="">Configuraciones</a>
+									<a class="config_options" href="">Cerrar sesión</a>
+								</div>
+							</li>
+						</ul>
+					</li>
 				</ul>
 			</nav>
 

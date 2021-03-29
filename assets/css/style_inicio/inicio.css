@@ -2,3 +2,43 @@
 	background: #BE1E2D;
 	color: #000000;
 }
+
+.nombre{
+	position: relative;
+}
+
+.nombre ul{
+	position: absolute;
+	/* bottom: 0; */
+	top: 300%;
+	left: -75px;
+}
+
+.nombre a{
+	text-decoration: none;
+	color: #000000;
+	font-size: 1.1rem;
+	font-weight: bold;
+	padding: 15px 15px;
+	cursor: pointer;
+}
+
+.nombre #perfil{
+	text-align: center;
+	background: #fff;
+	display: flex;
+	flex-flow: column wrap;	
+	z-index: 100;
+}
+
+#perfil hr{
+	text-align: center;
+	border: 0.5px solid #000;
+	margin: auto;
+	width: 90%;
+}
+
+.nombre a:hover{
+	background: #000;
+	color: #fff;
+}
