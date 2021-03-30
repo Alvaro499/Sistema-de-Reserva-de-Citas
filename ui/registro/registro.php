@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="author" content="Alvaro Siles, Sebastián, Kevin">
-	<meta name="viewport" content="user-scalable=no, width=device-width">
+	<meta name="viewport" content="width=device-width">
 	<title>Registro de Usuario</title>
 	<link rel="stylesheet" type="text/css" href="../../assets/css/style_registro/bridge.css">
 	<link rel="stylesheet" type="text/css" href="../../assets/css/toastr/toastr.min.css">

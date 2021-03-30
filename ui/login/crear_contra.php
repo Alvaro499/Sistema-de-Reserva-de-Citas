@@ -3,7 +3,7 @@
 <head>
 	<title>Crear Contraseña</title>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../../assets/fonts_awesome/css/all.min.css">
 	<link rel="stylesheet" type="text/css" href="../../assets/css/style_login/crear_contra.css">
 	<link rel="stylesheet" type="text/css" href="../../assets/css/toastr/toastr.min.css">

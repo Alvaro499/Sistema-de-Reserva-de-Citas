@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="author" content="Alvaro Siles, Sebastián, Kevin">
-	<meta name="viewport" content="user-scalable=no, width=device-width">
+	<meta name="viewport" content="width=device-width">
 	<title>Analítica Web</title>
 	<link rel="stylesheet" type="text/css" href="../../assets/fonts_awesome/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="../../assets/css/style_calendario/bridge.css">
@@ -100,7 +100,7 @@
 
 				// $estado = $estado_cita->estado_cita();
 				$datos_cita = $consulta_citas->get_cliente_calendary($_SESSION["cedula"]);
-			
+				
 			?>
 				<!-- Diseno e informacion del calendarios -->
 				<div id="father_calendar">
@@ -141,7 +141,7 @@
         			title: 'Capacitacion con el/la Lic <?php echo $valor['nombre_empleado'] ?> ',
         			category: '<?php echo $valor['area_servicio'] ?>',
         			dueDateClass: '<?php echo $valor['hora'] ?>',
-        			start: '<?php echo $valor['fecha'] ?>'
+        			start: '2021-03-29T02:30:00+9:00'
         			// end: '2021-03-25T02:30:00+09:00'
     			},
 					<?php } ?>
