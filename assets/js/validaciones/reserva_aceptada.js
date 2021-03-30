@@ -44,11 +44,13 @@ function validacion(modo) {
             document.getElementById("error_ofi").innerHTML = "*El formato de usuario es inválido, revise que no digito numeros.";
             document.getElementById("error_ofi").style.color = "#E40017";
             document.getElementById("medio_presencial").style.border = "3px solid #E40017";
+            document.getElementById("error_ofi").style.display = "block";
             cant_error++;
 
         } else {
             document.getElementById("error_ofi").style.color = "#FFF";
             document.getElementById("medio_presencial").style.border = "3px solid #54E346";
+            document.getElementById("error_ofi").style.display = "none";
         }
     }
 

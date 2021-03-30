@@ -14,16 +14,16 @@
 <body>
 
 	<?php 
-		require_once("../../sesion/C_Sesion.php");
+		// require_once("../../sesion/C_Sesion.php");
 
-		$inicio = new C_Sesion();
-		$inicio->inicializar();
+		// $inicio = new C_Sesion();
+		// $inicio->inicializar();
 		
-		if(!isset($_SESSION["cedula"])) {
-			header("Location: ../login/sesion.php");
-		}else {
+		// if(!isset($_SESSION["cedula"])) {
+		// 	header("Location: ../login/sesion.php");
+		// }else {
 			
-		}     
+		// }     
 
 	?>
 
@@ -32,18 +32,18 @@
 		<header id="menu_v">
 			
 			<div class="logo">
-				<img src="../../assets/img/logo.png" alt="Logo de la empresa">
+				<img src="../../assets/img/logo.png" alt="Logo de la empresa" tabindex="0">
 			</div>
 
 			<nav id="nav_v">
 				<ul>
-					<li class="li_v"><a href="../inicio/index.php"><span><img src="../../assets/iconos/inicio.svg" aria-hidden="true" class="icono_v"></span>Inicio</a></li>
-					<li class="li_v"><a href="../correos/correos.php"><span><img src="../../assets/iconos/email.svg" aria-hidden="true" class="icono_v"></span>Correos</a></li>
-					<li class="li_v"><a href="../registro.registro.php"><span><img src="../../assets/iconos/registro.svg" aria-hidden="true" class="icono_v"></span>Registro</a></li>
-					<li class="li_v"><a href="#"><span><img src="../../assets/iconos/citas.svg" aria-hidden="true" class="icono_v"></span>Citas</a></li>
-					<li class="li_v"><a href="../analitica_web/analitica.php"><span><img src="../../assets/iconos/analitica-web.svg" aria-hidden="true" class="icono_v"></span>Analítica Web</a></li>
-					<li class="li_v"><a href="../calendario/calendario.php"><span><img src="../../assets/iconos/calendario.svg" aria-hidden="true" class="icono_v"></span>Calendario</a></li>
-					<li class="li_v"><a href="../guia_web/guia_web.php"><span><img src="../../assets/iconos/guia-web.svg" aria-hidden="true" class="icono_v"></span>Guía Web</a></li>
+					<li class="li_v"><a href="../inicio/index.php" tabindex="0"><span><img src="../../assets/iconos/inicio.svg" aria-hidden="true" class="icono_v"></span>Inicio</a></li>
+					<li class="li_v"><a href="../correos/correos.php" tabindex="0"><span><img src="../../assets/iconos/email.svg" aria-hidden="true" class="icono_v"></span>Correos</a></li>
+					<li class="li_v"><a href="../registro.registro.php" tabindex="0"><span><img src="../../assets/iconos/registro.svg" aria-hidden="true" class="icono_v"></span>Registro</a></li>
+					<li class="li_v"><a href="#" tabindex="0"><span><img src="../../assets/iconos/citas.svg" aria-hidden="true" class="icono_v"></span>Citas</a></li>
+					<li class="li_v"><a href="../analitica_web/analitica.php" tabindex="0"><span><img src="../../assets/iconos/analitica-web.svg" aria-hidden="true" class="icono_v"></span>Analítica Web</a></li>
+					<li class="li_v"><a href="../calendario/calendario.php" tabindex="0"><span><img src="../../assets/iconos/calendario.svg" aria-hidden="true" class="icono_v"></span>Calendario</a></li>
+					<li class="li_v"><a href="../guia_web/guia_web.php" tabindex="0"><span><img src="../../assets/iconos/guia-web.svg" aria-hidden="true" class="icono_v"></span>Guía Web</a></li>
 					<!-- <li class="li_v"><a href="#"><span><img src="iconos/formulario.svg" aria-hidden="true" class="icono_v"></span>Asistencia Técnica</a></li> -->
 				</ul>	
 			</nav>
@@ -56,14 +56,14 @@
 
 				<!-- Cree esete div para separar el iconos de la flecha de los de idioma, usuarios, etc -->
 				<div class="regre">
-					<button><img src="../../assets/iconos/flecha-izq.svg" alt="Regresar"></button>
+					<button><img src="../../assets/iconos/flecha-izq.svg" alt="Regresar" tabindex="0"></button>
 				</div>
 
 				<ul>
-					<li class="li_h idioma"><a href="#"><img src="../../assets/iconos/idioma.svg" alt="Cambiar Idioma"></a></li>
-					<li class="li_h notifi"><a href="#"><img src="../../assets/iconos/bell.svg" alt="Notifaciones"></a></li>
-					<li class="li_h usuario"><img src="../../assets/iconos/usuario.svg" id="usuario" alt="Foto de Perfil"></li>
-					<li class="li_h nombre"><div class="userNmae"><?php echo $_SESSION["nombre"] ?></div></li>
+					<li class="li_h idioma"><a href="#" tabindex="0"><img src="../../assets/iconos/idioma.svg" alt="Cambiar Idioma"></a></li>
+					<li class="li_h notifi" ><a href="#" tabindex="0"><img src="../../assets/iconos/bell.svg" alt="Notificaciones"></a></li>
+					<li class="li_h usuario" ><img src="../../assets/iconos/usuario.svg" id="usuario" alt="Foto de Perfil" tabindex="0"></li>
+					<li class="li_h nombre"><div class="userNmae" tabindex="0"><?php echo $_SESSION["nombre"] ?></div></li>
 				</ul>
 			</nav>
 
@@ -71,8 +71,8 @@
 			<!-- SubMenu de Atajos (Menu Horizontal Negro) -->
 			<div class="submenu_h">
 				
-				<a href="../inicio/index.php"><span><img src="../../assets/iconos/inicio-blanco.svg"></span>Inicio</a>
-				<a href="../logout.php"><span><img src="../../assets/iconos/log-out.svg"></span>Salir</a>
+				<a href="../inicio/index.php" tabindex="0"><span><img src="../../assets/iconos/inicio-blanco.svg"></span>Inicio</a>
+				<a href="../logout.php" tabindex="0"><span><img src="../../assets/iconos/log-out.svg"></span>Salir</a>
 
 			</div>
 		</header>
@@ -81,37 +81,37 @@
 		<?php $modo = $_GET["medio"];?>
 			<form id="form_aceptar" class="reserva_acept">
 				
-                <h1>Reserva Aceptada</h1>
+                <h1 tabindex="0">Reserva Aceptada</h1>
                 
-				<label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" class="input">
-				<div id="error_nomb" class="errores"></div>
+				<label for="nombre" tabindex="0">Nombre:</label>
+                <input type="text" id="nombre" class="input" tabindex="0">
+				<div id="error_nomb" class="errores" tabindex="0"></div>
                 
 				<?php if($modo=="Presencial"){?>
-				<label for="medio_presencial">Oficina:</label>
-                <input type="text" id="medio_presencial" class="input">
-				<div id="error_ofi" class="errores"></div>
+				<label for="medio_presencial" tabindex="0">Oficina:</label>
+                <input type="text" id="medio_presencial" class="input" tabindex="0">
+				<div id="error_ofi" class="errores" tabindex="0"></div>
                 <?php }?>
 
 				<?php if($modo=="Virtual"){?>
-				<label for="medio_virtual">Plataforma:</label>
+				<label for="medio_virtual" tabindex="0">Plataforma:</label>
                 <select id="medio_virtual" class="select">
                     <option value="Teams">Teams</option>
                     <option value="Zoom">Zoom</option>
                     <option value="Skype">Skype</option>
                 </select>
                 
-                <label for="link">Link:</label>
-                <input type="text" id="link" class="input">
-				<div id="error_link" class="errores"></div>
+                <label for="link" tabindex="0">Link:</label>
+                <input type="text" id="link" class="input" tabindex="0">
+				<div id="error_link" class="errores" tabindex="0"></div>
 				<?php }?>
 
-				<label for="c_personas">Cantidad de Persona:</label>
-                <input type="number" id="c_personas" class="input">
-				<div id="error_cp" class="errores"></div>
+				<label for="c_personas" tabindex="0">Cantidad de Persona:</label>
+                <input type="number" id="c_personas" class="input" tabindex="0">
+				<div id="error_cp" class="errores" tabindex="0"></div>
 
 				<div class="cont_btn">
-					<button type="submit" class="btn_reserva">Aceptar</button>
+					<button type="submit" class="btn_reserva" tabindex="0">Aceptar</button>
 				</div>
 
 			</form>

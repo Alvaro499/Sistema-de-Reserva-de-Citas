@@ -27,10 +27,10 @@
 	<div class="contenedor">
 		<header class="parte1">
 			<figure class="logo">
-				<img src="../../assets/img/logo.png">
+				<img src="../../assets/img/logo.png" tabindex="0" alt="Logo de la empresa Gapa">
 			</figure>
 
-			<button onclick="abrir()" class="botonarriba">Regresar página de inicio</button>
+			<button onclick="abrir()" class="botonarriba" tabindex="0">Regresar página de inicio</button>
 			
 		</header>
 
@@ -41,29 +41,29 @@
 				
 				<form id="formcambiar">
 
-					<h1>Cambiar Contraseña</h1>
+					<h1 tabindex="0">Cambiar Contraseña</h1>
 
 					<!-- Crear contrasena nueva -->
-					<label for="contra_nueva">Contraseña nueva: </label>
+					<label for="contra_nueva" tabindex="0">Contraseña nueva: </label>
 					<div id="ctn_nueva" class="prueba campos campo-usuario">
-						<input id="contra_nueva" type="password" name="coontra_nueva">
+						<input id="contra_nueva" type="password" name="coontra_nueva" tabindex="0">
 						<span id="alert_contra_nueva" class="alert_icon iconos"><i class="fas fa-exclamation-circle"></i></span>
 						<span id="alert_visibility" class="alert_visibility iconos ocultar1" title="Presione para mostrar/ocultar la contraseña"><i class="far fa-eye"></i></span>
 					</div>
-					<div id="error_contra_nueva" class="div_error">*La contraseña debe incluir carácteres alfanuméricos.
-						</br></br>*La contraseña debe ser de al menos 6 a 12 carácteres.
+					<div id="error_contra_nueva" class="div_error" tabindex="0">La contraseña debe incluir carácteres alfanuméricos.
+						</br></br>La contraseña debe ser de al menos 6 a 12 carácteres.
 					</div>
 
 					<!-- Confirmar contrasena -->
-					<label for="confirm_contra">Confirme contraseña: </label>
+					<label for="confirm_contra" tabindex="0">Confirme contraseña: </label>
 					<div id="ctn_confirm" class="prueba campos campo-usuario">
-						<input id="confirm_contra" type="password" name="confirm_contra">
+						<input id="confirm_contra" type="password" name="confirm_contra" tabindex="0">
 						<span id="alert_confirm_contra" class="alert_icon iconos"><i class="fas fa-exclamation-circle"></i></span>
 						<span id="alert_visibility" class="alert_visibility iconos ocultar2" title="Presione para mostrar/ocultar la contraseña"><i class="far fa-eye"></i></span>
 					</div>
-					<div id="error_confirm_contra" class="div_error">La contraseña no coincide con la anteriormente creada.</div>
+					<div id="error_confirm_contra" class="div_error" tabindex="0">La contraseña no coincide con la anteriormente creada.</div>
 
-					<input type="submit" id="boton" value="Confirmar Contraseña">			
+					<input type="submit" id="boton" value="Confirmar Contraseña" tabindex="0">			
 
 				</form>
 			</div>

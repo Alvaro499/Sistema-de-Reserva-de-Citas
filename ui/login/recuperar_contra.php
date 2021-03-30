@@ -14,10 +14,10 @@
 		<header class="parte1">
 
 			<figure class="logo">
-				<img src="../../assets/img/logo.png">
+				<img src="../../assets/img/logo.png" tabindex="0" alt="Logo de la empresa Gapa">
 			</figure>
 
-			<button onclick="abrir()" class="botonarriba">Regresar página de inicio</button>
+			<button onclick="abrir()" class="botonarriba" tabindex="0">Regresar página de inicio</button>
 
 		</header>
 
@@ -27,16 +27,16 @@
 			<div class="ventana" id="vent">
 
 				<form id="frmrcrear">
-					<h1>Recuperación de Contraseña</h1>
+					<h1 tabindex="0">Recuperación de Contraseña</h1>
 
-					<label for="correo">Digite el correo con el cual está registrada su cuenta:</label>
+					<label for="correo" tabindex="0">Digite el correo con el cual está registrada su cuenta:</label>
 					<div class="campos campo_correo">
-						<input class="correo" id="correo" type="text" name="correo" placeholder="ejemplo@hotmail.com">
+						<input class="correo" id="correo" type="text" name="correo" placeholder="ejemplo@hotmail.com" tabindex="0">
 						<span id="alert_correo" class="alert_icon iconos"><i class="fas fa-exclamation-circle"></i></span>
-						<div id="error_correo" class="div_error">*Correo no válido</div>
+						<div id="error_correo" class="div_error" tabindex="0">Correo no válido</div>
 					</div>
 				
-					<input type="submit" id="boton" value="Enviar">			
+					<input type="submit" id="boton" value="Enviar" tabindex="0">			
 				</form>
 			</div>
 

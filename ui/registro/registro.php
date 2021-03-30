@@ -31,18 +31,18 @@
 		<header id="menu_v">
 			
 			<div class="logo">
-				<img src="../../assets/img/logo.png" alt="Logo de la empresa">
+				<img src="../../assets/img/logo.png" alt="Logo de la empresa" tabindex="0">
 			</div>
 
 			<nav id="nav_v">
 				<ul>
-					<li class="li_v"><a href="../inicio/index.php"><span><img src="../../assets/iconos/inicio.svg" aria-hidden="true" class="icono_v"></span>Inicio</a></li>
-					<li class="li_v"><a href="../correos/correos.php"><span><img src="../../assets/iconos/email.svg" aria-hidden="true" class="icono_v"></span>Correos</a></li>
-					<li class="li_v"><a href="../registro.registro.php"><span><img src="../../assets/iconos/registro.svg" aria-hidden="true" class="icono_v"></span>Registro</a></li>
-					<li class="li_v"><a href="#"><span><img src="../../assets/iconos/citas.svg" aria-hidden="true" class="icono_v"></span>Citas</a></li>
-					<li class="li_v"><a href="../analitica_web/analitica.php"><span><img src="../../assets/iconos/analitica-web.svg" aria-hidden="true" class="icono_v"></span>Analítica Web</a></li>
-					<li class="li_v"><a href="../calendario/calendario.php"><span><img src="../../assets/iconos/calendario.svg" aria-hidden="true" class="icono_v"></span>Calendario</a></li>
-					<li class="li_v"><a href="../guia_web/guia_web.php"><span><img src="../../assets/iconos/guia-web.svg" aria-hidden="true" class="icono_v"></span>Guía Web</a></li>
+					<li class="li_v"><a href="../inicio/index.php" tabindex="0"><span><img src="../../assets/iconos/inicio.svg" aria-hidden="true" class="icono_v"></span>Inicio</a></li>
+					<li class="li_v"><a href="../correos/correos.php" tabindex="0"><span><img src="../../assets/iconos/email.svg" aria-hidden="true" class="icono_v"></span>Correos</a></li>
+					<li class="li_v"><a href="../registro.registro.php" tabindex="0"><span><img src="../../assets/iconos/registro.svg" aria-hidden="true" class="icono_v"></span>Registro</a></li>
+					<li class="li_v"><a href="#" tabindex="0"><span><img src="../../assets/iconos/citas.svg" aria-hidden="true" class="icono_v"></span>Citas</a></li>
+					<li class="li_v"><a href="../analitica_web/analitica.php" tabindex="0"><span><img src="../../assets/iconos/analitica-web.svg" aria-hidden="true" class="icono_v"></span>Analítica Web</a></li>
+					<li class="li_v"><a href="../calendario/calendario.php" tabindex="0"><span><img src="../../assets/iconos/calendario.svg" aria-hidden="true" class="icono_v"></span>Calendario</a></li>
+					<li class="li_v"><a href="../guia_web/guia_web.php" tabindex="0"><span><img src="../../assets/iconos/guia-web.svg" aria-hidden="true" class="icono_v"></span>Guía Web</a></li>
 					<!-- <li class="li_v"><a href="#"><span><img src="iconos/formulario.svg" aria-hidden="true" class="icono_v"></span>Asistencia Técnica</a></li> -->
 				</ul>	
 			</nav>
@@ -55,14 +55,14 @@
 
 				<!-- Cree esete div para separar el iconos de la flecha de los de idioma, usuarios, etc -->
 				<div class="regre">
-					<button><img src="../../assets/iconos/flecha-izq.svg" alt="Regresar"></button>
+					<button><img src="../../assets/iconos/flecha-izq.svg" alt="Regresar" tabindex="0"></button>
 				</div>
 
 				<ul>
-					<li class="li_h idioma"><a href="#"><img src="../../assets/iconos/idioma.svg" alt="Cambiar Idioma"></a></li>
-					<li class="li_h notifi"><a href="#"><img src="../../assets/iconos/bell.svg" alt="Notifaciones"></a></li>
-					<li class="li_h usuario"><img src="../../assets/iconos/usuario.svg" id="usuario" alt="Foto de Perfil"></li>
-					<li class="li_h nombre"><div class="userNmae"><?php echo $_SESSION["nombre"] ?></div></li>
+					<li class="li_h idioma"><a href="#" tabindex="0"><img src="../../assets/iconos/idioma.svg" alt="Cambiar Idioma"></a></li>
+					<li class="li_h notifi"><a href="#" tabindex="0"><img src="../../assets/iconos/bell.svg" alt="Notifaciones"></a></li>
+					<li class="li_h usuario"><img src="../../assets/iconos/usuario.svg" id="usuario" alt="Foto de Perfil" tabindex="0"></li>
+					<li class="li_h nombre"><div class="userNmae" tabindex="0"><?php echo $_SESSION["nombre"] ?></div></li>
 				</ul>
 			</nav>
 
@@ -70,8 +70,8 @@
 			<!-- SubMenu de Atajos (Menu Horizontal Negro) -->
 			<div class="submenu_h">
 				
-				<a href="../inicio/index.php"><span><img src="../../assets/iconos/inicio-blanco.svg"></span>Inicio</a>
-				<a href="../logout.php"><span><img src="../../assets/iconos/log-out.svg"></span>Salir</a>
+				<a href="../inicio/index.php" tabindex="0"><span><img src="../../assets/iconos/inicio-blanco.svg"></span>Inicio</a>
+				<a href="../logout.php" tabindex="0"><span><img src="../../assets/iconos/log-out.svg"></span>Salir</a>
 
 			</div>
 		</header>
@@ -80,38 +80,38 @@
 			
 			<form id="frmregistro" class="registro">
 				
-                <h1>Registro de Usuario</h1>
+                <h1 tabindex="0">Registro de Usuario</h1>
                 
-				<label for="cedula">Cédula:</label>
-                <input type="text" id="cedula" class="input" name="cedula">
-				<div id="error_ced" class="errores"></div>
+				<label for="cedula" tabindex="0">Cédula:</label>
+                <input type="text" id="cedula" class="input" name="cedula" tabindex="0">
+				<div id="error_ced" class="errores" tabindex="0"></div>
                 
-				<label for="nombre_usuario">Nombre del Usuario:</label>
-                <input type="text" id="nombre" class="input" name="nombre_usuario">
-				<div id="error_nomb" class="errores"></div>
+				<label for="nombre_usuario" tabindex="0">Nombre del Usuario:</label>
+                <input type="text" id="nombre" class="input" name="nombre_usuario" tabindex="0">
+				<div id="error_nomb" class="errores" tabindex="0"></div>
                 
-				<label for="apell1">Primer Apellido:</label>
-                <input type="text" id="p_apellido" class="input" name="apell1">
-				<div id="error_ap1" class="errores"></div>
+				<label for="apell1" tabindex="0">Primer Apellido:</label>
+                <input type="text" id="p_apellido" class="input" name="apell1" tabindex="0">
+				<div id="error_ap1" class="errores" tabindex="0"></div>
                 
-				<label for="apell2">Segundo Apellido:</label>
-                <input type="text" id="s_apellido" class="input" name="apell2">
-				<div id="error_ap2" class="errores"></div>
+				<label for="apell2" tabindex="0">Segundo Apellido:</label>
+                <input type="text" id="s_apellido" class="input" name="apell2" tabindex="0">
+				<div id="error_ap2" class="errores" tabindex="0"></div>
                 
-				<label for="email">Correo Electrónico:</label>
-                <input type="text" id="correo" class="input" name="email" >
-				<div id="error_correo" class="errores"></div>
+				<label for="email" tabindex="0">Correo Electrónico:</label>
+                <input type="text" id="correo" class="input" name="email" tabindex="0" >
+				<div id="error_correo" class="errores" tabindex="0"></div>
                 
-				<label for="cel_1">Número de Celular:</label>
-                <input type="text" id="n_celular" class="input" name="cel_1">
-				<div id="error_num1" class="errores"></div>
+				<label for="cel_1" tabindex="0">Número de Celular:</label>
+                <input type="text" id="n_celular" class="input" name="cel_1" tabindex="0">
+				<div id="error_num1" class="errores" tabindex="0"></div>
 
-                <label for="cel_2">Número de Celular Opcional:</label>
-                <input type="text" id="s_celular" class="input" name="cel_2">
-				<div id="error_num2" class="errores"></div>
+                <label for="cel_2" tabindex="0">Número de Celular Opcional:</label>
+                <input type="text" id="s_celular" class="input" name="cel_2" tabindex="0">
+				<div id="error_num2" class="errores" tabindex="0"></div>
 				
                 
-                <label for="rol_usua">Rol del Usuario:</label>
+                <label for="rol_usua" tabindex="0">Rol del Usuario:</label>
                 <select id="rol" class="select" name="rol">
                     
 					<option value="2" name="rol">Empleado</option>
@@ -119,7 +119,7 @@
                 </select>
 
 				<div class="cont_btn">
-					<button type="submit" class="btn_registro">Aceptar</button>
+					<button type="submit" class="btn_registro" tabindex="0">Aceptar</button>
 				</div>
 
 			</form>
