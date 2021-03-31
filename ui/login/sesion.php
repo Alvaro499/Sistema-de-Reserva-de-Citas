@@ -12,10 +12,10 @@
 	<div class="contenedor">
 		<header class="parte1">
 			<figure class="logo">
-				<img src="../../assets/img/logo.png">
+				<img src="../../assets/img/logo.png" tabindex="0" alt="Logo de la empresa Gapa">
 			</figure>
 			
-			<button onclick="abrir()" class="botonarriba">Regresar página de inicio</button>
+			<button onclick="abrir()" class="botonarriba" tabindex="0" >Regresar página de inicio</button>
 			
 		</header>
 
@@ -25,21 +25,21 @@
 				
 				<form id="formsesion">
 					
-					<h1>Iniciar Sesión</h1>
+					<h1 tabindex="0">Iniciar Sesión</h1>
 
 					<div class="campos campo-usuario">
 
-						<input id="correo" class="prueba" type="text" name="correo" placeholder="Correo:" >
+						<input id="correo" class="prueba" type="text" name="correo" placeholder="Correo:" tabindex="0">
 
-						<span class="info_icon iconos"><img src="../../assets/iconos/correo-usuario.svg"></span>
+						<span class="info_icon iconos"><img src="../../assets/iconos/correo-usuario.svg" ></span>
 						<span id="alert_correo" class="alert_icon iconos"><i class="fas fa-exclamation-circle"></i></span>
 
 					</div>
-					<div id="error_correo" class="div_error">*Correo no válido</div>
+					<div id="error_correo" class="div_error" tabindex="0">Correo no válido</div>
 
 					<div class="campos campo-contra">
 
-						<input id="contra" class="prueba" type="password" name="pass" placeholder="Contraseña:">
+						<input id="contra" class="prueba" type="password" name="pass" placeholder="Contraseña:" tabindex="0">
 
 						<span class="info_icon iconos"><img src="../../assets/iconos/contra.svg"></span>
 						<span id="alert_contra" class="alert_icon iconos"><i class="fas fa-exclamation-circle"></i></span>
@@ -47,15 +47,15 @@
 						
 					</div>
 
-					<div id="error_contra" class="div_error">*Contraseña no válida</div>
+					<div id="error_contra" class="div_error" tabindex="0">Contraseña no válida</div>
 					
 					<div class="div-texto">
 						
-						<a href="recuperar_contra.php" id="texto">¿Olvidó su contraseña?</a>
+						<a href="recuperar_contra.php" id="texto" tabindex="0">¿Olvidó su contraseña?</a>
 
 					</div>
 					
-					<input id="boton" type="submit" name="" value="Iniciar">			
+					<input id="boton" type="submit" name="" value="Iniciar" tabindex="0">			
 				</form>
 			</div>
 		</figure>

@@ -32,18 +32,18 @@
 		<header id="menu_v">
 			
 			<div class="logo">
-				<img src="../../assets/img/logo.png" alt="Logo de la empresa">
+				<img src="../../assets/img/logo.png" alt="Logo de la empresa" tabindex="0">
 			</div>
 
 			<nav id="nav_v">
 				<ul>
-					<li class="li_v"><a href="../inicio/index.php"><span><img src="../../assets/iconos/inicio.svg" aria-hidden="true" class="icono_v"></span>Inicio</a></li>
-					<li class="li_v"><a href="../correos/correos.php"><span><img src="../../assets/iconos/email.svg" aria-hidden="true" class="icono_v"></span>Correos</a></li>
-					<li class="li_v"><a href="../registro.registro.php"><span><img src="../../assets/iconos/registro.svg" aria-hidden="true" class="icono_v"></span>Registro</a></li>
-					<li class="li_v"><a href="#"><span><img src="../../assets/iconos/citas.svg" aria-hidden="true" class="icono_v"></span>Citas</a></li>
-					<li class="li_v"><a href="../analitica_web/analitica.php"><span><img src="../../assets/iconos/analitica-web.svg" aria-hidden="true" class="icono_v"></span>Analítica Web</a></li>
-					<li class="li_v"><a href="../calendario/calendario.php"><span><img src="../../assets/iconos/calendario.svg" aria-hidden="true" class="icono_v"></span>Calendario</a></li>
-					<li class="li_v"><a href="../guia_web/guia_web.php"><span><img src="../../assets/iconos/guia-web.svg" aria-hidden="true" class="icono_v"></span>Guía Web</a></li>
+					<li class="li_v"><a href="../inicio/index.php" tabindex="0"><span><img src="../../assets/iconos/inicio.svg" aria-hidden="true" class="icono_v"></span>Inicio</a></li>
+					<li class="li_v"><a href="../correos/correos.php" tabindex="0"><span><img src="../../assets/iconos/email.svg" aria-hidden="true" class="icono_v"></span>Correos</a></li>
+					<li class="li_v"><a href="../registro.registro.php" tabindex="0"><span><img src="../../assets/iconos/registro.svg" aria-hidden="true" class="icono_v"></span>Registro</a></li>
+					<li class="li_v"><a href="#" tabindex="0"><span><img src="../../assets/iconos/citas.svg" aria-hidden="true" class="icono_v"></span>Citas</a></li>
+					<li class="li_v"><a href="../analitica_web/analitica.php" tabindex="0"><span><img src="../../assets/iconos/analitica-web.svg" aria-hidden="true" class="icono_v"></span>Analítica Web</a></li>
+					<li class="li_v"><a href="../calendario/calendario.php" tabindex="0"><span><img src="../../assets/iconos/calendario.svg" aria-hidden="true" class="icono_v"></span>Calendario</a></li>
+					<li class="li_v"><a href="../guia_web/guia_web.php" tabindex="0"><span><img src="../../assets/iconos/guia-web.svg" aria-hidden="true" class="icono_v"></span>Guía Web</a></li>
 					<!-- <li class="li_v"><a href="#"><span><img src="iconos/formulario.svg" aria-hidden="true" class="icono_v"></span>Asistencia Técnica</a></li> -->
 				</ul>	
 			</nav>
@@ -56,14 +56,14 @@
 
 				<!-- Cree esete div para separar el iconos de la flecha de los de idioma, usuarios, etc -->
 				<div class="regre">
-					<button><img src="../../assets/iconos/flecha-izq.svg" alt="Regresar"></button>
+					<button><img src="../../assets/iconos/flecha-izq.svg" alt="Esconder menú / Mostrar menú" tabindex="0"></button>
 				</div>
 
 				<ul>
-					<li class="li_h idioma"><a href="#"><img src="../../assets/iconos/idioma.svg" alt="Cambiar Idioma"></a></li>
-					<li class="li_h notifi"><a href="#"><img src="../../assets/iconos/bell.svg" alt="Notifaciones"></a></li>
-					<li class="li_h usuario"><img src="../../assets/iconos/usuario.svg" id="usuario" alt="Foto de Perfil"></li>
-					<li class="li_h nombre"><div class="userNmae"><?php echo $_SESSION["nombre"] ?></div></li>
+					<li class="li_h idioma"><a href="#"><img src="../../assets/iconos/idioma.svg" alt="Cambiar Idioma" tabindex="0"></a></li>
+					<li class="li_h notifi"><a href="#"><img src="../../assets/iconos/bell.svg" alt="Notificaciones" tabindex="0"></a></li>
+					<li class="li_h usuario"><img src="../../assets/iconos/usuario.svg" id="usuario" alt="Foto de Perfil" tabindex="0"></li>
+					<li class="li_h nombre"><div class="userNmae" tabindex="0"><?php echo $_SESSION["nombre"] ?></div></li>
 				</ul>
 			</nav>
 
@@ -71,8 +71,8 @@
 			<!-- SubMenu de Atajos (Menu Horizontal Negro) -->
 			<div class="submenu_h">
 				
-				<a href="../inicio/index.php"><span><img src="../../assets/iconos/inicio-blanco.svg"></span>Inicio</a>
-				<a href="../logout.php"><span><img src="../../assets/iconos/log-out.svg"></span>Salir</a>
+				<a href="../inicio/index.php" tabindex="0"><span><img src="../../assets/iconos/inicio-blanco.svg"></span>Inicio</a>
+				<a href="../logout.php " tabindex="0"><span><img src="../../assets/iconos/log-out.svg"></span>Salir</a>
 
 			</div>
 		</header>
@@ -81,10 +81,10 @@
 			
 			<form class="cita_cliente" id="formu">
 				
-                <h1>Reservación de Citas</h1>
+                <h1 tabindex="0">Reservación de Citas</h1>
                 
-				<label for="servicio">Área de Servicio:</label>
-                <select id="servicio" class="select" name="servicio">
+				<label for="servicio" tabindex="0">Área de Servicio:</label>
+                <select id="servicio" class="select" name="servicio" tabindex="0">
                     <option value="Administración">Administración</option>
                     <option value="Contabilidad">Contabilidad</option>
                     <option value="Control Interno">Control Interno</option>
@@ -98,38 +98,38 @@
                 </select>
                 
                 <!-- ct = Cita Cliente -->
-				<label for="asunto_ct">Asunto:</label>
-                <input type="text" id="asunto" class="input" name="asunto_ct">
-                <div id="error_asunto" class="errores"></div>
+				<label for="asunto_ct" tabindex="0">Asunto:</label>
+                <input type="text" id="asunto" class="input" name="asunto_ct" tabindex="0">
+                <div id="error_asunto" class="errores" tabindex="0"></div>
 
-				<label for="fecha_ct">Fecha:</label>
-                <input type="date" id="fecha" class="input" name="fecha_ct">
-                <div id="error_fecha" class="errores"></div>
+				<label for="fecha_ct" tabindex="0">Fecha:</label>
+                <input type="date" id="fecha" class="input" name="fecha_ct" tabindex="0">
+                <div id="error_fecha" class="errores" tabindex="0"></div>
 
-				<label for="hora_ct">Hora:</label>
-                <input type="time" id="hora" class="input" name="hora_ct">
-                <div id="error_hora" class="errores"></div>
+				<label for="hora_ct" tabindex="0">Hora:</label>
+                <input type="time" id="hora" class="input" name="hora_ct" tabindex="0">
+                <div id="error_hora" class="errores" tabindex="0"></div>
 
-				<label for="medio_ct">Medio de reunión:</label>
+				<label for="medio_ct" tabindex="0">Medio de reunión:</label>
                 <select id="medio" class="select" name="medio_ct" title="El colaborador le indicará la plataforma o sitio de la capacitacion, según usted haya escogido">
                     <option value="Presencial">Presencial</option>
                     <option value="Virtual">Virtual</option>
                 </select>
                 
-                <label for="mensaje_ct">Mensaje:</label>
-				<textarea id="mensaje_ct" resize="none" name="mensaje_ct"></textarea>
-				<div id="error_mensaje" class="errores"></div>
+                <label for="mensaje_ct" tabindex="0">Mensaje:</label>
+				<textarea id="mensaje_ct" resize="none" name="mensaje_ct" tabindex="0"></textarea>
+				<div id="error_mensaje" class="errores" tabindex="0"></div>
 
 				<div class="cont_btn">
                     <!-- <button class="btn_ct">Adjuntar Archivo</button> -->
-					<label for="file" id="label_file" class="btn_ct">Adjuntar Archivo
+					<label for="file" id="label_file" class="btn_ct" tabindex="0">Adjuntar Archivo
 					
-						<span id="file_name">Ningún archivo seleccionado</span>
+						<span id="file_name" tabindex="0">Ningún archivo seleccionado</span>
 					</label>
 					
-					<input type="file" id="file" name="file" class="archivo">
+					<input type="file" id="file" name="file" class="archivo" tabindex="0">
 					
-					<button type="submit" class="btn_ct">Enviar</button>
+					<button type="submit" class="btn_ct" tabindex="0">Enviar</button>
 				</div>
 
 			</form>

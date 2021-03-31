@@ -14,15 +14,15 @@
 <body>
 
 	<?php 
-		// require_once("../../sesion/C_Sesion.php");
+		require_once("../../sesion/C_Sesion.php");
 
-		// $inicio = new C_Sesion();
-		// $inicio->inicializar();
+		$inicio = new C_Sesion();
+		$inicio->inicializar();
 		
-		// if(!isset($_SESSION["cedula"])) {
-		// 	header("Location: ../login/sesion.php");
-		// }else {
-		// }     
+		if(!isset($_SESSION["cedula"])) {
+			header("Location: ../login/sesion.php");
+		}else {
+		}     
 
 	?>
 
@@ -31,18 +31,18 @@
 		<header id="menu_v">
 			
 			<div class="logo">
-				<img src="../../assets/img/logo.png" alt="Logo de la empresa">
+				<img src="../../assets/img/logo.png" alt="Logo de la empresa" tabindex="0">
 			</div>
 
 			<nav id="nav_v">
 				<ul>
-					<li class="li_v inicio"><a href="../inicio/index.php"><span><img src="../../assets/iconos/inicio.svg" aria-hidden="true" class="icono_v"></span>Inicio</a></li>
-					<li class="li_v correos"><a href="../correos/correos.php"><span><img src="../../assets/iconos/email.svg" aria-hidden="true" class="icono_v"></span>Correos</a></li>
-					<li class="li_v registro"><a href="../registro/registro.php"><span><img src="../../assets/iconos/registro.svg" aria-hidden="true" class="icono_v"></span>Registro</a></li>
-					<li class="li_v citas"><a href="#"><span><img src="../../assets/iconos/citas.svg" aria-hidden="true" class="icono_v"></span>Citas</a></li>
-					<li class="li_v analitica"><a href="../analitica_web/analitica.php"><span><img src="../../assets/iconos/analitica-web.svg" aria-hidden="true" class="icono_v"></span>Analítica Web</a></li>
-					<li class="li_v calendario"><a href="../calendario/calendario.php"><span><img src="../../assets/iconos/calendario.svg" aria-hidden="true" class="icono_v"></span>Calendario</a></li>
-					<li class="li_v guia_web"><a href="../guia_web/guia_web.php"><span><img src="../../assets/iconos/guia-web.svg" aria-hidden="true" class="icono_v"></span>Guía Web</a></li>
+					<li class="li_v inicio"><a href="../inicio/index.php" tabindex="0"><span><img src="../../assets/iconos/inicio.svg" aria-hidden="true" class="icono_v"></span>Inicio</a></li>
+					<li class="li_v correos"><a href="../correos/correos.php" tabindex="0"><span><img src="../../assets/iconos/email.svg" aria-hidden="true" class="icono_v"></span>Correos</a></li>
+					<li class="li_v registro"><a href="../registro/registro.php" v><span><img src="../../assets/iconos/registro.svg" aria-hidden="true" class="icono_v"></span>Registro</a></li>
+					<li class="li_v citas"><a href="#" tabindex="0"><span><img src="../../assets/iconos/citas.svg" aria-hidden="true" class="icono_v"></span>Citas</a></li>
+					<li class="li_v analitica"><a href="../analitica_web/analitica.php" tabindex="0"><span><img src="../../assets/iconos/analitica-web.svg" aria-hidden="true" class="icono_v"></span>Analítica Web</a></li>
+					<li class="li_v calendario"><a href="../calendario/calendario.php" tabindex="0"><span><img src="../../assets/iconos/calendario.svg" aria-hidden="true" class="icono_v"></span>Calendario</a></li>
+					<li class="li_v guia_web"><a href="../guia_web/guia_web.php" tabindex="0"><span><img src="../../assets/iconos/guia-web.svg" aria-hidden="true" class="icono_v"></span>Guía Web</a></li>
 					<!-- <li class="li_v asistencia"><a href="#"><span><img src="iconos/formulario.svg" aria-hidden="true" class="icono_v"></span>Asistencia Técnica</a></li> -->
 				</ul>	
 			</nav>
@@ -55,14 +55,14 @@
 
 				<!-- Cree esete div para separar el iconos de la flecha de los de idioma, usuarios, etc -->
 				<div class="regre">
-					<button><img src="../../assets/iconos/flecha-izq.svg" alt="Regresar"></button>
+					<button><img src="../../assets/iconos/flecha-izq.svg" alt="Esconder menú / Mostrar menú" tabindex="0"></button>
 				</div>
 
 				<ul>
-					<li class="li_h idioma"><a href="#"><img src="../../assets/iconos/idioma.svg" alt="Cambiar Idioma"></a></li>
-					<li class="li_h notifi"><a href="#"><img src="../../assets/iconos/bell.svg" alt="Notifaciones"></a></li>
-					<li class="li_h usuario"><img src="../../assets/iconos/usuario.svg" id="usuario" alt="Foto de Perfil"></li>
-					<li class="li_h nombre"><div class="userNmae"><?php echo $_SESSION["nombre"] ?></div></li>
+					<li class="li_h idioma"><a href="#" tabindex="0"><img src="../../assets/iconos/idioma.svg" alt="Cambiar Idioma"></a></li>
+					<li class="li_h notifi"><a href="#" tabindex="0"><img src="../../assets/iconos/bell.svg" alt="Notificaciones"></a></li>
+					<li class="li_h usuario"><img src="../../assets/iconos/usuario.svg" id="usuario" alt="Foto de Perfil" tabindex="0"></li>
+					<li class="li_h nombre"><div class="userNmae" tabindex="0"><?php echo $_SESSION["nombre"] ?></div></li>
 				</ul>
 			</nav>
 
@@ -70,8 +70,8 @@
 			<!-- SubMenu de Atajos (Menu Horizontal Negro) -->
 			<div class="submenu_h">
 				
-				<a href="../inicio/index.php"><span><img src="../../assets/iconos/inicio-blanco.svg"></span>Inicio</a>
-				<a href="../logout.php"><span><img src="../../assets/iconos/log-out.svg"></span>Salir</a>
+				<a href="../inicio/index.php" aria-hidden><span><img src="../../assets/iconos/inicio-blanco.svg" ></span tabindex="0">Inicio</a>
+				<a href="../logout.php" aria-hidden><span><img src="../../assets/iconos/log-out.svg" ></span tabindex="0">Salir</a>
 
 			</div>
 		</header>
@@ -80,26 +80,26 @@
 			
 			<form id="formu" class="form_correos">
 				
-				<h1>Correos</h1>
-				<h3>Especifique el asunto del correo a enviar</h3>
+				<h1 tabindex="0">Correos</h1>
+				<h3 tabindex="0">Especifique el asunto del correo a enviar</h3>
 
-				<label for="asunto_correos">Asunto:</label>
-				<input type="text" name="asunto" id="asunto_correos" placeholder="Por ejemplo: 'actualización días feriados'">
-				<div id="error_asunto"></div>
+				<label for="asunto_correos" tabindex="0">Asunto:</label>
+				<input type="text" name="asunto" id="asunto_correos" placeholder="Por ejemplo: 'actualización días feriados'" tabindex="0">
+				<div id="error_asunto" tabindex="0"></div>
 
-				<label for="mensaje_correos">*Mensaje:</label>
-				<textarea id="mensaje_correos" name="mensaje" resize="none"></textarea>
-				<div id="error_correo"></div>
+				<label for="mensaje_correos" tabindex="0">Mensaje:</label>
+				<textarea id="mensaje_correos" name="mensaje" resize="none" tabindex="0"></textarea>
+				<div id="error_correo" tabindex="0"></div>
 
 				<div class="cont_btn">
 
-					<label for="file" id="label_file" class="btn_ct btn_correos" name="adjuntar">Adjuntar Archivo
-						<span id="file_name">Ningún archivo seleccionado</span>
+					<label for="file" id="label_file" class="btn_ct btn_correos" name="adjuntar" tabindex="0">Adjuntar Archivo
+						<span id="file_name" tabindex="0">Ningún archivo seleccionado</span>
 					</label>
 
-					<input type="file" id="file" name="file" class="archivo">
+					<input type="file" id="file" name="file" class="archivo" tabindex="0">
 					<!-- <button class="btn_correos">Adjuntar Archivo</button> -->
-					<button type="submit" class="btn_correos">Enviar</button>
+					<button type="submit" class="btn_correos" tabindex="0">Enviar</button>
 				</div>
 			</form>
 			
