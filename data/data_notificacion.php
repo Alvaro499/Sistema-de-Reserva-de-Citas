@@ -15,9 +15,9 @@ require("../../db/db_access.php");
         $this->cargarConexion = $this->objConexion->conectar();
     }
 
-    public function get_estado(){
+    public function get_estado($cedula){
         try{
-        $query= $this->cargarConexion->prepare("SELECT `idcitas_cliente`,`area_servicio`,`Estado_Notificacion` FROM `citas_cliente` WHERE `Estado_Notificacion` !=3");
+        $query= $this->cargarConexion->prepare("SELECT `idcitas_cliente`,`area_servicio`,`Estado_Notificacion` FROM `citas_cliente` WHERE `Estado_Notificacion` !=3 AND `idusuarios`= '$cedula'");
         $query->execute();
         $resultado = $query->fetchAll();
         return $resultado;
