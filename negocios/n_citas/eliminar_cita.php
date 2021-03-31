@@ -25,7 +25,8 @@
     }
     $rechazar = $correo->Cita_Rechazada($nombre_cliente,$apellido,$correo_cliente,$fecha,$hora);
     if ($rechazar) {    
-        $eliminar = $delete->delete_citas($id);
+        //$eliminar = $delete->delete_citas($id);
+        $eliminar = $delete->actualizarCitaEliminada($id);
         if($eliminar){
             echo 1;
         }

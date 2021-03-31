@@ -8,6 +8,7 @@
 	<title>Inicio</title>
 	<link rel="stylesheet" type="text/css" href="fonts_awesome/css/all.min.css">
 	<link rel="stylesheet" type="text/css" href="../../assets/css/style_inicio/bridge.css">
+	<link rel="stylesheet" type="text/css" href="../../assets/css/style_inicio/submenu.css">
 </head>
 
 <body>
@@ -36,13 +37,13 @@
 			<nav id="nav_v">
 				<ul>
 					<li class="li_v"><a href="../inicio/index.php"><span><img src="../../assets/iconos/inicio.svg" aria-hidden="true" class="icono_v"></span>Inicio</a></li>
-					<li class="li_v"><a href="../correos/correos.php"><span><img src="../../assets/iconos/email.svg" aria-hidden="true" class="icono_v"></span>Correos</a></li>
+					<li class="li_v"><a href="../correos/correos"><span><img src="../../assets/iconos/email.svg" aria-hidden="true" class="icono_v"></span>Correos</a></li>
 					<?php if($_SESSION["idrol"] == 1){ ?>
 					<li class="li_v"><a href="../registro.registro.php"><span><img src="../../assets/iconos/registro.svg" aria-hidden="true" class="icono_v"></span>Registro</a></li>
 					<?php } ?>
 					<li class="li_v"><a href="../"><span><img src="../../assets/iconos/citas.svg" aria-hidden="true" class="icono_v"></span>Citas</a></li>
 					<li class="li_v"><a href="../analitica_web/analitica.php"><span><img src="../../assets/iconos/analitica-web.svg" aria-hidden="true" class="icono_v"></span>Analítica Web</a></li>
-					<li class="li_v"><a href="../calendario/calendario.php"><span><img src="../../assets/iconos/calendario.svg" aria-hidden="true" class="icono_v"></span>Calendario</a></li>
+					<li class="li_v"><a href="../calendario/calendario"><span><img src="../../assets/iconos/calendario.svg" aria-hidden="true" class="icono_v"></span>Calendario</a></li>
 					<li class="li_v"><a href="../guia_web/guia_web.php"><span><img src="../../assets/iconos/guia-web.svg" aria-hidden="true" class="icono_v"></span>Guía Web</a></li>
 					<!-- <li class="li_v"><a href="#"><span><img src="iconos/formulario.svg" aria-hidden="true" class="icono_v"></span>Asistencia Técnica</a></li> -->
 				</ul>	
@@ -61,7 +62,27 @@
 
 				<ul>
 					<li class="li_h idioma"><a href="#"><img src="../../assets/iconos/idioma.svg" alt="Cambiar Idioma"></a></li>
-					<li class="li_h notifi"><a href="#"><img src="../../assets/iconos/bell.svg" alt="Notifaciones"></a></li>
+					<li class="li_h notifi menu__item container-submenu"><a href="#"><img src="../../assets/iconos/bell.svg" alt="Notifaciones"></a>
+						<ul class="submenu">
+							<?php 
+							require("../../negocios/n_notificacion/notificaciones.php");
+							$notifi = $datos_noti;
+							foreach($notifi as $values){
+							?>
+							<li class="menu_item">
+								<?php if($values["Estado_Notificacion"]==0){?>
+									<a href="" class="menu__link" onclick='actualizar_estado(<?php echo $values["idcitas_cliente"]; ?>);'>Su solicitud fue enviada</a>
+								<?php }?>
+								<?php if($values["Estado_Notificacion"]==1){?>
+									<a href="" class="menu__link" onclick='actualizar_estado_aceptado(<?php echo $values["idcitas_cliente"]; ?>);'>Su cita para <?php echo $values["area_servicio"];?> fue aceptada</a>
+								<?php }?>
+								<?php if($values["Estado_Notificacion"]==2){?>
+									<a href="" class="menu__link" onclick='actualizar_estado_rechazado(<?php echo $values["idcitas_cliente"]; ?>);'>Su cita para <?php echo $values["area_servicio"];?> fue rechazada</a>
+								<?php }?>
+							</li>
+							<?php }?>
+						</ul>
+					</li>
 					<li class="li_h usuario"><img src="../../assets/iconos/usuario.svg" id="usuario" alt="Foto de Perfil"></li>
 					<li class="li_h nombre"><div class="userNmae"><?php echo $_SESSION["nombre"] ?></div>
 						<ul>
@@ -98,5 +119,7 @@
 	</div>
 
 	<script type="text/javascript" src="../../assets/js/hide_menu_v.js"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="../../assets/js/notificaciones/notifi.js"></script>
 </body>
 </html>

@@ -1,0 +1,7 @@
+#Titulo de la alerta
+AuthName "Autorización Requerida"
+#Dirección del archivo con las contraseñas
+AuthUserFile C:\xampp\htdocs\SRCG\ui\inicio\.htpasswd
+AuthType Basic
+#Usuarios a los que tiene acceso
+require user Zeus

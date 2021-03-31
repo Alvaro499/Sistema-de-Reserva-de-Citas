@@ -18,7 +18,7 @@ class D_Citas{
     public function insertarCitas($area, $asunto, $mensaje, $fecha, $hora,$medio, $archivo, $usuario){
 
         try {
-            $insertar = $this->cargarConexion->prepare("INSERT INTO `citas_cliente`(`area_servicio`, `asunto`, `comentario`, `url_archivo`, `fecha`, `hora`, `medio`, `estado_cita`,`idusuarios`) VALUES ('$area','$asunto','$mensaje','$archivo','$fecha','$hora','$medio','0','$usuario')");
+            $insertar = $this->cargarConexion->prepare("INSERT INTO `citas_cliente`(`area_servicio`, `asunto`, `comentario`, `url_archivo`, `fecha`, `hora`, `medio`, `estado_cita`,`Estado_Notificacion`,`idusuarios`) VALUES ('$area','$asunto','$mensaje','$archivo','$fecha','$hora','$medio','0','0','$usuario')");
 
             $resultado = $insertar->execute();
             return $resultado;
@@ -39,15 +39,15 @@ class D_Citas{
         }
     }
     
-    public function delete_citas($id){
-        try{
-            $query = $this->cargarConexion->prepare("DELETE FROM `citas_cliente` WHERE `idcitas_cliente`='$id'");
-            $resultado = $query->execute();
-            return $resultado;
-        }catch(PDOException $e){
-            echo "Error:" . $e->getMessage();
-        }
-    }
+    // public function delete_citas($id){
+    //     try{
+    //         $query = $this->cargarConexion->prepare("DELETE FROM `citas_cliente` WHERE `idcitas_cliente`='$id'");
+    //         $resultado = $query->execute();
+    //         return $resultado;
+    //     }catch(PDOException $e){
+    //         echo "Error:" . $e->getMessage();
+    //     }
+    // }
 
     public function aceptarCita($nombre, $oficina, $cant_personas, $plataforma, $link, $id){
         try{
@@ -61,7 +61,17 @@ class D_Citas{
 
     public function actualizarCita($id){
         try{
-            $query = $this->cargarConexion->prepare("UPDATE `citas_cliente` SET `estado_cita`=1 WHERE `idcitas_cliente`= '$id'");
+            $query = $this->cargarConexion->prepare("UPDATE `citas_cliente` SET `estado_cita`=1, `Estado_Notificacion`=1  WHERE `idcitas_cliente`= '$id'");
+            $resultado = $query->execute();
+            return $resultado;
+        }catch(PDOException $e){
+            echo "Error:" . $e->getMessage();
+        }
+    }
+    
+    public function actualizarCitaEliminada($id){
+        try{
+            $query = $this->cargarConexion->prepare("UPDATE `citas_cliente` SET `estado_cita`=2, `Estado_Notificacion`=2  WHERE `idcitas_cliente`= '$id'");
             $resultado = $query->execute();
             return $resultado;
         }catch(PDOException $e){
