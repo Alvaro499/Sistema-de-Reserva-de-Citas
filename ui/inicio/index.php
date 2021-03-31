@@ -56,7 +56,7 @@
 
 				<!-- Cree esete div para separar el iconos de la flecha de los de idioma, usuarios, etc -->
 				<div class="regre">
-					<button><img src="../../assets/iconos/flecha-izq.svg" alt="Regresar"></button>
+					<button><img src="../../assets/iconos/flecha-izq.svg" alt="Esconder menú / Mostrar menú"></button>
 				</div>
 
 				<ul>

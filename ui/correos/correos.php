@@ -14,15 +14,15 @@
 <body>
 
 	<?php 
-		// require_once("../../sesion/C_Sesion.php");
+		require_once("../../sesion/C_Sesion.php");
 
-		// $inicio = new C_Sesion();
-		// $inicio->inicializar();
+		$inicio = new C_Sesion();
+		$inicio->inicializar();
 		
-		// if(!isset($_SESSION["cedula"])) {
-		// 	header("Location: ../login/sesion.php");
-		// }else {
-		// }     
+		if(!isset($_SESSION["cedula"])) {
+			header("Location: ../login/sesion.php");
+		}else {
+		}     
 
 	?>
 
@@ -55,7 +55,7 @@
 
 				<!-- Cree esete div para separar el iconos de la flecha de los de idioma, usuarios, etc -->
 				<div class="regre">
-					<button><img src="../../assets/iconos/flecha-izq.svg" alt="Regresar" tabindex="0"></button>
+					<button><img src="../../assets/iconos/flecha-izq.svg" alt="Esconder menú / Mostrar menú" tabindex="0"></button>
 				</div>
 
 				<ul>
@@ -70,8 +70,8 @@
 			<!-- SubMenu de Atajos (Menu Horizontal Negro) -->
 			<div class="submenu_h">
 				
-				<a href="../inicio/index.php"><span><img src="../../assets/iconos/inicio-blanco.svg" tabindex="0"></span>Inicio</a>
-				<a href="../logout.php"><span><img src="../../assets/iconos/log-out.svg" tabindex="0"></span>Salir</a>
+				<a href="../inicio/index.php" aria-hidden><span><img src="../../assets/iconos/inicio-blanco.svg" ></span tabindex="0">Inicio</a>
+				<a href="../logout.php" aria-hidden><span><img src="../../assets/iconos/log-out.svg" ></span tabindex="0">Salir</a>
 
 			</div>
 		</header>
