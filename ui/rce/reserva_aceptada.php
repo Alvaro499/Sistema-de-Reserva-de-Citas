@@ -14,16 +14,16 @@
 <body>
 
 	<?php 
-		// require_once("../../sesion/C_Sesion.php");
+		require_once("../../sesion/C_Sesion.php");
 
-		// $inicio = new C_Sesion();
-		// $inicio->inicializar();
+		$inicio = new C_Sesion();
+		$inicio->inicializar();
 		
-		// if(!isset($_SESSION["cedula"])) {
-		// 	header("Location: ../login/sesion.php");
-		// }else {
+		if(!isset($_SESSION["cedula"])) {
+			header("Location: ../login/sesion.php");
+		}else {
 			
-		// }     
+		}     
 
 	?>
 
@@ -56,7 +56,7 @@
 
 				<!-- Cree esete div para separar el iconos de la flecha de los de idioma, usuarios, etc -->
 				<div class="regre">
-					<button><img src="../../assets/iconos/flecha-izq.svg" alt="Regresar" tabindex="0"></button>
+					<button><img src="../../assets/iconos/flecha-izq.svg" alt="Esconder menú / Mostrar menú" tabindex="0"></button>
 				</div>
 
 				<ul>
