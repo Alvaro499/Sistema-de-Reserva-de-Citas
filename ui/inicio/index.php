@@ -62,11 +62,15 @@
 
 				<ul>
 					<li class="li_h idioma"><a href="#"><img src="../../assets/iconos/idioma.svg" alt="Cambiar Idioma"></a></li>
-					<li class="li_h notifi menu__item container-submenu"><a href="#"><img src="../../assets/iconos/bell.svg" alt="Notifaciones"></a>
+					<li class="li_h notifi menu__item container-submenu"><a href="#"><img src="../../assets/iconos/bell.svg" alt="Notificaciones"></a>
 						<ul class="submenu">
 							<?php 
 							require("../../negocios/n_notificacion/notificaciones.php");
 							$notifi = $datos_noti;
+
+							//Numero de notificaciones
+							$num_notifi = count($notifi);
+						
 							foreach($notifi as $values){
 							?>
 							<li class="menu_item">
@@ -82,16 +86,19 @@
 							</li>
 							<?php }?>
 						</ul>
+						<div id="container_ctn_notifi">
+							
+							<span id="cnt_notifi"><?php echo $num_notifi ?></span>
+							
+						</div>
 					</li>
-					<li class="li_h usuario"><img src="../../assets/iconos/usuario.svg" id="usuario" alt="Foto de Perfil"></li>
+					<li class="li_h usuario"><img src="<?php //../../assets/iconos/usuario.svg ?>" id="usuario" alt="Foto de Perfil"></li>
 					<li class="li_h nombre"><div class="userNmae"><?php echo $_SESSION["nombre"] ?></div>
 						<ul>
 							<li>
 								<div id="perfil" class="cont_perfil">
-									<a class="config_options" href="">Mi perfil</a>
-									
-									<a class="config_options" href="">Configuraciones</a>
-									<a class="config_options" href="">Cerrar sesión</a>
+									<a class="config_options" href="../perfil/perfil.php">Mi perfil</a>
+									<a class="config_options" href="../logout.php">Cerrar sesión</a>
 								</div>
 							</li>
 						</ul>

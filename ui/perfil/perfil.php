@@ -5,9 +5,9 @@
 	<meta charset="utf-8">
 	<meta name="author" content="Alvaro Siles, Sebastián, Kevin">
 	<meta name="viewport" content="width=device-width">
-	<title>Correos</title>
-	<link rel="stylesheet" type="text/css" href="../../assetsfonts_awesome/css/all.min.css">
-	<link rel="stylesheet" type="text/css" href="../../assets/css/style_correos/bridge.css">
+	<title>Mi perfil</title>
+	<link rel="stylesheet" type="text/css" href="../../assets/fonts_awesome/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="../../assets/css/style_perfil/bridge.css">
 	<link rel="stylesheet" type="text/css" href="../../assets/css/toastr/toastr.min.css">
 </head>
 
@@ -43,7 +43,7 @@
 					<li class="li_v analitica"><a href="../analitica_web/analitica.php" tabindex="0"><span><img src="../../assets/iconos/analitica-web.svg" aria-hidden="true" class="icono_v"></span>Analítica Web</a></li>
 					<li class="li_v calendario"><a href="../calendario/calendario.php" tabindex="0"><span><img src="../../assets/iconos/calendario.svg" aria-hidden="true" class="icono_v"></span>Calendario</a></li>
 					<li class="li_v guia_web"><a href="../guia_web/guia_web.php" tabindex="0"><span><img src="../../assets/iconos/guia-web.svg" aria-hidden="true" class="icono_v"></span>Guía Web</a></li>
-					<!-- <li class="li_v asistencia"><a href="#"><span><img src="iconos/formulario.svg" aria-hidden="true" class="icono_v"></span>Asistencia Técnica</a></li> -->
+				
 				</ul>	
 			</nav>
 
@@ -77,67 +77,94 @@
 		</header>
 
 		<main id="principal">
-			<!-- Se agrega el enctype="multipart/form-data" para que el input permita elegir mas de un archivo -->
-			<form id="formu" class="form_correos" enctype="multipart/form-data">
-				
-				<h1 tabindex="0">Correos</h1>
-				<h3 tabindex="0">Especifique el asunto del correo a enviar</h3>
+			
+			<div id="perfil_cont">
+				<h1>Mi perfil</h1>
 
-				<label for="asunto_correos" tabindex="0">Asunto:</label>
-				<input type="text" name="asunto" id="asunto_correos" placeholder="Por ejemplo: 'actualización días feriados'" tabindex="0">
-				<div id="error_asunto" tabindex="0"></div>
+				<section id="foto_cont">
 
-				<label for="mensaje_correos" tabindex="0">Mensaje:</label>
-				<textarea id="mensaje_correos" name="mensaje" resize="none" tabindex="0"></textarea>
-				<div id="error_correo" tabindex="0"></div>
+					<div id="foto_opciones">
+						<div class="foto">
+							<img src="../../assets/iconos/usuario.svg" id="foto_actual" alt="Foto de perfil actual, por defecto" tabindex="0">
+						</div>
 
-				<div class="cont_btn">
+						<label for="input_foto" class="label_foto"><span><i class="fas fa-paperclip"></i></span>Actualizar foto de perfil</label>
+						<input type="file" id="input_foto" name="input_foto">
+					</div>
 
-					<label for="file" id="label_file" class="btn_ct btn_correos" name="adjuntar" tabindex="0" title="Los archivos deben ser ">Adjuntar Archivos
-						<span id="file_name" tabindex="0">Ningún archivo seleccionado</span>
-					</label>
+				</section>
 
-					<input type="file" id="file" name="file[]" class="archivo" tabindex="0" multiple="true">
-					<!-- <button class="btn_correos">Adjuntar Archivo</button> -->
-					<button type="submit" class="btn_correos" tabindex="0">Enviar</button>
-				</div>
-			</form>
+				<section id="info_cont">
+					<div class="card_cont">
+
+						<h2>Información de perfil</h2>
+
+						<?php
+							require("../../data/data_perfil.php");
+							$datos = new D_Perfil;
+							$info_perfil = $datos->infoPerfil($_SESSION["cedula"]);
+
+							foreach($info_perfil as $value){
+						
+						?>
+						<div class="card_info">
+							<p>Nombre:</p>
+							<p><?php echo $value["nombre"] ?></p>
+
+						</div >
+
+						<div class="card_info">
+							<p>Primer Apellido:</p>
+							<p><?php echo $value["apellido1"] ?></p>
+						</div>
+
+						<div class="card_info">
+							<p>Segundo Apellido:</p>
+							<p><?php echo $value["apellido2"]?></p>
+						</div class="card_info">
+
+						<div class="card_info">
+							<p>Cédula:</p>
+							<p><?php echo $value["cedula"] ?></p>
+						</div>
+
+						<div class="card_info">
+							<p>Correo Electrónico:</p>
+							<p><?php echo $value["correo"] ?></p>
+						</div>
+
+						<div class="card_info">
+							<p>Número de Teléfono:</p>
+							<p><?php echo $value["celular"] ?></p>
+						</div>
+
+						<div class="card_info">
+							<p>Número de Teléfono (opcional):</p>
+							<p><?php echo $value["celular_opcional"] ?></p>
+						</div>
+						<?php } ?>
+					</div>
+				</section>
+
+				<section id="ayuda_cont">
+					<div class="ayuda_opciones">
+
+						<h2>Ayuda</h2>
+
+						<div class="card_ayuda">
+							<p><a href="../login/recuperar_contra.php">Cambiar contraseña</a></p>
+						</div>
+						
+					</div>
+				</section>
+			</div>
 			
 		</main>
 
 	</div>
 	<script type="text/javascript" src="../../assets/js/hide_menu_v.js"></script>
-	<script type="text/javascript" src="../../assets/js/validaciones/correos_valid.js"></script>
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="../../assets/js/toastr/toastr.min.js"></script>
-	<script type="text/javascript" src="../../assets/js/upload_file.js"></script>
-	<script type="text/javascript">
 	
-		$("form#formu").submit(function(event){
-			event.preventDefault();
-			if(validacion()){
-
-				$.ajax({
-					type: "POST",
-					url:"../../negocios/n_correos/correos.php",
-					data: new FormData(this),
-					contentType: false,
-					cache:false,
-					processData: false,
-					//Métodos
-					success: function(data){
-						
-						if(data==1){
-							toastr.success("Los correos han sido enviado con éxito","Éxitos");
-						}else if(data==0){
-							toastr.error("Los correos no se enviaron","Error");
-						}else{
-							toastr.error("Error desconocido"+data,"Error");
-						}
-					}
-				})
-			}
-		});
-	</script>
 </body>
 </html>

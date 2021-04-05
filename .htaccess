@@ -1,11 +1,11 @@
 #Restringe acceso a los archivos de las carpetas
 #Options All -Indexes 
 #Código de error y direccionamiento
-ErrorDocument 404 /SRCG/ui/login/sesion.php
+#ErrorDocument 404 /SRCG/ui/login/sesion.php
 #Sobreescribe la ruta para ocultar la extensión
-RewriteEngine on
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}.php -f 
+#RewriteEngine on
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{REQUEST_FILENAME}.php -f 
 #RewriteRule ^cambiar_contra/([0-9]+)$ cambiar_contra.php?cedula=$1
-RewriteRule ^(.*)$ $1.php 
+#RewriteRule ^(.*)$ $1.php 
 

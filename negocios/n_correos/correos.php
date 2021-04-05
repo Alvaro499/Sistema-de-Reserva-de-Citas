@@ -5,8 +5,9 @@ require("email.php");
 
 $asunto= $_POST["asunto"];
 $mensaje= $_POST["mensaje"];
-$archivo= $_FILES["file"]["name"];
-$ruta= $_FILES["file"]["tmp_name"];
+$archivo= $_FILES["file"]["name"]; //nombre archivo
+$ruta = $_FILES["file"]["tmp_name"]; //ruta archivo
+// $rutas = array();
 $correo_max = new N_EnvioEmail();
 $citas = new D_Usuarios();
 $sesion = new C_Sesion();

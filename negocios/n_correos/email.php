@@ -31,8 +31,14 @@
 
                 $email->addAddress($correo);
 
+
                 if(!empty($archivo)){
-                   $email->AddAttachment($ruta,$archivo);
+                    
+                    $contador = 0;
+                    foreach ($ruta as $rutas) {
+                        $email->AddAttachment($rutas,$archivo[0]);
+                        ++$contador;
+                    }
                 }
 
                 $email->Charset = "UTF-8";

@@ -71,3 +71,27 @@
         visibility: visible;
     }
 }
+
+/* Numero de notificaciones */
+.container-submenu{
+    position: relative;
+}
+
+#container_ctn_notifi{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: orange;
+    color: #fff;
+    position: absolute;
+    top: -10%;
+    right: -25%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+#cnt_notifi{
+    position: relative;
+    top: 7%;
+}

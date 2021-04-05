@@ -14,14 +14,15 @@
 
 	<?php
 
-		$parametro_ced = isset($_GET["cedula"]) ? $_GET["cedula"] : null;
-		//se trae el parametro con el valor de la cedula enviado por el correo ejecutado por recuperar_contra/php
+		// $parametro_ced = isset($_GET["cedula"]) ? $_GET["cedula"] : null;
+		// //se trae el parametro con el valor de la cedula enviado por el correo ejecutado por recuperar_contra/php
 		
-		if($parametro_ced == null){
-			header("location: ../login/sesion.php");
-		}
+		// if($parametro_ced == null){
+		// 	header("location: ../login/sesion.php");
+		// }
 		session_start();
-		$_SESSION["ced"] = $parametro_ced;
+		//$_SESSION["ced"] = $parametro_ced;
+		$parametro_ced = $_SESSION["param_cedula"];
 		//se guarda el valor del parametro en una variable global para usarla en la funcion de recuperar contrasena
 	?>
 	<div class="contenedor">

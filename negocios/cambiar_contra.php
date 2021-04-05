@@ -3,7 +3,7 @@
     require("../data/data_crear_contra.php");
 
     session_start();
-    $cedula = $_SESSION["ced"];
+    $cedula = $_SESSION["param_cedula"];
     $confirm =  $_POST["confirm"];
 
     $objeto = new D_Crear_Contra();
