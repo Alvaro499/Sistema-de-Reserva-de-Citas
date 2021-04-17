@@ -1,10 +1,5 @@
 //Cuando el input type file detecte un cambio, nos traemos el nombre del archivo seleccionado, pero la ruta no es la verdadera, ya que incluye "fake/path/"
 
-var ejemplo = ["Pepe", "mARIA"];
-for (let ejemplos in ejemplo) {
-    //console.log(ejemplos);
-    console.log(ejemplo[ejemplos].length);
-}
 var form =  document.getElementById("formu");
 var input_file = document.getElementById('file');
 var file_name = document.getElementById('file_name');
