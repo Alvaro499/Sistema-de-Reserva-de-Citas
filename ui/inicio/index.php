@@ -15,14 +15,16 @@
 
 	<?php 
 		require_once("../../sesion/C_Sesion.php");
+		
 
+		//Varaibles de sesion
 		$inicio = new C_Sesion();
 		$inicio->inicializar();
 		
 		if(!isset($_SESSION["cedula"])) {
 			header("Location: ../login/sesion.php");
 		}else {
-		}     
+		}
 
 	?>
 
@@ -37,7 +39,7 @@
 			<nav id="nav_v">
 				<ul>
 					<li class="li_v"><a href="../inicio/index.php"><span><img src="../../assets/iconos/inicio.svg" aria-hidden="true" class="icono_v"></span>Inicio</a></li>
-					<li class="li_v"><a href="../correos/correos"><span><img src="../../assets/iconos/email.svg" aria-hidden="true" class="icono_v"></span>Correos</a></li>
+					<li class="li_v"><a href="../correos/correos.php"><span><img src="../../assets/iconos/email.svg" aria-hidden="true" class="icono_v"></span>Correos</a></li>
 					<?php if($_SESSION["idrol"] == 1){ ?>
 					<li class="li_v"><a href="../registro.registro.php"><span><img src="../../assets/iconos/registro.svg" aria-hidden="true" class="icono_v"></span>Registro</a></li>
 					<?php } ?>
@@ -65,6 +67,7 @@
 					<li class="li_h notifi menu__item container-submenu"><a href="#"><img src="../../assets/iconos/bell.svg" alt="Notificaciones"></a>
 						<ul class="submenu">
 							<?php 
+							// require("../../negocios/n_notificacion/notificaciones.php");
 							require("../../negocios/n_notificacion/notificaciones.php");
 							$notifi = $datos_noti;
 
@@ -92,7 +95,22 @@
 							
 						</div>
 					</li>
-					<li class="li_h usuario"><img src="<?php //../../assets/iconos/usuario.svg ?>" id="usuario" alt="Foto de Perfil"></li>
+
+					<!-- MOSTRAR FOTO DE PERFIL -->
+
+					<?php
+						//Foto de perfil
+						require("../../data/data_perfil.php");
+						$select_foto = new D_Perfil();
+						$foto_perfil = $select_foto->mostrarFoto($_SESSION["cedula"]);
+						foreach ($foto_perfil as $value) {
+							
+					?>
+
+					<li class="li_h usuario"><img src="../../assets/fotos_perfil/<?php echo $value["img_perfil"]; ?>" id="usuario" alt="Foto de Perfil"></li>
+
+					<?php } ?>
+
 					<li class="li_h nombre"><div class="userNmae"><?php echo $_SESSION["nombre"] ?></div>
 						<ul>
 							<li>

@@ -58,12 +58,12 @@
 							<label for="agregar_foto" class="agregar_foto"><span><i class="fas fa-paperclip"></i></span>Actualizar foto de perfil</label>
 							<input type="file" id="agregar_foto" name="agregar_foto">
 
-							<a href="#" class="elim_foto"><span><i class="fas fa-trash-alt"></i></span>Eliminar foto actual</a>
+							<a href="#" class="elim_foto" onclick='eliminarFoto(<?php echo $_SESSION["cedula"];?>)'><span><i class="fas fa-trash-alt"></i></span>Eliminar foto actual</a>
 						</div>
 
 						<div class="btn_modal">
 							<input type="submit" id="input_submit" name="input_submit" value="Aceptar">
-							<input type="reset" id="input_reset" class="cerrar_modal" name="input_reset" value="Cancelar">
+							<input type="reset" id="input_reset" class="cerrar_modal" name="input_reset" value="Cerrar">
 						</div>
 
 						<span class="icon_x cerrar_modal" title="Cerrar ventana" tabindex="0"><i class="fas fa-times"></i></span>
@@ -210,6 +210,69 @@
 	<script type="text/javascript" src="../../assets/js/foto_perfil.js"></script>
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="../../assets/js/toastr/toastr.min.js"></script>
+	<script type="text/javascript">
 	
+		$("form#form_foto").submit(function(event){
+				event.preventDefault();
+				// var foto = $("#agregar_foto").val();
+
+				// let datos = 
+				// "agregar_foto=" + foto;
+
+				$.ajax({
+					// type: "POST",
+					// url:"../../negocios/n_perfil/foto_perfil.php",
+					// data: datos,
+					type: "POST",
+					url:"../../negocios/n_perfil/foto_perfil.php",
+					data: new FormData(this),
+					contentType: false,
+					cache:false,
+					processData: false,
+					//Métodos
+					success: function(data){
+						
+						if(data==1){
+							toastr.success("Foto de perfil actualizada","Éxito");
+						}else if(data==2){
+							toastr.error("No se ha podido actualizar la foto de perfil","Error");
+						}else if(data==3){
+							toast.error("La foto seleccionado no ha sido guardada", "Error");
+						}
+						// else{
+						// 	toastr.error("Error desconocido"+ data,"Error");
+						// }
+					}
+				})
+		});
+
+		function eliminarFoto(cedula){
+
+			 let datos = 
+				"cedula=" + cedula;
+
+			$.ajax({
+					
+					type: "POST",
+					url:"../../negocios/n_perfil/eliminar_foto.php",
+					data: datos,
+					//Métodos
+					success: function(data){
+						
+						if(data==1){
+							toastr.success("Foto de perfil eliminada","Éxito");
+						}else if(data==2){
+							toastr.error("La foto de perfil no ha podido ser eliminada","Error");
+						}else if(data==3){
+							toast.success("Actualmente no tienes una foto de perfil", "Alerta");
+						}
+						else{
+							toastr.error("Error desconocido"+ data,"Error");
+						}
+					}
+				})
+		}
+		
+	</script>
 </body>
 </html>

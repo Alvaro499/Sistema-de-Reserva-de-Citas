@@ -1,6 +1,6 @@
 <?php
-
-    require("../../db/db_access.php");
+    // require("../../db/db_access.php");
+    require_once("../../db/db_access.php");
 
     class D_Perfil{
 
@@ -25,11 +25,48 @@
             
         }
 
-        public function fotoPerfil($foto,$cedula){
-            try {
-                $actualizar = $this->cargarConexion->prepare("UPDATE `usuarios` SET `img_perfil` = $foto WHERE `cedula` = '$cedula'");
+        // public function fotoPerfil($foto,$cedula){
+        //     try {
+        //         $actualizar = $this->cargarConexion->prepare("UPDATE `usuarios` SET `img_perfil` = $foto WHERE `cedula` = '$cedula'");
 
-            } catch (\Throwable $th) {
+
+
+        //     } catch (PDOException $e) {
+        //         echo "Error:" . $e->getMessage();
+        //     }
+        // }
+
+        public function mostrarFoto($cedula){
+            try {
+                $seleccionar = $this->cargarConexion->prepare("SELECT `img_perfil` FROM `usuarios` WHERE `cedula` = '$cedula'");
+                $nombre_extension = $seleccionar->execute();
+                $nombre_extension = $seleccionar->fetchAll();
+                return $nombre_extension;
+
+            } catch (PDOException $e) {
+                echo "Error:" . $e->getMessage();
+            }
+        }
+
+        //Cambiar la foto actual
+        public function actualizarFoto($nom_extension,$cedula){
+            try {
+                $actualizar = $this->cargarConexion->prepare("UPDATE `usuarios` SET `img_perfil`='$nom_extension' WHERE `cedula` = '$cedula'");
+                $info = $actualizar->execute();
+                return $info;
+                
+            } catch (PDOException $e) {
+                echo "Error:" . $e->getMessage();
+            }
+        }
+
+        public function eliminarFoto($cedula){
+            try {
+                $actualizar = $this->cargarConexion->prepare("UPDATE `usuarios` SET `img_perfil`='usuario.svg' WHERE `cedula` = '$cedula'");
+                $info = $actualizar->execute();
+                return $info;
+                
+            } catch (PDOException $e) {
                 echo "Error:" . $e->getMessage();
             }
         }

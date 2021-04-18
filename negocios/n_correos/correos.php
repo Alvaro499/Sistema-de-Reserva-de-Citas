@@ -15,9 +15,6 @@ $sesion->inicializar();
 
 $result= $citas->max_correo();
 
-// if(!empty($archivo)){
-//     subirImagen($archivo);
-// }
 $sebas;
 
 foreach($result as $value){
@@ -29,19 +26,5 @@ if($sebas){
 }else{
     echo 0; 
 }
-
-// function subirImagen($funcionImagen){
-//     $gt = $_FILES["file"]["tmp_name"];
-//     if (is_uploaded_file($gt)) {
-//         $ruta = "../../assets/archivos/";
-//         $upload = $ruta . $funcionImagen;
-//         if (move_uploaded_file($gt, $upload)) {
-//         }else{
-//             echo 3;
-//         }
-//     }else{
-//         echo 4;
-//     }
-// }
 
 ?>
