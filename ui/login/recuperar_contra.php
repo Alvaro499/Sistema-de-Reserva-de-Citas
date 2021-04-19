@@ -66,7 +66,7 @@
 						if(data==0){
 							toastr.success("El correo de recuperación ha sido enviado. Por favor verifique su bandeja de entrada","Éxito");
 						}else{
-							toastr.error("Este correo no está registrado en el sistema" + data,"Error");
+							toastr.error("Este correo no está registrado en el sistema","Error");
 						}
 					}
 				})

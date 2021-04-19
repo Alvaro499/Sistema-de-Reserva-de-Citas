@@ -34,5 +34,29 @@ for(let opciones in cerrar_modal){
 
 
 // Caracteristicas de la foto
-let
+let formulario = document.querySelector("#form_foto");
+let input = document.querySelector("#agregar_foto");
+let nombre_archivo = document.querySelector("#nombre_archivo");
+
+input.onchage = function(){
+    var archivo = this.input;
+    console.log(archivo);
+
+    if (archivo.type == "image/jpg" || archivo.type == "image/png" || archivo.type == "image/svg" || archivo.type == "image/jpg" || archivo.type == "image/jpeg") {
+
+        if (archivo.size >= 250000000) {
+            
+            $("#agregar_foto").val('');
+            toastr.error("El tamaño del archivo excede los 25MB", "Error");
+        
+        }else{
+            // toastr.success("El tamaño del archivo excede los 25MB", "Éxito"
+        }
+    }else{
+        $("#agregar_foto").val('');
+        toastr.error("Formato de imagen no permitido", "Error");
+    }
     
+};
+
+  

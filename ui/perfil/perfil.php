@@ -62,7 +62,7 @@
 						</div>
 
 						<div class="btn_modal">
-							<input type="submit" id="input_submit" name="input_submit" value="Aceptar">
+							<input type="submit" id="input_submit" name="input_submit" value="Actualizar">
 							<input type="reset" id="input_reset" class="cerrar_modal" name="input_reset" value="Cerrar">
 						</div>
 
@@ -264,7 +264,7 @@
 						}else if(data==2){
 							toastr.error("La foto de perfil no ha podido ser eliminada","Error");
 						}else if(data==3){
-							toast.success("Actualmente no tienes una foto de perfil", "Alerta");
+							toastr.success("Actualmente no tienes una foto de perfil", "Alerta");
 						}
 						else{
 							toastr.error("Error desconocido"+ data,"Error");
