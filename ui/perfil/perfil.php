@@ -105,7 +105,7 @@
 				<ul>
 					<li class="li_h idioma"><a href="#" tabindex="0"><img src="../../assets/iconos/idioma.svg" alt="Cambiar Idioma"></a></li>
 					<li class="li_h notifi"><a href="#" tabindex="0"><img src="../../assets/iconos/bell.svg" alt="Notificaciones"></a></li>
-					<li class="li_h usuario"><img src="../../assets/iconos/usuario.svg" id="usuario" alt="Foto de Perfil" tabindex="0"></li>
+					<li class="li_h usuario"><img src="../../assets/fotos_perfil/<?php echo $_SESSION["img_perfil"] ?>" id="usuario" alt="Foto de Perfil" tabindex="0"></li>
 					<li class="li_h nombre"><div class="userNmae" tabindex="0"><?php echo $_SESSION["nombre"] ?></div></li>
 				</ul>
 			</nav>
@@ -207,9 +207,9 @@
 
 	</div>
 	<script type="text/javascript" src="../../assets/js/hide_menu_v.js"></script>
-	<script type="text/javascript" src="../../assets/js/foto_perfil.js"></script>
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="../../assets/js/toastr/toastr.min.js"></script>
+	<script type="text/javascript" src="../../assets/js/foto_perfil.js"></script>
 	<script type="text/javascript">
 	
 		$("form#form_foto").submit(function(event){
@@ -262,9 +262,13 @@
 						if(data==1){
 							toastr.success("Foto de perfil eliminada","Éxito");
 						}else if(data==2){
-							toastr.error("La foto de perfil no ha podido ser eliminada","Error");
+							toastr.error("No se ha podido actualizar la foto de perfil","Error");
 						}else if(data==3){
-							toastr.success("Actualmente no tienes una foto de perfil", "Alerta");
+							toastr.error("El archivo seleccionado no cumple con las especificaciones","Error");
+						}else if(data==4){
+							toastr.info("Actualmente no tienes una foto de perfil", "Alerta");
+						}else if(data==5){
+							toastr.success("Foto de perfil ha sido eliminada con éxito", "Éxito");
 						}
 						else{
 							toastr.error("Error desconocido"+ data,"Error");

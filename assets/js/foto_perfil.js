@@ -1,4 +1,4 @@
-
+console.log("HOLA MUNDO 1.0");
 // CODIGO DEL MODAL
 let modal = document.querySelector(".modal_container"); //contenedor
 let modal_form = document.querySelector(".modal"); //formulario
@@ -7,7 +7,7 @@ let modal_form = document.querySelector(".modal"); //formulario
 let abrir_modal = document.querySelector(".label_foto");
 
 console.log(abrir_modal);
-abrir_modal.addEventListener("click", function (e) {
+abrir_modal.addEventListener("click", function () {
 
     modal.style.visibility = "initial";
     modal.style.transform = "scale(1,1)";
@@ -22,39 +22,52 @@ abrir_modal.addEventListener("click", function (e) {
 
     // Cerrar modal
 let cerrar_modal = document.querySelectorAll(".cerrar_modal");
-
-for(let opciones in cerrar_modal){
-    cerrar_modal[opciones].addEventListener("click", function (e) {
+for (let i = 0; i < cerrar_modal.length; i++) {
+    
+    cerrar_modal[i].addEventListener("click", function (e) {
         // modal.style.display = "none";
         modal.style.visibility = "hidden";
         modal.style.transform = "scale(0.1,0.1)";
         modal.style.background = "rgba(0,0,0,0)";    
     });
+    
 }
+// for(let opciones in cerrar_modal){
+//     cerrar_modal[opciones].addEventListener("click", function (e) {
+//         // modal.style.display = "none";
+//         modal.style.visibility = "hidden";
+//         modal.style.transform = "scale(0.1,0.1)";
+//         modal.style.background = "rgba(0,0,0,0)";    
+//     });
+// }
 
-
+console.log("HOLA MUNDO 2.0");
 // Caracteristicas de la foto
 let formulario = document.querySelector("#form_foto");
+console.log(formulario);
 let input = document.querySelector("#agregar_foto");
-let nombre_archivo = document.querySelector("#nombre_archivo");
+console.log(input);
+//let nombre_archivo = document.querySelector("#nombre_archivo");
 
 input.onchage = function(){
-    var archivo = this.input;
+    var archivo = this.files[0];
+    var archivo_tipo = archivo.type;
     console.log(archivo);
 
-    if (archivo.type == "image/jpg" || archivo.type == "image/png" || archivo.type == "image/svg" || archivo.type == "image/jpg" || archivo.type == "image/jpeg") {
+    if (archivo_tipo == "image/png" || archivo_tipo == "image/svg" || archivo_tipo == "image/jpg" || archivo_tipo == "image/jpeg") {
 
         if (archivo.size >= 250000000) {
             
-            $("#agregar_foto").val('');
             toastr.error("El tamaño del archivo excede los 25MB", "Error");
+            $("#agregar_foto").val('');
         
         }else{
-            // toastr.success("El tamaño del archivo excede los 25MB", "Éxito"
+            // toastr.success("El tamaño del archivo excede los 25MB", "Error";
         }
     }else{
-        $("#agregar_foto").val('');
         toastr.error("Formato de imagen no permitido", "Error");
+        // $("#agregar_foto").val('');
+        $("#agregar_foto").val('');
     }
     
 };

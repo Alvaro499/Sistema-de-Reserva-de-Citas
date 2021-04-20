@@ -25,6 +25,7 @@
             $objSesion->cargarSesion("nombre", $value["nombre"]);
             $objSesion->cargarSesion("correo", $value["correo"]);
             $objSesion->cargarSesion("idrol", $value["idroles"]);
+            $objSesion->cargarSesion("img_perfil", $value["img_perfil"]);
 
             if ($value["pass_temp"] == 0){
                 echo 2; //Direcciona a crear la contraseña por primera vez

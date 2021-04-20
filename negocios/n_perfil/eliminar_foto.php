@@ -17,13 +17,13 @@ foreach ($mostrar as $value) {
     
     if ($value["img_perfil"] == "usuario.svg") {
         
-        echo 3; //Actualmente no tienes una foto de perfil
+        echo 4; //Actualmente no tienes una foto de perfil
     }else {
         $eliminar = $funct_perfil->eliminarFoto($cedula);
         if ($eliminar) {
-            echo 1; //Foto de perfil eliminada
+            echo 5; //Foto de perfil eliminada
         }else {
-            echo 2; //La foto de perfil no podido ser eliminada
+            echo 6; //La foto de perfil no podido ser eliminada
         }
     }
     

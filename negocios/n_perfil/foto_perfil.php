@@ -14,7 +14,7 @@ $funct_perfil = new D_Perfil();
 
 function foto_perfil($nom_extension, $ruta){
 
-    if (!empty($nom_extension)) {
+    if (!empty($nom_extension) || !empty($ruta)) {
 
         if(is_uploaded_file($ruta)){
     
@@ -32,7 +32,7 @@ function foto_perfil($nom_extension, $ruta){
         }
             
     }else{
-       // echo "Seleccione una imagen para colocar como foto de perfil en esta cuenta";
+       return false;
     }
 
 }
@@ -45,13 +45,13 @@ if ($select_foto) {
     $subir_foto = $funct_perfil->actualizarFoto($archivo,$_SESSION["cedula"]);
 
     if ($subir_foto) {
-        echo 1; //la foto de perfil ha sido actualizada con exito
+        echo 1; //Foto de perfil actualizada
     }else{
         echo 2; //No se ha podido actualizar la foto de perfil
     }
     
 }else{
-    echo 3; //La foto seleccionado no ha sido guardad
+    echo 3; //El archivo escogido no cumple con las especificaciones
 }
 
 ?>
