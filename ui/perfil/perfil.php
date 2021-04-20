@@ -38,7 +38,7 @@
 					<div class="div_form">
 						<h2 tabindex="0">Actualizar foto de perfil</h2>
 						<div class="foto_modal">
-							<img src="../../assets/iconos/usuario.svg" id="foto_actual" alt="Foto de perfil actual, por defecto" tabindex="0">
+							<img src="../../assets/fotos_perfil/<?php echo $_SESSION["img_perfil"] ?>" id="foto_actual" alt="Foto de perfil actual, por defecto" tabindex="0" title="Foto actual">
 							
 						</div>
 
@@ -129,7 +129,7 @@
 
 					<div id="foto_opciones">
 						<div class="foto">
-							<img src="../../assets/iconos/usuario.svg" id="foto_actual" alt="Foto de perfil actual, por defecto" tabindex="0">
+							<img src="../../assets/fotos_perfil/<?php echo $_SESSION["img_perfil"] ?>" id="foto_actual" alt="Foto de perfil actual, por defecto" tabindex="0">
 						</div>
 
 						<a for="input_foto" class="label_foto"><span><i class="fas fa-paperclip"></i></span>Actualizar foto de perfil</a>
@@ -214,15 +214,9 @@
 	
 		$("form#form_foto").submit(function(event){
 				event.preventDefault();
-				// var foto = $("#agregar_foto").val();
-
-				// let datos = 
-				// "agregar_foto=" + foto;
-
+				
 				$.ajax({
-					// type: "POST",
-					// url:"../../negocios/n_perfil/foto_perfil.php",
-					// data: datos,
+					
 					type: "POST",
 					url:"../../negocios/n_perfil/foto_perfil.php",
 					data: new FormData(this),
@@ -237,11 +231,8 @@
 						}else if(data==2){
 							toastr.error("No se ha podido actualizar la foto de perfil","Error");
 						}else if(data==3){
-							toast.error("La foto seleccionado no ha sido guardada", "Error");
+							toastr.error("La foto de perfil no puede ser actualizada, escoja un archivo que cumpla con las especificaciones indicadas", "Error");
 						}
-						// else{
-						// 	toastr.error("Error desconocido"+ data,"Error");
-						// }
 					}
 				})
 		});
@@ -259,16 +250,12 @@
 					//Métodos
 					success: function(data){
 						
-						if(data==1){
-							toastr.success("Foto de perfil eliminada","Éxito");
-						}else if(data==2){
-							toastr.error("No se ha podido actualizar la foto de perfil","Error");
-						}else if(data==3){
-							toastr.error("El archivo seleccionado no cumple con las especificaciones","Error");
-						}else if(data==4){
+						if(data==4){
 							toastr.info("Actualmente no tienes una foto de perfil", "Alerta");
 						}else if(data==5){
-							toastr.success("Foto de perfil ha sido eliminada con éxito", "Éxito");
+							toastr.success("Foto de perfil eliminada con éxito", "Éxito");
+						}else if(data==6){
+							toastr.success("La foto de perfil no ha podido ser eliminada", "Error");
 						}
 						else{
 							toastr.error("Error desconocido"+ data,"Error");
@@ -276,7 +263,6 @@
 					}
 				})
 		}
-		
 	</script>
 </body>
 </html>

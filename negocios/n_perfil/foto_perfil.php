@@ -46,6 +46,18 @@ if ($select_foto) {
 
     if ($subir_foto) {
         echo 1; //Foto de perfil actualizada
+
+        //Cuando la foto sea acutualizada compararla con la variable de sesion de la foto de perfil
+        $foto = $funct_perfil->mostrarFoto($_SESSION["cedula"]);
+
+        foreach ($foto as $value) {
+           $nom_foto = $value["img_perfil"];
+        }
+        if ($nom_foto != $_SESSION["img_perfil"]) {
+            
+            $_SESSION["img_perfil"] = $nom_foto;
+        }
+
     }else{
         echo 2; //No se ha podido actualizar la foto de perfil
     }

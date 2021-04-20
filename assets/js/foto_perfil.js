@@ -49,25 +49,25 @@ let input = document.querySelector("#agregar_foto");
 console.log(input);
 //let nombre_archivo = document.querySelector("#nombre_archivo");
 
-input.onchage = function(){
+input.onchange = function(){
     var archivo = this.files[0];
-    var archivo_tipo = archivo.type;
     console.log(archivo);
 
-    if (archivo_tipo == "image/png" || archivo_tipo == "image/svg" || archivo_tipo == "image/jpg" || archivo_tipo == "image/jpeg") {
+    if (archivo.type == "image/png" || archivo.type == "image/svg" || archivo.type == "image/jpg" || archivo.type == "image/jpeg") {
 
         if (archivo.size >= 250000000) {
             
             toastr.error("El tamaño del archivo excede los 25MB", "Error");
-            $("#agregar_foto").val('');
+            //$("#agregar_foto").val('');
+            this.value = "";
         
         }else{
             // toastr.success("El tamaño del archivo excede los 25MB", "Error";
         }
     }else{
         toastr.error("Formato de imagen no permitido", "Error");
-        // $("#agregar_foto").val('');
-        $("#agregar_foto").val('');
+        //$("#agregar_foto").val('');
+        this.value = "";
     }
     
 };

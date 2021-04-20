@@ -26,6 +26,7 @@
             $objSesion->cargarSesion("correo", $value["correo"]);
             $objSesion->cargarSesion("idrol", $value["idroles"]);
             $objSesion->cargarSesion("img_perfil", $value["img_perfil"]);
+            //cada que vez que se inicia sesion muestra el ultimo dato de bd
 
             if ($value["pass_temp"] == 0){
                 echo 2; //Direcciona a crear la contraseña por primera vez
