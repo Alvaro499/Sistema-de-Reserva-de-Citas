@@ -11,6 +11,8 @@
 
 #foto_cont .foto img{
     width: 150px;
+    border-radius: 50%;
+	object-fit: cover;
 }
 
 #foto_opciones{
@@ -179,6 +181,8 @@
 
 .foto_modal img{
     width: 75px;
+	border-radius: 50%;
+	object-fit: cover;
 }
 
 #form_foto p{

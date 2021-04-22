@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width">
 	<title>Analítica Web</title>
 	<link rel="stylesheet" type="text/css" href="fonts_awesome/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="../../assets/css/style_calendario/bridge.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/css/guia_web/bridge.css">
 </head>
 
 <body>

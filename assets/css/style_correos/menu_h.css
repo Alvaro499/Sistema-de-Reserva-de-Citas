@@ -57,11 +57,13 @@ div.regre button:hover{
 
 .usuario{
 	margin-right: 10px;
-	padding: 10px
 }
 
 .usuario img{
-	width: 50px
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	object-fit: cover;
 }
 
 /*Editar el texto del div que contiene el nombre del usuario*/
