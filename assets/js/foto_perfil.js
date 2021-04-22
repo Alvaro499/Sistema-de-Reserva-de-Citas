@@ -3,7 +3,7 @@ console.log("HOLA MUNDO 1.0");
 let modal = document.querySelector(".modal_container"); //contenedor
 let modal_form = document.querySelector(".modal"); //formulario
 
-    // Abrir modal
+    // ABRIR MODAL
 let abrir_modal = document.querySelector(".label_foto");
 
 console.log(abrir_modal);
@@ -20,7 +20,7 @@ abrir_modal.addEventListener("click", function () {
     }
 });
 
-    // Cerrar modal
+    // CERRAR MODAL
 let cerrar_modal = document.querySelectorAll(".cerrar_modal");
 for (let i = 0; i < cerrar_modal.length; i++) {
     
@@ -29,6 +29,7 @@ for (let i = 0; i < cerrar_modal.length; i++) {
         modal.style.visibility = "hidden";
         modal.style.transform = "scale(0.1,0.1)";
         modal.style.background = "rgba(0,0,0,0)";    
+        window.location.reload(); 
     });
     
 }
@@ -41,8 +42,8 @@ for (let i = 0; i < cerrar_modal.length; i++) {
 //     });
 // }
 
-console.log("HOLA MUNDO 2.0");
-// Caracteristicas de la foto
+
+// CARACTERISTICAS DE LA FOTO
 let formulario = document.querySelector("#form_foto");
 console.log(formulario);
 let input = document.querySelector("#agregar_foto");
@@ -71,5 +72,3 @@ input.onchange = function(){
     }
     
 };
-
-  
