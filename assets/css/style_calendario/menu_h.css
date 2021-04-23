@@ -77,19 +77,6 @@
         position: relative
     }
     
-    .nombre::after{
-        content: "";
-        height: 0;
-        width: 0;
-        border-left: 8px solid transparent;
-        border-right: 8px solid transparent;
-        border-top: 12px solid #000000;
-        position: absolute;
-        left: 110%;
-        top: 25%
-    
-    }
-    
     #nav_h ul{
         display: flex;
         align-items: center;

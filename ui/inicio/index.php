@@ -115,8 +115,8 @@
 						<ul>
 							<li>
 								<div id="perfil" class="cont_perfil">
-									<a class="config_options" href="../perfil/perfil.php">Mi perfil</a>
-									<a class="config_options" href="../logout.php">Cerrar sesión</a>
+									<a class="config_options" href="../perfil/perfil.php"><span><i class="fas fa-user-edit"></i></span>Mi perfil</a>
+									<a class="config_options" href="../logout.php"><span><i class="fas fa-sign-out-alt"></i></span>Cerrar sesión</a>
 								</div>
 							</li>
 						</ul>
