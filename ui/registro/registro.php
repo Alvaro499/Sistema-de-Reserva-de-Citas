@@ -177,15 +177,15 @@
 						if(data==1){
 							toastr.success("Se guardo exitosamente","Éxitos");
 						}else if(data==2){
-							toastr.error("Ese usuario ya hiciste","Error");
+							toastr.error("Ese usuario ya hiciste","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
 						}
 						else if(data==3){
-							toastr.error("Ese usuario ya hiciste","Error");
+							toastr.error("Ese usuario ya hiciste","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
 						}
 						else if(data==4){
-							toastr.error("Error al enviar el correo","Error");
+							toastr.error("Error al enviar el correo","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
 						}else{
-							toastr.error("Error desconocido","Error");
+							toastr.error("Error desconocido","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
 						}
 					}
 				})

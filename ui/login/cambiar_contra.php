@@ -97,9 +97,9 @@
 							setTimeout(function(){ location.href="sesion.php"; }, 3000);		
 						}
 						else if(data==1){
-							toastr.error("Fallo al cambiar contraseña","Error",{positionClass: "toast-bottom-right"});
+							toastr.error("Fallo al cambiar contraseña","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
 						}else{
-							toastr.error("Error desconocido" + data,"Error",{positionClass: "toast-bottom-right"});
+							toastr.error("Error desconocido" + data,"Error",{positionClass: "toast-bottom-right", showDuration: "400"});
 						}
 					}
 			})

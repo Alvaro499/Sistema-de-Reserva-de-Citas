@@ -212,12 +212,12 @@
                 //Métodos
                 success: function(data){
                     if(data==1){
-                        toastr.success("Se rechazó exitosamente","Éxitos");
+                        toastr.success("Se rechazó exitosamente","Éxitos",{positionClass: "toast-bottom-right", showDuration: "400"});
                         location.reload();
                     }else if(data==2){
-                        toastr.error("Error al rechazar cita","Error");
+                        toastr.error("Error al rechazar cita","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
                     }else{
-                        toastr.error("Error desconocido"+data,"Error");
+                        toastr.error("Error desconocido"+data,"Error",{positionClass: "toast-bottom-right", showDuration: "400"});
                     }
                 }
             })

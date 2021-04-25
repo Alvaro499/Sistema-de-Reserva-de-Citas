@@ -227,11 +227,11 @@
 					success: function(data){
 						
 						if(data==1){
-							toastr.success("Foto de perfil actualizada","Éxito");
+							toastr.success("Foto de perfil actualizada","Éxito",{positionClass: "toast-bottom-right", showDuration: "400"});
 						}else if(data==2){
-							toastr.error("No se ha podido actualizar la foto de perfil","Error");
+							toastr.error("No se ha podido actualizar la foto de perfil","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
 						}else if(data==3){
-							toastr.error("La foto de perfil no puede ser actualizada, escoja un archivo que cumpla con las especificaciones indicadas", "Error");
+							toastr.error("La foto de perfil no puede ser actualizada, escoja un archivo que cumpla con las especificaciones indicadas", "Error",{positionClass: "toast-bottom-right", showDuration: "400"});
 						}
 					}
 				})
@@ -251,14 +251,14 @@
 					success: function(data){
 						
 						if(data==4){
-							toastr.info("Actualmente no tienes una foto de perfil", "Alerta");
+							toastr.info("Actualmente no tienes una foto de perfil", "Alerta",{positionClass: "toast-bottom-right", showDuration: "400"});
 						}else if(data==5){
-							toastr.success("Foto de perfil eliminada con éxito", "Éxito");
+							toastr.success("Foto de perfil eliminada con éxito", "Éxito",{positionClass: "toast-bottom-right", showDuration: "400"});
 						}else if(data==6){
-							toastr.success("La foto de perfil no ha podido ser eliminada", "Error");
+							toastr.success("La foto de perfil no ha podido ser eliminada", "Error",{positionClass: "toast-bottom-right", showDuration: "400"});
 						}
 						else{
-							toastr.error("Error desconocido"+ data,"Error");
+							toastr.error("Error desconocido"+ data,"Error",{positionClass: "toast-bottom-right", showDuration: "400"});
 						}
 					}
 				})

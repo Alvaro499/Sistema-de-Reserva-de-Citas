@@ -169,13 +169,13 @@
 					success: function(data){
 						
 						if(data==1){
-							toastr.success("La cita fue creada con exito","Éxitos");
+							toastr.success("La cita fue creada con exito","Éxitos",{positionClass: "toast-bottom-right", showDuration: "400"});
 						}else if(data==2){
-							toastr.error("La cita no fue aceptada","Error");
+							toastr.error("La cita no fue aceptada","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
 						}else if (data==3){
-							toastr.error("La cita no fue aceptada","Error");
+							toastr.error("La cita no fue aceptada","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
 						}else{
-							toastr.error("Error desconocido"+ data,"Error");
+							toastr.error("Error desconocido"+ data,"Error",{positionClass: "toast-bottom-right", showDuration: "400"});
 						}
 					}
 				})

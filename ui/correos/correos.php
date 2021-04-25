@@ -137,11 +137,11 @@
 					success: function(data){
 						
 						if(data==1){
-							toastr.success("Los correos han sido enviado con éxito","Éxitos");
+							toastr.success("Los correos han sido enviado con éxito","Éxitos",{positionClass: "toast-bottom-right", showDuration: "400"});
 						}else if(data==0){
-							toastr.error("Los correos no se enviaron","Error");
+							toastr.error("Los correos no se enviaron","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
 						}else{
-							toastr.error("Error desconocido"+data,"Error");
+							toastr.error("Error desconocido"+data,"Error",{positionClass: "toast-bottom-right", showDuration: "400"});
 						}
 					}
 				})

@@ -83,7 +83,7 @@
 					//Métodos
 					success: function(data){
 						if(data==0){//Usuario no existe
-							toastr.error("No existe el usuario","Error",{positionClass: "toast-bottom-right"});
+							toastr.error("No existe el usuario","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
 						}
 						else if(data==1){
 							location.href="../inicio/index.php";
@@ -91,9 +91,9 @@
 							location.href="crear_contra.php";
 						}
 						else if(data==3){
-							toastr.error("No existe el usuario","Error",{positionClass: "toast-bottom-right"});
+							toastr.error("No existe el usuario","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
 						}else{
-							toastr.error("Error desconocido","Error",{positionClass: "toast-bottom-right"});
+							toastr.error("Error desconocido","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
 						}
 					}
 			})

@@ -86,14 +86,14 @@
 						if(data==0){
 							location.href="../inicio/index.php";
 						}else if(data==1){
-							toastr.error("Error de actualización de contraseña","Error");
+							toastr.error("Error de actualización de contraseña","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
 						}
 						else if(data==3){
-							toastr.error("Error de actualización de contraseña","Error");
+							toastr.error("Error de actualización de contraseña","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
 						}else if(data==5){
-							toastr.error("Error de actualización de contraseña","Error");
+							toastr.error("Error de actualización de contraseña","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
 						}else{
-							toastr.error("Error desconocido" + data,"Error");
+							toastr.error("Error desconocido" + data,"Error",{positionClass: "toast-bottom-right", showDuration: "400"});
 						}
 					}
 				})

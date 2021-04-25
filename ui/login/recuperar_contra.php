@@ -64,9 +64,9 @@
 					success: function(data){
 						
 						if(data==0){
-							toastr.success("El correo de recuperación ha sido enviado. Por favor verifique su bandeja de entrada","Éxito");
+							toastr.success("El correo de recuperación ha sido enviado. Por favor verifique su bandeja de entrada","Éxito",{positionClass: "toast-bottom-right", showDuration: "400"});
 						}else{
-							toastr.error("Este correo no está registrado en el sistema","Error");
+							toastr.error("Este correo no está registrado en el sistema","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
 						}
 					}
 				})
