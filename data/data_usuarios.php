@@ -114,6 +114,23 @@
             }
         }
 
+        public function correoDoble($correo){
+            try{
+                $seleccionar = $this->cargarConexion->prepare("SELECT `correo` FROM `usuarios` WHERE `correo` = '$correo'");
+                $resultado = $seleccionar->execute();
+                $resultado = $seleccionar->fetchAll();
+
+                if (count($resultado) > 0) {
+                    return true; //el correo ya existe
+                }else{
+                    return false; //el correo esta disponible
+                }
+                return $resultado;
+            }catch(PDOException $e){
+                echo "Error:" . $e->getMessage();
+            }
+        }
+
     }//Cierre de D_Usuarios
 
 ?>

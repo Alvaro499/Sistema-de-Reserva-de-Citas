@@ -18,32 +18,39 @@
         $contra = generar_contra();
         
         $contra2 = password_hash($contra, PASSWORD_DEFAULT, ["cost"=>5]);
-        $insertarUsuario = $usuarios->insertarUsuario($cedula,$nombre,$apellido1,$apellido2,$email,$celular,$celular_op,$contra2);
-        
-        if($insertarUsuario){
-            $insertarRol = $usuarios->insertarRolUsuario($rol,$cedula);
-        }
 
-        if($insertarUsuario && $insertarRol){
+        //Condicional de correos repetidos
+        $comprobar_correo= $usuarios->correoDoble($email);
+        if (!$comprobar_correo) {
+            
+            $insertarUsuario = $usuarios->insertarUsuario($cedula,$nombre,$apellido1,$apellido2,$email,$celular,$celular_op,$contra2);
+            if($insertarUsuario){
+                $insertarRol = $usuarios->insertarRolUsuario($rol,$cedula);
+            }
+    
+            if($insertarUsuario && $insertarRol){
+    
+                $contraTemporal = new N_EnvioEmail();
+    
+                $contraTemporal->envioContra($email,$contra,$nombre);
+            }
+    
+            if($insertarUsuario && $insertarRol && $contraTemporal){
+                echo 1; //Exito
+            }else if($insertarUsuario!= true){
+                echo 2; //Error en el insertar usuario
+            }else if($insertarRol!= true){
+                echo 3; //Error en el insertar usuario-rol
+            }else if($contraTemporal!= true){
+                echo 4; //Error en el envio de correo
+            }else{
+                echo 5; //Error desconocido
+            }
 
-            $contraTemporal = new N_EnvioEmail();
-
-            $contraTemporal->envioContra($email,$contra,$nombre);
-        }
-
-        if($insertarUsuario && $insertarRol && $contraTemporal){
-            echo 1; //Exito
-        }else if($insertarUsuario!= true){
-            echo 2; //Error en el insertar usuario
-        }else if($insertarRol!= true){
-            echo 3; //Error en el insertar usuario-rol
-        }else if($contraTemporal!= true){
-            echo 4; //Error en el envio de correo
         }else{
-            echo 5; //Error desconocido
+            echo 6;//este correo ya esta registrado
         }
-
-
+        
     function generar_contra(){
         $caracteres='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
         $longpalabra=4;

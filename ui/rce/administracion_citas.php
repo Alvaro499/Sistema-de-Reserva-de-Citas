@@ -6,7 +6,7 @@
 	<meta name="author" content="Alvaro Siles, Sebastián, Kevin">
 	<meta name="viewport" content="width=device-width">
 	<title>Administración y Rervación de Citas</title>
-	<link rel="stylesheet" type="text/css" href="fonts_awesome/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="../../assets/fonts_awesome/css/all.min.css">
 	<link rel="stylesheet" type="text/css" href="../../assets/css/style_rce/bridge.css">
     <link rel="stylesheet" type="text/css" href="../../assets/css/toastr/toastr.min.css">
 </head>

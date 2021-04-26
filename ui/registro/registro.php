@@ -6,6 +6,7 @@
 	<meta name="author" content="Alvaro Siles, Sebastián, Kevin">
 	<meta name="viewport" content="width=device-width">
 	<title>Registro de Usuario</title>
+	<link rel="stylesheet" type="text/css" href="../../assets/fonts_awesome/css/all.min.css">
 	<link rel="stylesheet" type="text/css" href="../../assets/css/style_registro/bridge.css">
 	<link rel="stylesheet" type="text/css" href="../../assets/css/toastr/toastr.min.css">
 </head>
@@ -175,17 +176,24 @@
 					success: function(data){
 						
 						if(data==1){
-							toastr.success("Se guardo exitosamente","Éxitos");
+							toastr.success("El usuario ha sido creado exitosamente","Éxito",{positionClass: "toast-bottom-right", showDuration: "500"});
+
 						}else if(data==2){
-							toastr.error("Ese usuario ya hiciste","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
+							toastr.error("Error al crear el usuario, verificar que la cédula introducida no esté ya registrada","Error",{positionClass: "toast-bottom-right", showDuration: "500"});
+
 						}
 						else if(data==3){
-							toastr.error("Ese usuario ya hiciste","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
+							toastr.error("No se pudo asignar el rol al usuario, verificar que la cédula introducida no esté ya registrada","Error",{positionClass: "toast-bottom-right", showDuration: "500"});
+
 						}
 						else if(data==4){
 							toastr.error("Error al enviar el correo","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
+
+						}else if(data==6){
+							toastr.error("Este correo ya está registrado","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
+
 						}else{
-							toastr.error("Error desconocido","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
+							toastr.error("Error desconocido" + data,"Error",{positionClass: "toast-bottom-right", showDuration: "400"});
 						}
 					}
 				})
