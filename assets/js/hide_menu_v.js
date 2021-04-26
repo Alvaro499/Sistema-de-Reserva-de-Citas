@@ -6,9 +6,6 @@ console.log(regre);
 let hide = false; //menu escondido
 let out = true; //menu descubierto
 
-
-
-
 /*Esta condicional permitira saber cuando el tamano del navegador sea menor o igual a 569, el cual es el rango del media query que esconde el menu vertical (morado), asi la fleccha "regre" que oculta y esconde dicho menu, sabra que debe estar en posicion de ocultado (-->).
 EN RESUMEN: cambia la posicion del boton regre cuando ya el menu este oculto a causa del tamano menor a 570px */
 let widthSize = window.outerWidth;
@@ -19,8 +16,6 @@ if (widthSize <= 569) {
 	out = false
 	regre.style.transform = "rotate(180deg)"; //cuando la pantalla sea pequena y el menu este  oculto la flecha este en posicion de "mostrar"
 }
-
-
 
 //OXULTAR EL MENU VERTICAL, EMEPLEANDO MARGIN
 
@@ -49,30 +44,3 @@ regre.onclick = function(){
 		hide = false;
 	}
 }
-
-
-
-
-//OCULTAR EL MENU VERTICAL USANDO "display: none"
-
-// regre.onclick = function(){
-
-// 	if (hide == false) {
-// 		document.querySelector("#menu_v").style.display = "none";
-// 		document.querySelector("#menu_h").style.gridColumnStart = 1;
-// 		document.querySelector("#principal").style.gridColumnStart = 1;
-// 		regre.style.transform = "rotate(180deg)";
-// 		regre.style.transition = "transform 0.8s ease-in-out";
-// 		hide = true
-// 		out = false
-// 	}else if (out == false) {
-// 		document.querySelector("#menu_v").style.display = "block";
-// 		document.querySelector("#menu_h").style.gridColumnStart = 2;
-// 		document.querySelector("#principal").style.gridColumnStart = 2;
-// 		regre.style.transform = "rotate(0deg)";
-// 		regre.style.transition = "transform 0.8s ease-in-out";
-// 		hide = false
-// 	}
-// }
-
-

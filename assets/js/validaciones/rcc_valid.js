@@ -41,6 +41,34 @@ function validacion(){
         console.log(cant_error);
     }
     
+    // if (fecha == null || fecha == "") {
+    //     document.getElementById("error_fecha").innerHTML = "*La fecha es obligatoria";
+    //     document.getElementById("error_fecha").style.color = "#C70039";
+    //     document.getElementById("fecha").style.border = "3px solid #E40017";
+    //     cant_error++;
+    //     console.log(cant_error);
+    // }else{
+        
+    //     document.getElementById("error_fecha").innerHTML = "";
+    //     document.getElementById("fecha").style.border = "3px solid #54E346";
+
+    //     let now = new Date();
+    //     let now_sec = now.getTime();
+
+    //     let fecha_date = new Date(fecha)
+    //     let fecha_sec = fecha_date.getTime();
+
+    //     if (fecha_sec <= now_sec) {
+    //         alert("La fecha debe ser al menos 3 dias posteriores a la fecha actual");
+            
+    //     }else{
+    //         alert("Fecha disponible");
+    //     }
+
+    //     console.log(cant_error);
+    // }
+
+    //Segunda version de la fecha
     if (fecha == null || fecha == "") {
         document.getElementById("error_fecha").innerHTML = "*La fecha es obligatoria";
         document.getElementById("error_fecha").style.color = "#C70039";
@@ -48,13 +76,29 @@ function validacion(){
         cant_error++;
         console.log(cant_error);
     }else{
-        
-        document.getElementById("error_fecha").innerHTML = "";
-        document.getElementById("fecha").style.border = "3px solid #54E346";
 
-        console.log(cant_error);
+        let now = new Date();
+        let now_sec = now.getTime();
+
+        let fecha_date = new Date(fecha)
+        let fecha_sec = fecha_date.getTime();
+
+        if (fecha_sec <= now_sec) {
+            document.getElementById("error_fecha").innerHTML = "La fecha debe ser al menos 2 dias posteriores a la fecha actual";
+            document.getElementById("error_fecha").style.color = "#C70039";
+            document.getElementById("fecha").style.border = "3px solid #E40017";
+            cant_error++;
+
+            console.log(cant_error);
+            
+        }else{
+            document.getElementById("error_fecha").innerHTML = "";
+            document.getElementById("fecha").style.border = "3px solid #54E346";
+
+            console.log(cant_error);
+        }        
     }
-    
+
     if (hora == null || hora == "") {
         document.getElementById("error_hora").innerHTML = "*La Hora es obligatoria.";
         document.getElementById("error_hora").style.color = "#C70039";
@@ -62,7 +106,7 @@ function validacion(){
         cant_error++;
         console.log(cant_error);
     }else{
-        
+
         document.getElementById("error_hora").innerHTML = "";
         document.getElementById("hora").style.border = "3px solid #54E346";
 
