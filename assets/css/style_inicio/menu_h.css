@@ -135,7 +135,14 @@ div.regre button:hover{
 	height: 83px
 }
 
-#nav_h li :not(.idioma){
+/* ORIGINAL */
+/* #nav_h li :not(.idioma){
+	display: flex;
+	justify-content: space-between;
+} */
+
+/* CORREGIR ERROR DE DISENO EN NOITIFICACIONES */
+#nav_h li{
 	display: flex;
 	justify-content: space-between;
 }
