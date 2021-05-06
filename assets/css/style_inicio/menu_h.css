@@ -46,14 +46,67 @@ div.regre button:hover{
 	background: rgba(0,0,0,0.5);
 }
 
+/* Submenu Idiomas */
 .idioma{
+	/* width: auto;
+	height: auto; */
 	margin-right: 20px;
-	padding: 5px 10px
+	position: relative;
+}
+
+.menu_idiomas > a{
+	padding: 5px 10px;
+}
+
+/* .idioma a:nth-child(2){
+	z-index: -1;
+} */
+
+.idioma .menu_idiomas:last-child{
+	z-index: -1;
+	position: absolute;
+	top: 0;
 }
 
 .idioma:hover{
-	background: rgba(0,0,0,0.5);
+	background: #FFFFFF;
 }
+
+.idioma:hover .menu_idiomas:last-child{
+	top: 100%;
+	background: #FFFFFF;
+	z-index: 1;
+	transition: all 0.3s;
+}
+
+/* .menu_idiomas{
+	background: #FFFFFF;
+	padding: 10px;
+	display: flex;
+	flex-flow: column wrap;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	visibility: hidden;
+} */
+
+/* .idioma:hover .menu_idiomas{
+	top: 100%;
+	left: 0;
+	z-index: 1;
+	visibility: visible;
+	transition: all 0.5s;
+}
+
+.idioma:focus .menu_idiomas{
+	z-index: 1;
+	top: 100%;
+	left: 18%;
+	visibility: visible;
+	transition: all 0.3s;
+} */
+/* Final submenu Idiomas */
 
 .usuario{
 	margin-right: 10px;
@@ -82,7 +135,7 @@ div.regre button:hover{
 	height: 83px
 }
 
-#nav_h li{
+#nav_h li :not(.idioma){
 	display: flex;
 	justify-content: space-between;
 }
