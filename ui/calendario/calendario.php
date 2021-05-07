@@ -9,8 +9,10 @@
 	<link rel="stylesheet" type="text/css" href="../../assets/fonts_awesome/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="../../assets/css/style_calendario/bridge.css">
 
-	<!-- TOAST UI Calendar -->
-	<link rel="stylesheet" type="text/css" href="https://uicdn.toast.com/tui-calendar/latest/tui-calendar.css"/>
+	<!-- Full Calendar -->
+	<link href="../../assets/fullcalendar/main.css" rel="stylesheet"/>
+	<!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.7.1/fullcalendar.min.css"> -->
+	<script src="../../assets/fullcalendar/main.js"></script>
 </head>
 
 <body>
@@ -24,8 +26,7 @@
 		if(!isset($_SESSION["cedula"])) {
 			header("Location: ../login/sesion.php");
 		}else {
-		}     
-
+		}    
 	?>
 
 	<div class="container">
@@ -88,88 +89,89 @@
 
 		<main id="principal">
 			
-			<!-- Archivos JS TOAST UI Calendar -->
-
-			<script src="https://uicdn.toast.com/tui.code-snippet/v1.5.2/tui-code-snippet.min.js"></script>
-
-			<script src="https://uicdn.toast.com/tui.time-picker/latest/tui-time-picker.min.js"></script>
-
-			<script src="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.min.js"></script>
-
-			<script src="https://uicdn.toast.com/tui-calendar/latest/tui-calendar.js"></script>
-
-			<!-- ... -->
-
-			<!-- Creacion del calendario -->
-
 				<!-- Consultas -->
 			<?php
 				require("../../data/data_citas.php");
-				$consulta_citas = new D_Citas();
+				// $consulta_citas = new D_Citas();
+				// $datos_cita_empleado = $consulta_citas->get_cliente_calendary_employer();	
+				// $datos_cita_cliente = $consulta_citas->get_cliente_calendary($_SESSION["cedula"]);
+				function citas_calendario(){
+					if ($_SESSION["idrol"] == 2) {
+						$consulta_citas = new D_Citas();
+						$datos_cita_empleado = $consulta_citas->get_cliente_calendary_employer();
+						return $datos_cita_empleado;
 
-				// $estado = $estado_cita->estado_cita();
-				$datos_cita = $consulta_citas->get_cliente_calendary($_SESSION["cedula"]);
-				
+					}else if ($_SESSION["idrol"] == 3) {
+
+						$consulta_citas = new D_Citas();
+						$datos_cita_cliente = $consulta_citas->get_cliente_calendary($_SESSION["cedula"]);
+						return $datos_cita_cliente;
+					};	
+				};
+				$datos = citas_calendario();
+				// $consulta_citas = new D_Citas();
+				// $datos_cita_empleado = $consulta_citas->get_cliente_calendary_employer();	
+				// $datos_cita_cliente = $consulta_citas->get_cliente_calendary($_SESSION["cedula"]);
+				// $datos;
+
+				// var_dump($datos_cita_cliente);	
+				// echo "<br><br>";
+				// var_dump($datos_cita_empleado);	
 			?>
-				<!-- Diseno e informacion del calendarios -->
-				<div id="father_calendar">
-					<div id="calendar" style="height: 800px;"></div>
-					<button id="btn_left" class="btn_cal" onclick="prevMonth();"><i class="fas fa-arrow-left"></i></button>
-					<button id="btn_right" class="btn_cal" onclick="nextMonth();"><i class="fas fa-arrow-right"></i></button>
-					<button id="btn_today" onclick="todayDay();">Día de hoy</button>
-					<span id="today"></span>
-					
-				</div>
-				
-			
+			<div id='calendar'></div>
+
 			<script>
-				var Calendar = tui.Calendar;
-				
-
-				var calendar = new Calendar('#calendar',{
-					defaultView: 'month',
-					taskView: true,
-					//useCreationPopup: true, //crear popups
-					//useDetailPopup: true, //detalles del popup
-
-					template: {
-						monthDayName: function(dayname){
-							return '<span class="calendar-week-dayname-name">' + dayname.label + '</span>'
+				document.addEventListener('DOMContentLoaded', function() {
+					var calendar_div = document.getElementById('calendar');
+					var calendar = new FullCalendar.Calendar(calendar_div, {
+						initialView: 'dayGridMonth',
+						eventClick: function(info) {
+							alert('Asesor: ' + info.event.extendedProps.asesor);
+							alert('Hora:' + info.event.extendeProps.hora);
 						},
-						alldayTitle: function() {
-            				return 'All Day';
-    				    }
-					}
-				});
-				
-				calendar.createSchedules([
-					<?php foreach ($datos_cita as $valor) { ?>
-    			{
-        			id: '1',
-        			calendarId: '1',
-        			title: 'Capacitacion con el/la Lic <?php echo $valor['nombre_empleado'] ?> ',
-        			category: '<?php echo $valor['area_servicio'] ?>',
-        			dueDateClass: '<?php echo $valor['hora'] ?>',
-        			start: '2021-03-29T02:30:00+9:00'
-        			// end: '2021-03-25T02:30:00+09:00'
-    			},
-					<?php } ?>
-				]);
+						events:[
+						<?php
+							// function citas_calendario(){
+							// 	if ($_SESSION["idrol"] == 2) {
 
-				function nextMonth(){
-					calendar.next();
-				}
-				function prevMonth(){
-					calendar.prev();
-				}
-				function todayDay(){
-					calendar.today();
-				}
-// calendar.deleteSchedule(schedule.id, schedule.calendarId);
-			</script>
+							// 		return $datos_cita_empleado;
+
+							// 	}else if ($_SESSION["idrol"] == 3) {
+
+							// 		return $datos_cita_cliente;
+							// 	};	
+							// }
+
+							// $citas_calendario = function(){
+							// 		if ($_SESSION["idrol"] == 2) {
+
+							// 		return $datos_cita_empleado;
+
+							// 	}else if ($_SESSION["idrol"] == 3) {
+
+							// 		return $datos_cita_cliente;
+							// 	};	
+							// };
+							
+							foreach ($datos as $valor) { ?>
+						{
+							title: 'Cita: <?php echo $valor['area_servicio'] ?>',
+							start: '<?php echo $valor['fecha'] ?>',
+							extendedProps:{
+                				asesor: "<?php echo $valor['nombre_empleado']; ?>",
+								hora: "Hora: <?php echo $valor['hora']; ?>"
+             				}
+						},
+						<?php }; ?>
+						]
+					});
+					//LA FUNCIÓN INTERNA QUE POSEE FULLCALENDAR PARA DESPLEGAR EL CALENDARIO
+					calendar.render();
+				});
+
+    		</script>
 		</main>
 	</div>
-
 	<script type="text/javascript" src="../../assets/js/hide_menu_v.js"></script>
 	
 </body>
