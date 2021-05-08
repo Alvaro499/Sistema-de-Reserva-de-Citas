@@ -1,4 +1,4 @@
-#nav_v li:nth-child(5){  /*resalto */
+.li_analitica{ /*resalto */
 	background: #BE1E2D;
 	color: #000000;
 }

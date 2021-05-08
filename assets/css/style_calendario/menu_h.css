@@ -47,14 +47,34 @@
         background: rgba(0,0,0,0.5);
     }
     
-    .idioma{
-        margin-right: 20px;
-        padding: 5px 10px
-    }
-    
-    .idioma:hover{
-        background: rgba(0,0,0,0.5);
-    }
+    /* Submenu Idiomas */
+.idioma{
+	/* width: auto;
+	height: auto; */
+	margin-right: 20px;
+	position: relative;
+}
+
+.menu_idiomas > a{
+	padding: 5px 10px;
+}
+
+.idioma .menu_idiomas:last-child{
+	z-index: -1;
+	position: absolute;
+	top: 0;
+}
+
+.idioma:hover{
+	background: #FFFFFF;
+}
+
+.idioma:hover .menu_idiomas:last-child{
+	top: 100%;
+	background: #FFFFFF;
+	z-index: 1;
+	transition: all 0.3s;
+}
     
     .usuario{
         margin-right: 10px;

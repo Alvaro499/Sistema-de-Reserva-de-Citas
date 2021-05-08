@@ -37,8 +37,9 @@ let palabras = {
 		"soporte fiscal y tributario": "Soporte Fiscal y Tributario",
 		"soporte legal": "Soporte Legal",
 		"talento humano": "Talento Humano",
+		
 
-	// Notificaciones
+	// Notificaciones, datos extra duplicados
 		//Obtener la traduccion de texto php desde el ingles, ya que el key no se actualiza al estar en ingles
 		"Administration": "Administración",
 		"Accounting": "Contabilidad",
@@ -76,7 +77,7 @@ let palabras = {
 		"soporte legal": "Legal Support",
 		"talento humano": "Human Talent",
 
-	// Notificaciones
+	// Notificaciones, datos extra duplicados
 		//Obtener la traduccion de texto php desde el ingles, ya que el key no se actualiza al estar en ingles
 		"Administración": "Administration",
 		"Contabilidad": "Accounting",
@@ -93,7 +94,6 @@ let palabras = {
 
 console.log(palabras);
 
-//var clone = $(".icono").clone();
 $(function(){
 	$(".translate").click(function(){
 		let lang = $(this).attr("id");
@@ -106,13 +106,9 @@ $(function(){
 			}else if($(this).children().get(0).tagName == "STRONG") { //elementos a traducir pero que tienen hijos <strong> con php dentro
 				var clone = $(this).children().clone();//toma al primer hijo de cada elemento con class="lang", <a> tiene 2 hijos que son <span> y el contenido de texto, pero children solo toma etiquetas
 
-
 				$(this).text(palabras[lang][$(this).attr("key")]);
 				//clone.before($(this)); //Coloca elementos nuevos antes del elemento especificado o comoo su priemr hijo
 				$(this).append(clone); //coloca elementos nuevos como ultimo hijo
-				// $(this).children()[0]
-				
-				// console.log("Soy un strong");
 			
 			}else{ //elementos a traducir pero que tienen otros hijos aparte de su contenido solo texto
 				var clone = $(this).children().clone();//toma al primer hijo de cada elemento con class="lang", <a> tiene 2 hijos que son <span> y el contenido de texto, pero children solo toma etiquetas
@@ -174,3 +170,19 @@ idiomas.addEventListener("click", function(e){
 	//idiomas.insertAdjacentElement("afterbegin",primero);
 	//obtener elemento del click, colocarlo como el primer hijo reemplazando al actual, borrar el elemento del click
 })
+
+/*
+button (today):
+	fc-today-button
+	fc-button
+	fc-button-primary
+
+h1 actual month:
+	fc-toolbar-tittle
+
+days of the week:
+	fc-col-eader-cell-cushion
+
+info-date:
+	fc-event-title fc-sticky
+*/

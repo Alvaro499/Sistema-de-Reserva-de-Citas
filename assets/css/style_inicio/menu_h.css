@@ -58,10 +58,6 @@ div.regre button:hover{
 	padding: 5px 10px;
 }
 
-/* .idioma a:nth-child(2){
-	z-index: -1;
-} */
-
 .idioma .menu_idiomas:last-child{
 	z-index: -1;
 	position: absolute;

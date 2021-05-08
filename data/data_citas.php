@@ -1,6 +1,9 @@
 <?php 
 
-require("../../db/db_access.php");
+//require("../../db/db_access.php");
+//No permite mostrar el calendario
+
+require_once("../../db/db_access.php");
 class D_Citas{
 
     private $cargarConexion;
