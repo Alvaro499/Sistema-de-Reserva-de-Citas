@@ -8,6 +8,7 @@
 	<title>Inicio</title>
 	<link rel="stylesheet" type="text/css" href="../../assets/fonts_awesome/css/all.min.css">
 	<link rel="stylesheet" type="text/css" href="../../assets/css/style_inicio/bridge.css">
+	<link rel="stylesheet" type="text/css" href="../../assets/css/notificaciones.css">
 </head>
 
 <body>
@@ -75,7 +76,8 @@
 							Un div para cada idioma
 						</div> -->
 
-					<li class="li_h notifi menu__item container-submenu"><a href="#"><img src="../../assets/iconos/bell.svg" alt="Notificaciones"></a>
+					<li class="li_h notifi menu__item container-submenu" id="notifica"><a href="#"><img src="../../assets/iconos/bell.svg" alt="Notificaciones"></a>
+					<div class="sub-menu-1" id="submenu1">
 						<ul class="submenu">
 							<?php 
 							// require("../../negocios/n_notificacion/notificaciones.php");
@@ -100,6 +102,7 @@
 							</li>
 							<?php }?>
 						</ul>
+						</div>
 						<div id="container_ctn_notifi">
 							
 							<span id="cnt_notifi"><?php echo $num_notifi ?></span>
@@ -157,6 +160,7 @@
 	<script type="text/javascript" src="../../assets/js/hide_menu_v.js"></script>
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="../../assets/js/notificaciones/notifi.js"></script>
+	<script type="text/javascript" src="../../assets/js/notificaciones/notificaciones.js"></script>
 	<script type="text/javascript" src="../../assets/js/lang/multi_lang.js"></script>
 </body>
 </html>

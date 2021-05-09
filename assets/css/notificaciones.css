@@ -1,0 +1,82 @@
+/*Posición de las notificaciones y hacerlo invisible*/
+
+.sub-menu-1 {
+    display: none;
+    position: absolute;
+    margin-top: 30px;
+    margin-left: -5px;
+    z-index: 1;
+}
+
+
+/*Hacer visible las notificaciones cuando se posicione encima de la campana*/
+
+.notifi:hover .sub-menu-1 {
+    display: block;
+}
+
+
+/*Acomodar en columna las notificaciones*/
+
+.sub-menu-1 .submenu {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/*Diseño de los li (tamaño y color)*/
+
+.sub-menu-1 .submenu li {
+    background-color: #FFF;
+    padding: 10px;
+    width: 180px;
+    border-bottom: 1px solid green;
+}
+
+
+/*La última notificación no va tener la línea de border abajo*/
+
+.sub-menu-1 .submenu li:last-child {
+    border-bottom: none;
+}
+
+
+/*Cambiar el color del fondo de la notificacioón cuando se posicione encima*/
+
+.sub-menu-1 .submenu li:hover {
+    background-color: #C5CFDB;
+}
+
+
+/*Color del texto de las notificaciones*/
+
+.sub-menu-1 .submenu li a {
+    text-decoration: none;
+    color: #000;
+}
+
+
+/*De aquí para abajo es el diseño del número de la cantidad de notificaciones*/
+
+.container-submenu {
+    position: relative;
+}
+
+#container_ctn_notifi {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: orange;
+    color: #fff;
+    position: absolute;
+    top: -10%;
+    right: -25%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+#cnt_notifi {
+    position: relative;
+    top: 7%;
+}

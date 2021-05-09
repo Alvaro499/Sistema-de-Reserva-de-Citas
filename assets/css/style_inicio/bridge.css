@@ -2,7 +2,9 @@
 @import url("estructura.css");
 @import url("menu_v.css");
 @import url("menu_h.css");
-@import url("../submenu_notifi.css");
+
+/*@import url("../submenu_notifi.css");*/
+
 @import url("../submenu_perfil.css");
 @import url("inicio.css");
 @import url("media-query812.css");
