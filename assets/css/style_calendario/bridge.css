@@ -2,8 +2,8 @@
 @import url("estructura.css");
 @import url("menu_v.css");
 @import url("menu_h.css");
+@import url("../notificaciones.css");
 @import url("../submenu_perfil.css");
-@import url("../submenu_notifi.css");
 @import url("calendario.css");
 @import url("media-query812.css");
 @import url("media-query570.css");

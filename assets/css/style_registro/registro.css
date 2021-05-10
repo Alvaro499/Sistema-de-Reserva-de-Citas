@@ -1,4 +1,4 @@
-#nav_v li:nth-child(3){  /*resalto */
+.li_registro{  /*resalto */
 	background: #BE1E2D;
 	color: #000000;
 }

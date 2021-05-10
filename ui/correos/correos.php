@@ -36,14 +36,15 @@
 
 			<nav id="nav_v">
 				<ul>
-					<li class="li_v inicio"><a href="../inicio/index.php" tabindex="0"><span><img src="../../assets/iconos/inicio.svg" aria-hidden="true" class="icono_v"></span>Inicio</a></li>
-					<li class="li_v correos"><a href="../correos/correos.php" tabindex="0"><span><img src="../../assets/iconos/email.svg" aria-hidden="true" class="icono_v"></span>Correos</a></li>
-					<li class="li_v registro"><a href="../registro/registro.php" v><span><img src="../../assets/iconos/registro.svg" aria-hidden="true" class="icono_v"></span>Registro</a></li>
-					<li class="li_v citas"><a href="#" tabindex="0"><span><img src="../../assets/iconos/citas.svg" aria-hidden="true" class="icono_v"></span>Citas</a></li>
-					<li class="li_v analitica"><a href="../analitica_web/analitica.php" tabindex="0"><span><img src="../../assets/iconos/analitica-web.svg" aria-hidden="true" class="icono_v"></span>Analítica Web</a></li>
-					<li class="li_v calendario"><a href="../calendario/calendario.php" tabindex="0"><span><img src="../../assets/iconos/calendario.svg" aria-hidden="true" class="icono_v"></span>Calendario</a></li>
-					<li class="li_v guia_web"><a href="../guia_web/guia_web.php" tabindex="0"><span><img src="../../assets/iconos/guia-web.svg" aria-hidden="true" class="icono_v"></span>Guía Web</a></li>
-					<!-- <li class="li_v asistencia"><a href="#"><span><img src="iconos/formulario.svg" aria-hidden="true" class="icono_v"></span>Asistencia Técnica</a></li> -->
+					<li class="li_v li_inicio"><a href="../inicio/index.php" key="inicio" class="lang"><span class="icono"><img src="../../assets/iconos/inicio.svg" aria-hidden="true" class="icono_v"></span class="icono">Inicio</a></li>
+					<li class="li_v li_correos"><a href="../correos/correos.php" key="correo" class="lang"><span><img src="../../assets/iconos/email.svg" aria-hidden="true" class="icono_v"></span>Correos</a></li>
+					<?php if($_SESSION["idrol"] == 2){ ?>
+					<li class="li_v li_registro"><a href="../registro/registro.php" key="registro" class="lang"><span class="icono"><img src="../../assets/iconos/registro.svg" aria-hidden="true" class="icono_v"></span>Registro</a></li>
+					<?php } ?>
+					<li class="li_v li_citas"><a href="#" key="citas" class="lang"><span class="icono"><img src="../../assets/iconos/citas.svg" aria-hidden="true" class="icono_v"></span>Citas</a></li>
+					<li class="li_v li_analitica"><a href="../analitica_web/analitica.php" key="analitica web" class="lang"><span class="icono"><img src="../../assets/iconos/analitica-web.svg" aria-hidden="true" class="icono_v"></span>Analítica Web</a></li>
+					<li class="li_v li_calendario"><a href="../calendario/calendario.php" key="calendario" class="lang"><span class="icono"><img src="../../assets/iconos/calendario.svg" aria-hidden="true" class="icono_v"></span>Calendario</a></li>
+					<li class="li_v li_guia"><a href="../guia_web/guia_web.php" key="guia web" class="lang"><span class="icono"><img src="../../assets/iconos/guia-web.svg" aria-hidden="true" class="icono_v"></span>Guía Web</a></li>
 				</ul>	
 			</nav>
 
@@ -59,15 +60,58 @@
 				</div>
 
 				<ul>
-					<li class="li_h idioma"><a href="#" tabindex="0"><img src="../../assets/iconos/idioma.svg" alt="Cambiar Idioma"></a></li>
-					<li class="li_h notifi"><a href="#" tabindex="0"><img src="../../assets/iconos/bell.svg" alt="Notificaciones"></a></li>
+					<li class="li_h idioma" tabindex="0">
+						<div class="menu_idiomas">
+							<a href="#es" class="translate" id="es" title="Español" tabindex="0" class="idiomas"><img src="../../assets/iconos/idioma.svg" alt="Cambiar español"></a>
+						</div>
+						<div class="menu_idiomas">
+							<a href="#en" class="translate" id="en" title="Inglés USA" tabindex="0"><img src="../../assets/iconos/usa.svg" alt="Change to english"></a>
+						</div>
+
+					</li>
+					<li class="li_h notifi menu__item container-submenu" id="notifica"><a href="#"><img src="../../assets/iconos/bell.svg" alt="Notificaciones"></a>
+						<div class="sub-menu-1" id="submenu1">
+							<ul class="submenu">
+								<?php 
+								// require("../../negocios/n_notificacion/notificaciones.php");
+								require("../../negocios/n_notificacion/notificaciones.php");
+								$notifi = $datos_noti;
+
+								//Numero de notificaciones
+								$num_notifi = count($notifi);
+							
+								foreach($notifi as $values){
+								?>
+								<li class="menu_item">
+									<?php if($values["Estado_Notificacion"]==0){?>
+										<a href="" class="menu__link lang" key="solicitud enviada" onclick='actualizar_estado(<?php echo $values["idcitas_cliente"]; ?>);'>Su solicitud fue enviada</a>
+									<?php }?>
+									<?php if($values["Estado_Notificacion"]==1){?>
+										<a href="" class="menu__link lang" key="solicitud aceptada" onclick='actualizar_estado_aceptado(<?php echo $values["idcitas_cliente"]; ?>);'>Su solicitud para una capacitación fue aceptada. Tema: <strong class="lang_php" key=""><?php echo $values["area_servicio"];?></strong></a>
+									<?php }?>
+									<?php if($values["Estado_Notificacion"]==2){?>
+										<a href="" class="menu__link lang" key="solicitud rechazada" onclick='actualizar_estado_rechazado(<?php echo $values["idcitas_cliente"]; ?>);'>Su solicitud para una capacitación fue rechazada. Tema: <strong class="lang_php" key=""><?php echo $values["area_servicio"];?></strong></a>
+									<?php }?>
+								</li>
+								<?php }?>
+							</ul>
+						</div>
+						<div id="container_ctn_notifi">
+							
+							<span id="cnt_notifi"><?php echo $num_notifi ?></span>
+							
+						</div>
+					</li>
+
+					<!-- MOSTRAR FOTO DE PERFIL -->
+
 					<li class="li_h usuario"><img src="../../assets/fotos_perfil/<?php echo $_SESSION["img_perfil"] ?>" id="usuario" alt="Foto de Perfil" tabindex="0"></li>
 					<li class="li_h nombre"><div class="userNmae"><?php echo $_SESSION["nombre"] ?></div>
 						<ul>
 							<li>
 								<div id="perfil" class="cont_perfil">
-									<a class="config_options" href="../perfil/perfil.php"><span><i class="fas fa-user-edit"></i></span>Mi perfil</a>
-									<a class="config_options" href="../logout.php"><span><i class="fas fa-sign-out-alt"></i></span>Cerrar sesión</a>
+									<a class="config_options lang" key="mi perfil" href="../perfil/perfil.php"><span><i class="fas fa-user-edit"></i></span>Mi perfil</a>
+									<a class="config_options lang" key="salir" href="../logout.php"><span><i class="fas fa-sign-out-alt"></i></span>Cerrar sesión</a>
 								</div>
 							</li>
 						</ul>
@@ -79,8 +123,8 @@
 			<!-- SubMenu de Atajos (Menu Horizontal Negro) -->
 			<div class="submenu_h">
 				
-				<a href="../inicio/index.php" aria-hidden><span><img src="../../assets/iconos/inicio-blanco.svg" ></span tabindex="0">Inicio</a>
-				<a href="../logout.php" aria-hidden><span><img src="../../assets/iconos/log-out.svg" ></span tabindex="0">Salir</a>
+				<a href="../inicio/index.php" key="inicio" class="lang"><span><img src="../../assets/iconos/inicio-blanco.svg"></span>Inicio</a>
+				<a href="../logout.php" key="salir" class="lang"><span><img src="../../assets/iconos/log-out.svg"></span>Salir</a>
 
 			</div>
 		</header>
@@ -89,26 +133,26 @@
 			<!-- Se agrega el enctype="multipart/form-data" para que el input permita elegir mas de un archivo -->
 			<form id="formu" class="form_correos" enctype="multipart/form-data">
 				
-				<h1 tabindex="0">Correos</h1>
-				<h3 tabindex="0">Especifique el asunto del correo a enviar</h3>
+				<h1 tabindex="0" class="lang" key="correo">Correos</h1>
+				<h3 tabindex="0" class="lang" key="especifique correo">Especifique el asunto del correo a enviar</h3>
 
-				<label for="asunto_correos" tabindex="0">Asunto:</label>
+				<label for="asunto_correos" tabindex="0"  class="lang" key="asunto">Asunto:</label>
 				<input type="text" name="asunto" id="asunto_correos" placeholder="Por ejemplo: 'actualización días feriados'" tabindex="0">
-				<div id="error_asunto" tabindex="0"></div>
+				<div id="error_asunto" class="lang" key="asunto requerido" tabindex="0"></div>
 
-				<label for="mensaje_correos" tabindex="0">Mensaje:</label>
+				<label for="mensaje_correos" tabindex="0" class="lang" key="mensaje">Mensaje:</label>
 				<textarea id="mensaje_correos" name="mensaje" resize="none" tabindex="0"></textarea>
-				<div id="error_correo" tabindex="0"></div>
+				<div id="error_correo" class="lang" key="asunto requerido" tabindex="0"></div>
 
 				<div class="cont_btn">
 
-					<label for="file" id="label_file" class="btn_ct btn_correos" name="adjuntar" tabindex="0" title="Los archivos deben ser ">Adjuntar Archivos
-						<span id="file_name" tabindex="0">Ningún archivo seleccionado</span>
+					<label for="file" id="label_file" class="btn_ct btn_correos lang" name="adjuntar" tabindex="0" key="adjuntar archivos">Adjuntar Archivos
+						<span id="file_name" tabindex="0" class="lang" key="ningun archivo">Ningún archivo seleccionado</span>
 					</label>
 
 					<input type="file" id="file" name="file[]" class="archivo" tabindex="0" multiple="true">
 					<!-- <button class="btn_correos">Adjuntar Archivo</button> -->
-					<button type="submit" class="btn_correos" tabindex="0">Enviar</button>
+					<button type="submit" class="btn_correos lang" tabindex="0" key="enviar">Enviar</button>
 				</div>
 			</form>
 			
@@ -148,5 +192,6 @@
 			}
 		});
 	</script>
+	<script type="text/javascript" src="../../assets/js/lang/multi_lang.js"></script>
 </body>
 </html>

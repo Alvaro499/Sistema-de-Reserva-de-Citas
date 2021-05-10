@@ -8,7 +8,6 @@
 	<title>Inicio</title>
 	<link rel="stylesheet" type="text/css" href="../../assets/fonts_awesome/css/all.min.css">
 	<link rel="stylesheet" type="text/css" href="../../assets/css/style_inicio/bridge.css">
-	<link rel="stylesheet" type="text/css" href="../../assets/css/notificaciones.css">
 </head>
 
 <body>
@@ -47,7 +46,6 @@
 					<li class="li_v li_analitica"><a href="../analitica_web/analitica.php" key="analitica web" class="lang"><span class="icono"><img src="../../assets/iconos/analitica-web.svg" aria-hidden="true" class="icono_v"></span>Analítica Web</a></li>
 					<li class="li_v li_calendario"><a href="../calendario/calendario.php" key="calendario" class="lang"><span class="icono"><img src="../../assets/iconos/calendario.svg" aria-hidden="true" class="icono_v"></span>Calendario</a></li>
 					<li class="li_v li_guia"><a href="../guia_web/guia_web.php" key="guia web" class="lang"><span class="icono"><img src="../../assets/iconos/guia-web.svg" aria-hidden="true" class="icono_v"></span>Guía Web</a></li>
-					<!-- <li class="li_v"><a href="#"><span><img src="iconos/formulario.svg" aria-hidden="true" class="icono_v"></span>Asistencia Técnica</a></li> -->
 				</ul>	
 			</nav>
 
@@ -72,36 +70,32 @@
 						</div>
 
 					</li>
-					<!-- <div class="menu_idiomas idiomas">
-							Un div para cada idioma
-						</div> -->
-
 					<li class="li_h notifi menu__item container-submenu" id="notifica"><a href="#"><img src="../../assets/iconos/bell.svg" alt="Notificaciones"></a>
-					<div class="sub-menu-1" id="submenu1">
-						<ul class="submenu">
-							<?php 
-							// require("../../negocios/n_notificacion/notificaciones.php");
-							require("../../negocios/n_notificacion/notificaciones.php");
-							$notifi = $datos_noti;
+						<div class="sub-menu-1" id="submenu1">
+							<ul class="submenu">
+								<?php 
+								// require("../../negocios/n_notificacion/notificaciones.php");
+								require("../../negocios/n_notificacion/notificaciones.php");
+								$notifi = $datos_noti;
 
-							//Numero de notificaciones
-							$num_notifi = count($notifi);
-						
-							foreach($notifi as $values){
-							?>
-							<li class="menu_item">
-								<?php if($values["Estado_Notificacion"]==0){?>
-									<a href="" class="menu__link lang" key="solicitud enviada" onclick='actualizar_estado(<?php echo $values["idcitas_cliente"]; ?>);'>Su solicitud fue enviada</a>
+								//Numero de notificaciones
+								$num_notifi = count($notifi);
+							
+								foreach($notifi as $values){
+								?>
+								<li class="menu_item">
+									<?php if($values["Estado_Notificacion"]==0){?>
+										<a href="" class="menu__link lang" key="solicitud enviada" onclick='actualizar_estado(<?php echo $values["idcitas_cliente"]; ?>);'>Su solicitud fue enviada</a>
+									<?php }?>
+									<?php if($values["Estado_Notificacion"]==1){?>
+										<a href="" class="menu__link lang" key="solicitud aceptada" onclick='actualizar_estado_aceptado(<?php echo $values["idcitas_cliente"]; ?>);'>Su solicitud para una capacitación fue aceptada. Tema: <strong class="lang_php" key=""><?php echo $values["area_servicio"];?></strong></a>
+									<?php }?>
+									<?php if($values["Estado_Notificacion"]==2){?>
+										<a href="" class="menu__link lang" key="solicitud rechazada" onclick='actualizar_estado_rechazado(<?php echo $values["idcitas_cliente"]; ?>);'>Su solicitud para una capacitación fue rechazada. Tema: <strong class="lang_php" key=""><?php echo $values["area_servicio"];?></strong></a>
+									<?php }?>
+								</li>
 								<?php }?>
-								<?php if($values["Estado_Notificacion"]==1){?>
-									<a href="" class="menu__link lang" key="solicitud aceptada" onclick='actualizar_estado_aceptado(<?php echo $values["idcitas_cliente"]; ?>);'>Su solicitud para una capacitación fue aceptada. Tema: <strong class="lang_php" key=""><?php echo $values["area_servicio"];?></strong></a>
-								<?php }?>
-								<?php if($values["Estado_Notificacion"]==2){?>
-									<a href="" class="menu__link lang" key="solicitud rechazada" onclick='actualizar_estado_rechazado(<?php echo $values["idcitas_cliente"]; ?>);'>Su solicitud para una capacitación fue rechazada. Tema: <strong class="lang_php" key=""><?php echo $values["area_servicio"];?></strong></a>
-								<?php }?>
-							</li>
-							<?php }?>
-						</ul>
+							</ul>
 						</div>
 						<div id="container_ctn_notifi">
 							
@@ -112,19 +106,7 @@
 
 					<!-- MOSTRAR FOTO DE PERFIL -->
 
-					<?php
-						//Foto de perfil
-						require("../../data/data_perfil.php");
-						$select_foto = new D_Perfil();
-						$foto_perfil = $select_foto->mostrarFoto($_SESSION["cedula"]);
-						foreach ($foto_perfil as $value) {
-							
-					?>
-
-					<li class="li_h usuario"><img src="../../assets/fotos_perfil/<?php echo $value["img_perfil"]; ?>" id="usuario" alt="Foto de Perfil"></li>
-
-					<?php } ?>
-
+					<li class="li_h usuario"><img src="../../assets/fotos_perfil/<?php echo $_SESSION["img_perfil"] ?>" id="usuario" alt="Foto de Perfil"></li>
 					<li class="li_h nombre"><div class="userNmae"><?php echo $_SESSION["nombre"] ?></div>
 						<ul>
 							<li>
@@ -159,8 +141,8 @@
 	
 	<script type="text/javascript" src="../../assets/js/hide_menu_v.js"></script>
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-	<script type="text/javascript" src="../../assets/js/notificaciones/notifi.js"></script>
-	<script type="text/javascript" src="../../assets/js/notificaciones/notificaciones.js"></script>
+	<!-- <script type="text/javascript" src="../../assets/js/notificaciones/notifi.js"></script>
+	<script type="text/javascript" src="../../assets/js/notificaciones/notificaciones.js"></script> -->
 	<script type="text/javascript" src="../../assets/js/lang/multi_lang.js"></script>
 </body>
 </html>

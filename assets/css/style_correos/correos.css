@@ -1,4 +1,4 @@
-#nav_v li:nth-child(2){  /*resalto */
+.li_correo{  /*resalto */
 	background: #BE1E2D;
 	color: #000000;
 }

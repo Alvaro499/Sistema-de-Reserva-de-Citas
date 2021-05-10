@@ -37,15 +37,16 @@
 
 			<nav id="nav_v">
 				<ul>
-					<li class="li_v"><a href="../inicio/index.php" tabindex="0"><span><img src="../../assets/iconos/inicio.svg" aria-hidden="true" class="icono_v"></span>Inicio</a></li>
-					<li class="li_v"><a href="../correos/correos.php" tabindex="0"><span><img src="../../assets/iconos/email.svg" aria-hidden="true" class="icono_v"></span>Correos</a></li>
-					<li class="li_v"><a href="../registro.registro.php" tabindex="0"><span><img src="../../assets/iconos/registro.svg" aria-hidden="true" class="icono_v"></span>Registro</a></li>
-					<li class="li_v"><a href="#" tabindex="0"><span><img src="../../assets/iconos/citas.svg" aria-hidden="true" class="icono_v"></span>Citas</a></li>
-					<li class="li_v"><a href="../analitica_web/analitica.php" tabindex="0"><span><img src="../../assets/iconos/analitica-web.svg" aria-hidden="true" class="icono_v"></span>Analítica Web</a></li>
-					<li class="li_v"><a href="../calendario/calendario.php" tabindex="0"><span><img src="../../assets/iconos/calendario.svg" aria-hidden="true" class="icono_v"></span>Calendario</a></li>
-					<li class="li_v"><a href="../guia_web/guia_web.php" tabindex="0"><span><img src="../../assets/iconos/guia-web.svg" aria-hidden="true" class="icono_v"></span>Guía Web</a></li>
-					<!-- <li class="li_v"><a href="#"><span><img src="iconos/formulario.svg" aria-hidden="true" class="icono_v"></span>Asistencia Técnica</a></li> -->
-				</ul>	
+					<li class="li_v li_inicio"><a href="../inicio/index.php" key="inicio" class="lang"><span class="icono"><img src="../../assets/iconos/inicio.svg" aria-hidden="true" class="icono_v"></span class="icono">Inicio</a></li>
+					<li class="li_v li_correos"><a href="../correos/correos.php" key="correo" class="lang"><span><img src="../../assets/iconos/email.svg" aria-hidden="true" class="icono_v"></span>Correos</a></li>
+					<?php if($_SESSION["idrol"] == 2){ ?>
+					<li class="li_v li_registro"><a href="../registro/registro.php" key="registro" class="lang"><span class="icono"><img src="../../assets/iconos/registro.svg" aria-hidden="true" class="icono_v"></span>Registro</a></li>
+					<?php } ?>
+					<li class="li_v li_citas"><a href="#" key="citas" class="lang"><span class="icono"><img src="../../assets/iconos/citas.svg" aria-hidden="true" class="icono_v"></span>Citas</a></li>
+					<li class="li_v li_analitica"><a href="../analitica_web/analitica.php" key="analitica web" class="lang"><span class="icono"><img src="../../assets/iconos/analitica-web.svg" aria-hidden="true" class="icono_v"></span>Analítica Web</a></li>
+					<li class="li_v li_calendario"><a href="../calendario/calendario.php" key="calendario" class="lang"><span class="icono"><img src="../../assets/iconos/calendario.svg" aria-hidden="true" class="icono_v"></span>Calendario</a></li>
+					<li class="li_v li_guia"><a href="../guia_web/guia_web.php" key="guia web" class="lang"><span class="icono"><img src="../../assets/iconos/guia-web.svg" aria-hidden="true" class="icono_v"></span>Guía Web</a></li>
+				</ul>
 			</nav>
 
 		</header>
@@ -56,19 +57,62 @@
 
 				<!-- Cree esete div para separar el iconos de la flecha de los de idioma, usuarios, etc -->
 				<div class="regre">
-					<button><img src="../../assets/iconos/flecha-izq.svg" alt="Esconder menú / Mostrar menú" tabindex="0"></button>
+					<button tabindex="0"><img src="../../assets/iconos/flecha-izq.svg" alt="Regresar"></button>
 				</div>
 
 				<ul>
-					<li class="li_h idioma"><a href="#" tabindex="0"><img src="../../assets/iconos/idioma.svg" alt="Cambiar Idioma"></a></li>
-					<li class="li_h notifi"><a href="#" tabindex="0"><img src="../../assets/iconos/bell.svg" alt="Notifaciones"></a></li>
-					<li class="li_h usuario"><img src="../../assets/fotos_perfil/<?php echo $_SESSION["img_perfil"] ?>" id="usuario" alt="Foto de Perfil" tabindex="0"></li>
+					<li class="li_h idioma" tabindex="0">
+						<div class="menu_idiomas">
+							<a href="#es" class="translate" id="es" title="Español" tabindex="0" class="idiomas"><img src="../../assets/iconos/idioma.svg" alt="Cambiar español"></a>
+						</div>
+						<div class="menu_idiomas">
+							<a href="#en" class="translate" id="en" title="Inglés USA" tabindex="0"><img src="../../assets/iconos/usa.svg" alt="Change to english"></a>
+						</div>
+
+					</li>
+					<li class="li_h notifi menu__item container-submenu" id="notifica"><a href="#"><img src="../../assets/iconos/bell.svg" alt="Notificaciones"></a>
+						<div class="sub-menu-1" id="submenu1">
+							<ul class="submenu">
+								<?php 
+								// require("../../negocios/n_notificacion/notificaciones.php");
+								require("../../negocios/n_notificacion/notificaciones.php");
+								$notifi = $datos_noti;
+
+								//Numero de notificaciones
+								$num_notifi = count($notifi);
+							
+								foreach($notifi as $values){
+								?>
+								<li class="menu_item">
+									<?php if($values["Estado_Notificacion"]==0){?>
+										<a href="" class="menu__link lang" key="solicitud enviada" onclick='actualizar_estado(<?php echo $values["idcitas_cliente"]; ?>);'>Su solicitud fue enviada</a>
+									<?php }?>
+									<?php if($values["Estado_Notificacion"]==1){?>
+										<a href="" class="menu__link lang" key="solicitud aceptada" onclick='actualizar_estado_aceptado(<?php echo $values["idcitas_cliente"]; ?>);'>Su solicitud para una capacitación fue aceptada. Tema: <strong class="lang_php" key=""><?php echo $values["area_servicio"];?></strong></a>
+									<?php }?>
+									<?php if($values["Estado_Notificacion"]==2){?>
+										<a href="" class="menu__link lang" key="solicitud rechazada" onclick='actualizar_estado_rechazado(<?php echo $values["idcitas_cliente"]; ?>);'>Su solicitud para una capacitación fue rechazada. Tema: <strong class="lang_php" key=""><?php echo $values["area_servicio"];?></strong></a>
+									<?php }?>
+								</li>
+								<?php }?>
+							</ul>
+						</div>
+						<div id="container_ctn_notifi">
+							
+							<span id="cnt_notifi"><?php echo $num_notifi ?></span>
+							
+						</div>
+					</li>
+
+					<!-- MOSTRAR FOTO DE PERFIL -->
+
+					<li class="li_h usuario"><img src="../../assets/fotos_perfil/<?php echo $_SESSION["img_perfil"] ?>" id="usuario" alt="Foto de Perfil"></li>
 					<li class="li_h nombre"><div class="userNmae"><?php echo $_SESSION["nombre"] ?></div>
 						<ul>
 							<li>
 								<div id="perfil" class="cont_perfil">
-									<a class="config_options" href="../perfil/perfil.php"><span><i class="fas fa-user-edit"></i></span>Mi perfil</a>
-									<a class="config_options" href="../logout.php"><span><i class="fas fa-sign-out-alt"></i></span>Cerrar sesión</a>
+									<a class="config_options lang" key="mi perfil" href="../perfil/perfil.php"><span><i class="fas fa-user-edit"></i></span>Mi perfil</a>
+									<a class="config_options lang" key="salir" href="../logout.php"><span><i class="fas fa-sign-out-alt"></i></span>Cerrar sesión</a>
 								</div>
 							</li>
 						</ul>
@@ -80,8 +124,8 @@
 			<!-- SubMenu de Atajos (Menu Horizontal Negro) -->
 			<div class="submenu_h">
 				
-				<a href="../inicio/index.php" tabindex="0"><span><img src="../../assets/iconos/inicio-blanco.svg"></span>Inicio</a>
-				<a href="../logout.php" tabindex="0"><span><img src="../../assets/iconos/log-out.svg"></span>Salir</a>
+				<a href="../inicio/index.php" key="inicio" class="lang"><span><img src="../../assets/iconos/inicio-blanco.svg"></span>Inicio</a>
+				<a href="../logout.php" key="salir" class="lang"><span><img src="../../assets/iconos/log-out.svg"></span>Salir</a>
 
 			</div>
 		</header>
@@ -90,42 +134,42 @@
 			
 			<form id="frmregistro" class="registro">
 				
-                <h1 tabindex="0">Registro de Usuario</h1>
+                <h1 class="lang" key="registro usuario" tabindex="0">Registro de Usuario</h1>
                 
-				<label for="cedula" tabindex="0">Cédula:</label>
+				<label for="cedula" class="lang" key="cedula" tabindex="0">Cédula:</label>
                 <input type="text" id="cedula" class="input" name="cedula" tabindex="0">
 				<div id="error_ced" class="errores" tabindex="0"></div>
                 
-				<label for="nombre_usuario" tabindex="0">Nombre del Usuario:</label>
+				<label for="nombre_usuario" class="lang" key="nombre usuario" tabindex="0">Nombre del Usuario:</label>
                 <input type="text" id="nombre" class="input" name="nombre_usuario" tabindex="0">
 				<div id="error_nomb" class="errores" tabindex="0"></div>
                 
-				<label for="apell1" tabindex="0">Primer Apellido:</label>
+				<label for="apell1" class="lang" key="apellido1" tabindex="0">Primer Apellido:</label>
                 <input type="text" id="p_apellido" class="input" name="apell1" tabindex="0">
 				<div id="error_ap1" class="errores" tabindex="0"></div>
                 
-				<label for="apell2" tabindex="0">Segundo Apellido:</label>
+				<label for="apell2" class="lang" key="apellido2" tabindex="0">Segundo Apellido:</label>
                 <input type="text" id="s_apellido" class="input" name="apell2" tabindex="0">
 				<div id="error_ap2" class="errores" tabindex="0"></div>
                 
-				<label for="email" tabindex="0">Correo Electrónico:</label>
+				<label for="email" class="lang" key="correo" tabindex="0">Correo Electrónico:</label>
                 <input type="text" id="correo" class="input" name="email" tabindex="0" >
 				<div id="error_correo" class="errores" tabindex="0"></div>
                 
-				<label for="cel_1" tabindex="0">Número de Celular:</label>
+				<label for="cel_1" class="lang" key="celular" tabindex="0">Número de Celular:</label>
                 <input type="text" id="n_celular" class="input" name="cel_1" tabindex="0">
 				<div id="error_num1" class="errores" tabindex="0"></div>
 
-                <label for="cel_2" tabindex="0">Número de Celular Opcional:</label>
+                <label for="cel_2" class="lang" key="celular opcional" tabindex="0">Número de Celular Opcional:</label>
                 <input type="text" id="s_celular" class="input" name="cel_2" tabindex="0">
 				<div id="error_num2" class="errores" tabindex="0"></div>
 				
                 
-                <label for="rol_usua" tabindex="0">Rol del Usuario:</label>
+                <label for="rol_usua" class="lang" key="rol usuario" tabindex="0">Rol del Usuario:</label>
                 <select id="rol" class="select" name="rol">
                     
-					<option value="2" name="rol">Empleado</option>
-                    <option value="3" name="rol">Cliente</option>
+					<option value="2" name="rol" class="lang" key="empleado">Empleado</option>
+                    <option value="3" name="rol" class="lang" key="cliente">Cliente</option>
                 </select>
 
 				<div class="cont_btn">
@@ -201,5 +245,6 @@
 		});
 		
 	</script>
+	<script type="text/javascript" src="../../assets/js/lang/multi_lang.js"></script>
 </body>
 </html>

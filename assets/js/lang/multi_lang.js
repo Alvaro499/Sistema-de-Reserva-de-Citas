@@ -50,7 +50,58 @@ let palabras = {
 		"Marketing": "Mercadeo",
 		"Fiscal and Tax Support": "Soporte Fiscal y Tributario",
 		"Legal Support": "Soporte Legal",
-		"Human Talent": "Talento Humano"
+		"Human Talent": "Talento Humano",
+
+		// CORREOS
+		"especifique correo": "Especifique el asunto del correo a enviar",
+		"asunto": "Asunto:",
+		"asunto requerido" : "El asunto es obligatorio",
+		"mensaje" : "Mensaje:",
+		"mensaje requerido" : "El correo es obligatorio",
+		"adjuntar archivos": "Adjuntar Archivos",
+		"ningun archivo": "Ningún archivo seleccionado",
+		"enviar": "Enviar",
+
+		// REGISTRO
+		"registro usuario" : "Registro de Usuario:",
+		"" : "",
+		"cedula" : "Cédula:",
+		"" : "",
+		"nombre usuario" : "Nombre del Usuario:",
+		"" : "",
+		"apellido1" : "Primer Apellido:",
+		"" : "",
+		"apellido2" : "Segundo Apellido:",
+		"" : "",
+		"correo" : "Correo Electrónico:" ,
+		"" : "",
+		"celular" : "Número de Celular:",
+		"" : "",
+		"celular opcional" : "Número de Celular Opcional:",
+		"" : "",
+		"rol usuario" : "Rol del Usuario:",
+		"empleado" : "Empleado",
+		"cliente" : "Cliente",
+
+		//PERFIL
+		"actualizar foto" : "Actualizar foto de perfil",
+		"caract foto" : "Antes de actualizar su foto de perfil en la plataforma asegúrese que dicha foto cumpla las siguientes características:",
+		"tamano foto" : "Debe de tener un tamaño menor a 25MB.",
+		"formato foto" : "Debe de estar únicamente en formato jpg, png o svg.",
+		"resolucion foto" : "Asegúrese que posea una buena resolución y esté centrada.",
+		"elim foto" : "Eliminar foto",
+		"info perfil" : "Información de perfil",
+		"nombre perfil" : "Nombre:",
+		"correo perfil" : "Correo Electrónico:",
+		"telefono" : "Numero de Teléfono:",
+		"telefono opcional" : "Número de Teléfono Opcional",
+		"ayuda" : "Ayuda",
+		"cambiar contra" : "Cambiar contraseña",
+			//Inputs
+		"Update" : "Actualizar",
+		"Close" : "Cerrar"
+
+
 	},
 
 	"en":{
@@ -88,7 +139,54 @@ let palabras = {
 		"Mercadeo": "Marketing",
 		"Soporte Fiscal y Tributario": "Fiscal and Tax Support",
 		"Soporte Legal": "Legal Support",
-		"Talento Humano": "Human Talent"
+		"Talento Humano": "Human Talent",
+
+		// CORREOS
+		"especifique correo": "Specify the subject of the email to send",
+		"asunto": "Subject",
+		"asunto requerido" : "Subject is required",
+		"mensaje requerido" : "Body is required",
+		"mensaje" : "Body",
+		"adjuntar archivos": "Attach a file",
+		"ningun archivo": "No selected file",
+		"enviar": "Send",
+
+		// REGISTRO
+		"registro usuario" : "User Register:",
+		"" : "",
+		"cedula" : "ID:",
+		"" : "",
+		"nombre usuario" : "User Name:",
+		"" : "",
+		"apellido1" : "First Surname:",
+		"" : "",
+		"apellido2" : "Second Surname:",
+		"" : "",
+		"celular" : "Cell phone number:",
+		"" : "",
+		"celular opcional" : "Optional Cell Number:",
+		"rol usuario" : "User Rol:",
+		"empleado" : "Employer",
+		"cliente" : "Customer",
+
+		//PERFIL
+		"actualizar foto" : "Update photo",
+		"caract foto" : "Before updating your profile photo on the platform, make sure the picture has the following characteristics:",
+		"tamano foto" : "Size picture must be less than 25MB.",
+		"formato foto" : "Only be in jpg, png or svg format.",
+		"resolucion foto" : "Make sure it has a good resolution and is centered.",
+		"elim foto" : "Delete photo",
+		"info perfil" : "Profile Information",
+		"nombre perfil" : "Name:",
+		"correo perfil" : "Email:",
+		"telefono" : "Phone number:",
+		"telefono opcional" : "Optional Phone Number",
+		"ayuda" : "Help",
+		"cambiar contra" : "Change password",
+			//Inputs
+		"Actualizar" : "Update",
+		"Cerrar" : "Close"
+		
 	}
 };
 
@@ -123,25 +221,42 @@ $(function(){
 		});
 
 		//Esto no servira en la pagina de tarjetas ya que no esta encerrados en tag strong como los de las noitificaciones
-			//Elementos a traducir con la clase .lang_php, quue contienen php, son los <strong>
-			$(".lang_php").each(function(){
-				// for (var i = 0; i >= palabras.length; i++) {
+		//Elementos a traducir con la clase .lang_php, quue contienen php, son los <strong>
+		$(".lang_php").each(function(){
+			
+			var texto_php = $(this).text(); //obtener el texto de los elem a traducir
+			console.log(texto_php);
+			$(this).attr("key", texto_php); //pasamos el contenido de la etiqueta como valor del atributo key
+			$(this).text(palabras[lang][$(this).attr("key")]);
+			//$(this).attr("key", texto_clon);
+			// if ($(this).attr("key") == palabras[i]) {
 
-				// }
-				var texto_php = $(this).text(); //obtener el texto de los elem a traducir
-				// var texto_clon = texto_php.clone();
-				console.log(texto_php);
-				 // console.log(texto_clon);
-				$(this).attr("key", texto_php); //pasamos el contenido de la etiqueta como valor del atributo key
-				$(this).text(palabras[lang][$(this).attr("key")]);
-				//$(this).attr("key", texto_clon);
-				// if ($(this).attr("key") == palabras[i]) {
+			// 	$(this).text(palabras[lang][$(this).attr("key")]);
+			// 	break;
+			// 	//detener ciclo, no recuerdo el nombre
+			// }//cierre del if		
+		});
 
-				// 	$(this).text(palabras[lang][$(this).attr("key")]);
-				// 	break;
-				// 	//detener ciclo, no recuerdo el nombre
-				// }//cierre del if		
-			});
+		//Traducir "values de inputs"
+		//Elementos a traducir con la clase .lang_input
+		$(".lang_input").each(function(){
+			
+			var nombre_input = $(this).attr("value"); //nombre del value
+			console.log(nombre_input);
+			$(this).attr("key", nombre_input); //pasamos el nombre value del input a key
+			$(this).attr("value", palabras[lang][$(this).attr("key")]); //al atributo value le asignamos las claves del obj personas
+		});
+
+		//Traducir errores
+		//Elementos a traducir con la clase .lang_error
+		$(".lang_input").each(function(){
+			
+
+			var nombre_input = $(this).attr("value"); //nombre del value
+			console.log(nombre_input);
+			$(this).attr("key", nombre_input); //pasamos el nombre value del input a key
+			$(this).attr("value", palabras[lang][$(this).attr("key")]); //al atributo value le asignamos las claves del obj personas
+		});
 	});
 });
 

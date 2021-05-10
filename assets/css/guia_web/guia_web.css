@@ -1,4 +1,4 @@
-#nav_v li:nth-child(7){  /*resalto */
+.li_guia{  /*resalto */
 	background: #BE1E2D;
 	color: #000000;
 }

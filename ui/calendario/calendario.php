@@ -50,7 +50,6 @@
 					<li class="li_v li_analitica"><a href="../analitica_web/analitica.php" key="analitica web" class="lang"><span class="icono"><img src="../../assets/iconos/analitica-web.svg" aria-hidden="true" class="icono_v"></span>Analítica Web</a></li>
 					<li class="li_v li_calendario"><a href="../calendario/calendario.php" key="calendario" class="lang"><span class="icono"><img src="../../assets/iconos/calendario.svg" aria-hidden="true" class="icono_v"></span>Calendario</a></li>
 					<li class="li_v li_guia"><a href="../guia_web/guia_web.php" key="guia web" class="lang"><span class="icono"><img src="../../assets/iconos/guia-web.svg" aria-hidden="true" class="icono_v"></span>Guía Web</a></li>
-					<!-- <li class="li_v"><a href="#"><span><img src="iconos/formulario.svg" aria-hidden="true" class="icono_v"></span>Asistencia Técnica</a></li> -->
 				</ul>	
 			</nav>
 
@@ -75,44 +74,50 @@
 						</div>
 
 					</li>
-					<li class="li_h notifi menu__item container-submenu"><a href="#"><img src="../../assets/iconos/bell.svg" alt="Notificaciones"></a>
-						<ul class="submenu">
-							<?php 
-							// require("../../negocios/n_notificacion/notificaciones.php");
-							require("../../negocios/n_notificacion/notificaciones.php");
-							$notifi = $datos_noti;
+					<li class="li_h notifi menu__item container-submenu" id="notifica"><a href="#"><img src="../../assets/iconos/bell.svg" alt="Notificaciones"></a>
+						<div class="sub-menu-1" id="submenu1">
+							<ul class="submenu">
+								<?php 
+								// require("../../negocios/n_notificacion/notificaciones.php");
+								require("../../negocios/n_notificacion/notificaciones.php");
+								$notifi = $datos_noti;
 
-							//Numero de notificaciones
-							$num_notifi = count($notifi);
-						
-							foreach($notifi as $values){
-							?>
-							<li class="menu_item">
-								<?php if($values["Estado_Notificacion"]==0){?>
-									<a href="" class="menu__link lang" key="solicitud enviada" onclick='actualizar_estado(<?php echo $values["idcitas_cliente"]; ?>);'>Su solicitud fue enviada</a>
+								//Numero de notificaciones
+								$num_notifi = count($notifi);
+							
+								foreach($notifi as $values){
+								?>
+								<li class="menu_item">
+									<?php if($values["Estado_Notificacion"]==0){?>
+										<a href="" class="menu__link lang" key="solicitud enviada" onclick='actualizar_estado(<?php echo $values["idcitas_cliente"]; ?>);'>Su solicitud fue enviada</a>
+									<?php }?>
+									<?php if($values["Estado_Notificacion"]==1){?>
+										<a href="" class="menu__link lang" key="solicitud aceptada" onclick='actualizar_estado_aceptado(<?php echo $values["idcitas_cliente"]; ?>);'>Su solicitud para una capacitación fue aceptada. Tema: <strong class="lang_php" key=""><?php echo $values["area_servicio"];?></strong></a>
+									<?php }?>
+									<?php if($values["Estado_Notificacion"]==2){?>
+										<a href="" class="menu__link lang" key="solicitud rechazada" onclick='actualizar_estado_rechazado(<?php echo $values["idcitas_cliente"]; ?>);'>Su solicitud para una capacitación fue rechazada. Tema: <strong class="lang_php" key=""><?php echo $values["area_servicio"];?></strong></a>
+									<?php }?>
+								</li>
 								<?php }?>
-								<?php if($values["Estado_Notificacion"]==1){?>
-									<a href="" class="menu__link lang" key="solicitud aceptada" onclick='actualizar_estado_aceptado(<?php echo $values["idcitas_cliente"]; ?>);'>Su solicitud para una capacitación fue aceptada. Tema: <strong class="lang_php" key=""><?php echo $values["area_servicio"];?></strong></a>
-								<?php }?>
-								<?php if($values["Estado_Notificacion"]==2){?>
-									<a href="" class="menu__link lang" key="solicitud rechazada" onclick='actualizar_estado_rechazado(<?php echo $values["idcitas_cliente"]; ?>);'>Su solicitud para una capacitación fue rechazada. Tema: <strong class="lang_php" key=""><?php echo $values["area_servicio"];?></strong></a>
-								<?php }?>
-							</li>
-							<?php }?>
-						</ul>
+							</ul>
+						</div>
 						<div id="container_ctn_notifi">
 							
 							<span id="cnt_notifi"><?php echo $num_notifi ?></span>
 							
 						</div>
 					</li>
-					<li class="li_h usuario"><img src="../../assets/fotos_perfil/<?php echo $_SESSION["img_perfil"] ?>" id="usuario" alt="Foto de Perfil"></li>
+
+					<!-- MOSTRAR FOTO DE PERFIL -->
+										<li class="li_h usuario"><img src="../../assets/fotos_perfil/<?php echo $_SESSION["img_perfil"] ?>" id="usuario" alt="Foto de Perfil"></li>
 					<li class="li_h nombre"><div class="userNmae"><?php echo $_SESSION["nombre"] ?></div>
 						<ul>
 							<li>
 								<div id="perfil" class="cont_perfil">
+								<div id="perfil" class="cont_perfil">
 									<a class="config_options lang" key="mi perfil" href="../perfil/perfil.php"><span><i class="fas fa-user-edit"></i></span>Mi perfil</a>
 									<a class="config_options lang" key="salir" href="../logout.php"><span><i class="fas fa-sign-out-alt"></i></span>Cerrar sesión</a>
+								</div>
 								</div>
 							</li>
 						</ul>
@@ -194,23 +199,6 @@
 					calendar.render();
 				});
     		</script>
-
-			<!-- Cambio de idioma para FullCalendar -->
-			<script>
-
-				// $(function() {
-
-				// 	$('#calendar').fullCalendar({
-						
-				// 		lang: 'es'
-				// 		// monthNames: ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
-    			// 		// monthNamesShort: ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'],
-    			// 		// dayNames: ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'],
-    			// 		// dayNamesShort: ['Dom','Lun','Mar','Mié','Jue','Vie','Sáb']
-				// 	});
-				// });
-
-			</script>
 		</main>
 	</div>
 	<script type="text/javascript" src="../../assets/js/hide_menu_v.js"></script>
