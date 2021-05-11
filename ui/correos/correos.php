@@ -138,12 +138,12 @@
 
 				<label for="asunto_correos" tabindex="0"  class="lang" key="asunto">Asunto:</label>
 				<input type="text" name="asunto" id="asunto_correos" placeholder="Por ejemplo: 'actualización días feriados'" tabindex="0">
-				<div id="error_asunto" class="lang" key="asunto requerido" tabindex="0"></div>
-
+				<div id="error_asunto" class="lang_error" key="asunto requerido" tabindex="0">*El asunto es obligatorio</div>
+				
 				<label for="mensaje_correos" tabindex="0" class="lang" key="mensaje">Mensaje:</label>
 				<textarea id="mensaje_correos" name="mensaje" resize="none" tabindex="0"></textarea>
-				<div id="error_correo" class="lang" key="asunto requerido" tabindex="0"></div>
-
+				<div id="error_correo" class="lang_error" key="cuerpo requerido" tabindex="0">*El cuerpo del correo es obligatorio</div>
+		
 				<div class="cont_btn">
 
 					<label for="file" id="label_file" class="btn_ct btn_correos lang" name="adjuntar" tabindex="0" key="adjuntar archivos">Adjuntar Archivos
@@ -152,7 +152,7 @@
 
 					<input type="file" id="file" name="file[]" class="archivo" tabindex="0" multiple="true">
 					<!-- <button class="btn_correos">Adjuntar Archivo</button> -->
-					<button type="submit" class="btn_correos lang" tabindex="0" key="enviar">Enviar</button>
+					<button type="submit" class="btn_correos lang btn_enviar" tabindex="0" key="enviar">Enviar</button>
 				</div>
 			</form>
 			

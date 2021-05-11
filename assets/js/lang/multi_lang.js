@@ -55,9 +55,9 @@ let palabras = {
 		// CORREOS
 		"especifique correo": "Especifique el asunto del correo a enviar",
 		"asunto": "Asunto:",
-		"asunto requerido" : "El asunto es obligatorio",
+		"asunto requerido" : "*El asunto es obligatorio",
 		"mensaje" : "Mensaje:",
-		"mensaje requerido" : "El correo es obligatorio",
+		"cuerpo requerido" : "*El cuerpo del correo es obligatorio",
 		"adjuntar archivos": "Adjuntar Archivos",
 		"ningun archivo": "Ningún archivo seleccionado",
 		"enviar": "Enviar",
@@ -66,22 +66,28 @@ let palabras = {
 		"registro usuario" : "Registro de Usuario:",
 		"" : "",
 		"cedula" : "Cédula:",
-		"" : "",
+		"cedula no valida" : "Cédula no válida. Verificar que no incluya letras o guiones",
 		"nombre usuario" : "Nombre del Usuario:",
-		"" : "",
+		"nombre invalido" : "El formato de nombre de usuario es inválido, revise que no digito numeros",
 		"apellido1" : "Primer Apellido:",
-		"" : "",
+		"formato apellido1" : "El formato de primer apellido es inválido, revise que no digito numeros",
 		"apellido2" : "Segundo Apellido:",
-		"" : "",
-		"correo" : "Correo Electrónico:" ,
-		"" : "",
+		"formato apellido2" : "El formato de segundo apellido es inválido, revise que no digito numeros",
+		//"correo" : "Correo Electrónico:",
+		"formato correo" : "El formato de correo es inválido",
 		"celular" : "Número de Celular:",
-		"" : "",
+		"formato celular" : "El formato de celular es inválido, revise que no lleve letras",
 		"celular opcional" : "Número de Celular Opcional:",
-		"" : "",
+		"formato celular op" : "El formato del celular opcional es inválido, revise que no lleve letras",
 		"rol usuario" : "Rol del Usuario:",
 		"empleado" : "Empleado",
 		"cliente" : "Cliente",
+
+		//Rerva Citas Cliente RCC
+		"formato fecha1" : "La fecha es obligatoria",
+		"formato fecha1" : "La fecha debe ser al menos 2 dias posteriores a la fecha actual",
+		"formato hora" : "La Hora es obligatoria",
+		"formato mensaje cita" : "El mensaje es requerido",
 
 		//PERFIL
 		"actualizar foto" : "Actualizar foto de perfil",
@@ -144,30 +150,37 @@ let palabras = {
 		// CORREOS
 		"especifique correo": "Specify the subject of the email to send",
 		"asunto": "Subject",
-		"asunto requerido" : "Subject is required",
-		"mensaje requerido" : "Body is required",
+		"asunto requerido" : "*Subject is required",
 		"mensaje" : "Body",
+		"cuerpo requerido" : "*Body is required",
 		"adjuntar archivos": "Attach a file",
 		"ningun archivo": "No selected file",
 		"enviar": "Send",
 
 		// REGISTRO
 		"registro usuario" : "User Register:",
-		"" : "",
 		"cedula" : "ID:",
-		"" : "",
+		"cedula no valida" : "Invalid ID. Verify that it does not include letters or hyphens",
 		"nombre usuario" : "User Name:",
-		"" : "",
+		"nombre invalido" : "Username format is invalid, check that you did not enter numbers",
 		"apellido1" : "First Surname:",
-		"" : "",
+		"formato apellido1" : "First surname is invalid, check that you did not enter numbers",
 		"apellido2" : "Second Surname:",
-		"" : "",
+		"formato apellido2" : "Second surname is invalid, check that you did not enter numbers",
+		//"correo" : "Email:",
+		"formato correo" : "Email format is invalid",
 		"celular" : "Cell phone number:",
-		"" : "",
+		"formato celular" : "Cell phone format is invalid, check that it does not have letters",
 		"celular opcional" : "Optional Cell Number:",
 		"rol usuario" : "User Rol:",
 		"empleado" : "Employer",
 		"cliente" : "Customer",
+		
+		//Rerva Citas Cliente RCC
+		"formato fecha1" : "Date is required",
+		"formato fecha2" : "Date must be at least 2 days after the current date",
+		"formato hora" : "Hour is required",
+		"formato mensaje cita" : "Message is required",
 
 		//PERFIL
 		"actualizar foto" : "Update photo",
@@ -181,6 +194,7 @@ let palabras = {
 		"correo perfil" : "Email:",
 		"telefono" : "Phone number:",
 		"telefono opcional" : "Optional Phone Number",
+		"formato celular op" : "Optional cell phone format is invalid, check that it does not have letters",
 		"ayuda" : "Help",
 		"cambiar contra" : "Change password",
 			//Inputs
@@ -249,13 +263,8 @@ $(function(){
 
 		//Traducir errores
 		//Elementos a traducir con la clase .lang_error
-		$(".lang_input").each(function(){
-			
-
-			var nombre_input = $(this).attr("value"); //nombre del value
-			console.log(nombre_input);
-			$(this).attr("key", nombre_input); //pasamos el nombre value del input a key
-			$(this).attr("value", palabras[lang][$(this).attr("key")]); //al atributo value le asignamos las claves del obj personas
+		$(".lang_error").each(function(){
+			$(this).text(palabras[lang][$(this).attr("key")]);
 		});
 	});
 });

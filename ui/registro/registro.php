@@ -66,7 +66,7 @@
 							<a href="#es" class="translate" id="es" title="Español" tabindex="0" class="idiomas"><img src="../../assets/iconos/idioma.svg" alt="Cambiar español"></a>
 						</div>
 						<div class="menu_idiomas">
-							<a href="#en" class="translate" id="en" title="Inglés USA" tabindex="0"><img src="../../assets/iconos/usa.svg" alt="Change to english"></a>
+							<a href="#en" class="translate" id="en" title="English USA" tabindex="0"><img src="../../assets/iconos/usa.svg" alt="Change to english"></a>
 						</div>
 
 					</li>
@@ -138,31 +138,31 @@
                 
 				<label for="cedula" class="lang" key="cedula" tabindex="0">Cédula:</label>
                 <input type="text" id="cedula" class="input" name="cedula" tabindex="0">
-				<div id="error_ced" class="errores" tabindex="0"></div>
+				<div id="error_ced" class="errores lang_error" key="cedula no valida" tabindex="0">Cédula no válida. Verificar que no incluya letras o guiones</div>
                 
 				<label for="nombre_usuario" class="lang" key="nombre usuario" tabindex="0">Nombre del Usuario:</label>
                 <input type="text" id="nombre" class="input" name="nombre_usuario" tabindex="0">
-				<div id="error_nomb" class="errores" tabindex="0"></div>
+				<div id="error_nomb" class="errores lang_error" key="nombre invalido" tabindex="0">El formato de nombre de usuario es inválido, revise que no digito numeros</div>
                 
 				<label for="apell1" class="lang" key="apellido1" tabindex="0">Primer Apellido:</label>
                 <input type="text" id="p_apellido" class="input" name="apell1" tabindex="0">
-				<div id="error_ap1" class="errores" tabindex="0"></div>
+				<div id="error_ap1" class="errores lang_error" key="formato apellido1" tabindex="0">El formato de primer apellido es inválido, revise que no digito numeros</div>
                 
 				<label for="apell2" class="lang" key="apellido2" tabindex="0">Segundo Apellido:</label>
                 <input type="text" id="s_apellido" class="input" name="apell2" tabindex="0">
-				<div id="error_ap2" class="errores" tabindex="0"></div>
+				<div id="error_ap2" class="errores lang_error" key="formato apellido2" tabindex="0">El formato de segundo apellido es inválido, revise que no digito numeros</div>
                 
 				<label for="email" class="lang" key="correo" tabindex="0">Correo Electrónico:</label>
                 <input type="text" id="correo" class="input" name="email" tabindex="0" >
-				<div id="error_correo" class="errores" tabindex="0"></div>
+				<div id="error_correo" class="errores lang_error" key="formato correo" tabindex="0">El formato de correo es inválido</div>
                 
 				<label for="cel_1" class="lang" key="celular" tabindex="0">Número de Celular:</label>
                 <input type="text" id="n_celular" class="input" name="cel_1" tabindex="0">
-				<div id="error_num1" class="errores" tabindex="0"></div>
+				<div id="error_num1" class="errores lang_error" key="formato celular" tabindex="0">El formato de celular es inválido, revise que no lleve letras</div>
 
                 <label for="cel_2" class="lang" key="celular opcional" tabindex="0">Número de Celular Opcional:</label>
                 <input type="text" id="s_celular" class="input" name="cel_2" tabindex="0">
-				<div id="error_num2" class="errores" tabindex="0"></div>
+				<div id="error_num2" class="errores lang_error"  key="formato celular op" tabindex="0">El formato del celular opcional es inválido, revise que no lleve letras</div>
 				
                 
                 <label for="rol_usua" class="lang" key="rol usuario" tabindex="0">Rol del Usuario:</label>
