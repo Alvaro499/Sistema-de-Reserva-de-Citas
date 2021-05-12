@@ -66,7 +66,7 @@
 							<a href="#es" class="translate" id="es" title="Español" tabindex="0" class="idiomas"><img src="../../assets/iconos/idioma.svg" alt="Cambiar español"></a>
 						</div>
 						<div class="menu_idiomas">
-							<a href="#en" class="translate" id="en" title="Inglés USA" tabindex="0"><img src="../../assets/iconos/usa.svg" alt="Change to english"></a>
+							<a href="#en" class="translate" id="en" title="English USA" tabindex="0"><img src="../../assets/iconos/usa.svg" alt="Change to english"></a>
 						</div>
 
 					</li>
@@ -133,83 +133,28 @@
 		<main id="principal">
 			
 			<section class="admin_citas">
-                <h1 tabindex="0">Reservas pendientes</h1>
+                <h1 class="lang" key="reservas pendientes" tabindex="0">Reservas pendientes</h1>
                 <div id="reservas">
-                <?php 
-                require("../../negocios/n_citas/admin_citas.php");
-                $citas = new N_Admin_Citas();
-                $datos= $citas->get_citas();
-                foreach($datos as $values)
-                {
-                ?>
-                    <div class="card-reserva">
-                        <h3><?php echo "Área de " . $values["area_servicio"]; ?></h3>
-                        <p><strong tabindex="0">Usuario:</strong> <?php echo $values["nombre"]; ?></p>
-                        <p><strong tabindex="0">Asunto:</strong> <?php echo $values["asunto"]; ?></p>
-                        <p><strong tabindex="0">Fecha:</strong> <?php echo $values["fecha"]; ?></p>
-                        <p><strong tabindex="0">Hora:</strong> <?php echo $values["hora"]; ?></p>
-                        <p><strong tabindex="0">Medio de reunión: </strong><?php echo $values["medio"]; ?></p>
-                        <p><strong tabindex="0">Mensaje:</strong> <?php echo $values["comentario"]; ?></p>
-                        <!-- <button id="descargar" class="btn file">Descargar</button> -->
-                        <button id="rechazar" class="btn danger" onclick='rechazar(<?php echo $values["idcitas_cliente"];?>, "<?php echo $values["cedula"];?>");' tabindex="0">Rechazar</button>
-                        <button id="aceptar" class="btn success" onclick='aceptar(<?php echo $values["idcitas_cliente"];?>,"<?php echo $values["medio"];?>","<?php echo $values["cedula"];?>");' tabindex="0">Aceptar</button>
-                    </div>
-                <?php }?>
-                    
-                    <!-- <div class="card-reserva">
-                        <h3>Administración</h3>
-                        <p><strong>Usuario:</strong> ...</p>
-                        <p><strong>Asunto:</strong> Capacitación del servicio de Administración</p>
-                        <p><strong>Fecha:</strong> 28/01/2021</p>
-                        <p><strong>Hora:</strong> 11:00a.m</p>
-                        <p><strong>Medio de reunión: </strong>Virtual</p>
-                        <p><strong>Mensaje:</strong> qwertyuiopasdfghjkldtyvuejcgebusjgwevr</p>
-                        <button class="btn danger">Rechazar</button>
-                        <button class="btn success" onclick="location.href='reserva_aceptada.html'">Aceptar</button>
-                    </div>
-                    
-
-                    <div class="card-reserva">
-                        <h3>Administración</h3>
-                        <p><strong>Usuario:</strong> ...</p>
-                        <p><strong>Asunto:</strong> Capacitación del servicio de Administración</p>
-                        <p><strong>Fecha:</strong> 28/01/2021</p>
-                        <p><strong>Hora:</strong> 11:00a.m</p>
-                        <p><strong>Medio de reunión: </strong>Virtual</p>
-                        <p><strong>Mensaje:</strong> qwertyuiopasdfghjkldtyvuejcgebusjgwevr</p>
-                        <button class="btn danger">Rechazar</button>
-                        <button class="btn success" onclick="location.href='reserva_aceptada.html'">Aceptar</button>
-                    </div>
-                    
-
-                    <div class="card-reserva">
-                        <h3>Administración</h3>
-                        <p><strong>Usuario:</strong> ...</p>
-                        <p><strong>Asunto:</strong> Capacitación del servicio de Administración</p>
-                        <p><strong>Fecha:</strong> 28/01/2021</p>
-                        <p><strong>Hora:</strong> 11:00a.m</p>
-                        <p><strong>Medio de reunión: </strong>Virtual</p>
-                        <p><strong>Mensaje:</strong> qwertyuiopasdfghjkldtyvuejcgebusjgwevr</p>
-                        <button class="btn file">Descargar</button>
-                        <button class="btn danger">Rechazar</button>
-                        <button class="btn success" onclick="location.href='reserva_aceptada.html'">Aceptar</button>
-                    </div>
-                    
-
-                    <div class="card-reserva">
-                        <h3>Administración</h3>
-                        <p><strong>Usuario:</strong> ...</p>
-                        <p><strong>Asunto:</strong> Capacitación del servicio de Administración</p>
-                        <p><strong>Fecha:</strong> 28/01/2021</p>
-                        <p><strong>Hora:</strong> 11:00a.m</p>
-                        <p><strong>Medio de reunión: </strong>Virtual</p>
-                        <p><strong>Mensaje:</strong> qwertyuiopasdfghjkldtyvuejcgebusjgwevr</p>
-                        <button class="btn file">Descargar</button>
-                        <button class="btn danger">Rechazar</button>
-                        <button class="btn success" onclick="location.href='reserva_aceptada.html'">Aceptar</button>
-                    </div> -->
-                    
-                    
+                    <?php 
+                    require("../../negocios/n_citas/admin_citas.php");
+                    $citas = new N_Admin_Citas();
+                    $datos= $citas->get_citas();
+                    foreach($datos as $values)
+                    {
+                    ?>
+                        <div class="card-reserva">
+                            <h3><strong class="lang_php" key=""><?php echo $values["area_servicio"]; ?></strong></h3>
+                            <p><strong class="lang" key="usuario" tabindex="0">Usuario: </strong> <?php echo $values["nombre"]; ?></p>
+                            <p><strong class="lang" key="asunto" tabindex="0">Asunto: </strong> <?php echo $values["asunto"]; ?></p>
+                            <p><strong class="lang" key="fecha" tabindex="0">Fecha: </strong> <?php echo $values["fecha"]; ?></p>
+                            <p><strong class="lang" key="hora" tabindex="0">Hora: </strong> <?php echo $values["hora"]; ?></p>
+                            <p><strong class="lang" key="medio reunion" tabindex="0">Medio de reunión: </strong><?php echo $values["medio"]; ?></p>
+                            <p><strong class="lang" key="mensaje" tabindex="0">Mensaje: </strong> <?php echo $values["comentario"]; ?></p>
+                            <!-- <button id="descargar" class="btn file">Descargar</button> -->
+                            <button id="rechazar" class="btn danger lang" key="rechazar" onclick='rechazar(<?php echo $values["idcitas_cliente"];?>, "<?php echo $values["cedula"];?>");' tabindex="0">Rechazar</button>
+                            <button id="aceptar" class="btn success lang" key="aceptar" onclick='aceptar(<?php echo $values["idcitas_cliente"];?>,"<?php echo $values["medio"];?>","<?php echo $values["cedula"];?>");' tabindex="0">Aceptar</button>
+                        </div>
+                    <?php }?>
                 </div>
             </section>
 			

@@ -109,7 +109,7 @@
 							<a href="#es" class="translate" id="es" title="Español" tabindex="0" class="idiomas"><img src="../../assets/iconos/idioma.svg" alt="Cambiar español"></a>
 						</div>
 						<div class="menu_idiomas">
-							<a href="#en" class="translate" id="en" title="Inglés USA" tabindex="0"><img src="../../assets/iconos/usa.svg" alt="Change to english"></a>
+							<a href="#en" class="translate" id="en" title="English USA" tabindex="0"><img src="../../assets/iconos/usa.svg" alt="Change to english"></a>
 						</div>
 
 					</li>
@@ -184,7 +184,7 @@
 							<img src="../../assets/fotos_perfil/<?php echo $_SESSION["img_perfil"] ?>" id="foto_actual" alt="Foto de perfil actual, por defecto" tabindex="0">
 						</div>
 
-						<a for="input_foto" class="label_foto lang" key="actualizar foto"><span><i class="fas fa-paperclip"></i></span>Actualizar foto de perfil</a>
+						<a for="input_foto" class="label_foto lang" key="actualizar foto" tabindex="0"><span><i class="fas fa-paperclip"></i></span>Actualizar foto de perfil</a>
 						<!-- <input type="file" id="input_foto" name="input_foto"> -->
 					</div>
 

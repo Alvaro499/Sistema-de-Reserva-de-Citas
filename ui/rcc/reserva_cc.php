@@ -66,7 +66,7 @@
 							<a href="#es" class="translate" id="es" title="Español" tabindex="0" class="idiomas"><img src="../../assets/iconos/idioma.svg" alt="Cambiar español"></a>
 						</div>
 						<div class="menu_idiomas">
-							<a href="#en" class="translate" id="en" title="Inglés USA" tabindex="0"><img src="../../assets/iconos/usa.svg" alt="Change to english"></a>
+							<a href="#en" class="translate" id="en" title="English USA" tabindex="0"><img src="../../assets/iconos/usa.svg" alt="Change to english"></a>
 						</div>
 
 					</li>
@@ -134,28 +134,28 @@
 			
 			<form class="cita_cliente" id="formu">
 				
-                <h1 tabindex="0">Reservación de Citas</h1>
+                <h1 class="lang" key="reservacion citas" tabindex="0">Reservación de Citas</h1>
                 
-				<label for="servicio" tabindex="0">Área de Servicio:</label>
+				<label for="servicio" class="lang" key="area servicio" tabindex="0">Área de Servicio:</label>
                 <select id="servicio" class="select" name="servicio" tabindex="0">
-                    <option key="administracion" value="Administración">Administración</option>
-                    <option key="" value="Contabilidad">Contabilidad</option>
-                    <option key="" value="Control Interno">Control Interno</option>
-                    <option key="" value="Facturación Electrónica">Facturación Electrónica</option>
-                    <option key="" value="Finanzas y Economía">Finanzas y Economía</option>
-                    <option key="" value="Infraestructura y TIC's">Infraestructura y TIC's</option>
-                    <option key="" value="Mercadeo">Mercadeo</option>
-                    <option key="" value="Soporte Fiscal y Tributario">Soporte Fiscal y Tributario</option>
-                    <option key="" value="Soporte Legal">Soporte Legal</option>
-                    <option key="" value="Talento Humano">Talento Humano</option>
+                    <option class="lang" key="administracion" value="Administración">Administración</option>
+                    <option class="lang" key="contabilidad" value="Contabilidad">Contabilidad</option>
+                    <option class="lang" key="control interno" value="Control Interno">Control Interno</option>
+                    <option class="lang" key="facturacion electronica" value="Facturación Electrónica">Facturación Electrónica</option>
+                    <option class="lang" key="finanzas y economia" value="Finanzas y Economía">Finanzas y Economía</option>
+                    <option class="lang" key="infraestructura tic" value="Infraestructura y TIC's">Infraestructura y TIC's</option>
+                    <option class="lang" key="mercadeo" value="Mercadeo">Mercadeo</option>
+                    <option class="lang" key="soporte fiscal tributario" value="Soporte Fiscal y Tributario">Soporte Fiscal y Tributario</option>
+                    <option class="lang" key="soporte legal" value="Soporte Legal">Soporte Legal</option>
+                    <option class="lang" key="talento humano" value="Talento Humano">Talento Humano</option>
                 </select>
                 
                 <!-- ct = Cita Cliente -->
-				<label for="asunto_ct" tabindex="0">Asunto:</label>
+				<label for="asunto_ct" class="lang" key="asunto" tabindex="0">Asunto:</label>
                 <input type="text" id="asunto" class="input" name="asunto_ct" tabindex="0">
                 <div id="error_asunto" class="errores lang_error" key="asunto requerido" tabindex="0">El Asunto es obligatorio</div>
 
-				<label for="fecha_ct" tabindex="0">Fecha:</label>
+				<label for="fecha_ct" class="lang" key="hora" tabindex="0">Fecha:</label>
                 <input type="date" id="fecha" class="input" name="fecha_ct" tabindex="0">
                 <div id="error_fecha1" class="errores lang_error" key="formato fecha1" tabindex="0">La fecha es obligatoria</div>
 				<div id="error_fecha2" class="errores lang_error" key="formato fecha2" tabindex="0">La fecha debe ser al menos 2 dias posteriores a la fecha actual</div>
@@ -164,10 +164,10 @@
                 <input type="time" id="hora" class="input" name="hora_ct" tabindex="0">
                 <div id="error_hora" class="errores lang_error" key="formato hora" tabindex="0">La Hora es obligatoria</div>
 
-				<label for="medio_ct" tabindex="0">Medio de reunión:</label>
+				<label for="medio_ct" class="lang" key="medio reunion" tabindex="0">Medio de Reunión:</label>
                 <select id="medio" class="select" name="medio_ct" title="El colaborador le indicará la plataforma o sitio de la capacitacion, según usted haya escogido">
-                    <option value="Presencial">Presencial</option>
-                    <option value="Virtual">Virtual</option>
+                    <option class="lang" key="presencial" value="Presencial">Presencial</option>
+                    <option class="lang" key="virtual" value="Virtual">Virtual</option>
                 </select>
                 
                 <label for="mensaje_ct" class="lang_error" key="mensaje" tabindex="0">Mensaje:</label>
@@ -183,7 +183,7 @@
 					
 					<input type="file" id="file" name="file" class="archivo" tabindex="0">
 					
-					<button type="submit" class="btn_ct" tabindex="0">Enviar</button>
+					<button type="submit" class="btn_ct lang" key="enviar" tabindex="0">Enviar</button>
 				</div>
 
 			</form>

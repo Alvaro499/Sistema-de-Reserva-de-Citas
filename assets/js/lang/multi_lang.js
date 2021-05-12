@@ -44,7 +44,7 @@ let palabras = {
 		"Administration": "Administración",
 		"Accounting": "Contabilidad",
 		"Internal control": "Control Interno",
-		"Electronic billing": "Facturación Electrónica",
+		"Electronic Billing": "Facturación Electrónica",
 		"Finance and Economy": "Finanzas y Economía",
 		"Infrastructure and ICT": "Infraestructura y TIC's",
 		"Marketing": "Mercadeo",
@@ -52,7 +52,7 @@ let palabras = {
 		"Legal Support": "Soporte Legal",
 		"Human Talent": "Talento Humano",
 
-		// CORREOS
+	// CORREOS
 		"especifique correo": "Especifique el asunto del correo a enviar",
 		"asunto": "Asunto:",
 		"asunto requerido" : "*El asunto es obligatorio",
@@ -62,9 +62,8 @@ let palabras = {
 		"ningun archivo": "Ningún archivo seleccionado",
 		"enviar": "Enviar",
 
-		// REGISTRO
+	// REGISTRO
 		"registro usuario" : "Registro de Usuario:",
-		"" : "",
 		"cedula" : "Cédula:",
 		"cedula no valida" : "Cédula no válida. Verificar que no incluya letras o guiones",
 		"nombre usuario" : "Nombre del Usuario:",
@@ -83,13 +82,48 @@ let palabras = {
 		"empleado" : "Empleado",
 		"cliente" : "Cliente",
 
-		//Rerva Citas Cliente RCC
+	//Rerva Citas Cliente RCC
+		"reservacion citas" : "Reservación de Citas",
+		"area servicio" : "Área de Servicio:",
+		"fecha" : "Fecha:",
+		"hora" : "Hora:",
+		"medio reunion" : "Medio de Reunión:",
+		"presencial" : "Presencial",
+		"virtual" : "Virtual",
+		"administracion": "Administración",
+		"contabilidad": "Contabilidad",
+		"control interno" : "Control Interno",
+		"facturacion electronica" : "Facturación Electrónica",
+		"finanzas y economia" : "Finanzas y Economía",
+		"infraestructura tic" : "Infraestructura y TIC's",
+		"mercadeo" : "Mercadeo",
+		"soporte fiscal tributario" : "Soporte Fiscal y Tributario",
+		"soporte legal" : "Soporte Legal",
+		"talento humano" : "Talento Humano",
 		"formato fecha1" : "La fecha es obligatoria",
 		"formato fecha1" : "La fecha debe ser al menos 2 dias posteriores a la fecha actual",
 		"formato hora" : "La Hora es obligatoria",
 		"formato mensaje cita" : "El mensaje es requerido",
+	
+	//Rerva Citas Empleados RCE - Reservacion Aceptada
+		"reserva aceptada" : "Reserva Aceptada",
+		"nombre" : "Nombre:",
+		"formato nombre colaborador" : "El formato del usuario colaborador es inválido, revisar que no haya digitado datos numéricos",
+		"oficina" : "Oficina:",
+		"formato lugar presencial" : "Lugar de la cita presencial es requerido",
+		"plataforma" : "Plataforma:",
+		"formato digitar enlace" : "Digite un código o un enlace",
+		"cantidad personas" : "Cantidad de Personas:",
+		"solo numeros" : "Digite solo datos numéricos",
+		"confirmar" : "Confirmar",
+	
+	//Rerva Citas Empleados RCE - Administracion Citas (tarjetas)
+		"reservas pendientes" : "Reservas Pendientes",
+		"usuario" : "Usuario: ",
+		"aceptar" : "Aceptar",
+		"rechazar" : "Rechazar",
 
-		//PERFIL
+	//PERFIL
 		"actualizar foto" : "Actualizar foto de perfil",
 		"caract foto" : "Antes de actualizar su foto de perfil en la plataforma asegúrese que dicha foto cumpla las siguientes características:",
 		"tamano foto" : "Debe de tener un tamaño menor a 25MB.",
@@ -124,8 +158,8 @@ let palabras = {
 		"solicitud rechazada": "Your request was declined. \n Service area: ",
 		"mi perfil": "My Profile",
 		"administracion": "Administration",
-		"contabilidad": "Accounting",
-		"control interno": "Internal control",
+		"contabilidad": "Contability",
+		"control interno": "Internal Control",
 		"facturacion electronica": "Electronic Billing",
 		"finanzas y economia": "Finance and Economy",
 		"infraestructura y tic's": "Infrastructure and ICT",
@@ -137,8 +171,8 @@ let palabras = {
 	// Notificaciones, datos extra duplicados
 		//Obtener la traduccion de texto php desde el ingles, ya que el key no se actualiza al estar en ingles
 		"Administración": "Administration",
-		"Contabilidad": "Accounting",
-		"Control Interno": "Internal control",
+		"Contabilidad": "Contability",
+		"Control Interno": "Internal Control",
 		"Facturación Electrónica": "Electronic billing",
 		"Finanzas y Economía": "Finance and Economy",
 		"Infraestructura y TIC's": "Infrastructure and ICT",
@@ -147,17 +181,17 @@ let palabras = {
 		"Soporte Legal": "Legal Support",
 		"Talento Humano": "Human Talent",
 
-		// CORREOS
+	//CORREOS
 		"especifique correo": "Specify the subject of the email to send",
-		"asunto": "Subject",
+		"asunto": "Subject:",
 		"asunto requerido" : "*Subject is required",
-		"mensaje" : "Body",
+		"mensaje" : "Body:",
 		"cuerpo requerido" : "*Body is required",
 		"adjuntar archivos": "Attach a file",
 		"ningun archivo": "No selected file",
 		"enviar": "Send",
 
-		// REGISTRO
+	//REGISTRO
 		"registro usuario" : "User Register:",
 		"cedula" : "ID:",
 		"cedula no valida" : "Invalid ID. Verify that it does not include letters or hyphens",
@@ -176,13 +210,48 @@ let palabras = {
 		"empleado" : "Employer",
 		"cliente" : "Customer",
 		
-		//Rerva Citas Cliente RCC
+	//Rerva Citas Cliente RCC
+		"reservacion citas" : "Appointment Reservation",
+		"area servicio" : "Service Area:",
+		"fecha" : "Date:",
+		"hora" : "Hour:",
+		"medio reunion" : "Type of Meeting:",
+		"presencial" : "Presential ",
+		"virtual" : "Virtual",
+		"administracion": "Administration",
+		"contabilidad": "Contability",
+		"control interno" : "Internal Control",
+		"facturacion electronica" : "Electronic Billing",
+		"finanzas y economia" : "Finance and Economy",
+		"infraestructura tic" : "Infrastructure and ICT",
+		"mercadeo" : "Marketing",
+		"soporte fiscal tributario" : "Fiscal and Tax Support",
+		"soporte legal" : "Legal Support",
 		"formato fecha1" : "Date is required",
 		"formato fecha2" : "Date must be at least 2 days after the current date",
 		"formato hora" : "Hour is required",
 		"formato mensaje cita" : "Message is required",
 
-		//PERFIL
+	//Rerva Citas Cliente RCC
+		"reserva aceptada" : "Reservation Accepted",	
+		"nombre" : "Name:",
+		"formato nombre colaborador" : "Format of the collaborating user is invalid, check that you have not entered numerical data data or the field is empty",
+		"oficina" : "Office Place:",
+		"formato lugar presencial" : "Place of the presential appointment is required",
+		"plataforma" : "Virtual Platform:",
+		// "formato reunion virtual" : "",
+		"formato digitar enlace" : "Enter a code or a link",
+		"cantidad personas" : "Number of people:",
+		"solo numeros" : "Only numeric data",
+		"confirmar" : "Confirm",
+
+	//Rerva Citas Empleados RCE - Administracion Citas (tarjetas)
+		"reservas pendientes" : "Pending Appointments",
+		"usuario" : "User :",
+		"aceptar" : "Accept",
+		"rechazar" : "Decline",
+
+	//PERFIL
 		"actualizar foto" : "Update photo",
 		"caract foto" : "Before updating your profile photo on the platform, make sure the picture has the following characteristics:",
 		"tamano foto" : "Size picture must be less than 25MB.",

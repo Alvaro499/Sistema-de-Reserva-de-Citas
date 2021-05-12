@@ -20,31 +20,35 @@ function validacion(modo) {
     const regex_correo = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
     if (cant_person == null || cant_person == "" || !regex_tel.test(cant_person)) {
-        document.getElementById("error_cp").innerHTML = "*Digite solo datos numericos";
+        // document.getElementById("error_cp").innerHTML = "*Digite solo datos numericos";
+        document.getElementById("error_cp").style.display = "block";
         document.getElementById("error_cp").style.color = "#E40017";
         document.getElementById("c_personas").style.border = "3px solid #E40017";
         cant_error++;
     } else {
+        document.getElementById("error_cp").style.display = "none";
         document.getElementById("error_cp").style.color = "#FFF";
         document.getElementById("c_personas").style.border = "3px solid #54E346";
     }
 
     if (nomb == null || nomb == "" || !regex_texto.test(nomb)) {
-        document.getElementById("error_nomb").innerHTML = "*El formato de usuario es inválido, revise que no digito numeros.";
+        // document.getElementById("error_nomb").innerHTML = "*El formato de usuario es inválido, revise que no digito numeros.";
+        document.getElementById("error_nomb").style.display = "block";
         document.getElementById("error_nomb").style.color = "#E40017";
         document.getElementById("nombre").style.border = "3px solid #E40017";
         cant_error++;
     } else {
+        document.getElementById("error_nomb").style.display = "none";
         document.getElementById("error_nomb").style.color = "#FFF";
         document.getElementById("nombre").style.border = "3px solid #54E346";
     } //||
     //!regex_texto.test(ofi)
     if (modo == "Presencial") {
         if (medio == null || medio == "") {
-            document.getElementById("error_ofi").innerHTML = "*El formato de usuario es inválido, revise que no digito numeros.";
+            // document.getElementById("error_ofi").innerHTML = "*El formato de usuario es inválido, revise que no digito numeros.";
+            document.getElementById("error_ofi").style.display = "block";
             document.getElementById("error_ofi").style.color = "#E40017";
             document.getElementById("medio_presencial").style.border = "3px solid #E40017";
-            document.getElementById("error_ofi").style.display = "block";
             cant_error++;
 
         } else {
@@ -56,12 +60,14 @@ function validacion(modo) {
 
     if (modo == "Virtual") {
         if (medio == null || medio == "") {
-            document.getElementById("error_link").innerHTML = "*Digite un link";
+            //document.getElementById("error_link").innerHTML = "*Digite un link";
+            document.getElementById("error_link").style.display = "block";
             document.getElementById("error_link").style.color = "#E40017";
             document.getElementById("link").style.border = "3px solid #E40017";
             cant_error++;
 
         } else {
+            document.getElementById("error_link").style.display = "none";
             document.getElementById("error_link").style.color = "#FFF";
             document.getElementById("link").style.border = "3px solid #54E346";
         }

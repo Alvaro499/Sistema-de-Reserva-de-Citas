@@ -66,7 +66,7 @@
 							<a href="#es" class="translate" id="es" title="Español" tabindex="0" class="idiomas"><img src="../../assets/iconos/idioma.svg" alt="Cambiar español"></a>
 						</div>
 						<div class="menu_idiomas">
-							<a href="#en" class="translate" id="en" title="Inglés USA" tabindex="0"><img src="../../assets/iconos/usa.svg" alt="Change to english"></a>
+							<a href="#en" class="translate" id="en" title="English USA" tabindex="0"><img src="../../assets/iconos/usa.svg" alt="Change to english"></a>
 						</div>
 
 					</li>
@@ -134,20 +134,20 @@
 		<?php $modo = $_GET["medio"];?>
 			<form id="form_aceptar" class="reserva_acept">
 				
-                <h1 tabindex="0">Reserva Aceptada</h1>
+                <h1 class="lang" key="reserva aceptada" tabindex="0">Reserva Aceptada</h1>
                 
-				<label for="nombre" tabindex="0">Nombre:</label>
+				<label for="nombre" class="lang" key="nombre" tabindex="0">Nombre:</label>
                 <input type="text" id="nombre" class="input" tabindex="0">
-				<div id="error_nomb" class="errores" tabindex="0"></div>
+				<div id="error_nomb" class="errores lang_error" key="formato nombre colaborador" tabindex="0">El formato del usuario colaborador es inválido, revisar que no haya digitado datos numéricos o el campo esté vacío</div>
                 
 				<?php if($modo=="Presencial"){?>
-				<label for="medio_presencial" tabindex="0">Oficina:</label>
+				<label for="medio_presencial" class="lang" key="oficina" tabindex="0">Oficina:</label>
                 <input type="text" id="medio_presencial" class="input" tabindex="0">
-				<div id="error_ofi" class="errores" tabindex="0"></div>
+				<div id="error_ofi" class="errores lang_error" key="formato lugar presencial" tabindex="0">Lugar de la cita presencial es requerido</div>
                 <?php }?>
 
 				<?php if($modo=="Virtual"){?>
-				<label for="medio_virtual" tabindex="0">Plataforma:</label>
+				<label for="medio_virtual" class="lang" key="plataforma" tabindex="0">Plataforma:</label>
                 <select id="medio_virtual" class="select">
                     <option value="Teams">Teams</option>
                     <option value="Zoom">Zoom</option>
@@ -156,15 +156,15 @@
                 
                 <label for="link" tabindex="0">Link:</label>
                 <input type="text" id="link" class="input" tabindex="0">
-				<div id="error_link" class="errores" tabindex="0"></div>
+				<div id="error_link" class="errores lang_error" key="formato digitar enlace" tabindex="0">Digite un código o un enlace</div>
 				<?php }?>
 
-				<label for="c_personas" tabindex="0">Cantidad de Persona:</label>
+				<label for="c_personas" class="lang" key="cantidad personas" tabindex="0">Cantidad de Personas:</label>
                 <input type="number" id="c_personas" class="input" tabindex="0">
-				<div id="error_cp" class="errores" tabindex="0"></div>
+				<div id="error_cp" class="errores lang_error" key="solo numeros" tabindex="0">Digite solo datos numéricos</div>
 
 				<div class="cont_btn">
-					<button type="submit" class="btn_reserva" tabindex="0">Aceptar</button>
+					<button type="submit" class="btn_reserva lang" key="confirmar" tabindex="0">Confirmar</button>
 				</div>
 
 			</form>
