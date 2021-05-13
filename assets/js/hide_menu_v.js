@@ -2,7 +2,6 @@ let regre = document.querySelector(".regre"); //llamando al boton para ocultar m
 let menu_v = document.querySelector("#menu_v"); //llamando al menu vertical (morado)
 let menu_h = document.querySelector("#menu_h"); //llamando al menu horizontal (rojo)
 let principal = document.querySelector("#principal"); //llamando al cuerpo de la interfaz
-console.log(regre);
 let hide = false; //menu escondido
 let out = true; //menu descubierto
 

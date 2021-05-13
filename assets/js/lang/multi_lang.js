@@ -1,7 +1,7 @@
 console.log("Hi");
 let palabras = {
 	"es":{
-
+		//Menu Vertical
 		"inicio": "Inicio",
 		"correo": "Correos",
 		"registro": "Registro",
@@ -9,12 +9,20 @@ let palabras = {
 		"analitica web": "Analítica Web",
 		"calendario": "Calendario",
 		"guia web": "Guía Web",
+
+		//Submenu
 		"salir": "Salir",
+
+		//Notificaciones
 		"solicitud enviada": "Su solicitud fue enviada",
 		"solicitud aceptada": "Su solicitud para una capacitación fue aceptada. \n Tema: ",
 		"solicitud rechazada": "Su solicitud para una capacitación fue rechazada. \n Tema: ",
+
+		//Submenu Perfil
 		"mi perfil": "Mi Perfil",
 		"cerrar sesion": "Cerrar Sesión",
+
+		//Traducciones al espanol, texto php servicios
 		"Administración": "Administración",
 		"Contabilidad": "Contabilidad",
 		"Control Interno": "Control Interno",
@@ -201,7 +209,6 @@ let palabras = {
 		"formato apellido1" : "First surname is invalid, check that you did not enter numbers",
 		"apellido2" : "Second Surname:",
 		"formato apellido2" : "Second surname is invalid, check that you did not enter numbers",
-		//"correo" : "Email:",
 		"formato correo" : "Email format is invalid",
 		"celular" : "Cell phone number:",
 		"formato celular" : "Cell phone format is invalid, check that it does not have letters",
@@ -239,7 +246,6 @@ let palabras = {
 		"oficina" : "Office Place:",
 		"formato lugar presencial" : "Place of the presential appointment is required",
 		"plataforma" : "Virtual Platform:",
-		// "formato reunion virtual" : "",
 		"formato digitar enlace" : "Enter a code or a link",
 		"cantidad personas" : "Number of people:",
 		"solo numeros" : "Only numeric data",
@@ -303,7 +309,6 @@ $(function(){
 			}
 		});
 
-		//Esto no servira en la pagina de tarjetas ya que no esta encerrados en tag strong como los de las noitificaciones
 		//Elementos a traducir con la clase .lang_php, quue contienen php, son los <strong>
 		$(".lang_php").each(function(){
 			
@@ -311,13 +316,6 @@ $(function(){
 			console.log(texto_php);
 			$(this).attr("key", texto_php); //pasamos el contenido de la etiqueta como valor del atributo key
 			$(this).text(palabras[lang][$(this).attr("key")]);
-			//$(this).attr("key", texto_clon);
-			// if ($(this).attr("key") == palabras[i]) {
-
-			// 	$(this).text(palabras[lang][$(this).attr("key")]);
-			// 	break;
-			// 	//detener ciclo, no recuerdo el nombre
-			// }//cierre del if		
 		});
 
 		//Traducir "values de inputs"
@@ -344,38 +342,11 @@ $(function(){
 //nodeName: "STRONG"
 //localName: "strong"
 
-//Posicion de los iconos de idiomas
-
+//Posicion de los iconos de cada idioma
 let idiomas = document.querySelector(".idioma");
-console.log(idiomas);
-
 idiomas.addEventListener("click", function(e){
+	let bandera = document.querySelectorAll(".menu_idiomas");
 	let primero = e.target.parentNode.parentNode;
-	console.log(e.target.parentNode.parentNode);
-	
-	let segundo = idiomas.replaceChild(primero, idiomas.firstChild);
-	console.log(segundo);
-
-	if (idiomas.replaceChild(segundo, idiomas.lastChild)) {
-		idiomas.replaceChild(segundo, idiomas.lastChild);	
-	}
-	//idiomas.replaceChild(segundo, idiomas.lastChild);
-	//idiomas.insertAdjacentElement("afterbegin",primero);
-	//obtener elemento del click, colocarlo como el primer hijo reemplazando al actual, borrar el elemento del click
+	idiomas.insertBefore(primero, bandera[0]);
+	//Insertamos el nodo clickeado como primero de la lista
 })
-
-/*
-button (today):
-	fc-today-button
-	fc-button
-	fc-button-primary
-
-h1 actual month:
-	fc-toolbar-tittle
-
-days of the week:
-	fc-col-eader-cell-cushion
-
-info-date:
-	fc-event-title fc-sticky
-*/
