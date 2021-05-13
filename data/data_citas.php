@@ -18,10 +18,10 @@ class D_Citas{
 
     }
 
-    public function insertarCitas($area, $asunto, $mensaje, $fecha, $hora,$medio, $archivo, $usuario){
+    public function insertarCitas($area, $asunto, $mensaje, $fecha, $hora,$medio, $usuario){
 
         try {
-            $insertar = $this->cargarConexion->prepare("INSERT INTO `citas_cliente`(`area_servicio`, `asunto`, `comentario`, `url_archivo`, `fecha`, `hora`, `medio`, `estado_cita`,`Estado_Notificacion`,`idusuarios`) VALUES ('$area','$asunto','$mensaje','$archivo','$fecha','$hora','$medio','0','0','$usuario')");
+            $insertar = $this->cargarConexion->prepare("INSERT INTO `citas_cliente`(`area_servicio`, `asunto`, `comentario`, `fecha`, `hora`, `medio`, `estado_cita`,`Estado_Notificacion`,`idusuarios`) VALUES ('$area','$asunto','$mensaje','$fecha','$hora','$medio','0','0','$usuario')");
 
             $resultado = $insertar->execute();
             return $resultado;
@@ -33,7 +33,7 @@ class D_Citas{
 
     public function admin_citas(){
         try{
-            $query = $this->cargarConexion->prepare("SELECT user.cedula, user.nombre, citas.idcitas_cliente, citas.asunto, citas.comentario,citas.fecha, citas.hora, citas.medio, citas.url_archivo, citas.area_servicio FROM citas_cliente AS citas, usuarios AS user WHERE citas.estado_cita=0 AND user.cedula=citas.idusuarios");
+            $query = $this->cargarConexion->prepare("SELECT user.cedula, user.nombre, citas.idcitas_cliente, citas.asunto, citas.comentario,citas.fecha, citas.hora, citas.medio, citas.area_servicio FROM citas_cliente AS citas, usuarios AS user WHERE citas.estado_cita=0 AND user.cedula=citas.idusuarios");
             $resultado = $query->execute();
             $resultado = $query->fetchAll();
             return $resultado;

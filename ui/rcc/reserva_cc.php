@@ -175,14 +175,6 @@
 				<div id="error_mensaje" class="errores lang_error" key="formato mensaje cita" tabindex="0">El Mensaje es obligatorio</div>
 
 				<div class="cont_btn">
-                    <!-- <button class="btn_ct">Adjuntar Archivo</button> -->
-					<label for="file" id="label_file" class="btn_ct" tabindex="0">Adjuntar Archivo
-					
-						<span id="file_name" tabindex="0">Ningún archivo seleccionado</span>
-					</label>
-					
-					<input type="file" id="file" name="file" class="archivo" tabindex="0">
-					
 					<button type="submit" class="btn_ct lang" key="enviar" tabindex="0">Enviar</button>
 				</div>
 
