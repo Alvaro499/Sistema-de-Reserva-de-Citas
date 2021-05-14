@@ -95,25 +95,25 @@
 		</header>
 
 
-		<header id="menu_h">
+		<header id="menu_h" tabindex="0">
 			<nav id="nav_h">
 
 				<!-- Cree esete div para separar el iconos de la flecha de los de idioma, usuarios, etc -->
 				<div class="regre">
-					<button><img src="../../assets/iconos/flecha-izq.svg" alt="Esconder menú / Mostrar menú" tabindex="0"></button>
+					<button><img src="../../assets/iconos/flecha-izq.svg" alt="Esconder menu vertical"></button>
 				</div>
 
 				<ul>
-				<li class="li_h idioma" tabindex="0">
+					<li class="li_h idioma" tabindex="0">
 						<div class="menu_idiomas">
-							<a href="#es" class="translate" id="es" title="Español" tabindex="0" class="idiomas"><img src="../../assets/iconos/idioma.svg" alt="Cambiar español"></a>
+							<a href="#" class="translate" id="es" title="Español" tabindex="0" class="idiomas"><img src="../../assets/iconos/idioma.svg" alt="Cambiar idioma a español"></a>
 						</div>
 						<div class="menu_idiomas">
-							<a href="#en" class="translate" id="en" title="English USA" tabindex="0"><img src="../../assets/iconos/usa.svg" alt="Change to english"></a>
+							<a href="#" class="translate" id="en" title="English USA" tabindex="0"><img src="../../assets/iconos/usa.svg" alt="Change language to english"></a>
 						</div>
 
 					</li>
-					<li class="li_h notifi menu__item container-submenu" id="notifica"><a href="#"><img src="../../assets/iconos/bell.svg" alt="Notificaciones"></a>
+					<li class="li_h notifi menu__item container-submenu" id="notifica" tabindex="0"><a href="#"><img src="../../assets/iconos/bell.svg" alt="Notificaciones"></a>
 						<div class="sub-menu-1" id="submenu1">
 							<ul class="submenu">
 								<?php 
@@ -126,7 +126,7 @@
 							
 								foreach($notifi as $values){
 								?>
-								<li class="menu_item">
+								<li class="menu_item" tabindex="0">
 									<?php if($values["Estado_Notificacion"]==0){?>
 										<a href="" class="menu__link lang" key="solicitud enviada" onclick='actualizar_estado(<?php echo $values["idcitas_cliente"]; ?>);'>Su solicitud fue enviada</a>
 									<?php }?>
@@ -148,13 +148,14 @@
 					</li>
 
 					<!-- MOSTRAR FOTO DE PERFIL -->
-					<li class="li_h usuario"><img src="../../assets/fotos_perfil/<?php echo $_SESSION["img_perfil"] ?>" id="usuario" alt="Foto de Perfil" tabindex="0"></li>
-					<li class="li_h nombre"><div class="userNmae"><?php echo $_SESSION["nombre"] ?></div>
+
+					<li class="li_h usuario" tabindex="0"><img src="../../assets/fotos_perfil/<?php echo $_SESSION["img_perfil"] ?>" id="usuario" alt="Foto de Perfil"></li>
+					<li class="li_h nombre" tabindex="0"><div class="userNmae" tabindex="0"><?php echo $_SESSION["nombre"] ?></div>
 						<ul>
-							<li tabindex="0">
+							<li>
 								<div id="perfil" class="cont_perfil">
-									<a class="config_options lang" key="mi perfil" href="../perfil/perfil.php" ><span><i class="fas fa-user-edit"></i></span>Mi perfil</a>
-									<a class="config_options lang" key="salir" href="../logout.php"><span><i class="fas fa-sign-out-alt"></i></span>Cerrar sesión</a>
+									<a class="config_options lang" key="mi perfil" href="../perfil/perfil.php" tabindex="0"><span><i class="fas fa-user-edit"></i></span>Mi perfil</a>
+									<a class="config_options lang" key="salir" href="../logout.php" tabindex="0"><span><i class="fas fa-sign-out-alt"></i></span>Cerrar sesión</a>
 								</div>
 							</li>
 						</ul>
@@ -175,7 +176,7 @@
 		<main id="principal">
 			
 			<div id="perfil_cont">
-				<h1 class="lang" key="mi perfil">Mi perfil</h1>
+				<h1 class="lang" key="mi perfil" tabindex="0">Mi perfil</h1>
 
 				<section id="foto_cont">
 
@@ -184,7 +185,7 @@
 							<img src="../../assets/fotos_perfil/<?php echo $_SESSION["img_perfil"] ?>" id="foto_actual" alt="Foto de perfil actual, por defecto" tabindex="0">
 						</div>
 
-						<a for="input_foto" class="label_foto lang" key="actualizar foto" tabindex="0"><span><i class="fas fa-paperclip"></i></span>Actualizar foto de perfil</a>
+						<a href="#" for="input_foto" class="label_foto lang" key="actualizar foto" tabindex="0"><span><i class="fas fa-paperclip"></i></span>Actualizar foto de perfil</a>
 						<!-- <input type="file" id="input_foto" name="input_foto"> -->
 					</div>
 
@@ -193,7 +194,7 @@
 				<section id="info_cont">
 					<div class="card_cont">
 
-						<h2 class="lang" key="info perfil">Información de perfil</h2>
+						<h2 class="lang" key="info perfil" tabindex="0">Información de perfil</h2>
 
 						<?php
 							require("../../data/data_perfil.php");
@@ -203,38 +204,38 @@
 							foreach($info_perfil as $value){
 						
 						?>
-						<div class="card_info">
+						<div class="card_info" tabindex="0">
 							<p class="lang" key="nombre perfil">Nombre:</p>
 							<p><?php echo $value["nombre"] ?></p>
 
 						</div >
 
-						<div class="card_info">
+						<div class="card_info" tabindex="0">
 							<p class="lang" key="apellido1">Primer Apellido:</p>
 							<p><?php echo $value["apellido1"] ?></p>
 						</div>
 
-						<div class="card_info">
+						<div class="card_info" tabindex="0">
 							<p class="lang" key="apellido2">Segundo Apellido:</p>
 							<p><?php echo $value["apellido2"]?></p>
 						</div class="card_info">
 
-						<div class="card_info">
+						<div class="card_info" tabindex="0">
 							<p class="lang" key="cedula">Cédula:</p>
 							<p><?php echo $value["cedula"] ?></p>
 						</div>
 
-						<div class="card_info">
+						<div class="card_info" tabindex="0">
 							<p class="lang" key="correo perfil">Correo Electrónico:</p>
 							<p><?php echo $value["correo"] ?></p>
 						</div>
 
-						<div class="card_info">
+						<div class="card_info" tabindex="0">
 							<p class="lang" key="telefono">Número de Teléfono:</p>
 							<p><?php echo $value["celular"] ?></p>
 						</div>
 
-						<div class="card_info">
+						<div class="card_info" tabindex="0">
 							<p class="lang" key="telefono opcional">Número de Teléfono Opcional:</p>
 							<p><?php echo $value["celular_opcional"] ?></p>
 						</div>
@@ -245,7 +246,7 @@
 				<section id="ayuda_cont">
 					<div class="ayuda_opciones">
 
-						<h2 class="lang" key="ayuda">Ayuda</h2>
+						<h2 class="lang" key="ayuda" tabindex="0">Ayuda</h2>
 
 						<div class="card_ayuda">
 							<p><a href="../login/recuperar_contra.php" class="lang" key="cambiar contra">Cambiar contraseña</a></p>
@@ -317,5 +318,6 @@
 		}
 	</script>
 	<script type="text/javascript" src="../../assets/js/lang/multi_lang.js"></script>
+	<script type="text/javascript" src="../../assets/js/accesibilidad.js"></script>
 </body>
 </html>

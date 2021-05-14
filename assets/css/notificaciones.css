@@ -11,10 +11,9 @@
 
 /*Hacer visible las notificaciones cuando se posicione encima de la campana*/
 
-.notifi:hover .sub-menu-1 {
+.notifi:hover .sub-menu-1{
     display: block;
 }
-
 
 /*Acomodar en columna las notificaciones*/
 

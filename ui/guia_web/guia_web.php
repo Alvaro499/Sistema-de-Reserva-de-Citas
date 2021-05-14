@@ -50,25 +50,25 @@
 		</header>
 
 
-		<header id="menu_h">
+		<header id="menu_h" tabindex="0">
 			<nav id="nav_h">
 
 				<!-- Cree esete div para separar el iconos de la flecha de los de idioma, usuarios, etc -->
 				<div class="regre">
-					<button tabindex="0"><img src="../../assets/iconos/flecha-izq.svg" alt="Regresar"></button>
+					<button><img src="../../assets/iconos/flecha-izq.svg" alt="Esconder menu vertical"></button>
 				</div>
 
 				<ul>
 					<li class="li_h idioma" tabindex="0">
 						<div class="menu_idiomas">
-							<a href="#es" class="translate" id="es" title="Español" tabindex="0" class="idiomas"><img src="../../assets/iconos/idioma.svg" alt="Cambiar español"></a>
+							<a href="#" class="translate" id="es" title="Español" tabindex="0" class="idiomas"><img src="../../assets/iconos/idioma.svg" alt="Cambiar idioma a español"></a>
 						</div>
 						<div class="menu_idiomas">
-							<a href="#en" class="translate" id="en" title="English USA" tabindex="0"><img src="../../assets/iconos/usa.svg" alt="Change to english"></a>
+							<a href="#" class="translate" id="en" title="English USA" tabindex="0"><img src="../../assets/iconos/usa.svg" alt="Change language to english"></a>
 						</div>
 
 					</li>
-					<li class="li_h notifi menu__item container-submenu" id="notifica"><a href="#"><img src="../../assets/iconos/bell.svg" alt="Notificaciones"></a>
+					<li class="li_h notifi menu__item container-submenu" id="notifica" tabindex="0"><a href="#"><img src="../../assets/iconos/bell.svg" alt="Notificaciones"></a>
 						<div class="sub-menu-1" id="submenu1">
 							<ul class="submenu">
 								<?php 
@@ -81,7 +81,7 @@
 							
 								foreach($notifi as $values){
 								?>
-								<li class="menu_item">
+								<li class="menu_item" tabindex="0">
 									<?php if($values["Estado_Notificacion"]==0){?>
 										<a href="" class="menu__link lang" key="solicitud enviada" onclick='actualizar_estado(<?php echo $values["idcitas_cliente"]; ?>);'>Su solicitud fue enviada</a>
 									<?php }?>
@@ -104,13 +104,13 @@
 
 					<!-- MOSTRAR FOTO DE PERFIL -->
 
-					<li class="li_h usuario"><img src="../../assets/fotos_perfil/<?php echo $_SESSION["img_perfil"] ?>" id="usuario" alt="Foto de Perfil"></li>
-					<li class="li_h nombre"><div class="userNmae"><?php echo $_SESSION["nombre"] ?></div>
+					<li class="li_h usuario" tabindex="0"><img src="../../assets/fotos_perfil/<?php echo $_SESSION["img_perfil"] ?>" id="usuario" alt="Foto de Perfil"></li>
+					<li class="li_h nombre" tabindex="0"><div class="userNmae" tabindex="0"><?php echo $_SESSION["nombre"] ?></div>
 						<ul>
 							<li>
 								<div id="perfil" class="cont_perfil">
-									<a class="config_options lang" key="mi perfil" href="../perfil/perfil.php"><span><i class="fas fa-user-edit"></i></span>Mi perfil</a>
-									<a class="config_options lang" key="salir" href="../logout.php"><span><i class="fas fa-sign-out-alt"></i></span>Cerrar sesión</a>
+									<a class="config_options lang" key="mi perfil" href="../perfil/perfil.php" tabindex="0"><span><i class="fas fa-user-edit"></i></span>Mi perfil</a>
+									<a class="config_options lang" key="salir" href="../logout.php" tabindex="0"><span><i class="fas fa-sign-out-alt"></i></span>Cerrar sesión</a>
 								</div>
 							</li>
 						</ul>
@@ -139,5 +139,6 @@
 	<script type="text/javascript" src="../../assets/js/hide_menu_v.js"></script>
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="../../assets/js/lang/multi_lang.js"></script>
+	<script type="text/javascript" src="../../assets/js/accesibilidad.js"></script>
 </body>
 </html>

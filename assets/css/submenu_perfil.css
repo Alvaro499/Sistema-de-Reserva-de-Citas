@@ -12,11 +12,10 @@
 /* Contenedor principal para las opciones de perfil */
 .nombre ul{
 	position: absolute;
-	top: 120%;
+	top: 110%;
 	left: -60px;
 	margin-top: -500px;
 	visibility: hidden;
-	transition: all 0.5s;
 }
 
 .nombre a{
@@ -67,3 +66,9 @@
 	visibility: visible;
 	transition: all 0.8s;
 }
+
+/* .nombre:focus ul {
+	margin-top: 0;
+	visibility: visible;
+	transition: all 0.8s;
+} */
