@@ -61,7 +61,7 @@ let padre_subperfil = document.querySelector(".nombre");
 let menu_subperfil = document.querySelector(".nombre > ul");
 
 menu_h.addEventListener("keydown", function(e){
-    
+  //Cada vez que se presione "TAB" en menu_h, se obtiene el origen del evento y si este es hijo del nodo especificado desplegar los submenus
         if (e.keyCode == 9) {
 
           //abrir notificaciones
