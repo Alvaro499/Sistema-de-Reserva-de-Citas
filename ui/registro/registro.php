@@ -155,7 +155,7 @@
                 <input type="text" id="cedula" class="input" name="cedula" tabindex="0">
 				<div id="error_ced" class="errores lang_error" key="cedula no valida" tabindex="0">Cédula no válida. Verificar que no incluya letras o guiones</div>
                 
-				<label for="nombre_usuario" class="lang" key="nombre usuario" tabindex="0">Nombre del Usuario:</label>
+				<label for="nombre_usuario" class="lang" key="nombre usuario" tabindex="0">Nombre:</label>
                 <input type="text" id="nombre" class="input" name="nombre_usuario" tabindex="0">
 				<div id="error_nomb" class="errores lang_error" key="nombre invalido" tabindex="0">El formato de nombre de usuario es inválido, revise que no digito numeros</div>
                 
