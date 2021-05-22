@@ -2,3 +2,21 @@
 	background: #BE1E2D;
 	color: #000000;
 }
+section img{
+	width: 100%;
+	padding: 10px;
+	object-fit: cover;
+}
+.card{
+	border: 1px solid rgb(226, 12, 12);
+    margin: 10px;
+}
+section h1, p, h2{
+	margin: 5.5px;
+	padding: 10px;
+	font-size: 1.4rem;
+}
+#principal{
+	display: grid;
+	grid-template-columns: repeat(3, auto)
+}
