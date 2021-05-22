@@ -58,7 +58,9 @@
 					<?php } ?>
 
 					<li class="li_v li_calendario"><a href="../calendario/calendario.php" key="calendario" class="lang"><span class="icono"><img src="../../assets/iconos/calendario.svg" aria-hidden="true" class="icono_v"></span>Calendario</a></li>
+					<?php if($_SESSION["idrol"] == 3){ ?>
 					<li class="li_v li_guia"><a href="../guia_web/guia_web.php" key="guia web" class="lang"><span class="icono"><img src="../../assets/iconos/guia-web.svg" aria-hidden="true" class="icono_v"></span>Guía Web</a></li>
+					<?php } ?>
 				</ul>
 			</nav>
 
@@ -153,7 +155,7 @@
                 <input type="text" id="cedula" class="input" name="cedula" tabindex="0">
 				<div id="error_ced" class="errores lang_error" key="cedula no valida" tabindex="0">Cédula no válida. Verificar que no incluya letras o guiones</div>
                 
-				<label for="nombre_usuario" class="lang" key="nombre usuario" tabindex="0">Nombre del Usuario:</label>
+				<label for="nombre_usuario" class="lang" key="nombre usuario" tabindex="0">Nombre:</label>
                 <input type="text" id="nombre" class="input" name="nombre_usuario" tabindex="0">
 				<div id="error_nomb" class="errores lang_error" key="nombre invalido" tabindex="0">El formato de nombre de usuario es inválido, revise que no digito numeros</div>
                 
