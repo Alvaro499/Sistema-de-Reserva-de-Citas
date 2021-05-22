@@ -218,7 +218,7 @@
                     }else if(data==2){
                         toastr.error("Error al rechazar cita","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
                     }else{
-                        toastr.error("Error desconocido"+data,"Error",{positionClass: "toast-bottom-right", showDuration: "400"});
+                        toastr.error("Error desconocido","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
                     }
                 }
             })

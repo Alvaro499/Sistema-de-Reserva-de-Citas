@@ -227,11 +227,11 @@
 					success: function(data){
 						
 						if(data==1){
-							toastr.success("Se envió la solicitud exitosamente"+data,"Éxitos",{positionClass: "toast-bottom-right", showDuration: "400"});
+							toastr.success("Se envió la solicitud exitosamente","Éxitos",{positionClass: "toast-bottom-right", showDuration: "400"});
 						}else if(data==0){
-							toastr.error("Falló al solicitar la cita"+data,"Error",{positionClass: "toast-bottom-right", showDuration: "400"});
+							toastr.error("Falló al solicitar la cita","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
 						}else{
-							toastr.error("Error desconocido"+data,"Error",{positionClass: "toast-bottom-right", showDuration: "400"});
+							toastr.error("Error desconocido","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
 						}
 					}
 				})

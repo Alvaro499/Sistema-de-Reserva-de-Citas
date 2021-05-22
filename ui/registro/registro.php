@@ -250,7 +250,7 @@
 							toastr.error("Este correo ya está registrado","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
 
 						}else{
-							toastr.error("Error desconocido" + data,"Error",{positionClass: "toast-bottom-right", showDuration: "400"});
+							toastr.error("Error desconocido","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
 						}
 					}
 				})

@@ -10,7 +10,8 @@
 }
 
 #foto_cont .foto img{
-    width: 150px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
 	object-fit: cover;
 }
@@ -180,7 +181,8 @@
 /* Final del estilo boton de cerrar "X" */
 
 .foto_modal img{
-    width: 75px;
+    width: 150px;
+    height: 150px;
 	border-radius: 50%;
 	object-fit: cover;
 }
@@ -221,7 +223,7 @@
     margin-right: 10px;
 }
 
-.opciones_modal label:hover, a:hover{
+.opciones_modal label:hover{
     color: rgb(16, 94, 146);
     transition: all 0.9s;
     cursor: pointer;
@@ -270,6 +272,9 @@
 
     .foto_modal img{
         width: 150px;
+        height: 150px;
+	    border-radius: 50%;
+	    object-fit: cover;
     }
 
     .opciones_modal{
@@ -309,6 +314,7 @@
 
      .foto_modal img{
         width: 200px;
+        height: 200px;
     }
 
     #form_foto p{

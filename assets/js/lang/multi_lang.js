@@ -33,7 +33,7 @@ let palabras = {
 		"Soporte Fiscal y Tributario": "Soporte Fiscal y Tributario",
 		"Soporte Legal": "Soporte Legal",
 		"Talento Humano": "Talento Humano",
-		"reservacion de citas": "Appoinment Reservation",
+		"reservacion de citas": "Appointment Reservation",
 		"area de servicio": "Service Area",
 		"administracion": "Administración",
 		"contabilidad": "Contabilidad",
@@ -63,9 +63,9 @@ let palabras = {
 	// CORREOS
 		"especifique correo": "Especifique el asunto del correo a enviar",
 		"asunto": "Asunto:",
-		"asunto requerido" : "*El asunto es obligatorio",
+		"asunto requerido" : "El asunto es obligatorio",
 		"mensaje" : "Mensaje:",
-		"cuerpo requerido" : "*El cuerpo del correo es obligatorio",
+		"cuerpo requerido" : "El cuerpo del correo es obligatorio",
 		"adjuntar archivos": "Adjuntar Archivos",
 		"ningun archivo": "Ningún archivo seleccionado",
 		"enviar": "Enviar",
@@ -80,7 +80,6 @@ let palabras = {
 		"formato apellido1" : "El formato de primer apellido es inválido, revise que no digito numeros",
 		"apellido2" : "Segundo Apellido:",
 		"formato apellido2" : "El formato de segundo apellido es inválido, revise que no digito numeros",
-		//"correo" : "Correo Electrónico:",
 		"formato correo" : "El formato de correo es inválido",
 		"celular" : "Número de Celular:",
 		"formato celular" : "El formato de celular es inválido, revise que no lleve letras",
@@ -156,10 +155,10 @@ let palabras = {
 		"inicio": "Home",
 		"correo": "Emails",
 		"registro": "Register",
-		"citas": "Appointemens",
-		"analitica web": "Analytical Web",
-		"calendario": "Calendary",
-		"guia web": "Guide Web",
+		"citas": "Appointments",
+		"analitica web": "Web Analytics",
+		"calendario": "Calendar",
+		"guia web": "Web Guide",
 		"salir": "Log Out",
 		"solicitud enviada": "Your request was sent",
 		"solicitud aceptada": "Your request was accepted. \n Service area: ",
@@ -192,9 +191,9 @@ let palabras = {
 	//CORREOS
 		"especifique correo": "Specify the subject of the email to send",
 		"asunto": "Subject:",
-		"asunto requerido" : "*Subject is required",
+		"asunto requerido" : "Subject is required",
 		"mensaje" : "Body:",
-		"cuerpo requerido" : "*Body is required",
+		"cuerpo requerido" : "Body is required",
 		"adjuntar archivos": "Attach a file",
 		"ningun archivo": "No selected file",
 		"enviar": "Send",
@@ -279,8 +278,6 @@ let palabras = {
 	}
 };
 
-console.log(palabras);
-
 $(function(){
 	$(".translate").click(function(){
 		let lang = $(this).attr("id");
@@ -323,7 +320,6 @@ $(function(){
 		$(".lang_input").each(function(){
 			
 			var nombre_input = $(this).attr("value"); //nombre del value
-			console.log(nombre_input);
 			$(this).attr("key", nombre_input); //pasamos el nombre value del input a key
 			$(this).attr("value", palabras[lang][$(this).attr("key")]); //al atributo value le asignamos las claves del obj personas
 		});
@@ -335,12 +331,6 @@ $(function(){
 		});
 	});
 });
-
-
-//outerHTML = "<strong>Soporte Fiscal y Tributario </strong
-//outerText: "Soporte Fiscal y Tributario "
-//nodeName: "STRONG"
-//localName: "strong"
 
 //Posicion de los iconos de cada idioma
 let idiomas = document.querySelector(".idioma");

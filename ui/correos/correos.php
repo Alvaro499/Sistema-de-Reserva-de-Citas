@@ -151,11 +151,11 @@
 
 				<label for="asunto_correos" tabindex="0"  class="lang" key="asunto">Asunto:</label>
 				<input type="text" name="asunto" id="asunto_correos" placeholder="Por ejemplo: 'actualización días feriados'" tabindex="0">
-				<div id="error_asunto" class="lang_error" key="asunto requerido" tabindex="0">*El asunto es obligatorio</div>
+				<div id="error_asunto" class="lang_error" key="asunto requerido" tabindex="0">El asunto es obligatorio</div>
 				
 				<label for="mensaje_correos" tabindex="0" class="lang" key="mensaje">Mensaje:</label>
 				<textarea id="mensaje_correos" name="mensaje" resize="none" tabindex="0"></textarea>
-				<div id="error_correo" class="lang_error" key="cuerpo requerido" tabindex="0">*El cuerpo del correo es obligatorio</div>
+				<div id="error_correo" class="lang_error" key="cuerpo requerido" tabindex="0">El cuerpo del correo es obligatorio</div>
 		
 				<div class="cont_btn">
 
@@ -198,7 +198,7 @@
 						}else if(data==0){
 							toastr.error("Los correos no se enviaron","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
 						}else{
-							toastr.error("Error desconocido"+data,"Error",{positionClass: "toast-bottom-right", showDuration: "400"});
+							toastr.error("Error desconocido","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
 						}
 					}
 				})

@@ -93,6 +93,7 @@
 					<?php if($_SESSION["idrol"] == 2){ ?>
 					<li class="li_v li_citas"><a href="../rce/administracion_citas.php" key="citas" class="lang"><span class="icono"><img src="../../assets/iconos/citas.svg" aria-hidden="true" class="icono_v"></span>Citas</a></li>
 					<?php }else if($_SESSION["idrol"] == 3){ ?>
+						
 						<li class="li_v li_citas"><a href="../rcc/reserva_cc.php" key="citas" class="lang"><span class="icono"><img src="../../assets/iconos/citas.svg" aria-hidden="true" class="icono_v"></span>Citas</a></li>
 					<?php } ?>
 
@@ -101,7 +102,10 @@
 					<?php } ?>
 
 					<li class="li_v li_calendario"><a href="../calendario/calendario.php" key="calendario" class="lang"><span class="icono"><img src="../../assets/iconos/calendario.svg" aria-hidden="true" class="icono_v"></span>Calendario</a></li>
+
+					<?php if($_SESSION["idrol"] == 3){ ?>
 					<li class="li_v li_guia"><a href="../guia_web/guia_web.php" key="guia web" class="lang"><span class="icono"><img src="../../assets/iconos/guia-web.svg" aria-hidden="true" class="icono_v"></span>Guía Web</a></li>
+					<?php } ?>
 				</ul>	
 			</nav>
 
