@@ -166,8 +166,10 @@
                             <p tabindex="0"><strong class="lang" key="medio reunion">Medio de reunión: </strong><?php echo $values["medio"]; ?></p>
                             <p tabindex="0"><strong class="lang" key="mensaje">Mensaje: </strong> <?php echo $values["comentario"]; ?></p>
                             <!-- <button id="descargar" class="btn file">Descargar</button> -->
-                            <button id="rechazar" class="btn danger lang" key="rechazar" onclick='rechazar(<?php echo $values["idcitas_cliente"];?>, "<?php echo $values["cedula"];?>");' tabindex="0">Rechazar</button>
-                            <button id="aceptar" class="btn success lang" key="aceptar" onclick='aceptar(<?php echo $values["idcitas_cliente"];?>,"<?php echo $values["medio"];?>","<?php echo $values["cedula"];?>");' tabindex="0">Aceptar</button>
+							<div id="separar-button">
+                            	<button id="rechazar" class="btn danger lang" key="rechazar" onclick='rechazar(<?php echo $values["idcitas_cliente"];?>, "<?php echo $values["cedula"];?>");' tabindex="0">Rechazar</button>
+                            	<button id="aceptar" class="btn success lang" key="aceptar" onclick='aceptar(<?php echo $values["idcitas_cliente"];?>,"<?php echo $values["medio"];?>","<?php echo $values["cedula"];?>");' tabindex="0">Aceptar</button>
+							</div>
                         </div>
                     <?php }?>
                 </div>
