@@ -148,7 +148,7 @@
 			<!-- Se agrega el enctype="multipart/form-data" para que el input permita elegir mas de un archivo -->
 			<form id="formu" class="form_correos" enctype="multipart/form-data">
 				
-				<h1 tabindex="0" class="lang" key="correo">Correos</h1>
+				<!-- <h1 tabindex="0" class="lang" key="correo">Correos</h1> -->
 				<h3 tabindex="0" class="lang" key="especifique correo">Especifique el asunto del correo a enviar</h3>
 
 				<label for="asunto_correos" tabindex="0"  class="lang" key="asunto">Asunto:</label>

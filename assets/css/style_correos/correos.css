@@ -18,9 +18,8 @@
 	box-shadow: 1.5px 1.5px 15px rgba(0,0,0,0.5) , -1.5px -1.5px 15px rgba(0,0,0,0.5);
 }
 
-.form_correos h1, h3{
-	margin: 0 0 50px 0;
-
+.form_correos h3{
+	margin: 40px 0 15px 0;
 }
 
 .form_correos label{
