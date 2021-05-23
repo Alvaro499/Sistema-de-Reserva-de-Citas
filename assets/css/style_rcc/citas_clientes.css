@@ -1,25 +1,9 @@
+/*ESTILOS INPUT 2 columnas*/
+
 .li_citas{  /*resalto */
     background: #BE1E2D;
     color: #000000;
 }
-
-.select{
-    width: 50%;
-    height: 30px;
-    text-align: center;
-    padding: 5px 10px;
-    font-size: 15px;
-    border: 1px solid rgba(128,189,255,1);
-    margin: 20px 0 25px 0;
-    text-align: center;
-    text-align-last: center;
-}
-
-.select:focus{
-border: none;
-box-shadow: 5px 5px 5px rgba(128,189,255,0.5) , -5px -5px 5px rgba(128,189,255,0.5);
-}
-
 
 /*COPIAND EL CODIGO DE LOS CORREOS*/
 
@@ -29,23 +13,28 @@ box-shadow: 5px 5px 5px rgba(128,189,255,0.5) , -5px -5px 5px rgba(128,189,255,0
     height: 100%;
     border-radius: 3%;
     text-align: center;
-    padding: 20px 20px;
+    padding: 20px 40px;
     display: flex;
-    align-items: center;
     flex-flow: column wrap;
     border: 1px solid #BCCBD3;
     box-shadow: 1.5px 1.5px 15px rgba(0,0,0,0.5) , -1.5px -1.5px 15px rgba(0,0,0,0.5);
 }
 
-.cita_cliente h1{
-    margin: 0 0 50px 0;
-    font-size: 2.5rem
+.data{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 0.4fr 0.5fr;
+    margin-bottom: 25px;
+}
 
+.cita_cliente h1{
+    margin: 25px 0 50px 0;
+    font-size: 2.5rem
 }
 
 .cita_cliente label{
     margin: 25px 0 0 0;
-    font-size: 1.5rem
+    font-size: 1.5rem;
 }
 
 
@@ -57,7 +46,7 @@ box-shadow: 5px 5px 5px rgba(128,189,255,0.5) , -5px -5px 5px rgba(128,189,255,0
 }
 
 .cita_cliente input{
-    width: 50%;
+    /* width: 70%; */
     text-align: center;
     margin-bottom: 40px;
     padding: 5px 10px;
@@ -72,11 +61,30 @@ box-shadow: 5px 5px 5px rgba(128,189,255,0.5) , -5px -5px 5px rgba(128,189,255,0
 
 
 #mensaje_ct{  /*textarea*/
-    width: 70%;
-    height: 100px;
+    width: 100%;
     height: 100px;
     padding: 10px 25px;
+    margin-right: 40px;
     resize: none; /*evitar cambiar de tamano el textarea*/
+}
+
+.select{ /*Select's*/
+    height: 40px;
+    text-align: center;
+    padding: 5px 10px;
+    font-size: 15px;
+    border: 1px solid rgba(128,189,255,1);
+    margin-right: 40px;
+    margin: 20px 0 25px 0;
+    text-align: center;
+    text-align-last: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.select:focus{
+border: none;
+box-shadow: 5px 5px 5px rgba(128,189,255,0.5) , -5px -5px 5px rgba(128,189,255,0.5);
 }
 
 
@@ -86,7 +94,7 @@ box-shadow: 5px 5px 5px rgba(128,189,255,0.5) , -5px -5px 5px rgba(128,189,255,0
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    margin: 50px 0 0 0;
+    margin: 25px 0 0 0;
 	position: relative;
     
 }
@@ -142,7 +150,6 @@ box-shadow: 5px 5px 5px rgba(128,189,255,0.5) , -5px -5px 5px rgba(128,189,255,0
 .btn_ct:active{
     transform: scale(0.9);
 }
-
 
 .errores{
     display: none;

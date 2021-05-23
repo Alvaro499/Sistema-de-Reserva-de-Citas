@@ -1,0 +1,40 @@
+/* Media Query de "Seccion Informacion del perfil" */
+
+@media(max-width: 569px){
+    .cita_cliente{      /*Contenedor del formulario, es un <form>*/
+        border-radius: 1.5rem;
+    }
+    .data{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        margin-bottom: auto;
+    }
+
+    .cita_cliente label{
+        text-align: left;
+    }
+
+    #mensaje_ct{  /*textarea*/
+        height: 100px;
+    }
+}
+
+@media(max-width: 900px){
+    .cita_cliente{
+        border-radius: 1.5rem;
+    }
+    .data{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        margin-bottom: auto;
+    }
+
+    .cita_cliente label{
+        text-align: left;
+    }
+
+    #mensaje_ct{  /*textarea*/
+        height: 200px;
+    }
+  
+}

@@ -4,6 +4,10 @@
     color: #000000;
 }
 
+/* Esta altura evita que la pagina se acorte por la falta de cotenido en el <main> */
+.container{
+    min-height: 2000px;
+}
 
 /*Contenedor de las tarjetas*/
 
@@ -15,7 +19,6 @@
 .admin_citas h1 {
     font-size: 2.5rem
 }
-
 
 /*Tarjetas*/
 

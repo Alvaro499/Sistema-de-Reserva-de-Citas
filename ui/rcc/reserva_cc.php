@@ -146,49 +146,59 @@
 		</header>
 
 		<main id="principal">
-			
 			<form class="cita_cliente" id="formu">
+				<h1 class="lang" key="reservacion citas" tabindex="0">Reservación de Citas</h1>
+				<div class="data">
+					<label for="servicio" class="lang" key="area servicio" tabindex="0">Área de Servicio:</label>
+					<select id="servicio" class="select" name="servicio" tabindex="0">
+						<option class="lang" key="administracion" value="Administración">Administración</option>
+						<option class="lang" key="contabilidad" value="Contabilidad">Contabilidad</option>
+						<option class="lang" key="control interno" value="Control Interno">Control Interno</option>
+						<option class="lang" key="facturacion electronica" value="Facturación Electrónica">Facturación Electrónica</option>
+						<option class="lang" key="finanzas y economia" value="Finanzas y Economía">Finanzas y Economía</option>
+						<option class="lang" key="infraestructura tic" value="Infraestructura y TIC's">Infraestructura y TIC's</option>
+						<option class="lang" key="mercadeo" value="Mercadeo">Mercadeo</option>
+						<option class="lang" key="soporte fiscal tributario" value="Soporte Fiscal y Tributario">Soporte Fiscal y Tributario</option>
+						<option class="lang" key="soporte legal" value="Soporte Legal">Soporte Legal</option>
+						<option class="lang" key="talento humano" value="Talento Humano">Talento Humano</option>
+					</select>
+				</div>
 				
-                <h1 class="lang" key="reservacion citas" tabindex="0">Reservación de Citas</h1>
-                
-				<label for="servicio" class="lang" key="area servicio" tabindex="0">Área de Servicio:</label>
-                <select id="servicio" class="select" name="servicio" tabindex="0">
-                    <option class="lang" key="administracion" value="Administración">Administración</option>
-                    <option class="lang" key="contabilidad" value="Contabilidad">Contabilidad</option>
-                    <option class="lang" key="control interno" value="Control Interno">Control Interno</option>
-                    <option class="lang" key="facturacion electronica" value="Facturación Electrónica">Facturación Electrónica</option>
-                    <option class="lang" key="finanzas y economia" value="Finanzas y Economía">Finanzas y Economía</option>
-                    <option class="lang" key="infraestructura tic" value="Infraestructura y TIC's">Infraestructura y TIC's</option>
-                    <option class="lang" key="mercadeo" value="Mercadeo">Mercadeo</option>
-                    <option class="lang" key="soporte fiscal tributario" value="Soporte Fiscal y Tributario">Soporte Fiscal y Tributario</option>
-                    <option class="lang" key="soporte legal" value="Soporte Legal">Soporte Legal</option>
-                    <option class="lang" key="talento humano" value="Talento Humano">Talento Humano</option>
-                </select>
-                
                 <!-- ct = Cita Cliente -->
-				<label for="asunto_ct" class="lang" key="asunto" tabindex="0">Asunto:</label>
-                <input type="text" id="asunto" class="input" name="asunto_ct" tabindex="0">
-                <div id="error_asunto" class="errores lang_error" key="asunto requerido" tabindex="0">El Asunto es obligatorio</div>
-
-				<label for="fecha_ct" class="lang" key="hora" tabindex="0">Fecha:</label>
-                <input type="date" id="fecha" class="input" name="fecha_ct" tabindex="0">
-                <div id="error_fecha1" class="errores lang_error" key="formato fecha1" tabindex="0">La fecha es obligatoria</div>
-				<div id="error_fecha2" class="errores lang_error" key="formato fecha2" tabindex="0">La fecha debe ser al menos 2 dias posteriores a la fecha actual</div>
-
-				<label for="hora_ct" tabindex="0">Hora:</label>
-                <input type="time" id="hora" class="input" name="hora_ct" tabindex="0">
-                <div id="error_hora" class="errores lang_error" key="formato hora" tabindex="0">La Hora es obligatoria</div>
-
-				<label for="medio_ct" class="lang" key="medio reunion" tabindex="0">Medio de Reunión:</label>
-                <select id="medio" class="select" name="medio_ct" title="El colaborador le indicará la plataforma o sitio de la capacitacion, según usted haya escogido">
-                    <option class="lang" key="presencial" value="Presencial">Presencial</option>
-                    <option class="lang" key="virtual" value="Virtual">Virtual</option>
-                </select>
+				<div class="data">
+					<label for="asunto_ct" class="lang" key="asunto" tabindex="0">Asunto:</label>
+                	<input type="text" id="asunto" class="input" name="asunto_ct" tabindex="0">
+                	<div id="error_asunto" class="errores lang_error" key="asunto requerido" tabindex="0">El Asunto es obligatorio</div>
+				</div>
+				
+				<div class="data">
+					<label for="fecha_ct" class="lang" key="hora" tabindex="0">Fecha:</label>
+                	<input type="date" id="fecha" class="input" name="fecha_ct" tabindex="0">
+                	<div id="error_fecha1" class="errores lang_error" key="formato fecha1" tabindex="0">La fecha es obligatoria</div>
+					<div id="error_fecha2" class="errores lang_error" key="formato fecha2" tabindex="0">La fecha debe ser al menos 2 dias posteriores a la fecha actual</div>
+				</div>
+				
+				
+				<div class="data">
+					<label for="hora_ct" tabindex="0">Hora:</label>
+                	<input type="time" id="hora" class="input" name="hora_ct" tabindex="0">
+                	<div id="error_hora" class="errores lang_error" key="formato hora" tabindex="0">La Hora es obligatoria</div>
+				</div>
+				
+				<div class="data">
+					<label for="medio_ct" class="lang" key="medio reunion" tabindex="0">Medio de Reunión:</label>
+					<select id="medio" class="select" name="medio_ct" title="El colaborador le indicará la plataforma o sitio de la capacitacion, según usted haya escogido">
+						<option class="lang" key="presencial" value="Presencial">Presencial</option>
+						<option class="lang" key="virtual" value="Virtual">Virtual</option>
+					</select>
+				</div>
+				
+				<div class="data">
+					<label for="mensaje_ct" class="lang_error" key="mensaje" tabindex="0">Mensaje:</label>
+					<textarea id="mensaje_ct" resize="none" name="mensaje_ct" tabindex="0"></textarea>
+					<div id="error_mensaje" class="errores lang_error" key="formato mensaje cita" tabindex="0">El Mensaje es obligatorio</div>
+				</div>
                 
-                <label for="mensaje_ct" class="lang_error" key="mensaje" tabindex="0">Mensaje:</label>
-				<textarea id="mensaje_ct" resize="none" name="mensaje_ct" tabindex="0"></textarea>
-				<div id="error_mensaje" class="errores lang_error" key="formato mensaje cita" tabindex="0">El Mensaje es obligatorio</div>
-
 				<div class="cont_btn">
 					<button type="submit" class="btn_ct lang" key="enviar" tabindex="0">Enviar</button>
 				</div>
