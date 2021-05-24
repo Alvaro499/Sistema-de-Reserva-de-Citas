@@ -8,6 +8,7 @@
 	<title>Analítica Web</title>
 	<link rel="stylesheet" type="text/css" href="../../assets/fonts_awesome/css/all.min.css">
 	<link rel="stylesheet" type="text/css" href="../../assets/css/style_analitica_web/bridge.css">
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-6L14TYCZSL"></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-6L14TYCZSL');</script>
 </head>
 
 <body>
