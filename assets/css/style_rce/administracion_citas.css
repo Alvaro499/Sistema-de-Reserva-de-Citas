@@ -6,7 +6,7 @@
 
 /* Esta altura evita que la pagina se acorte por la falta de cotenido en el <main> */
 .container{
-    min-height: 1500x;
+    min-height: 1500px;
 }
 
 /*Contenedor de las tarjetas*/
