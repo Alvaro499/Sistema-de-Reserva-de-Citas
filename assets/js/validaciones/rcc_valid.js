@@ -36,6 +36,12 @@ function validacion(){
         document.getElementById("mensaje_ct").style.border = "3px solid #E40017";
         cant_error++;
         console.log(cant_error);
+
+    // if (mensaje.length >= 25) {
+    //     document.getElementById("error_mensaje2").style.display = "block";
+    //     document.getElementById("error_mensaje2").style.color = "#C70039";
+    //     document.getElementById("mensaje_ct").style.border = "3px solid #E40017";
+    // }
     }else{
         
         //document.getElementById("error_mensaje").innerHTML = "";
@@ -74,7 +80,6 @@ function validacion(){
 
     //Segunda version de la fecha
     if (fecha == null || fecha == "") {
-        // document.getElementById("error_fecha1").innerHTML = "*La fecha es obligatoria";
         document.getElementById("error_fecha1").style.display = "block";
         document.getElementById("error_fecha1").style.color = "#C70039";
         document.getElementById("fecha").style.border = "3px solid #E40017";

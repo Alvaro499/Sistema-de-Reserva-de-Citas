@@ -151,42 +151,77 @@
 				
                 <h1 class="lang" key="registro usuario" tabindex="0">Registro de Usuario</h1>
                 
-				<label for="cedula" class="lang" key="cedula" tabindex="0">Cédula:</label>
-                <input type="text" id="cedula" class="input" name="cedula" tabindex="0">
-				<div id="error_ced" class="errores lang_error" key="cedula no valida" tabindex="0">Cédula no válida. Verificar que no incluya letras o guiones</div>
-                
-				<label for="nombre_usuario" class="lang" key="nombre usuario" tabindex="0">Nombre:</label>
-                <input type="text" id="nombre" class="input" name="nombre_usuario" tabindex="0">
-				<div id="error_nomb" class="errores lang_error" key="nombre invalido" tabindex="0">El formato de nombre de usuario es inválido, revise que no digito numeros</div>
-                
-				<label for="apell1" class="lang" key="apellido1" tabindex="0">Primer Apellido:</label>
-                <input type="text" id="p_apellido" class="input" name="apell1" tabindex="0">
-				<div id="error_ap1" class="errores lang_error" key="formato apellido1" tabindex="0">El formato de primer apellido es inválido, revise que no digito numeros</div>
-                
-				<label for="apell2" class="lang" key="apellido2" tabindex="0">Segundo Apellido:</label>
-                <input type="text" id="s_apellido" class="input" name="apell2" tabindex="0">
-				<div id="error_ap2" class="errores lang_error" key="formato apellido2" tabindex="0">El formato de segundo apellido es inválido, revise que no digito numeros</div>
-                
-				<label for="email" class="lang" key="correo" tabindex="0">Correo Electrónico:</label>
-                <input type="text" id="correo" class="input" name="email" tabindex="0" >
-				<div id="error_correo" class="errores lang_error" key="formato correo" tabindex="0">El formato de correo es inválido</div>
-                
-				<label for="cel_1" class="lang" key="celular" tabindex="0">Número de Celular:</label>
-                <input type="text" id="n_celular" class="input" name="cel_1" tabindex="0">
-				<div id="error_num1" class="errores lang_error" key="formato celular" tabindex="0">El formato de celular es inválido, revise que no lleve letras</div>
-
-                <label for="cel_2" class="lang" key="celular opcional" tabindex="0">Número de Celular Opcional:</label>
-                <input type="text" id="s_celular" class="input" name="cel_2" tabindex="0">
-				<div id="error_num2" class="errores lang_error"  key="formato celular op" tabindex="0">El formato del celular opcional es inválido, revise que no lleve letras</div>
+				<div class="data">
+					<label for="cedula" class="lang" key="cedula" tabindex="0">Cédula:</label>
+					<div>
+						<input type="text" id="cedula" class="input" name="cedula" tabindex="0">
+						<div id="error_ced" class="errores lang_error" key="cedula no valida" tabindex="0">Cédula no válida. Verificar que no incluya letras o guiones</div>
+					</div>
+                	
+				</div>
 				
-                
-                <label for="rol_usua" class="lang" key="rol usuario" tabindex="0">Rol del Usuario:</label>
-                <select id="rol" class="select" name="rol">
-                    
-					<option value="2" name="rol" class="lang" key="empleado">Empleado</option>
-                    <option value="3" name="rol" class="lang" key="cliente">Cliente</option>
-                </select>
+				<div class="data">
+					<label for="nombre_usuario" class="lang" key="nombre usuario" tabindex="0">Nombre:</label>
+					<div>
+						<input type="text" id="nombre" class="input" name="nombre_usuario" tabindex="0">
+						<div id="error_nomb" class="errores lang_error" key="nombre invalido" tabindex="0">El formato de nombre de usuario es inválido, revise que no digitó numeros</div>
+					</div>
+                	
+				</div>
+				
+				<div class="data">
+					<label for="apell1" class="lang" key="apellido1" tabindex="0">Primer Apellido:</label>
+					<div>
+						<input type="text" id="p_apellido" class="input" name="apell1" tabindex="0">
+						<div id="error_ap1" class="errores lang_error" key="formato apellido1" tabindex="0">El formato de primer apellido es inválido, revise que no digitó numeros</div>
+					</div>
+				</div>
+				
+				<div class="data">
+					<label for="apell2" class="lang" key="apellido2" tabindex="0">Segundo Apellido:</label>
+					<div>
+						<input type="text" id="s_apellido" class="input" name="apell2" tabindex="0">
+						<div id="error_ap2" class="errores lang_error" key="formato apellido2" tabindex="0">El formato de segundo apellido es inválido, revise que no digitó numeros</div>
+					</div>
+                	
+				</div>
+				
+				<div class="data">
+					<label for="email" class="lang" key="correo" tabindex="0">Correo Electrónico:</label>
+					<div>
+						<input type="text" id="correo" class="input" name="email" tabindex="0" >
+						<div id="error_correo" class="errores lang_error" key="formato correo" tabindex="0">El formato de correo es inválido</div>
+					</div>
+                	
+				</div>
+				
+				<div class="data">
+					<label for="cel_1" class="lang" key="celular" tabindex="0">Número de Celular:</label>
+					<div>
+						<input type="text" id="n_celular" class="input" name="cel_1" tabindex="0">
+						<div id="error_num1" class="errores lang_error" key="formato celular" tabindex="0">El formato de celular es inválido, revise que no lleve letras</div>
+					</div>
+				</div>
 
+				<div class="data">
+					<label for="cel_2" class="lang" key="celular opcional" tabindex="0">Número de Celular Opcional:</label>
+					<div>
+						<input type="text" id="s_celular" class="input" name="cel_2" tabindex="0">
+						<div id="error_num2" class="errores lang_error"  key="formato celular op" tabindex="0">El formato del celular opcional es inválido, revise que no lleve letras</div>
+					</div>
+				</div>
+                				
+                <div class="data data_rol">
+					<label for="rol_usua" class="lang" key="rol usuario" tabindex="0">Rol del Usuario:</label>
+					<div>
+						<select id="rol" class="select" name="rol">
+							<option value="2" name="rol" class="lang" key="empleado">Empleado</option>
+							<option value="3" name="rol" class="lang" key="cliente">Cliente</option>
+						</select>
+					</div>
+                	
+				</div>
+                
 				<div class="cont_btn">
 					<button type="submit" class="btn_registro" tabindex="0">Aceptar</button>
 				</div>

@@ -6,7 +6,7 @@
 
 /* Esta altura evita que la pagina se acorte por la falta de cotenido en el <main> */
 .container{
-    min-height: 2000px;
+    min-height: 1500x;
 }
 
 /*Contenedor de las tarjetas*/
@@ -26,6 +26,9 @@
     background: #FFFFFF;
     /*background: #ffffff;*/
     /*border: 1px solid #000;*/
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
     padding: 20px;
     margin: 15px;
     box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5), -1.5px -1.5px 10px rgba(0, 0, 0, 0.5);
@@ -46,11 +49,13 @@
 #separar-button {
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
 }
 
 .btn {
     border-radius: 15px;
     width: 30%;
+    height: 45px;
     padding: 2.5% 2%;
     margin: 10px 0 0 0;
     outline: none;

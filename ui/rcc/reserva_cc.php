@@ -167,22 +167,31 @@
                 <!-- ct = Cita Cliente -->
 				<div class="data">
 					<label for="asunto_ct" class="lang" key="asunto" tabindex="0">Asunto:</label>
-                	<input type="text" id="asunto" class="input" name="asunto_ct" tabindex="0">
-                	<div id="error_asunto" class="errores lang_error" key="asunto requerido" tabindex="0">El Asunto es obligatorio</div>
+					<div>
+						<input type="text" id="asunto" class="input" name="asunto_ct" tabindex="0">
+                		<div id="error_asunto" class="errores lang_error" key="asunto requerido" tabindex="0">El Asunto es obligatorio</div>
+					</div>
+                	
 				</div>
 				
 				<div class="data">
 					<label for="fecha_ct" class="lang" key="hora" tabindex="0">Fecha:</label>
-                	<input type="date" id="fecha" class="input" name="fecha_ct" tabindex="0">
-                	<div id="error_fecha1" class="errores lang_error" key="formato fecha1" tabindex="0">La fecha es obligatoria</div>
-					<div id="error_fecha2" class="errores lang_error" key="formato fecha2" tabindex="0">La fecha debe ser al menos 2 dias posteriores a la fecha actual</div>
+					<div>
+						<input type="date" id="fecha" class="input" name="fecha_ct" tabindex="0">
+                		<div id="error_fecha1" class="errores lang_error" key="formato fecha1" tabindex="0">La fecha es obligatoria</div>
+						<div id="error_fecha2" class="errores lang_error" key="formato fecha2" tabindex="0">La fecha debe ser al menos 2 dias posteriores a la fecha actual</div>
+					</div>
+                	
 				</div>
 				
 				
 				<div class="data">
 					<label for="hora_ct" tabindex="0">Hora:</label>
-                	<input type="time" id="hora" class="input" name="hora_ct" tabindex="0">
-                	<div id="error_hora" class="errores lang_error" key="formato hora" tabindex="0">La Hora es obligatoria</div>
+					<div>
+						<input type="time" id="hora" class="input" name="hora_ct" tabindex="0">
+                		<div id="error_hora" class="errores lang_error" key="formato hora" tabindex="0">La Hora es obligatoria</div>
+					</div>
+                	
 				</div>
 				
 				<div class="data">
@@ -195,8 +204,11 @@
 				
 				<div class="data">
 					<label for="mensaje_ct" class="lang_error" key="mensaje" tabindex="0">Mensaje:</label>
-					<textarea id="mensaje_ct" resize="none" name="mensaje_ct" tabindex="0"></textarea>
-					<div id="error_mensaje" class="errores lang_error" key="formato mensaje cita" tabindex="0">El Mensaje es obligatorio</div>
+					<div>
+						<textarea id="mensaje_ct" resize="none" name="mensaje_ct" tabindex="0"></textarea>
+						<div id="error_mensaje" class="errores lang_error" key="formato mensaje cita" tabindex="0">El Mensaje es obligatorio</div>
+					</div>
+					
 				</div>
                 
 				<div class="cont_btn">

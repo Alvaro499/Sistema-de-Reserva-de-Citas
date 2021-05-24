@@ -46,7 +46,7 @@
 }
 
 .cita_cliente input{
-    /* width: 70%; */
+    width: 100%;
     text-align: center;
     margin-bottom: 40px;
     padding: 5px 10px;

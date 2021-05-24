@@ -150,33 +150,56 @@
 			<form id="form_aceptar" class="reserva_acept">
 				
                 <h1 class="lang" key="reserva aceptada" tabindex="0">Reserva Aceptada</h1>
-                
-				<label for="nombre" class="lang" key="nombre" tabindex="0">Nombre:</label>
-                <input type="text" id="nombre" class="input" tabindex="0">
-				<div id="error_nomb" class="errores lang_error" key="formato nombre colaborador" tabindex="0">El formato del usuario colaborador es inválido, revisar que no haya digitado datos numéricos o el campo esté vacío</div>
-                
-				<?php if($modo=="Presencial"){?>
-				<label for="medio_presencial" class="lang" key="oficina" tabindex="0">Oficina:</label>
-                <input type="text" id="medio_presencial" class="input" tabindex="0">
-				<div id="error_ofi" class="errores lang_error" key="formato lugar presencial" tabindex="0">Lugar de la cita presencial es requerido</div>
-                <?php }?>
 
+                <div class="data">
+					<label for="nombre" class="lang" key="nombre" tabindex="0">Nombre:</label>
+					<div>
+						<input type="text" id="nombre" class="input" tabindex="0">
+						<div id="error_nomb" class="errores lang_error" key="formato nombre colaborador" tabindex="0">El formato del usuario colaborador es inválido, revisar que no haya digitado datos numéricos o el campo esté vacío</div>
+					</div>
+				</div>
+				
+				
+					<?php if($modo=="Presencial"){?>
+					<div class="data">
+						<label for="medio_presencial" class="lang" key="oficina" tabindex="0">Oficina:</label>
+						<div>
+							<input type="text" id="medio_presencial" class="input" tabindex="0">
+							<div id="error_ofi" class="errores lang_error" key="formato lugar presencial" tabindex="0">Lugar de la cita presencial es requerido</div>
+						</div>
+					</div>
+					<?php }?>
+				
+				
 				<?php if($modo=="Virtual"){?>
-				<label for="medio_virtual" class="lang" key="plataforma" tabindex="0">Plataforma:</label>
-                <select id="medio_virtual" class="select">
-                    <option value="Teams">Teams</option>
-                    <option value="Zoom">Zoom</option>
-                    <option value="Skype">Skype</option>
-                </select>
+				<div class="data plataforma_data">
+					<label for="medio_virtual" class="lang" key="plataforma" tabindex="0">Plataforma:</label>
+					<select id="medio_virtual" class="select">
+						<option value="Teams">Teams</option>
+						<option value="Zoom">Zoom</option>
+						<option value="Skype">Skype</option>
+					</select>
+				</div>
+				
+                <div class="data">
+					<label for="link" tabindex="0">Link:</label>
+					<div>
+						<input type="text" id="link" class="input" tabindex="0">
+						<div id="error_link" class="errores lang_error" key="formato digitar enlace" tabindex="0">Digite un código o un enlace</div>
+					</div>
+				</div>
                 
-                <label for="link" tabindex="0">Link:</label>
-                <input type="text" id="link" class="input" tabindex="0">
-				<div id="error_link" class="errores lang_error" key="formato digitar enlace" tabindex="0">Digite un código o un enlace</div>
 				<?php }?>
-
-				<label for="c_personas" class="lang" key="cantidad personas" tabindex="0">Cantidad de Personas:</label>
-                <input type="number" id="c_personas" class="input" tabindex="0">
-				<div id="error_cp" class="errores lang_error" key="solo numeros" tabindex="0">Digite solo datos numéricos</div>
+				
+				<div class="data">
+					<label for="c_personas" class="lang" key="cantidad personas" tabindex="0">Cantidad de Personas:</label>
+					<div>
+						<input type="number" id="c_personas" class="input" tabindex="0">
+						<div id="error_cp" class="errores lang_error" key="solo numeros" tabindex="0">Digite solo datos numéricos</div>
+					</div>
+                	
+				</div>
+				
 
 				<div class="cont_btn">
 					<button type="submit" class="btn_reserva lang" key="confirmar" tabindex="0">Confirmar</button>

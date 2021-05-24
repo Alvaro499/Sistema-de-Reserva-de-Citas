@@ -1,15 +1,26 @@
 @media screen and (min-width: 812px){
 
 	#reservas{
-		grid-template-columns: repeat(2, auto);
+		grid-template-columns: repeat(2, 1fr);
+		
 	}
+
+	.btn {
+		width: 40%;
+		height: 45px;
+	}
+	
 
 }
 
 @media screen and (min-width: 1080px){
 	
-	#reservas{
+	/* #reservas{
 		grid-template-columns: repeat(3, auto);
+	} */
+
+	.btn {
+		width: 25%;
 	}
 
 }

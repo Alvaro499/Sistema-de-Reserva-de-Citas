@@ -3,18 +3,27 @@
     color: #000000;
 }
 
+.container{
+    height: auto;
+}
+
 .reserva_acept{      /*Contenedor del formulario, es un <form>*/
     background: #FFFFFF;
     width: 100%;
     height: 100%;
-    border-radius: 3%;
+    border-radius: 1.5rem;
     text-align: center;
     padding: 20px 20px;
-    display: flex;
+    /* display: flex;
     align-items: center;
-    flex-flow: column wrap;
+    flex-flow: column wrap; */
     border: 1px solid #BCCBD3;
     box-shadow: 1.5px 1.5px 15px rgba(0,0,0,0.5) , -1.5px -1.5px 15px rgba(0,0,0,0.5);
+}
+
+.data{
+	margin-bottom: 60px;
+	text-align: left;
 }
 
 .reserva_acept h1{
@@ -24,33 +33,36 @@
 }
 
 .reserva_acept label{
-    margin: 25px 0 0 0;
-    font-size: 1.5rem
+    font-size: 1.2rem;
+    
+    text-align: left;
 }
-
 
 /*Crear esapcio entre los campos del formmulario*/
 .reserva_acept input{
 
-	width: 50%;
+	width: 100%;
+    height: 40px;
     text-align: center;
     padding: 5px 10px;
+    margin-top: 15px;
     font-size: 1.2rem;
     border: 1px solid rgba(128,189,255,1);
     box-shadow: 2px 2px 5px rgba(128,189,255,0.5) , -2px -2px 5px rgba(128,189,255,0.5);
-    margin: 20px 0 25px 0
 }
 
 .select{
-    width: 50%;
-    height: 30px;
+    width: 100%;
+    height: 40px;
     text-align: center;
     padding: 5px 10px;
+    margin-top: 15px;
     font-size: 15px;
     border: 1px solid rgba(128,189,255,1);
-    margin: 20px 0 25px 0;
     text-align: center;
     text-align-last: center;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
 .select:focus{
@@ -58,27 +70,21 @@
 	box-shadow: 5px 5px 5px rgba(128,189,255,0.5) , -5px -5px 5px rgba(128,189,255,0.5);
 }
 
-.cont_btn{      /*Contenedor que guarda los botones de "enviar" y archivos*/
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    
+.cont_btn{     
+    width: 100%; /*Contenedor que guarda los botones de "enviar" y archivos*/
+    text-align: center;
 }
 
 
 .btn_reserva{       /*estilos de los botones*/
-
     background: rgba(38,124,181,1);
     color: #ffffff;
     font-weight: bold;
     font-size: 1rem;
     border: none;
-    border-radius: 10%;
-    width: 25%;
-    padding: 3% 2%;
-    margin: 75px 0 0 0;
+    border-radius: 1.5rem;
+    width: 40%;
+    padding: 4% 2%;
     outline: none;
 }
 
@@ -93,8 +99,8 @@
 
 .errores{
     display: none;
-	margin-top: -20px;
-    margin-bottom: 20px;
+    margin-top: 0;
 	font-size: 1.2rem;
 	font-weight: bold;
+    text-align: center;
 }

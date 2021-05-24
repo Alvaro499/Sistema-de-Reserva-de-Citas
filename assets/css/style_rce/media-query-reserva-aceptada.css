@@ -1,17 +1,42 @@
 @media screen and (min-width: 812px){
 
 	.btn_reserva{
+		width: 25%;
+		font-size: 1.4rem;
+		padding: 3% 2%;
 
-		font-size: 1.2rem;
-		padding: 2% 2%;
 	}
 }
 
-@media screen and (min-width: 1080px){
-	.btn_reserva{
+@media screen and (min-width: 1000px){
+	.data{
+		width: 100%;
+		display: grid;
+		grid-template-columns: 0.4fr 0.5fr;
+		text-align: center;
+	}
 
+	.plataforma_data{
+		align-items: center;
+	}
+
+	.reserva_acept label{
+		text-align: center;
+	}
+
+	.reserva_acept input{
+		margin-top: 0;
+	}
+	
+	.select{
+		margin-top: 0;
+	}
+	
+	.btn_reserva{
 		font-size: 1.5rem;
-		/*padding: 3% 0.5%;*/
+		padding: 2% 2%;
+		width: 20%;
+		letter-spacing: 1px;
 	}
 
 	

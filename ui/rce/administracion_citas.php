@@ -158,13 +158,15 @@
                     {
                     ?>
                         <div class="card-reserva">
-                            <h3><strong class="lang_php" key="" tabindex="0"><?php echo $values["area_servicio"]; ?></strong></h3>
-                            <p tabindex="0"><strong class="lang" key="usuario">Usuario: </strong> <?php echo $values["nombre"]; ?></p>
-                            <p tabindex="0"><strong class="lang" key="asunto">Asunto: </strong> <?php echo $values["asunto"]; ?></p>
-                            <p tabindex="0"><strong class="lang" key="fecha">Fecha: </strong> <?php echo $values["fecha"]; ?></p>
-                            <p tabindex="0"><strong class="lang" key="hora">Hora: </strong> <?php echo $values["hora"]; ?></p>
-                            <p tabindex="0"><strong class="lang" key="medio reunion">Medio de reunión: </strong><?php echo $values["medio"]; ?></p>
-                            <p tabindex="0"><strong class="lang" key="mensaje">Mensaje: </strong> <?php echo $values["comentario"]; ?></p>
+							<div>
+								<h3><strong class="lang_php" key="" tabindex="0"><?php echo $values["area_servicio"]; ?></strong></h3>
+								<p tabindex="0"><strong class="lang" key="usuario">Usuario: </strong> <?php echo $values["nombre"]; ?></p>
+								<p tabindex="0"><strong class="lang" key="asunto">Asunto: </strong> <?php echo $values["asunto"]; ?></p>
+								<p tabindex="0"><strong class="lang" key="fecha">Fecha: </strong> <?php echo $values["fecha"]; ?></p>
+								<p tabindex="0"><strong class="lang" key="hora">Hora: </strong> <?php echo $values["hora"]; ?></p>
+								<p tabindex="0"><strong class="lang" key="medio reunion">Medio de reunión: </strong><?php echo $values["medio"]; ?></p>
+								<p tabindex="0"><strong class="lang" key="mensaje">Mensaje: </strong> <?php echo $values["comentario"]; ?></p>
+							</div>
                             <!-- <button id="descargar" class="btn file">Descargar</button> -->
 							<div id="separar-button">
                             	<button id="rechazar" class="btn danger lang" key="rechazar" onclick='rechazar(<?php echo $values["idcitas_cliente"];?>, "<?php echo $values["cedula"];?>");' tabindex="0">Rechazar</button>

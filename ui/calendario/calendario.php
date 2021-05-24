@@ -139,7 +139,6 @@
 				</ul>
 			</nav>
 
-
 			<!-- SubMenu de Atajos (Menu Horizontal Negro) -->
 			<div class="submenu_h">
 				
@@ -179,7 +178,9 @@
 						initialView: 'dayGridMonth',
 						eventClick: function(info) {
 							alert('Asesor: ' + info.event.extendedProps.asesor);
-							alert('Hora:' + info.event.extendeProps.hora);
+							// alert('Hora:' + info.event.extendeProps.hora);
+							console.log(document.querySelector(".submenu_h"));
+							document.querySelector(".datos_calendar").innerHTML = 'Asesor: ' + info.event.extendedProps.asesor + "<br>" + 'Hora:' + info.event.extendedProps.hora;
 						},
 						
   						locale: 'es',
@@ -191,7 +192,7 @@
 							start: '<?php echo $valor['fecha'] ?>',
 							extendedProps:{
                 				asesor: "<?php echo $valor['nombre_empleado']; ?>",
-								hora: "Hora: <?php echo $valor['hora']; ?>"
+								hora :"<?php echo $valor['hora']; ?>"
              				}
 						},
 						<?php }; ?>
@@ -213,6 +214,28 @@
 					calendar.render();
 				});
     		</script>
+
+			<div class="modal_cont">
+				<div class="modal">
+					<div class="head_modal">
+						<h2>Información de la cita</h2>
+						<button title="Cerrar ventana informacion de citas"><i class="fas fa-times"></i></button>
+						</hr>
+					</div class="body_modal">
+
+						<p class="info">Nombre del cliente: <strong class="info_calendar cliente"></strong></p>
+						<p class="info">Área de Servicio: <strong class="info_calendar cita"></strong></p>
+						<p class="info">Nombre del asesor: <strong class="info_calendar asesor"></strong></p>
+						<p class="info">Hora: <strong class="info_calendar hora"></strong></p>
+						<p class="info">Fecha: <strong class="info_calendar fecha"></strong></p>
+					<div>
+
+					</div>
+				</div>
+			</div>
+			<div class="datos_calendar">
+
+			</div>
 		</main>
 	</div>
 	<script type="text/javascript" src="../../assets/js/hide_menu_v.js"></script>

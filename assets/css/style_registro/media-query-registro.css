@@ -1,4 +1,4 @@
-@media screen and (min-width: 812px){
+@media screen and (max-width: 812px){
 
 	.btn_registro{
 		font-size: 1.2rem;
@@ -8,18 +8,33 @@
 	.registro h2, h3{
 		font-size: 1.5rem;
 	}
-
-	.registro label{
-		font-size: 1.5rem
-	}
 }
 
 
-@media screen and (min-width: 1080px){
-	.btn_registro{
+@media screen and (min-width: 813px){
+	.data{
+		width: 100%;
+		display: grid;
+		grid-template-columns: 0.4fr 0.5fr;
+		margin-top: 40px;
+		margin-bottom: 20px;
+	}
 
+	.data_rol{
+		align-items: center;
+	}
+
+	.registro label{
 		font-size: 1.5rem;
-		/*padding: 3% 0.5%;*/
+		text-align: center;
+	}
+
+	.input{
+		margin-top: 0;
+	}
+	
+	.btn_registro{
+		font-size: 1.5rem;
 	}
 
 	
