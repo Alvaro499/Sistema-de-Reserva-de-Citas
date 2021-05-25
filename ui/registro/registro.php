@@ -187,7 +187,7 @@
 				</div>
 				
 				<div class="data">
-					<label for="email" class="lang" key="correo" tabindex="0">Correo Electrónico:</label>
+					<label for="email" class="lang" key="correo electr" tabindex="0">Correo Electrónico:</label>
 					<div>
 						<input type="text" id="correo" class="input" name="email" tabindex="0" >
 						<div id="error_correo" class="errores lang_error" key="formato correo" tabindex="0">El formato de correo es inválido</div>

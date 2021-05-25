@@ -74,12 +74,13 @@ let palabras = {
 		"registro usuario" : "Registro de Usuario:",
 		"cedula" : "Cédula:",
 		"cedula no valida" : "Cédula no válida. Verificar que no incluya letras o guiones",
-		"nombre usuario" : "Nombre del Usuario:",
+		"nombre usuario" : "Nombre:",
 		"nombre invalido" : "El formato de nombre de usuario es inválido, revise que no digito numeros",
 		"apellido1" : "Primer Apellido:",
 		"formato apellido1" : "El formato de primer apellido es inválido, revise que no digito numeros",
 		"apellido2" : "Segundo Apellido:",
 		"formato apellido2" : "El formato de segundo apellido es inválido, revise que no digito numeros",
+		"correo electr" : "Correo Electrónico:",
 		"formato correo" : "El formato de correo es inválido",
 		"celular" : "Número de Celular:",
 		"formato celular" : "El formato de celular es inválido, revise que no lleve letras",
@@ -129,6 +130,13 @@ let palabras = {
 		"usuario" : "Usuario: ",
 		"aceptar" : "Aceptar",
 		"rechazar" : "Rechazar",
+	
+	//CALENDARIO
+		"info cita": "Información Cita",
+		"nombre cliente": "Nombre del Cliente:",
+		"nombre asesor" : "Nombre del Asesor:",
+
+	// GUIA WEB
 
 	//PERFIL
 		"actualizar foto" : "Actualizar foto de perfil",
@@ -202,12 +210,13 @@ let palabras = {
 		"registro usuario" : "User Register:",
 		"cedula" : "ID:",
 		"cedula no valida" : "Invalid ID. Verify that it does not include letters or hyphens",
-		"nombre usuario" : "User Name:",
+		"nombre usuario" : "Name:",
 		"nombre invalido" : "Username format is invalid, check that you did not enter numbers",
 		"apellido1" : "First Surname:",
 		"formato apellido1" : "First surname is invalid, check that you did not enter numbers",
 		"apellido2" : "Second Surname:",
 		"formato apellido2" : "Second surname is invalid, check that you did not enter numbers",
+		"correo electr" : "Email:",
 		"formato correo" : "Email format is invalid",
 		"celular" : "Cell phone number:",
 		"formato celular" : "Cell phone format is invalid, check that it does not have letters",
@@ -255,6 +264,14 @@ let palabras = {
 		"usuario" : "User :",
 		"aceptar" : "Accept",
 		"rechazar" : "Decline",
+
+	//CALENDARIO
+		"info cita": "Appointment Information",
+		"nombre cliente": "Customer Name:",
+		"nombre asesor" : "Assessor Name:",
+
+	// GUIA WEB
+
 
 	//PERFIL
 		"actualizar foto" : "Update photo",

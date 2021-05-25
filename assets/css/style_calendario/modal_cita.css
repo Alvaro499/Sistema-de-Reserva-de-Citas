@@ -1,5 +1,150 @@
 .modal_cont{
-    width: 50vw;
-    height: 50vh;
-    background:
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 20000;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+    visibility: visible;
+    background: rgba(0,0,0,0.7);
+    transition: all 0.5s;
+}
+
+/* ESTILOS APLICADOS CON JS AL PADRE DEL MODAL*/
+.modal_cont_js{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 20000;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+    visibility: hidden;
+    background: rgba(0,0,0,0);
+}
+/* ESTILOS APLICADOS CON JS AL PADRE DEL MODAL*/
+
+.modal{
+    width: 75%;
+    position: relative;
+    top: 0;
+    transition: top 0.5s;
+}
+
+/* ESTILOS APLICADOS CON JS AL MODAL EN SI*/
+.modal_js{
+    width: 75%;
+    position: relative;
+    top: -100%;
+}
+/* ESTILOS APLICADOS CON JS AL MODAL EN SI*/
+.head_modal{
+    position: relative;
+    padding: 15px 0px 0 0px;
+
+    background: rgba(55,136,216,1);
+}
+.head_modal h2{
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.head_modal hr{
+    width: 100%;
+    border: 1px solid #fff;
+}
+
+.btn_modal{
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255,255,255,1);
+    color: #000;
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: -26%;
+    right: -3%;
+}
+
+.btn_modal:hover{
+    background: rgba(255,37,37, 1);
+    color: #fff;
+    cursor: pointer;
+}
+
+.body_modal{
+    padding: 10px;
+    background: #fff;
+}
+
+.modal p{
+    font-size: 1rem;
+    text-align: center;
+}
+
+.info_modal{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    justify-items: center;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* .info_modal:not(:last-child){
+    border-bottom: 1px solid  #000;
+} */
+
+@media screen and (min-width: 812px){
+	.modal{
+        width: 50%;
+    }
+
+    .head_modal h2{
+     
+        font-size: 1.4rem;
+    }
+
+    .btn_modal{
+        top: -20%;
+        right: -4%;
+    }
+
+    .modal p{
+        font-size: 1.2rem;
+    }
+
+    .modal strong{
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (min-width: 1080px){
+    .head_modal h2{
+     
+        font-size: 1.6rem;
+    }
+
+    .modal p{
+        font-size: 1.3rem;
+    }
+
+    .modal strong{
+        font-size: 1.3rem;
+    }
+
+    .btn_modal{
+        top: -32%;
+        right: -4%;
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
 }

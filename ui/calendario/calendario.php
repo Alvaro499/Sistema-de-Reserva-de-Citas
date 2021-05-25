@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="author" content="Alvaro Siles, Sebastián, Kevin">
 	<meta name="viewport" content="width=device-width">
-	<title>Analítica Web</title>
+	<title>Calendario</title>
 	<link rel="stylesheet" type="text/css" href="../../assets/fonts_awesome/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="../../assets/css/style_calendario/bridge.css">
 
@@ -32,6 +32,44 @@
 	?>
 
 	<div class="container">
+
+		<div id="cont_modal" class="modal_cont_js">
+			<div id="modal" class="modal_js">
+				<div class="head_modal">
+					<h2 class="lang" key="info cita" tabindex="0">Información Cita</h2>
+					<button class="btn_modal translate" title="Cerrar ventana información de citas" tabindex="0"><i class="fas fa-times"></i></button>
+					<hr>
+				</div>
+
+				<div class="body_modal">
+					<div class="info_modal">
+						<p class="info lang" key="nombre cliente" tabindex="0">Nombre del Cliente:</p>
+						<strong class="info_calendar cliente" tabindex="0"></strong>
+					</div>
+
+					<div class="info_modal">
+						<p class="info lang" key="area servicio" tabindex="0">Área de Servicio:</p>
+						<strong class="info_calendar cita lang_php" key="" tabindex="0"></strong>
+					</div>
+					
+					<div class="info_modal">
+						<p class="info lang" key="nombre asesor" tabindex="0">Nombre del Asesor:</p>
+						<strong class="info_calendar asesor" tabindex="0"></strong>
+					</div>
+
+					<div class="info_modal">
+						<p class="info lang" key="hora" tabindex="0">Hora:</p>
+						<strong class="info_calendar hora" tabindex="0"></strong>
+					</div>
+
+					<div class="info_modal">
+						<p class="info lang" key="fecha" tabindex="0">Fecha:</p>
+						<strong class="info_calendar fecha" tabindex="0"></strong>
+					</div>
+					
+				</div>
+			</div>
+		</div>
 		
 		<header id="menu_v">
 			
@@ -148,6 +186,8 @@
 			</div>
 		</header>
 
+		<!-- MAIN CALENDARIO -->
+
 		<main id="principal">
 			
 				<!-- Consultas -->
@@ -177,10 +217,25 @@
 					var calendar = new FullCalendar.Calendar(calendar_div, {
 						initialView: 'dayGridMonth',
 						eventClick: function(info) {
-							alert('Asesor: ' + info.event.extendedProps.asesor);
-							// alert('Hora:' + info.event.extendeProps.hora);
-							console.log(document.querySelector(".submenu_h"));
-							document.querySelector(".datos_calendar").innerHTML = 'Asesor: ' + info.event.extendedProps.asesor + "<br>" + 'Hora:' + info.event.extendedProps.hora;
+
+							if (padre_modal.classList.contains('modal_cont_js')) {
+							
+								padre_modal.classList.replace('modal_cont_js', 'modal_cont')
+								modal.classList.replace('modal_js', 'modal')
+							}
+							cerrar.addEventListener("click", function(){
+								if (padre_modal.classList.contains("modal_cont")) {
+									padre_modal.classList.replace('modal_cont', 'modal_cont_js')
+									modal.classList.replace('modal', 'modal_js')
+								}
+							})
+
+							//INFORMACION DE LAS CITAS
+							cliente.innerHTML = info.event.extendedProps.cliente + " " + info.event.extendedProps.apellido1 + " " + info.event.extendedProps.apellido2;
+							area.innerHTML = info.event.extendedProps.area;
+							asesor.innerHTML = info.event.extendedProps.asesor;
+							hora.innerHTML = info.event.extendedProps.hora;
+							fecha.innerHTML = info.event.extendedProps.fecha;
 						},
 						
   						locale: 'es',
@@ -191,8 +246,13 @@
 							title: 'Cita: <?php echo $valor['area_servicio'] ?>',
 							start: '<?php echo $valor['fecha'] ?>',
 							extendedProps:{
+								cliente: "<?php echo $valor['nombre']; ?>",
+								apellido1: "<?php echo $valor['apellido1']; ?>",
+								apellido2: "<?php echo $valor['apellido2']; ?>",
+								area: "<?php echo $valor['area_servicio']; ?>",
                 				asesor: "<?php echo $valor['nombre_empleado']; ?>",
-								hora :"<?php echo $valor['hora']; ?>"
+								hora :"<?php echo $valor['hora']; ?>",
+								fecha: "<?php echo $valor['fecha']; ?>"
              				}
 						},
 						<?php }; ?>
@@ -209,30 +269,21 @@
 							});
 						}
 					}cambiarIdioma();
-					
+
+					//CODIGO PARA EL MODAL DE CITAS
+					let cliente = document.querySelector(".cliente");
+					let area = document.querySelector(".cita");
+					let asesor = document.querySelector(".asesor");
+					let hora = document.querySelector(".hora");
+					let fecha = document.querySelector(".fecha");
+					let padre_modal = document.querySelector("#cont_modal");
+					let modal = document.querySelector("#modal");
+					let cerrar = document.querySelector(".btn_modal");
+
 					//LA FUNCIÓN INTERNA QUE POSEE FULLCALENDAR PARA DESPLEGAR EL CALENDARIO
 					calendar.render();
 				});
     		</script>
-
-			<div class="modal_cont">
-				<div class="modal">
-					<div class="head_modal">
-						<h2>Información de la cita</h2>
-						<button title="Cerrar ventana informacion de citas"><i class="fas fa-times"></i></button>
-						</hr>
-					</div class="body_modal">
-
-						<p class="info">Nombre del cliente: <strong class="info_calendar cliente"></strong></p>
-						<p class="info">Área de Servicio: <strong class="info_calendar cita"></strong></p>
-						<p class="info">Nombre del asesor: <strong class="info_calendar asesor"></strong></p>
-						<p class="info">Hora: <strong class="info_calendar hora"></strong></p>
-						<p class="info">Fecha: <strong class="info_calendar fecha"></strong></p>
-					<div>
-
-					</div>
-				</div>
-			</div>
 			<div class="datos_calendar">
 
 			</div>
