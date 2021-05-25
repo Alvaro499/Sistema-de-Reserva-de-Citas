@@ -6,6 +6,11 @@
 		padding: 3% 2%;
 
 	}
+
+	.reserva_acept label{
+		text-align: center;
+		font-size: 1.2rem;
+	}
 }
 
 @media screen and (min-width: 1000px){
@@ -22,6 +27,7 @@
 
 	.reserva_acept label{
 		text-align: center;
+		font-size: 1.5rem;
 	}
 
 	.reserva_acept input{

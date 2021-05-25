@@ -5,8 +5,8 @@
 }
 
 /* Esta altura evita que la pagina se acorte por la falta de cotenido en el <main> */
-.container{
-    min-height: 1500px;
+.admin_citas{
+    min-height: 1250px;
 }
 
 /*Contenedor de las tarjetas*/
@@ -24,18 +24,17 @@
 
 .card-reserva {
     background: #FFFFFF;
-    /*background: #ffffff;*/
-    /*border: 1px solid #000;*/
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
     padding: 20px;
     margin: 15px;
     box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5), -1.5px -1.5px 10px rgba(0, 0, 0, 0.5);
+    position: relative;
 }
 
 .card-reserva h3 {
-    margin-bottom: 2px;
+    margin-bottom: 20px;
     text-align: center;
 }
 
@@ -88,4 +87,11 @@
     margin-bottom: 20px;
     font-size: 1.5rem;
     font-weight: bold;
+}
+
+.pin{
+    width: 50px;
+    position: absolute;
+    top: 5%;
+    right: 5%;
 }

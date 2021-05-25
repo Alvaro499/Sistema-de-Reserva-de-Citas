@@ -152,10 +152,10 @@
                 <h1 class="lang" key="reserva aceptada" tabindex="0">Reserva Aceptada</h1>
 
                 <div class="data">
-					<label for="nombre" class="lang" key="nombre" tabindex="0">Nombre:</label>
+					<label for="nombre" class="info lang" key="nombre completo asesor" tabindex="0">Nombre Completo del Asesor:</label>
 					<div>
 						<input type="text" id="nombre" class="input" tabindex="0">
-						<div id="error_nomb" class="errores lang_error" key="formato nombre colaborador" tabindex="0">El formato del usuario colaborador es inválido, revisar que no haya digitado datos numéricos o el campo esté vacío</div>
+						<div id="error_nomb" class="errores lang_error" key="formato nombre colaborador" tabindex="0">Debe escribir todo el nombre incluyendo apellidos</div>
 					</div>
 				</div>
 				

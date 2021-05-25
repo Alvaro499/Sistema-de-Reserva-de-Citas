@@ -1,16 +1,21 @@
 @media screen and (min-width: 812px){
 
 	#reservas{
-		grid-template-columns: repeat(2, 1fr);
-		
+		grid-template-columns: repeat(2, 1fr);	
+	}
+
+	.card-reserva p {
+		font-size: 1.2rem;
+	}
+
+	.card-reserva h3 {
+		font-size: 1.5rem;
 	}
 
 	.btn {
 		width: 40%;
 		height: 45px;
 	}
-	
-
 }
 
 @media screen and (min-width: 1080px){
@@ -19,8 +24,16 @@
 		grid-template-columns: repeat(3, auto);
 	} */
 
+	.card-reserva p {
+		font-size: 1.4rem;
+	}
+
 	.btn {
 		width: 25%;
+	}
+
+	.pin{
+		width: 60px;
 	}
 
 }

@@ -144,46 +144,47 @@
 		</header>
 		<main id="principal">
 			<section id="inicio" class="card">
-				<h2>Inicio</h2>
+				<h2 class="lang" key="inicio">Inicio</h2>
 				<img src="../../assets/img/inicio.png" alt="La página principal">
-				<p>En esta sección puede consultar noticias relacionado a finanzas y contabilidad.</p>
+				<p class="lang" key="inicio descrip">En esta sección puede consultar noticias relacionado a finanzas y contabilidad.</p>
 			</section>
 
 			<section id="citas" class="card">
-				<h2>Citas</h2>
+				<h2 class="lang" key="citas">Citas</h2>
 				<img src="../../assets/img/Citas.png" alt="La página principal">
-				<p>En este apartado puede solicitar una cita para capacitaciones, consultoria, etc de los servicios que se ofrece en la empresa Contabilidad Global Gapa.</p>
-				<p>Para solicitar debe llenar los siguientes campos:</p>
-				<p><b>Área de Servicio</b>: Aquí se encuentra departamentos que brinda la empresa. Seleccionar el servicio que desee recibir.</p>
-				<p><b>Asunto</b>: Aquí debe explicar en pocas palabras el objetivo de la cita. Este campo es obligatorio de completar.</p>
-				<p><b>Fecha</b>: Debe seleccionar el día que desee recibir la cita. Este campo es obligatorio de completar.</p>
-				<p><b>Hora</b>: Debe seleccionar la hora que desee recibir la cita. Este campo es obligatorio de completar.</p>
-				<p><b>Medio de Reunión</b>: Debe seleccionar la modalidad en que desee recibir la cita. Este campo es obligatorio de completar.</p>
-				<p><b>Mensaje</b>: Aquí puede dar más información de lo que desea recibir de la cita. Este campo es opcional.</p>
+				<p class="lang" key="citas descrip">En este apartado puede solicitar una cita para capacitaciones, consultoria y entre otros servicios que ofrece la empresa.</p>
+				<p class="lang" key="citas pasos">Para solicitar debe llenar los siguientes campos:</p>
+				<p class="lang" key="citas area"><b class="lang" key="area servicio">Área de Servicio: </b> aquí se encuentra departamentos que brinda la empresa. Seleccionar el servicio que desee recibir.</p>
+				<p class="lang" key="citas objetivo"><b class="lang" key="asunto guia">Asunto: </b>aquí debe explicar en pocas palabras el objetivo de la cita. Este campo es obligatorio de completar.</p>
+				<p class="lang" key="citas dia"><b class="lang" key="fecha guia">Fecha: </b>debe seleccionar el día que desee recibir la cita. Este campo es obligatorio de completar.</p>
+				<p class="lang" key="citas hora"><b class="lang" key="hora guia">Hora: </b>debe seleccionar la hora que desee recibir la cita. Este campo es obligatorio de completar.</p>
+				<p class="lang" key="citas medio"><b class="lang" key="medio guia">Medio de Reunión: </b>debe seleccionar la modalidad en que desee recibir la cita. Este campo es obligatorio de completar.</p>
+				<p class="lang" key="citas mensaje"><b class="lang" key="area servicio">Mensaje: </b>aquí puede dar más información de lo que desea recibir de la cita. Este campo es opcional.</p>
+				<p class="primer">Hola mundo</p>
 			</section>
 			
 			<section id="calendario" class="card">
-				<h2>Calendario</h2>
+				<h2 class="lang" key="calendario">Calendario</h2>
 				<img src="../../assets/img/Calendario.png" alt="Página del calendario">
-				<p>En este apartado puede consultar los días que tiene citas. Si le dar click en un día que tiene cita se desplegara una alerta con información más detallada de la misma. </p>
+				<p class="lang" key="calendar descrip"></p>
 			</section>
 
 			<section id="idioma" class="card">
-				<h2>Cambio de Idioma</h2>
+				<h2 class="lang" key="idiomas">Cambio de Idioma</h2>
 				<img src="../../assets/img/idioma.png" alt="Submenú de idiomas">
-				<p>En este apartado puede cambiar el idioma de la página de español a inglés y viceversa.</p>
+				<p class="lang" key="idioma descrip">Si desea cambiar el idioma de la página de español a inglés y viceversa, solamente seleccione el icono de referencia al país.</p>
 			</section>
 
 			<section id="notificaciones" class="card">
-				<h2>Notificaciones</h2>
+				<h2 class="lang" key="notificaciones">Notificaciones</h2>
 				<img src="../../assets/img/Notificaciones.png" alt="Submenú de idiomas">
-				<p>En este apartado puede ver las notificaciones del seguimiento de las citas.</p>
+				<p class="lang" key="notifi descrip">Aqui podrá ver las notificaciones del seguimiento del estado de sus citas.</p>
 			</section>		
 
 			<section id="perfil" class="card">
-				<h2>Perfil</h2>
+				<h2 class="lang" key="perfil">Perfil</h2>
 				<img src="../../assets/img/Perfil.png" alt="Submenú del perfil">
-				<p>Para ir al perfil debe posicionarse sobre el nombre de usuario y en el submenú hacer click en "Mi perfil", una ves dentro puede consultar la información de su usuario, cambiar la foto de perfil a dar click en "Actualizar foto de perfil y cambiar la contraseña.</p>
+				<p class="lang" key="perfil descrip">Para ir al perfil debe posicionarse sobre el nombre de usuario y en el submenú hacer click en "Mi perfil", una ves dentro puede consultar la información de su usuario, cambiar la foto de perfil a dar click en "Actualizar foto de perfil y cambiar la contraseña.</p>
 			</section>								
 		</main>
 

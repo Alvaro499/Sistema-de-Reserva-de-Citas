@@ -33,8 +33,8 @@ let palabras = {
 		"Soporte Fiscal y Tributario": "Soporte Fiscal y Tributario",
 		"Soporte Legal": "Soporte Legal",
 		"Talento Humano": "Talento Humano",
-		"reservacion de citas": "Appointment Reservation",
-		"area de servicio": "Service Area",
+		"reservacion de citas": "Reservación de Citas",
+		"area de servicio": "Área de Servicio",
 		"administracion": "Administración",
 		"contabilidad": "Contabilidad",
 		"control interno": "Control Interno",
@@ -50,7 +50,7 @@ let palabras = {
 	// Notificaciones, datos extra duplicados
 		//Obtener la traduccion de texto php desde el ingles, ya que el key no se actualiza al estar en ingles
 		"Administration": "Administración",
-		"Accounting": "Contabilidad",
+		"Contability": "Contabilidad",
 		"Internal control": "Control Interno",
 		"Electronic Billing": "Facturación Electrónica",
 		"Finance and Economy": "Finanzas y Economía",
@@ -116,7 +116,8 @@ let palabras = {
 	//Rerva Citas Empleados RCE - Reservacion Aceptada
 		"reserva aceptada" : "Reserva Aceptada",
 		"nombre" : "Nombre:",
-		"formato nombre colaborador" : "El formato del usuario colaborador es inválido, revisar que no haya digitado datos numéricos",
+		"nombre completo asesor": "Nombre Completo del Asesor:",
+		"formato nombre colaborador" : "Debe escribir todo el nombre incluyendo apellidos",
 		"oficina" : "Oficina:",
 		"formato lugar presencial" : "Lugar de la cita presencial es requerido",
 		"plataforma" : "Plataforma:",
@@ -137,6 +138,38 @@ let palabras = {
 		"nombre asesor" : "Nombre del Asesor:",
 
 	// GUIA WEB
+		"inicio descrip": "En esta sección puede consultar noticias relacionado a finanzas y contabilidad.",
+		"citas descrip": "En este apartado puede solicitar una cita para capacitaciones, consultoria, etc de los servicios que se ofrece en la empresa Contabilidad Global Gapa",
+		"citas pasos" :"Para solicitar debe llenar los siguientes campos:",
+		"citas area": "Aquí se encuentra departamentos que brinda la empresa. Seleccionar el servicio que desee recibir.",
+
+		"citas objetivo": "aquí debe explicar en pocas palabras el objetivo de la cita. Este campo es obligatorio de completar.",
+		"asunto guia": "Asunto: ",
+
+		"citas dia": "debe seleccionar el día que desee recibir la cita. Este campo es obligatorio de completar.",
+		"fecha guia": "Fecha: ",
+
+		"citas hora": "debe seleccionar la hora que desee recibir la cita. Este campo es obligatorio de completar.",
+		"hora guia": "Hora: ",
+
+		"citas medio": "debe seleccionar la modalidad en que desee recibir la cita. Este campo es obligatorio de completar.",
+		"medio guia": "Medio: ",
+
+		"citas mensaje": "aquí puede dar más información de lo que desea recibir de la cita. Este campo es opcional.",
+		"mensaje guia": "Mensaje: ",
+
+		"calendar descrip": "En este apartado puede consultar los días que tiene citas. Si se da click en un día que tenga un evento, se desplegará un cuadro con la información detallada de la cita.",
+
+		"idiomas": "Cambio de Idioma",
+		"idioma descrip": "Si desea cambiar el idioma de la página de español a inglés y viceversa, solamente seleccione el icono de referencia al país.",
+
+
+		"notificaciones": "Notificaciones",
+		"notifi descrip": "Here you can see the notifications of the monitoring of the status of your appointments.",
+
+		"perfil": "Perfil",
+		"perfil descrip": "Para ir al perfil debe posicionarse sobre el nombre de usuario y en el submenú hacer click en 'Mi perfil', una ves dentro puede consultar la información de su usuario, cambiar la foto de perfil a dar click en 'Actualizar foto de perfil' y cambiar la contraseña.",
+
 
 	//PERFIL
 		"actualizar foto" : "Actualizar foto de perfil",
@@ -155,8 +188,6 @@ let palabras = {
 			//Inputs
 		"Update" : "Actualizar",
 		"Close" : "Cerrar"
-
-
 	},
 
 	"en":{
@@ -188,7 +219,7 @@ let palabras = {
 		"Administración": "Administration",
 		"Contabilidad": "Contability",
 		"Control Interno": "Internal Control",
-		"Facturación Electrónica": "Electronic billing",
+		"Facturación Electrónica": "Electronic Billing",
 		"Finanzas y Economía": "Finance and Economy",
 		"Infraestructura y TIC's": "Infrastructure and ICT",
 		"Mercadeo": "Marketing",
@@ -247,10 +278,11 @@ let palabras = {
 		"formato hora" : "Hour is required",
 		"formato mensaje cita" : "Message is required",
 
-	//Rerva Citas Cliente RCC
+	//Reserva Aceptada RCE
 		"reserva aceptada" : "Reservation Accepted",	
 		"nombre" : "Name:",
-		"formato nombre colaborador" : "Format of the collaborating user is invalid, check that you have not entered numerical data data or the field is empty",
+		"nombre completo asesor": "Complete Name:",
+		"formato nombre colaborador" : "You must write the entire name including surnames",
 		"oficina" : "Office Place:",
 		"formato lugar presencial" : "Place of the presential appointment is required",
 		"plataforma" : "Virtual Platform:",
@@ -271,6 +303,36 @@ let palabras = {
 		"nombre asesor" : "Assessor Name:",
 
 	// GUIA WEB
+		"inicio descrip": "In this section you can consult news related to finance and accounting.",
+		"citas descrip": "In this section you can request an appointment for training, consulting, and among other services offered by the company",
+		"citas pasos" :"To request you must fill out the following fields:",
+		"citas area": "here you will find departments that the company provides. Select the service you want to receive.",
+		
+		"citas objetivo": "here you should briefly explain the purpose of the appointment. This field is required.",
+		"asunto guia": "Subject: ",
+
+		"citas dia": "you must select the day you want to receive the appointment. This field is required.",
+		"fecha guia": "Date: ",
+		"hora guia": "Hour: ",
+
+		"citas hora": "you must select the time you want to receive the appointment. This field is required.",
+		
+
+		"citas medio": "you must select the mode in which you want to receive the appointment. This field is mandatory to complete.",
+		"medio guia": "Modality: ",
+
+		"citas mensaje": "here you can give more information about what you want to receive from the appointment. This is an optional field.",
+		"mensaje guia": "Message: ",
+
+		"calendar descrip":"In this section you can check the days you have appointments. If you click on a day that has an event, a box will be displayed with the detailed information of the appointment.",
+
+		"idiomas": "Change of Language",
+		"idioma descrip": "If you want to change the language of the page from Spanish to English and vice-versa, just select the country reference icon.",
+
+		"notificaciones": "Notifications",
+		"notifi descrip": "Here you can see the notifications of the monitoring of the status of your appointments.",
+		"perfil": "Profile",
+		"perfil descrip": "To go to the profile you must position yourself on the username and in the submenu click on 'My profile', once inside you can check the information of your user, change the profile photo to click on Update profile photo and change the password.",
 
 
 	//PERFIL
@@ -313,13 +375,8 @@ $(function(){
 			
 			}else{ //elementos a traducir pero que tienen otros hijos aparte de su contenido solo texto
 				var clone = $(this).children().clone();//toma al primer hijo de cada elemento con class="lang", <a> tiene 2 hijos que son <span> y el contenido de texto, pero children solo toma etiquetas
-				// console.log($(this).children());
-				// console.log(clone);
-				console.log($(this));
-				// console.log($(this).children().get(0).tagName);
 				$(this).text(palabras[lang][$(this).attr("key")]);
-				clone.prependTo($(this)); //Coloca elementos nuevos antes del elemento especificado o comoo su priemr hijo
-				//console.log("Soy un span");
+				clone.prependTo($(this)); //Coloca elementos nuevos antes del elemento especificado o comoo su primer hijo
 			}
 		});
 

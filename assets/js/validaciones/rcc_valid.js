@@ -45,7 +45,7 @@ function validacion(){
     }else{
         
         //document.getElementById("error_mensaje").innerHTML = "";
-        document.getElementById("error_mensaje").style.color = "none";
+        document.getElementById("error_mensaje").style.display = "none";
         document.getElementById("mensaje_ct").style.border = "3px solid #54E346";
 
         console.log(cant_error);

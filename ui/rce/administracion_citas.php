@@ -171,7 +171,9 @@
 							<div id="separar-button">
                             	<button id="rechazar" class="btn danger lang" key="rechazar" onclick='rechazar(<?php echo $values["idcitas_cliente"];?>, "<?php echo $values["cedula"];?>");' tabindex="0">Rechazar</button>
                             	<button id="aceptar" class="btn success lang" key="aceptar" onclick='aceptar(<?php echo $values["idcitas_cliente"];?>,"<?php echo $values["medio"];?>","<?php echo $values["cedula"];?>");' tabindex="0">Aceptar</button>
+								
 							</div>
+							<img  class="pin" src="../../assets/iconos/pin.svg" alt="pin">
                         </div>
                     <?php }?>
                 </div>
