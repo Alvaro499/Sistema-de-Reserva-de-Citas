@@ -28,6 +28,15 @@
 	?>
 
 	<div class="container">
+
+		<div id="cont_carga" class="container_load">
+			<div class="load_father">
+				<div class="circle_father">
+					<div class="circle"></div>
+				</div>
+				<p class="text lang" key="load carga" tabindex="0">POR FAVOR ESPERE MIENTRAS SE PROCESAN LOS DATOS<span>...</span</p>
+			</div>
+		</div>
 		
 		<header id="menu_v">
 			
@@ -216,9 +225,14 @@
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="../../assets/js/toastr/toastr.min.js"></script>
 	<script type="text/javascript">
-	
+
+		//VARIABLES PARA LA BARRA DE CARGA
+		let cont_carga = document.querySelector("#cont_carga");
+		let body = document.querySelector("body");
+
 		$("form#form_aceptar").submit(function(event){
 			event.preventDefault();
+
 			if(validacion("<?php echo $modo;?>")){
 				var nombre = $("#nombre").val();
 				var personas = $("#c_personas").val();
@@ -242,25 +256,43 @@
 				"&virtual=" + virtual +
 				"&link=" + link +
 				"&cedula="+"<?php echo $_GET["cedula"];?>";
-
-				$.ajax({
-					type: "POST",
-					url:"../../negocios/n_citas/aceptar_cita.php",
-					data: datos,
-					//Métodos
-					success: function(data){
-						
-						if(data==1){
-							toastr.success("La cita fue creada con exito","Éxitos",{positionClass: "toast-bottom-right", showDuration: "400"});
-						}else if(data==2){
-							toastr.error("La cita no fue aceptada","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
-						}else if (data==3){
-							toastr.error("La cita no fue aceptada","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
-						}else{
-							toastr.error("Error desconocido","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
-						}
+				
+				//EJECUTAR BARRA DE CARGA
+				function load_carga(){
+					
+					if (cont_carga.classList.contains('container_load')) {
+						cont_carga.classList.replace('container_load', 'container_load_js');
+						body.style.overflowY = "hidden";
+						body.style.overflowX = "hidden";
 					}
-				})
+					
+					$.ajax({
+						type: "POST",
+						url:"../../negocios/n_citas/aceptar_cita.php",
+						data: datos,
+						//Métodos
+						success: function(data){
+							
+							if(data==1){
+								toastr.success("La cita ha sido aceptada con exito","Éxito",{positionClass: "toast-bottom-right", showDuration: "400"});
+							}else if(data==2){
+								toastr.error("La cita no fue aceptada","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
+							}else if (data==3){
+								toastr.error("La cita no fue aceptada","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
+							}else{
+								toastr.error("Error desconocido"+data,"Error",{positionClass: "toast-bottom-right", showDuration: "400"});
+							}
+							
+							//FINALIZAR BARRA DE CARGA
+							if (data>=0) {
+								if (cont_carga.classList.contains('container_load_js')) {
+									cont_carga.classList.replace('container_load_js', 'container_load');
+									body.style.overflowY = "scroll";
+								}
+							}
+						}
+					})
+				}load_carga();
 			}
 		});
 	</script>

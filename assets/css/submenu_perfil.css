@@ -64,11 +64,5 @@
 .nombre:hover ul {
 	margin-top: 0;
 	visibility: visible;
-	transition: all 0.8s;
+	transition: all 0.5s;
 }
-
-/* .nombre:focus ul {
-	margin-top: 0;
-	visibility: visible;
-	transition: all 0.8s;
-} */

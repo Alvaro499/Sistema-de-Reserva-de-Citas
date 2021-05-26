@@ -27,6 +27,15 @@
 	?>
 
 	<div class="container">
+
+		<div id="cont_carga" class="container_load">
+			<div class="load_father">
+				<div class="circle_father">
+					<div class="circle"></div>
+				</div>
+				<p class="text lang" key="load carga" tabindex="0">POR FAVOR ESPERE MIENTRAS SE PROCESAN LOS DATOS<span>...</span</p>
+			</div>
+		</div>
 		
 		<header id="menu_v">
 			
@@ -181,29 +190,48 @@
 	<script type="text/javascript" src="../../assets/js/upload_file.js"></script>
 	<script type="text/javascript">
 	
+		let cont_carga = document.querySelector("#cont_carga");
+		let body = document.querySelector("body");
 		$("form#formu").submit(function(event){
 			event.preventDefault();
 			if(validacion()){
 
-				$.ajax({
-					type: "POST",
-					url:"../../negocios/n_correos/correos.php",
-					data: new FormData(this),
-					contentType: false,
-					cache:false,
-					processData: false,
-					//Métodos
-					success: function(data){
-						
-						if(data==1){
-							toastr.success("Los correos han sido enviado con éxito","Éxitos",{positionClass: "toast-bottom-right", showDuration: "400"});
-						}else if(data==0){
-							toastr.error("Los correos no se enviaron","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
-						}else{
-							toastr.error("Error desconocido","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
-						}
+				//BARRA DE CARGA MIENTRAS SE EJECUTA AJAX
+				function load_circle(){
+					if (cont_carga.classList.contains('container_load')) {
+						cont_carga.classList.replace('container_load', 'container_load_js');
+						body.style.overflowY = "hidden";
+						body.style.overflowX = "hidden";
 					}
-				})
+					
+					$.ajax({
+						type: "POST",
+						url:"../../negocios/n_correos/correos.php",
+						data: new FormData(document.querySelector("#formu")),
+						contentType: false,
+						cache:false,
+						processData: false,
+						//Métodos
+						success: function(data){
+							if(data==1){
+								toastr.success("Los correos han sido enviados con éxito","Éxitos",{positionClass: "toast-bottom-right", showDuration: "400"});
+								
+							}else if(data==0){
+								toastr.error("Los correos no se enviaron, intente de nuevo","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
+								
+							}else{
+								toastr.error("Error desconocido" + data,"Error",{positionClass: "toast-bottom-right", showDuration: "400"});
+							}
+
+							if (data>=0) {
+								if (cont_carga.classList.contains('container_load_js')) {
+									cont_carga.classList.replace('container_load_js', 'container_load');
+									body.style.overflowY = "scroll";
+								}
+							}
+						}
+					})
+				}load_circle();
 			}
 		});
 	</script>

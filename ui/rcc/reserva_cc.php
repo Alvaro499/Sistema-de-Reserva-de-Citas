@@ -28,6 +28,15 @@
 	?>
 
 	<div class="container">
+
+		<div id="cont_carga" class="container_load">
+			<div class="load_father">
+				<div class="circle_father">
+					<div class="circle"></div>
+				</div>
+				<p class="text lang" key="load carga" tabindex="0">POR FAVOR ESPERE MIENTRAS SE PROCESAN LOS DATOS<span>...</span</p>
+			</div>
+		</div>
 		
 		<header id="menu_v">
 			
@@ -226,9 +235,13 @@
 	<script type="text/javascript" src="../../assets/js/toastr/toastr.min.js"></script>
 	<script type="text/javascript" src="../../assets/js/upload_file.js"></script>
 	<script type="text/javascript">
-	
+
+		//VARIABLES BARRA DE CARGA
+		let cont_carga = document.querySelector("#cont_carga");
+		let body = document.querySelector("body");
 		$("form#formu").submit(function(event){
 			event.preventDefault();
+
 			if(validacion()){
 				var area = $("#servicio").val();
 				var asunto = $("#asunto").val();
@@ -238,27 +251,44 @@
 				var mensaje = $("#mensaje_ct").val();
 				var archivo = $("#file");
 
-				console.log(archivo[0]);
-
-				$.ajax({
-					type: "POST",
-					url:"../../negocios/n_citas/citas_clientes.php",
-					data: new FormData(this),
-					contentType: false,
-					cache:false,
-					processData: false,
-					//Métodos
-					success: function(data){
-						
-						if(data==1){
-							toastr.success("Se envió la solicitud exitosamente","Éxitos",{positionClass: "toast-bottom-right", showDuration: "400"});
-						}else if(data==0){
-							toastr.error("Falló al solicitar la cita","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
-						}else{
-							toastr.error("Error desconocido","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
-						}
+				//EJECUTAR BARRA DE CARGA
+				function load_circle(){
+					if (cont_carga.classList.contains('container_load')) {
+						cont_carga.classList.replace('container_load', 'container_load_js');
+						body.style.overflowY = "hidden";
+						body.style.overflowX = "hidden";
 					}
-				})
+					
+					$.ajax({
+						type: "POST",
+						url:"../../negocios/n_citas/citas_clientes.php",
+
+						//EL PARAMETRO DEL "FormData()" debe ser el formulario donde se ingresan los datos a enviar
+						data: new FormData(document.querySelector("#formu")),
+						contentType: false,
+						cache:false,
+						processData: false,
+						//Métodos
+						success: function(data){
+							
+							if(data==1){
+								toastr.success("Se envió la solicitud exitosamente","Éxitos",{positionClass: "toast-bottom-right", showDuration: "400"});
+							}else if(data==0){
+								toastr.error("Falló al solicitar la cita","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
+							}else{
+								toastr.error("Error desconocido","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
+							}
+
+							if (data>=0) {
+								if (cont_carga.classList.contains('container_load_js')) {
+									cont_carga.classList.replace('container_load_js', 'container_load');
+									body.style.overflowY = "scroll";
+								}
+							}
+							//FINALIZAR BARRA DE CARGA
+						}
+					})
+				}load_circle();
 			}
 		});
 	</script>

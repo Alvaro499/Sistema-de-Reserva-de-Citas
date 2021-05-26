@@ -187,7 +187,11 @@ let palabras = {
 		"cambiar contra" : "Cambiar contraseña",
 			//Inputs
 		"Update" : "Actualizar",
-		"Close" : "Cerrar"
+		"Close" : "Cerrar",
+	
+	//BARRA CARGA
+		"load carga": "POR FAVOR ESPERE MIENTRAS SE PROCESAN LOS DATOS",
+		"load eliminar": "ELIMINANDO CITA"
 	},
 
 	"en":{
@@ -352,7 +356,11 @@ let palabras = {
 		"cambiar contra" : "Change password",
 			//Inputs
 		"Actualizar" : "Update",
-		"Cerrar" : "Close"
+		"Cerrar" : "Close",
+	
+	//BARRA CARGA
+		"load carga": "PLEASE WAIT WHILE THE DATA IS PROCESSED",
+		"load eliminar": "DELETING APPOINTMENT"
 		
 	}
 };

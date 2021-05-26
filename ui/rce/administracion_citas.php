@@ -28,6 +28,15 @@
 	?>
 
 	<div class="container">
+
+		<div id="cont_carga" class="container_load">
+			<div class="load_father">
+				<div class="circle_father">
+					<div class="circle"></div>
+				</div>
+				<p class="text lang" key="load eliminar" tabindex="0">ELIMINANDO CITA<span>...</span</p>
+			</div>
+		</div>
 		
 		<header id="menu_v">
 			
@@ -209,27 +218,49 @@
             // })   
     }
 
+	//VARAIBLES BARRA DE CARGA
+	let cont_carga = document.querySelector("#cont_carga");
+	let body = document.querySelector("body");
+
     function rechazar(id,cedula){
-        let dato_id = "id="+id +
-        "&cedula="+cedula;
+		
+		//EJECUTAR BARRA DE CARGA
+		function load_circle(){
 
+			let dato_id = "id="+id +
+			"&cedula="+cedula;
 
-         $.ajax({
-                type: "POST",
-                url:"../../negocios/n_citas/eliminar_cita.php",
-                data: dato_id,
-                //Métodos
-                success: function(data){
-                    if(data==1){
-                        toastr.success("Se rechazó exitosamente","Éxitos",{positionClass: "toast-bottom-right", showDuration: "400"});
-                        location.reload();
-                    }else if(data==2){
-                        toastr.error("Error al rechazar cita","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
-                    }else{
-                        toastr.error("Error desconocido","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
-                    }
-                }
-            })
+			if (cont_carga.classList.contains('container_load')) {
+				cont_carga.classList.replace('container_load', 'container_load_js');
+				body.style.overflowY = "hidden";
+				body.style.overflowX = "hidden";
+			}
+
+			$.ajax({
+				type: "POST",
+				url:"../../negocios/n_citas/eliminar_cita.php",
+				data: dato_id,
+				//Métodos
+				success: function(data){
+					if(data==1){
+						toastr.success("La cita ha sido rechazada","Éxito",{positionClass: "toast-bottom-right", showDuration: "400"});
+						location.reload();
+					}else if(data==2){
+						toastr.error("Error al rechazar cita","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
+					}else{
+						toastr.error("Error desconocido"+data,"Error",{positionClass: "toast-bottom-right", showDuration: "400"});
+					}
+
+					//FINALIZAR BARRA DE CARGA
+					if (data>=0) {
+						if (cont_carga.classList.contains('container_load_js')) {
+							cont_carga.classList.replace('container_load_js', 'container_load');
+							body.style.overflowY = "scroll";
+						}
+					}
+				}
+			})
+		}load_circle();
     }
     
 </script>
