@@ -165,7 +165,7 @@
 						<option class="lang" key="control interno" value="Control Interno">Control Interno</option>
 						<option class="lang" key="facturacion electronica" value="Facturación Electrónica">Facturación Electrónica</option>
 						<option class="lang" key="finanzas y economia" value="Finanzas y Economía">Finanzas y Economía</option>
-						<option class="lang" key="infraestructura tic" value="Infraestructura y TIC's">Infraestructura y TIC's</option>
+						<option class="lang" key="infraestructura tic" value="Infraestructura y TICs">Infraestructura y TIC's</option>
 						<option class="lang" key="mercadeo" value="Mercadeo">Mercadeo</option>
 						<option class="lang" key="soporte fiscal tributario" value="Soporte Fiscal y Tributario">Soporte Fiscal y Tributario</option>
 						<option class="lang" key="soporte legal" value="Soporte Legal">Soporte Legal</option>
