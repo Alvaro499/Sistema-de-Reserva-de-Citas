@@ -22,7 +22,7 @@
 	}
 
 	.notifi{
-		margin-right: 5px; /*para que el boton notificaciones no se pegue tanto a al boton regre*/
+		margin-right: 25px; /*para que el boton notificaciones no se pegue tanto a al boton regre*/
 		
 	}
 
@@ -49,5 +49,31 @@
 	}
 
 }
+@media screen and (max-width: 525px){
+	#menu_v{
+		grid-column-start: 1;
+		grid-column-end: 7;
+		z-index: 10000;
+	}
 
-/*https://es.stackoverflow.com/questions/340390/cambiar-el-valor-de-la-propiedad-grid-column-row-de-css-con-javascript*/
+	.cerrar{
+		display: block;
+	}
+	
+	.btn_cerrar{
+		display: block;
+	}
+
+	#nav_h{
+		padding: 0 20px;
+	}
+
+	.usuario img{
+		width: 50px;
+		height: 50px;
+	}
+
+	.usuario{
+		margin-right: 0;
+	}
+}

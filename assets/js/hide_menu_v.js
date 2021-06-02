@@ -1,4 +1,5 @@
 let regre = document.querySelector(".regre"); //llamando al boton para ocultar menu
+let cerrar = document.querySelector(".btn_cerrar");//boton cerrar width < 525px
 let menu_v = document.querySelector("#menu_v"); //llamando al menu vertical (morado)
 let menu_h = document.querySelector("#menu_h"); //llamando al menu horizontal (rojo)
 let principal = document.querySelector("#principal"); //llamando al cuerpo de la interfaz
@@ -10,7 +11,7 @@ EN RESUMEN: cambia la posicion del boton regre cuando ya el menu este oculto a c
 let widthSize = window.outerWidth;
 console.log(widthSize);
 
-if (widthSize <= 569) {
+if (widthSize <= 525) {
 	hide = true;
 	out = false
 	regre.style.transform = "rotate(180deg)"; //cuando la pantalla sea pequena y el menu este  oculto la flecha este en posicion de "mostrar"
@@ -41,5 +42,22 @@ regre.onclick = function(){
 		regre.style.transform = "rotate(0deg)"; //el boton gira hacia la izquierda cuando el menu este oculto
 		regre.style.transition = "transform 0.8s ease-in-out";
 		hide = false;
+	}
+}
+
+cerrar.onclick = function(){
+
+	if(hide==false){
+		hide = true;
+		out = false;
+		menu_v.style.margin = "100% 100% 0 0";
+		menu_v.style.transition = "margin 0.2s linear";
+		menu_v.style.overflow = "hidden";
+		menu_h.style.gridColumnStart = 1;
+ 		principal.style.gridColumnStart = 1;
+	}else if (out==false){
+		hide=false;
+		menu_v.style.margin = "0 0 0 0";
+		menu_v.style.overflow = "initial";
 	}
 }

@@ -42,6 +42,7 @@
 			
 			<div class="logo">
 				<img src="../../assets/img/logo.png" alt="Logo de la empresa" tabindex="0">
+				<button class="btn_cerrar" title="Cerrar Menú" tabindex="0">X</button>
 			</div>
 
 			<nav id="nav_v">
@@ -62,10 +63,7 @@
 						<li class="li_v li_citas"><a href="../rcc/reserva_cc.php" key="citas" class="lang"><span class="icono"><img src="../../assets/iconos/citas.svg" aria-hidden="true" class="icono_v"></span>Citas</a></li>
 					<?php } ?>
 
-					<?php if($_SESSION["idrol"] == 2){ ?>
-					<li class="li_v li_analitica"><a href="../analitica_web/analitica.php" key="analitica web" class="lang"><span class="icono"><img src="../../assets/iconos/analitica-web.svg" aria-hidden="true" class="icono_v"></span>Analítica Web</a></li>
-					<?php } ?>
-
+					
 					<li class="li_v li_calendario"><a href="../calendario/calendario.php" key="calendario" class="lang"><span class="icono"><img src="../../assets/iconos/calendario.svg" aria-hidden="true" class="icono_v"></span>Calendario</a></li>
 					<?php if($_SESSION["idrol"] == 3){ ?>
 					<li class="li_v li_guia"><a href="../guia_web/guia_web.php" key="guia web" class="lang"><span class="icono"><img src="../../assets/iconos/guia-web.svg" aria-hidden="true" class="icono_v"></span>Guía Web</a></li>
@@ -196,6 +194,8 @@
 	
 	<script type="text/javascript" src="../../assets/js/hide_menu_v.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="../../assets/js/notificaciones/notifi.js"></script>
+	<script type="text/javascript" src="../../assets/js/notificaciones/notificaciones.js"></script>
 	<script type="text/javascript" src="../../assets/js/toastr/toastr.min.js"></script>
     <script type="text/javascript">
 	function aceptar(id,medio,cedula)
@@ -225,11 +225,11 @@
     function rechazar(id,cedula){
 		
 		//EJECUTAR BARRA DE CARGA
+		
+		let dato_id = "id="+id +
+		"&cedula="+cedula;
+			
 		function load_circle(){
-
-			let dato_id = "id="+id +
-			"&cedula="+cedula;
-
 			if (cont_carga.classList.contains('container_load')) {
 				cont_carga.classList.replace('container_load', 'container_load_js');
 				body.style.overflowY = "hidden";
@@ -243,12 +243,12 @@
 				//Métodos
 				success: function(data){
 					if(data==1){
-						toastr.success("La cita ha sido rechazada","Éxito",{positionClass: "toast-bottom-right", showDuration: "400"});
+						toastr.success("La cita ha sido rechazada","Éxito",{positionClass: "toast-bottom-right", showDuration: "500"});
 						location.reload();
 					}else if(data==2){
-						toastr.error("Error al rechazar cita","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
+						toastr.error("Error al rechazar cita","Error",{positionClass: "toast-bottom-right", showDuration: "500"});
 					}else{
-						toastr.error("Error desconocido"+data,"Error",{positionClass: "toast-bottom-right", showDuration: "400"});
+						toastr.error("Error desconocido"+data,"Error",{positionClass: "toast-bottom-right", showDuration: "500"});
 					}
 
 					//FINALIZAR BARRA DE CARGA

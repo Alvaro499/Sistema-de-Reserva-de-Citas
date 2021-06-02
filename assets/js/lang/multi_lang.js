@@ -1,4 +1,3 @@
-console.log("Hi");
 let palabras = {
 	"es":{
 		//Menu Vertical
@@ -137,40 +136,60 @@ let palabras = {
 		"nombre cliente": "Nombre del Cliente:",
 		"nombre asesor" : "Nombre del Asesor:",
 
-	// GUIA WEB
-		"inicio descrip": "En esta sección puede consultar noticias relacionado a finanzas y contabilidad.",
-		"citas descrip": "En este apartado puede solicitar una cita para capacitaciones, consultoria, etc de los servicios que se ofrece en la empresa Contabilidad Global Gapa",
-		"citas pasos" :"Para solicitar debe llenar los siguientes campos:",
-		"citas area": "Aquí se encuentra departamentos que brinda la empresa. Seleccionar el servicio que desee recibir.",
+	// GUIA WEB CLIENTE
+		"intro": "Introducción al Sistema",
+		"intro descrip":"Antes de empezar a usar tu cuenta te recomendamos que leas este pequeño manual de usuario en el que se explican de forma rápida y entendible las diferentes funcionalidades del Sistema de Reservas de Citas de Gapa",
 
-		"citas objetivo": "aquí debe explicar en pocas palabras el objetivo de la cita. Este campo es obligatorio de completar.",
-		"asunto guia": "Asunto: ",
+		"citas menu": "En el Sistema de Reservas Citas Gapa los clientes tiene la oportunidad de solicitar citas personalizadas, esto con el fin de brindar una mayor libertad en los servicios que ofrecemos.",
 
-		"citas dia": "debe seleccionar el día que desee recibir la cita. Este campo es obligatorio de completar.",
-		"fecha guia": "Fecha: ",
+		"citas donde solicitar": "¿Dónde solicitar una cita?",
+		"citas solicitar": "Para solicitar una cita personalizada solo debemos ir al menú vertical de la izquierda y presionar el enlace 'Citas'.",
 
-		"citas hora": "debe seleccionar la hora que desee recibir la cita. Este campo es obligatorio de completar.",
-		"hora guia": "Hora: ",
+		"crear citas": "Creación de Citas",
+		"personalizacion citas": "La personalización de citas es un procesos rápido y simple, es un formulario que incluye opciones desde escoger la hora, fecha y hasta el medio de la reunión.",
 
-		"citas medio": "debe seleccionar la modalidad en que desee recibir la cita. Este campo es obligatorio de completar.",
-		"medio guia": "Medio: ",
+		"como crear citas": "¿Cómo crear una cita?",
+		"como solicitar citas": "Para solicitar una cita solo debemos completar cada uno de los espacios con la información más acorde a nuestro gusto. Debemos tener en cuenta que ningún campo puede crear vacío.",
 
-		"citas mensaje": "aquí puede dar más información de lo que desea recibir de la cita. Este campo es opcional.",
-		"mensaje guia": "Mensaje: ",
+		"ver calendario": "Para visualizar el calendario solo debemos ir al menú vertical de la izquierda y presionar el enlace 'Calendario'. En él, podrás ver cada una de las citas que tengas agendadas",
 
-		"calendar descrip": "En este apartado puede consultar los días que tiene citas. Si se da click en un día que tenga un evento, se desplegará un cuadro con la información detallada de la cita.",
+		"ver citas": "¿Cómo visualizar mis citas?",
+
+		"cuadros azules": "Si se desea ver más información detallada de cada cita simplemente presionamos los cuadros celestes que se ubican en la fecha especificada. En el ejemplo de abajo podemos ver que hay una cita agendada para el domingo 6 de junio",
+
+		"modal calendario": "Después de presionar el cuadro en el calendario se despleguará una ventana flotante en la cual habrá información más detallada, como el nombre del asesor, la hora y el area de servicio relacionada.",
+
+		"notificaciones": "Notificaciones",
+		"sistema noitifi": "El sistema también cuenta con una sección de notificaciones en la cual le llegarán diferentes mensajes relacionados al estado de las solicitudes que hayan enviado.",
+
+		"tipo notifi": "Tipos de notificación",
+		"tres notifi": "Hay tres tipos de notificación en el sistema, cada uno se mostrará dependiendo el estado actual de su última solicitud en la sección de 'Citas', estas son:",
+
+		"notifi enviada": "Notificación de envío confirmado",
+		"soli enviada": "Justo después de haber enviado una solicitud para una cita, podrá ver en la sección de notificaciones un mensaje que dirá 'Su solcitud ha sido enviada'. Esto signfica que está en pendiente de ser revisada por un administrador de la empresa que dice si la acepta o rechaza",
+
+		"notifi aceptada": "Notificación de aceptación",
+		"soli aceptada": "Este mensaje se mostrará cuando un administrador de la empresa haya aceptado su solicitud, además la cita será agendada al calendario y también recibirá un correo electrónico con más detalles.",
+		"notifi rechazada":	"Notificación de rechazo",
+		"soli recazada": "Por último está la notififación de rechazo, la cual se mostrará en su cuenta únicamente cuando algún administrador indique que es imposible atenderlo.",
+
 
 		"idiomas": "Cambio de Idioma",
 		"idioma descrip": "Si desea cambiar el idioma de la página de español a inglés y viceversa, solamente seleccione el icono de referencia al país.",
 
-
-		"notificaciones": "Notificaciones",
-		"notifi descrip": "Here you can see the notifications of the monitoring of the status of your appointments.",
+		"ver idiomas": "¿Cómo cambio el idioma de mi cuenta?",
 
 		"perfil": "Perfil",
-		"perfil descrip": "Para ir al perfil debe posicionarse sobre el nombre de usuario y en el submenú hacer click en 'Mi perfil', una ves dentro puede consultar la información de su usuario, cambiar la foto de perfil a dar click en 'Actualizar foto de perfil' y cambiar la contraseña.",
+		"perfil descrip": "Cada cuenta tiene la posibilidad de verificar la información de su usuario, para acceder a esto solo se debe entrar a la sección de 'Mi Perfil'.",
+		"perfil descrip1": "Para ir a tu perfil solamente debes posicionar el ratón sobre tu nombre, el cual está en la esquina superior derecha de la interfaz, esto desplegará un submenú donde estará la opcion para visitar perfil.",
+		"perfil descrip2": "Una vez dentro de tu perfil podrás revisar tu información personal, la cual compone tu cuenta en el sistema. Además en esta sección puedes cambiar tu foto perfil y tu contraseña.",
 
-
+		"foto perfil": "Foto de Perfil",
+		"foto descrip": "Toda cuenta tiene una foto de perfil para identificar a cada usuario, igualmente esta puede ser cambiada a gusto por todos los usuarios.",
+		"ver foto" : "¿Cómo cambiar la foto de mi perfil?",
+		"foto descrip1": "Primero, se debe acceder a la opción de 'Mi Perfil', después de esto, al inicio de esta sección solo debemos presionar en el botón 'Actualizar Foto de Perfil'.",
+		"foto descrip2": "Justo después de haber presionado el botón para cambiar la foto, aparecerá una nueva ventana en la cual tendremos 2 opciones, una para escoger una nueva foto de perfil y la otra para eliminar la foto actual. Cabe mencionar que solo pueden ser archivos png, jpg y svg.",
+	
 	//PERFIL
 		"actualizar foto" : "Actualizar foto de perfil",
 		"caract foto" : "Antes de actualizar su foto de perfil en la plataforma asegúrese que dicha foto cumpla las siguientes características:",
@@ -191,6 +210,7 @@ let palabras = {
 	
 	//BARRA CARGA
 		"load carga": "POR FAVOR ESPERE MIENTRAS SE PROCESAN LOS DATOS",
+		"load rcc": "AL FINALIZAR LA CARGA REVISE LA SECCIÓN DE NOTIFICACIONES",
 		"load eliminar": "ELIMINANDO CITA"
 	},
 
@@ -307,36 +327,56 @@ let palabras = {
 		"nombre asesor" : "Assessor Name:",
 
 	// GUIA WEB
-		"inicio descrip": "In this section you can consult news related to finance and accounting.",
-		"citas descrip": "In this section you can request an appointment for training, consulting, and among other services offered by the company",
-		"citas pasos" :"To request you must fill out the following fields:",
-		"citas area": "here you will find departments that the company provides. Select the service you want to receive.",
+		"intro": "Introduction",
+		"intro descrip": "Before starting to use your account, we recommend that you read this small user manual in which the different functionalities of the Gapa Appointment Booking System are explained quickly and understandably.",
+
+		"citas menu": "In Gapa Appointments Reservation System, clients have the opportunity to request personalized appointments, this in order to provide greater freedom in the services we offer.",
+
+		"citas donde solicitar": "Where to request an appointment?",
+		"citas solicitar": "To request a personalized appointment we just have to go to the vertical menu on the left and press the link 'Appointments'.",
+
+		"crear citas": "Appointment Creation",
+		"personalizacion citas": "Personalization of appointments is a quick and simple process, it is a form that includes options from choosing the time, date and even the middle of the meeting.",
+
+		"como crear citas": "How to create an appointment?",
+		"como solicitar citas": "To request an appointment, we only have to complete each of the spaces with the information that best suits our taste. We must bear in mind that no field can create emptiness.",
+
+		"ver calendario": "To view the calendar we just have to go to the vertical menu on the left and press the link 'Calendar'. In it, you will be able to see each of the appointments that you have scheduled",
 		
-		"citas objetivo": "here you should briefly explain the purpose of the appointment. This field is required.",
-		"asunto guia": "Subject: ",
+		"ver citas": "How to view my appointments?",
+		"cuadros azules": "If you want to see more detailed information about each appointment, simply click on the blue squares that are located on the specified date. In the example below we can see that there is an appointment scheduled for Sunday, June 6.",
+		"modal calendario": "After pressing the box in the calendar, a floating window will be displayed in which there will be more detailed information, such as the name of the advisor, the time and the related service area.",
 
-		"citas dia": "you must select the day you want to receive the appointment. This field is required.",
-		"fecha guia": "Date: ",
-		"hora guia": "Hour: ",
+		"notificaciones": "Notifications",
+		"sistema noitifi": "The system also has a notification section in which you will receive different messages related to the status of the requests that have been sent.",
 
-		"citas hora": "you must select the time you want to receive the appointment. This field is required.",
-		
+		"tipo notifi": "Notification types",
+		"tres notifi": "There are three types of notification in the system, each one will be displayed depending on the current status of your last request in the 'Appointments' section, these are:",
 
-		"citas medio": "you must select the mode in which you want to receive the appointment. This field is mandatory to complete.",
-		"medio guia": "Modality: ",
+		"notifi enviada": "Confirmation notification",
+		"soli enviada": "Right after you have submitted a request for an appointment, you will see a message in the notifications section that will say 'Your request has been sent.' This means that it is pending to be reviewed by a company administrator who says if he accepts or rejects it.",
 
-		"citas mensaje": "here you can give more information about what you want to receive from the appointment. This is an optional field.",
-		"mensaje guia": "Message: ",
+		"notifi aceptada": "Acceptance notification",
+		"soli aceptada": "This message will be displayed when a company administrator has accepted your request, in addition the appointment will be scheduled to the calendar and you will also receive an email with more details.",
+		"notifi rechazada":	"Decline Notification",
+		"soli recazada": "Por último está la notififación de rechazo, la cual se mostrará en su cuenta únicamente cuando algún administrador indique que es imposible atenderlo.",
 
-		"calendar descrip":"In this section you can check the days you have appointments. If you click on a day that has an event, a box will be displayed with the detailed information of the appointment.",
 
 		"idiomas": "Change of Language",
 		"idioma descrip": "If you want to change the language of the page from Spanish to English and vice-versa, just select the country reference icon.",
 
-		"notificaciones": "Notifications",
-		"notifi descrip": "Here you can see the notifications of the monitoring of the status of your appointments.",
+		"ver idiomas": "How do I change the language of my account?",
+		
 		"perfil": "Profile",
-		"perfil descrip": "To go to the profile you must position yourself on the username and in the submenu click on 'My profile', once inside you can check the information of your user, change the profile photo to click on Update profile photo and change the password.",
+		"perfil descrip": "Every account has the possibility of verifying the information of its user, to access this you only have to enter the 'My Profile' section.",
+		"perfil descrip1": "To go to your profile you only have to position the mouse over your name, which is in the upper right corner of the interface, this will display a submenu where the option to visit the profile will be.",
+		"perfil descrip2": "Once inside your profile you can review your personal information, which makes up your account in the system. Also in this section you can change your profile picture and your password.",
+
+		"foto perfil": "Profile picture",
+		"foto descrip": "Every account has a profile picture to identify each user, it can also be changed at will by all users.",
+		"ver foto": "How to change my profile picture?",
+		"foto descrip1": "First, you must access the option of 'My Profile', after this, at the beginning of this section we just have to click on the button 'Update Profile Picture'.",
+		"foto descrip2": "Just after having pressed the button to change the photo, a new window will appear in which we will have 2 options, one to choose a new profile photo and the other to delete the current photo. It should be mentioned that they can only be png, jpg and svg files.",
 
 
 	//PERFIL
@@ -360,8 +400,8 @@ let palabras = {
 	
 	//BARRA CARGA
 		"load carga": "PLEASE WAIT WHILE THE DATA IS PROCESSED",
+		"load rcc": "AT THE END OF THE UPLOAD CHECK THE NOTIFICATIONS SECTION",
 		"load eliminar": "DELETING APPOINTMENT"
-		
 	}
 };
 

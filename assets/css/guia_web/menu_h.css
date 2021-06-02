@@ -12,7 +12,8 @@
         background: #BD1E2D;
         height: auto;
         position: sticky;
-        top: 0
+        top: 0;
+        z-index: 1;
     }
     
     #nav_h{
@@ -21,7 +22,6 @@
         align-items: center;
         padding: 0 50px;
     }
-    
     
     /*Modidicar la poisición de los iconos del menu horizontal (rojo)*/
     

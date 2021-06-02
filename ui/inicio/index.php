@@ -33,6 +33,7 @@
 			
 			<div class="logo">
 				<img src="../../assets/img/logo.png" alt="Logo de la empresa">
+				<button class="btn_cerrar" title="Cerrar Menú" tabindex="0">X</button>
 			</div>
 
 			<nav id="nav_v">
@@ -53,9 +54,6 @@
 						<li class="li_v li_citas"><a href="../rcc/reserva_cc.php" key="citas" class="lang"><span class="icono"><img src="../../assets/iconos/citas.svg" aria-hidden="true" class="icono_v"></span>Citas</a></li>
 					<?php } ?>
 
-					<?php if($_SESSION["idrol"] == 2){ ?>
-					<li class="li_v li_analitica"><a href="../analitica_web/analitica.php" key="analitica web" class="lang"><span class="icono"><img src="../../assets/iconos/analitica-web.svg" aria-hidden="true" class="icono_v"></span>Analítica Web</a></li>
-					<?php } ?>
 					<li class="li_v li_calendario"><a href="../calendario/calendario.php" key="calendario" class="lang"><span class="icono"><img src="../../assets/iconos/calendario.svg" aria-hidden="true" class="icono_v"></span>Calendario</a></li>
 					<?php if($_SESSION["idrol"] == 3){ ?>
 					<li class="li_v li_guia"><a href="../guia_web/guia_web.php" key="guia web" class="lang"><span class="icono"><img src="../../assets/iconos/guia-web.svg" aria-hidden="true" class="icono_v"></span>Guía Web</a></li>
@@ -153,8 +151,8 @@
 	
 	<script type="text/javascript" src="../../assets/js/hide_menu_v.js"></script>
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-	<!-- <script type="text/javascript" src="../../assets/js/notificaciones/notifi.js"></script>
-	<script type="text/javascript" src="../../assets/js/notificaciones/notificaciones.js"></script> -->
+	<script type="text/javascript" src="../../assets/js/notificaciones/notifi.js"></script>
+	<script type="text/javascript" src="../../assets/js/notificaciones/notificaciones.js"></script>
 	<script type="text/javascript" src="../../assets/js/lang/multi_lang.js"></script>
 	<script type="text/javascript" src="../../assets/js/accesibilidad.js"></script>
 	

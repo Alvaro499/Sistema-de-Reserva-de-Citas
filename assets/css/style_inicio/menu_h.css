@@ -75,33 +75,6 @@ div.regre button:hover{
 	transition: all 0.3s;
 }
 
-/* .menu_idiomas{
-	background: #FFFFFF;
-	padding: 10px;
-	display: flex;
-	flex-flow: column wrap;
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: -1;
-	visibility: hidden;
-} */
-
-/* .idioma:hover .menu_idiomas{
-	top: 100%;
-	left: 0;
-	z-index: 1;
-	visibility: visible;
-	transition: all 0.5s;
-}
-
-.idioma:focus .menu_idiomas{
-	z-index: 1;
-	top: 100%;
-	left: 18%;
-	visibility: visible;
-	transition: all 0.3s;
-} */
 /* Final submenu Idiomas */
 
 .usuario{

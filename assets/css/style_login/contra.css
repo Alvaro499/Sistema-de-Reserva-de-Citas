@@ -1,14 +1,16 @@
 .fondo{
 	
 	background: url("../../img/prueba2.jpg") no-repeat fixed center;
+	height: auto;
 }
-
-
 
 /*Ventana*/
 .ventana{
 	text-align: center;
-	padding: 50px
+	padding: 50px;
+	height: 100vh;
+	display: flex;
+	align-content: center;
 }
 
 .ventana form{
@@ -18,16 +20,13 @@
 	display: flex;
 	flex-flow: column wrap;
 	font-size: 0.8rem;
-	/* padding: 33px; */
-	padding: 10% 12%;
-	min-height: 400px;
+	padding: 5% 10%;
+	/* padding: 20px 20px */
 }
 
-
 form div input {
-	
 	margin: 0 0 20px 0;
-	padding: 10px;
+	padding: 10px 0;
 	height: 40px;
 	width: 100%;
 	font-size: 1rem
@@ -92,7 +91,6 @@ form div input {
 /*Cuerpo*/
 h1{
     margin: 0 0 20px 0;
-    font-size: 2rem;
     color: #ffffff
 }
 label{ 
@@ -108,13 +106,15 @@ label{
 	text-align: right;
 }
 #boton{
-	padding: 25px;
+	/* padding: 25px; */
+	width: 100%;
+	padding: 15px 0;
 	margin: 25px 0 0 0;
 	float: center;
 	background: red;
 	color: white;
 	text-align: center;
-	font-size: 1.2rem;
+	font-size: 1.1rem;
 	border: none;
 	cursor: pointer;
 	outline: none;

@@ -6,7 +6,11 @@
 /*Contenedor del formulario*/
 .ventana{
 	text-align: center;
-	padding: 40px
+	padding: 40px;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-content: center;
 }
 
 .ventana form{
@@ -74,7 +78,7 @@ form .correo {
 h1{
 	color: #ffffff;
 	text-align: center;
-	font-size: 1.8rem;
+	/* font-size: 1.8rem; */
 }
 
 label{ font-size: 1.2rem;
@@ -98,7 +102,6 @@ label{ font-size: 1.2rem;
 }
 
 #boton:hover{
-	
 	background: #ffffff;
 	color: #262261;
 

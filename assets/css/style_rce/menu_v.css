@@ -20,6 +20,27 @@
 	background: #262261;
 }
 
+/* Boton que se mostrara cuando el menu vertical cubra todo al medir la pantalla menos de 525px */
+.btn_cerrar{
+	display: none;
+	outline: none;
+	border: none;
+	width: 50px;
+	height: 50px;
+	font-size: 1.8rem;
+	font-weight: bolder;
+	background: #FFFFFF;
+	position: absolute;
+	color: #b84752;
+	top: 0;
+	right: 0;
+}
+
+.btn_cerrar:hover{
+	color: #df0d22;
+	cursor:pointer
+}
+
 /*Generar un espacio entre los iconos y el texto*/
 #nav_v span{
 	margin-right: 10px

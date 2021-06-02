@@ -31,7 +31,7 @@
 				<img src="../../assets/img/logo.png" tabindex="0" alt="Logo de la empresa Gapa">
 			</figure>
 
-			<button onclick="abrir()" class="botonarriba" tabindex="0">Regresar página de inicio</button>
+			<button onclick="abrir()" class="botonarriba" tabindex="0">Regresar a inicio</button>
 			
 		</header>
 

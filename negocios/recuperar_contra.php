@@ -49,7 +49,7 @@ require("../assets/PHPMAILER/src/SMTP.php");
             
                             <p style="font-size: 1.4rem">Estimado cliente, el Sistema de Reservas de Citas Gapa ha recibido la notificación de que su persona ha solicitado un cambio de contraseña.</p>
             
-                            <p style="font-size: 1.4rem">Para lograr recuperar su contraseña por vaya al siguiente enlace: <a href="http://localhost/archivos/SRCG/negocios/n_usuarios/cambiar_contra_parametro.php?cedula='.$cedula.'">Recuperar contraseña</a></p>
+                            <p style="font-size: 1.4rem">Para lograr cambiar su contraseña por favor vaya al siguiente enlace: <a href="http://localhost/SRCG/negocios/n_usuarios/cambiar_contra_parametro.php?cedula='.$cedula.'">Recuperar contraseña</a></p>
             
                             <p style="font-size: 1.4rem">Cualquier duda o consulta que presente puede consultar con nosotros por cualquier medio, ya sea por correo electrónico, llamando a servicio al cliente o visitando nuestras oficinas.</p>
             

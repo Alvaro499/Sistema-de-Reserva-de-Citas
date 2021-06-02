@@ -28,11 +28,21 @@
 	?>
 
 	<div class="container">
+
+		<div id="cont_carga" class="container_load">
+			<div class="load_father">
+				<div class="circle_father">
+					<div class="circle"></div>
+				</div>
+				<p class="text lang" key="load carga" tabindex="0">POR FAVOR ESPERE MIENTRAS SE PROCESAN LOS DATOS<span>...</span</p>
+			</div>
+		</div>
 		
 		<header id="menu_v">
 			
 			<div class="logo">
 				<img src="../../assets/img/logo.png" alt="Logo de la empresa" tabindex="0">
+				<button class="btn_cerrar" title="Cerrar Menú" tabindex="0">X</button>
 			</div>
 
 			<nav id="nav_v">
@@ -51,10 +61,6 @@
 					<li class="li_v li_citas"><a href="../rce/administracion_citas.php" key="citas" class="lang"><span class="icono"><img src="../../assets/iconos/citas.svg" aria-hidden="true" class="icono_v"></span>Citas</a></li>
 					<?php }else if($_SESSION["idrol"] == 3){ ?>
 						<li class="li_v li_citas"><a href="../rcc/reserva_cc.php" key="citas" class="lang"><span class="icono"><img src="../../assets/iconos/citas.svg" aria-hidden="true" class="icono_v"></span>Citas</a></li>
-					<?php } ?>
-
-					<?php if($_SESSION["idrol"] == 2){ ?>
-					<li class="li_v li_analitica"><a href="../analitica_web/analitica.php" key="analitica web" class="lang"><span class="icono"><img src="../../assets/iconos/analitica-web.svg" aria-hidden="true" class="icono_v"></span>Analítica Web</a></li>
 					<?php } ?>
 
 					<li class="li_v li_calendario"><a href="../calendario/calendario.php" key="calendario" class="lang"><span class="icono"><img src="../../assets/iconos/calendario.svg" aria-hidden="true" class="icono_v"></span>Calendario</a></li>
@@ -237,9 +243,13 @@
 	<script type="text/javascript" src="../../assets/js/hide_menu_v.js"></script>
 	<script type="text/javascript" src="../../assets/js/validaciones/registro_valid.js"></script>
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="../../assets/js/notificaciones/notifi.js"></script>
+	<script type="text/javascript" src="../../assets/js/notificaciones/notificaciones.js"></script>
 	<script type="text/javascript" src="../../assets/js/toastr/toastr.min.js"></script>
 	<script type="text/javascript">
-	
+
+		let cont_carga = document.querySelector("#cont_carga");
+		let body = document.querySelector("body");
 		$("form#frmregistro").submit(function(event){
 			event.preventDefault();
 			if(validacion()){
@@ -262,35 +272,51 @@
 				"&cel_2=" + opcional_celular +
 				"&rol=" + rol;
 
-				$.ajax({
-					type: "POST",
-					url:"../../negocios/n_usuarios/insertar_usuario.php",
-					data: datos,
-					//Métodos
-					success: function(data){
-						
-						if(data==1){
-							toastr.success("El usuario ha sido creado exitosamente","Éxito",{positionClass: "toast-bottom-right", showDuration: "500"});
-
-						}else if(data==2){
-							toastr.error("Error al crear el usuario, verificar que la cédula introducida no esté ya registrada","Error",{positionClass: "toast-bottom-right", showDuration: "500"});
-
-						}
-						else if(data==3){
-							toastr.error("No se pudo asignar el rol al usuario, verificar que la cédula introducida no esté ya registrada","Error",{positionClass: "toast-bottom-right", showDuration: "500"});
-
-						}
-						else if(data==4){
-							toastr.error("Error al enviar el correo","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
-
-						}else if(data==6){
-							toastr.error("Este correo ya está registrado","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
-
-						}else{
-							toastr.error("Error desconocido","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
-						}
+				function load_circle(){
+					if (cont_carga.classList.contains('container_load')) {
+						cont_carga.classList.replace('container_load', 'container_load_js');
+						body.style.overflowY = "hidden";
+						body.style.overflowX = "hidden";
 					}
-				})
+
+					$.ajax({
+						type: "POST",
+						url:"../../negocios/n_usuarios/insertar_usuario.php",
+						data: datos,
+						//Métodos
+						success: function(data){
+							
+							if(data==1){
+								toastr.success("El usuario ha sido creado exitosamente","Éxito",{positionClass: "toast-bottom-right", showDuration: "500"});
+
+							}else if(data==2){
+								toastr.error("Error al crear el usuario, verificar que la cédula introducida no esté ya registrada","Error",{positionClass: "toast-bottom-right", showDuration: "500"});
+
+							}
+							else if(data==3){
+								toastr.error("No se pudo asignar el rol al usuario, verificar que la cédula introducida no esté ya registrada","Error",{positionClass: "toast-bottom-right", showDuration: "500"});
+
+							}
+							else if(data==4){
+								toastr.error("Error al enviar el correo","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
+
+							}else if(data==6){
+								toastr.error("Este correo ya está registrado","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
+
+							}else{
+								toastr.error("Error desconocido","Error",{positionClass: "toast-bottom-right", showDuration: "400"});
+							}
+
+							//FINALIZAR BARRA DE CARGA
+							if (data>=0) {
+								if (cont_carga.classList.contains('container_load_js')) {
+									cont_carga.classList.replace('container_load_js', 'container_load');
+									body.style.overflowY = "scroll";
+								}
+							}
+						}
+					})
+				}load_circle();
 			}
 		});
 		

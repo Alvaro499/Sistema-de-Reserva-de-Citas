@@ -2,20 +2,141 @@
 	background: #BE1E2D;
 	color: #000000;
 }
-section img{
+h1{
+	margin-bottom: 10px;
+}
+
+.intro{
+	margin-bottom: 30px;
+}
+
+.acordeon{
 	width: 100%;
-	padding: 10px;
 }
-.card{
-	border: 1px solid rgb(226, 12, 12);
-    margin: 10px;
+
+.acordeon img{
+	width: 100%;
+	margin-bottom: 20px;
+	object-fit: cover;
 }
-section h1, p, h2{
-	margin: 5.5px;
-	padding: 10px;
-	font-size: 1.4rem;
+
+P{
+	text-align: justify;
 }
-#principal{
-	display: grid;
-	grid-template-columns: repeat(3, auto)
+
+.acordeon h2{
+	margin-bottom: 20px;
+}
+
+.acordeon p{
+	margin-bottom: 20px;
+}
+
+.acordeon input{
+	display: none;
+}
+
+.acordeon__item{
+	position: relative;
+	margin-bottom: 75px;
+	padding-top: 25PX;
+	border-top: 2px solid #000;
+}
+
+.acordeon__titulo{
+	display: block;
+	padding: 15px;
+	background: rgba(38,124,181,1);
+	color: white;
+	font-size: 20px;
+	cursor: pointer;
+	transition: all 0.5s;
+	position: relative;
+}
+
+/*3)EFECTO HOVER" A LOS <label>*/
+.acordeon__titulo:hover{
+	background-color: rgba(38,124,181,0.8);
+}
+
+.acordeon input:checked ~ .acordeon__titulo{
+	background: red;
+}
+
+.details{
+	margin-left: 20px
+}
+
+.acordeon__contenido{
+	display: none;
+	position: absolute;
+	top: 0;
+	border-bottom: 1px solid white;
+	transition: margin 0.5s;
+}
+
+.acordeon input:checked ~ .acordeon__contenido{
+	display: block;
+	background: #BCCBD3;
+	padding: 25px;
+	top: 100%;
+	transition: top 0.5s;
+	position: relative;
+}
+
+.acordeon__contenido_js{
+	display: block;
+	top: 100%;
+	transition: top 0.5s;
+	position: relative;	
+}
+
+@media screen and (min-width: 812px){
+
+	P{
+		font-size: 1.2rem;
+	}
+
+	.details{
+		margin-left: 30px
+	}
+
+	.acordeon__titulo{
+		font-weight: bold;
+		letter-spacing: 1px;
+	}
+
+	.nav_guia{
+		display: none;
+	}
+}
+
+@media screen and (min-width: 1080px){
+	
+	h1{
+		font-size: 2.4rem;
+	}
+
+	.acordeon h2{
+		font-size: 1.8rem;
+	}
+
+	P{
+		font-size: 1.3rem;
+	}
+	.acordeon img{
+		width: 80%;
+		height: auto;
+		object-fit: contain;
+	}
+
+	.acordeon input:checked ~ .acordeon__contenido{
+		text-align: center;
+	}
+
+	.acordeon__titulo{
+		text-align: center;
+		font-size: 1.5rem;
+	}
+
 }
