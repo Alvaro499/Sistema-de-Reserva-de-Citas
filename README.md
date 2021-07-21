@@ -12,21 +12,23 @@ A continuación muestro las funcionalidades mas importantes del sistema de citas
   El sistema se basa únicamente en 2 tipos de usuarios "administradores y clientes". Para crear un nuevo usuario ya sea alguno de los 2 anteriores esta acción debe ser realizada por el administrador principal, quien ya tiene una cuenta habilitada desde el inicio.
   Cabe recalcar que quien crea las cuentas a los usuarios es la empresa, no los mismo usuarios; por lo que los adminisradores son quienes en realidad lo hacen.
     
-    <img src="img/registro.jpeg" width="300">    
+  <img src="img/registro.PNG" width="800">    
+   
     
-    
-    *Creación exitosa de usuario
-    <img src="img/registro2.jpeg" width="300">    
+  *Creación exitosa de usuario
+  
+  <img src="img/registro2.PNG" width="800">    
     
     
    2)Envío de Correos masivos:
    
    Esta funcionalidad como su titulo dice permite a los administradores enviar correos masivos a todos los usuarios que tengan el rol de clientes. El correo permite enviar un asunto, el cuerpo del mensaje y un limite de 5 imagenes.
    
-    <img src="img/correos.png" width="300">    
+   <img src="img/correos.PNG" width="800">    
    
     *Envío de correos
-    <img src="img/correos_envio.png" width="300">
+    
+   <img src="img/correos_envio.PNG" width="800">
    
    3)Administración de Citas:
    
@@ -34,26 +36,26 @@ A continuación muestro las funcionalidades mas importantes del sistema de citas
    
    En el caso de ser rechazada, se le enviará al usuario un correo explicando el motivo por el cual su solicitud fue denegada.
    
-    <img src="img/citas.png" width="300">
+   <img src="img/citas.PNG" width="800">
    
    
    4)Calendario:
    
    En el calendario se visualizan las fechas de las citas aceptadas. El calendario de los clientes muestra el dia de su cita; mientras que el de los administradores muestra todas las citas de todos los clientes.
    
-    <img src="img/calendario.png" width="300">
+   <img src="img/calendario.PNG" width="800">
    
    El calendario tambien tiene una opcion de ver información detallada, al presionar sobre la cita se desplegará un modal con la información completa de la cita.
    
-    <img src="img/calendario_modal.png" width="300">
+   <img src="img/calendario_modal.PNG" width="800">
    
    5)Cambio de idioma:
    
    El sistema está adaptado a dos idiomas, español e inglés.
    
-      <img src="img/idioma.png" width="300">
+   <img src="img/idioma.PNG" width="800">
       
-      <img src="img/idioma_ingles.png" width="300">
+   <img src="img/idioma_ingles.PNG" width="800">
    
    
    
@@ -61,20 +63,20 @@ A continuación muestro las funcionalidades mas importantes del sistema de citas
    
    El usuarios tiene la oportunidad de verificar su información personal usada para la cuenta. También tiene la función de cambiar su foto de perfil de cuenta.
    
-      <img src="img/perfil.png" width="300">
+   <img src="img/perfil.PNG" width="800">
    
    
    6)Diseño Responsivo:
     
     El sistema también es responsivo para su empleabilidad tanto en móviles, tablets y pc escritorio.
     
-      <img src="img/responsive.png" width="300">
+   <img src="img/responsive.PNG" width="400">
       
-      <img src="img/responsive2.png" width="300">
+   <img src="img/responsive2.PNG" width="400">
     
    
    
    
 
 
-![](img/logo1.jpeg)
+
