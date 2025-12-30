@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="calibri font sv">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/assets/fonts/calibri font sv/Calibri Light.zip!/" />
+      <root url="jar://$PROJECT_DIR$/assets/fonts/calibri font sv/Calibri Regular.zip!/" />
+      <root url="jar://$PROJECT_DIR$/assets/fonts/calibri font sv/Calibri Bold.zip!/" />
+      <root url="jar://$PROJECT_DIR$/assets/fonts/calibri font sv/Calibri Bold Italic.zip!/" />
+      <root url="jar://$PROJECT_DIR$/assets/fonts/calibri font sv/Calibri Italic.zip!/" />
+      <root url="jar://$PROJECT_DIR$/assets/fonts/calibri font sv/Calibri Light Italic.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

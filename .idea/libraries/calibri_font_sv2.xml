@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="calibri-font-sv">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/assets/fonts/calibri-font-sv.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

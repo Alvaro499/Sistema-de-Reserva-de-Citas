@@ -146,7 +146,7 @@
 		<main id="principal">
 			<div class="guia_cont">
 				<h1 class="lang" key="intro" tabindex="0">Introducción al Sistema</h1>
-				<p class="intro descrip">Antes de empezar a usar tu cuenta te recomendamos que leas este pequeño manual de usuario en el que se explican de forma rápida y entendible las diferentes funcionalidades del Sistema de Reservas de Citas de Gapa</p>
+				<p key="intro descrip" class="lang p_intro">Antes de empezar a usar tu cuenta te recomendamos que leas este pequeño manual de usuario en el que se explican de forma rápida y entendible las diferentes funcionalidades del Sistema de Reservas de Citas de Gapa</p>
 
 				<div class="acordeon">
 					<div class="acordeon__item">
