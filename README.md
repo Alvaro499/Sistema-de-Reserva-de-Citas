@@ -1,8 +1,25 @@
-# GAPA - Appointment Reservation System
+# INA - Appointment Reservation System for GAPA
 
 > Web system for managing client appointments for the accounting company GAPA
 
 [Live Demo](https://gapa.infinityfreeapp.com)
+
+__Demo Users:__
+
+- Admin:
+  - __Email:__ `willqm12@gmail.com`
+  - __Password:__ `12345678`
+
+- Admin:
+
+  -	__Email:__ `mariel@gmail.com`
+  - __Password:__ `12345678`
+
+- Client
+
+  - __Email:__ `alvaro@gmail.com`
+  - __Password:__ `12345678`
+
 
 ---
 
