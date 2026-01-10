@@ -1,8 +1,14 @@
-#Restringe acceso a los archivos de las carpetas
-#Options All -Indexes 
-#Código de error y direccionamiento
-#ErrorDocument 404 /SRCG/ui/login/sesion.php
-#Sobreescribe la ruta para ocultar la extensión
+# Restringe acceso a los archivos de las carpetas
+Options All -Indexes
+
+# Código de error y direccionamiento
+ErrorDocument 404 /ui/login/sesion.php
+
+# NOTA: RewriteRules desactivadas porque:
+# - Los archivos están en subcarpetas (ui/login/, ui/perfil/, etc.)
+# - Puede causar conflictos con CSS/JS
+# - La estructura actual funciona bien con rutas completas
+#
 #RewriteEngine on
 #RewriteCond %{REQUEST_FILENAME} !-d
 #RewriteCond %{REQUEST_FILENAME}.php -f 
