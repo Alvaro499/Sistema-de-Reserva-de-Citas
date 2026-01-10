@@ -2,7 +2,7 @@
 
 > Web system for managing client appointments for the accounting company GAPA
 
-[Live Demo](https://gapa.infinityfreeapp.com)
+[Live Demo](booking-system-ina.infinityfreeapp.com)
 
 __Demo Users:__
 

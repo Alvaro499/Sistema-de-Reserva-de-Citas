@@ -4,6 +4,8 @@
 
     require("../../assets/PHPMAILER/src/SMTP.php");
 
+    require("../../config_email.php");
+
     class N_Correo_Citas{
 
         
@@ -12,22 +14,25 @@
             
             $email = new PHPmailer();
             try {              
+                // Obtener configuración según el entorno
+                $config = EmailConfig::getConfig();
+                
                 $email->SMTPdEBUG = SMTP::DEBUG_SERVER;
 
                 $email->isSMTP();
 
-                $email->Host = "smtp.gmail.com";
+                $email->Host = $config['host'];
 
                 $email->SMTPAuth = true;
 
-                $email->Username = "sistemareservas.cg@gmail.com";
-                $email->Password = "srcg12345";
+                $email->Username = $config['username'];
+                $email->Password = $config['password'];
 
-                $email->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+                $email->SMTPSecure = $config['encryption'];
 
-                $email->Port = 587;
+                $email->Port = $config['port'];
 
-                $email->setFrom("sistemareservas.cg@gmail.com", "SRCG");
+                $email->setFrom($config['from_email'], $config['from_name']);
 
                 $email->addAddress($correo);
 
@@ -119,22 +124,25 @@
 
             $email = new PHPmailer();
             try {              
+                // Obtener configuración según el entorno
+                $config = EmailConfig::getConfig();
+                
                 $email->SMTPdEBUG = SMTP::DEBUG_SERVER;
 
                 $email->isSMTP();
 
-                $email->Host = "smtp.gmail.com";
+                $email->Host = $config['host'];
 
                 $email->SMTPAuth = true;
 
-                $email->Username = "sistemareservas.cg@gmail.com";
-                $email->Password = "srcg12345";
+                $email->Username = $config['username'];
+                $email->Password = $config['password'];
 
-                $email->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+                $email->SMTPSecure = $config['encryption'];
 
-                $email->Port = 587;
+                $email->Port = $config['port'];
 
-                $email->setFrom("sistemareservas.cg@gmail.com", "SRCG");
+                $email->setFrom($config['from_email'], $config['from_name']);
 
                 $email->addAddress($correo_cliente);
 
